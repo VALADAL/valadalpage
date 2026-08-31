@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valadal — Tecnología, Reparación y Soluciones Digitales</title>
+  <meta name="description" content="Valadal repara y da mantenimiento a computadoras, smartphones y consolas, y desarrolla soluciones digitales para negocios.">
+
+  <!-- Tipografías -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#top" class="navbar__logo">
+        <span class="navbar__logo-mark">V</span>
+        Valadal
+      </a>
+
+      <nav class="navbar__links" id="navLinks">
+        <a href="#servicios" class="nav-link">Servicios</a>
+        <a href="#trabajo" class="nav-link">Trabajo</a>
+        <a href="#nosotros" class="nav-link">Nosotros</a>
+        <a href="#contacto" class="nav-link">Contacto</a>
+      </nav>
+
+      <a href="#contacto" class="btn btn--primary btn--small navbar__cta">Cotizar</a>
+
+      <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M3 12h18M3 6h18M3 18h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Reparación y tecnología en Guadalajara
+        </span>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line hero__title-line--dark">Reparamos tu tecnología.</span>
+          <span class="hero__title-line hero__title-line--accent">Construimos lo que sigue.</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Valadal repara, mantiene y actualiza tu computadora, celular o consola —
+          y diseña las soluciones digitales que tu negocio necesita para crecer.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico</a>
+          <a href="#servicios" class="btn btn--ghost">Ver servicios</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="device-panel">
+          <div class="device-panel__grid"></div>
+          <div class="device-panel__core"></div>
+          <div class="device-panel__line device-panel__line--1"></div>
+          <div class="device-panel__line device-panel__line--2"></div>
+        </div>
+
+        <div class="float-card float-card--1">
+          <span class="float-card__icon">◎</span>
+          <span>Diagnóstico gratuito</span>
+        </div>
+        <div class="float-card float-card--2">
+          <span class="float-card__icon">✓</span>
+          <span>Reparación certificada</span>
+        </div>
+        <div class="float-card float-card--3">
+          <span class="float-card__icon">◈</span>
+          <span>Entrega en 48h</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE DO ============ -->
+  <section class="section what-we-do">
+    <div class="container">
+      <p class="eyebrow-text">Qué hacemos</p>
+      <h2 class="section-title">Mantenemos la tecnología en movimiento.</h2>
+      <p class="section-lead">
+        Valadal nació como un taller de reparación, pero es mucho más que eso.
+        Hoy combinamos servicio técnico con desarrollo digital, para que la tecnología
+        que ya tienes funcione mejor, y la que necesitas construir, funcione desde el día uno.
+      </p>
+    </div>
+  </section>
+
+  <!-- ============ SERVICES CARDS ============ -->
+  <section class="section services" id="servicios">
+    <div class="container services__grid">
+
+      <a href="#reparaciones" class="service-card">
+        <div class="service-card__top">
+          <span class="service-card__index">01</span>
+          <span class="service-card__arrow">→</span>
+        </div>
+        <h3 class="service-card__title">Reparación</h3>
+        <p class="service-card__desc">
+          Diagnóstico, reparación y mantenimiento de computadoras, smartphones y consolas.
+        </p>
+        <div class="service-card__tags">
+          <span>Laptops</span><span>MacBook</span><span>iPhone</span><span>PlayStation</span><span>Xbox</span>
+        </div>
+      </a>
+
+      <a href="#digital" class="service-card service-card--accent">
+        <div class="service-card__top">
+          <span class="service-card__index">02</span>
+          <span class="service-card__arrow">→</span>
+        </div>
+        <h3 class="service-card__title">Digital Solutions</h3>
+        <p class="service-card__desc">
+          Sitios web, sistemas a la medida y automatización para negocios que quieren crecer.
+        </p>
+        <div class="service-card__tags">
+          <span>Web</span><span>Sistemas</span><span>Automatización</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- ============ REPAIR PREVIEW ============ -->
+  <section class="section repair-preview" id="reparaciones">
+    <div class="container">
+      <p class="eyebrow-text">Reparación</p>
+      <h2 class="section-title">Tu tecnología, en buenas manos.</h2>
+
+      <div class="repair-grid">
+        <div class="repair-item">
+          <span class="repair-item__icon">💻</span>
+          <h3>Computadoras</h3>
+          <p>Laptops · MacBook · PC de escritorio</p>
+          <ul>
+            <li>Diagnóstico y reparación</li>
+            <li>Mantenimiento</li>
+            <li>Actualizaciones y upgrades</li>
+          </ul>
+        </div>
+
+        <div class="repair-item">
+          <span class="repair-item__icon">📱</span>
+          <h3>Smartphones</h3>
+          <p>iPhone · Android</p>
+          <ul>
+            <li>Diagnóstico y reparación</li>
+            <li>Mantenimiento</li>
+          </ul>
+        </div>
+
+        <div class="repair-item">
+          <span class="repair-item__icon">🎮</span>
+          <h3>Gaming</h3>
+          <p>PlayStation · Xbox · Controles</p>
+          <ul>
+            <li>Reparación HDMI y drift</li>
+            <li>Limpieza y mantenimiento</li>
+            <li>Diagnóstico de consolas y controles</li>
+          </ul>
+        </div>
+      </div>
+
+      <a href="#contacto" class="btn btn--primary">Solicitar diagnóstico →</a>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL SOLUTIONS ============ -->
+  <section class="section digital" id="digital">
+    <div class="container digital__inner">
+      <p class="eyebrow-text eyebrow-text--light">Digital Solutions</p>
+      <h2 class="section-title section-title--light">Construimos lo que sigue.</h2>
+      <p class="section-lead section-lead--light">
+        Desarrollo web, sistemas personalizados, automatización y herramientas digitales
+        pensadas para que tu negocio trabaje de forma más inteligente.
+      </p>
+
+      <div class="digital__tags">
+        <span>Desarrollo web</span>
+        <span>Sistemas a medida</span>
+        <span>Automatización</span>
+      </div>
+
+      <a href="#contacto" class="btn btn--outline-light">Cotizar proyecto →</a>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK ============ -->
+  <section class="section work" id="trabajo">
+    <div class="container">
+      <p class="eyebrow-text">Portafolio</p>
+      <h2 class="section-title">Trabajo real. Resultados reales.</h2>
+      <p class="section-lead">
+        Estamos documentando cada proyecto conforme lo entregamos.
+        Estos son los tipos de trabajo que verás aquí muy pronto.
+      </p>
+
+      <div class="work-grid">
+        <div class="work-card">
+          <span class="work-card__tag">Gaming</span>
+          <h3>Reparación de consolas y controles</h3>
+        </div>
+        <div class="work-card">
+          <span class="work-card__tag">Computadoras</span>
+          <h3>Laptops, MacBook y equipos armados</h3>
+        </div>
+        <div class="work-card">
+          <span class="work-card__tag">Smartphones</span>
+          <h3>Reparación de iPhone y Android</h3>
+        </div>
+        <div class="work-card">
+          <span class="work-card__tag">Digital</span>
+          <h3>Sitios web y sistemas a la medida</h3>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT ============ -->
+  <section class="section about" id="nosotros">
+    <div class="container about__inner">
+      <div>
+        <p class="eyebrow-text">Nosotros</p>
+        <h2 class="section-title">Entender el problema. Encontrar la solución. Hacer que funcione.</h2>
+      </div>
+      <div>
+        <p class="section-lead">
+          Valadal es una empresa de tecnología con dos divisiones: reparación y soluciones digitales.
+          Reparamos y mantenemos los dispositivos que ya usas todos los días, y diseñamos
+          las herramientas digitales que tu negocio necesita para avanzar.
+        </p>
+        <p class="section-lead">
+          La tecnología debe trabajar para ti — esa es la idea detrás de todo lo que hacemos.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTACT ============ -->
+  <section class="section contact" id="contacto">
+    <div class="container contact__inner">
+      <div class="contact__intro">
+        <p class="eyebrow-text">Contacto</p>
+        <h2 class="section-title">Hablemos de tu proyecto.</h2>
+        <p class="section-lead">
+          Cuéntanos qué necesitas reparar o qué quieres construir.
+          Te respondemos lo antes posible.
+        </p>
+
+        <div class="contact__details">
+          <a href="mailto:hola@valadal.com">hola@valadal.com</a>
+          <a href="https://wa.me/523300000000" target="_blank" rel="noopener">WhatsApp</a>
+          <span>Guadalajara, Jalisco, México</span>
+        </div>
+      </div>
+
+      <form class="contact__form" id="contactForm">
+        <label>
+          Nombre
+          <input type="text" name="name" placeholder="Tu nombre" required>
+        </label>
+        <label>
+          Correo
+          <input type="email" name="email" placeholder="tu@correo.com" required>
+        </label>
+        <label>
+          Mensaje
+          <textarea name="message" rows="4" placeholder="Cuéntanos qué necesitas..." required></textarea>
+        </label>
+        <button type="submit" class="btn btn--primary">Enviar mensaje</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="navbar__logo-mark navbar__logo-mark--footer">V</span>
+        <div>
+          <p class="footer__name">Valadal</p>
+          <p class="footer__tagline">Technology · Repair · Digital Solutions</p>
+        </div>
+      </div>
+
+      <nav class="footer__links">
+        <a href="#servicios">Servicios</a>
+        <a href="#trabajo">Portafolio</a>
+        <a href="#nosotros">Nosotros</a>
+        <a href="#contacto">Contacto</a>
+      </nav>
+
+      <p class="footer__copy">© 2026 Valadal</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
