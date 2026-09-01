@@ -56,7 +56,7 @@
   background-size: 32px 32px;
 }
 
-.device-panel__core {
+/*.device-panel__core {
   position: absolute;
   top: 50%; left: 50%;
   width: 100px; height: 230px;
@@ -65,6 +65,37 @@
   background: linear-gradient(180deg, var(--blue-bright), var(--blue));
   box-shadow: 0 0 50px rgba(0, 102, 255, 0.35);
   animation: pulse-glow 4s ease-in-out infinite;
+}*/
+
+.hero-pc {
+  position: absolute;
+  z-index: 2;
+
+  width: 72%;
+  max-width: 390px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(0 24px 35px rgba(0, 0, 0, 0.20))
+    drop-shadow(0 0 28px rgba(0, 163, 255, 0.12));
+
+  animation: pc-float 5s ease-in-out infinite;
+}
+
+@keyframes pc-float {
+  0%, 100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform: translate(-50%, calc(-50% - 8px));
+  }
 }
 
 @keyframes pulse-glow {
