@@ -236,17 +236,17 @@
     height: 190px;
   }
 
-  .hero-pc {
-    width: 125%;
-    max-width: none;
+.hero-pc {
+  width: 75%;
+  max-width: none;
 
-    left: 50%;
-    top: 50%;
+  left: 50%;
+  top: 50%;
 
-    filter:
-      drop-shadow(0 12px 20px rgba(0, 0, 0, 0.20))
-      drop-shadow(0 0 16px rgba(0, 70, 180, 0.22));
-  }
+  filter:
+    drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18))
+    drop-shadow(0 0 13px rgba(0, 70, 180, 0.20));
+}
 
 
   /* ---------- FLOAT CARDS ---------- */
