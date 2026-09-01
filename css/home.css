@@ -263,9 +263,7 @@
 }
 
 
-/* ============================================================
-   TOP — IMAGE + CONTENT
-   ============================================================ */
+/* ---------- TOP: IMAGE + TEXT ---------- */
 
 .valadal-section__top {
   display: grid;
@@ -285,14 +283,12 @@
 
 .valadal-section__image {
   display: block;
-
   width: 100%;
   max-width: 330px;
   height: auto;
-
   object-fit: contain;
 
-  /* Sombra sutil — SIN glow azul */
+  /* Sombra sutil — sin glow */
   filter: drop-shadow(
     0 16px 24px rgba(0, 0, 0, 0.10)
   );
@@ -305,7 +301,7 @@
 }
 
 
-/* ---------- CONTENT ---------- */
+/* ---------- TEXT ---------- */
 
 .valadal-section__content {
   max-width: 680px;
@@ -317,7 +313,7 @@
 
 
 /* ============================================================
-   VALUES — HORIZONTAL
+   VALUES — 4 COLUMNAS HORIZONTALES
    ============================================================ */
 
 .valadal-section .values-grid {
@@ -328,15 +324,15 @@
 }
 
 .valadal-section .value-item {
-  border-top: 1px solid var(--border);
-  padding-top: 18px;
+  border-top: 1px solid var(--gray-light);
+  padding-top: 20px;
 }
 
 .valadal-section .value-item__index {
-  display: block;
   font-family: var(--font-display);
   color: var(--blue);
   font-size: 0.9rem;
+  display: block;
   margin-bottom: 10px;
 }
 
@@ -346,34 +342,13 @@
 }
 
 .valadal-section .value-item p {
-  color: var(--text-secondary);
+  color: var(--gray-medium);
   font-size: 0.92rem;
   line-height: 1.55;
 }
 
-/* Título */
 
-.valadal-section .value-item h3 {
-  font-size: 1.1rem;
-
-  margin-bottom: 8px;
-}
-
-
-/* Descripción */
-
-.valadal-section .value-item p {
-  color: var(--text-secondary);
-
-  font-size: 0.92rem;
-
-  line-height: 1.55;
-}
-
-
-/* ============================================================
-   STAGGER
-   ============================================================ */
+/* ---------- STAGGER ---------- */
 
 .valadal-section .value-item:nth-child(2) {
   transition-delay: 90ms;
@@ -399,57 +374,42 @@
     padding-bottom: 72px;
   }
 
-
-  /* Imagen arriba, texto debajo */
-
   .valadal-section__top {
     grid-template-columns: 1fr;
-
     gap: 42px;
   }
-
 
   .valadal-section__visual {
     order: 1;
   }
 
-
   .valadal-section__content {
     order: 2;
-
     max-width: 100%;
   }
-
 
   .valadal-section__image {
     max-width: 280px;
   }
 
-
-  /* Valores */
-
   .valadal-section .values-grid {
     grid-template-columns: 1fr 1fr;
-
     gap: 28px 20px;
-
     margin-top: 55px;
   }
-
 }
 
 
-/* ============================================================
-   SMALL MOBILE
-   ============================================================ */
+/* ---------- SMALL MOBILE ---------- */
 
 @media (max-width: 520px) {
 
   .valadal-section .values-grid {
     grid-template-columns: 1fr;
-
     gap: 24px;
   }
+
+}
 
 }
 /* ---------- SELECTED WORK TEASER ---------- */
