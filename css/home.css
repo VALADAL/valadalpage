@@ -105,8 +105,17 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 50px rgba(0, 102, 255, 0.35); }
-  50% { box-shadow: 0 0 74px rgba(0, 102, 255, 0.5); }
+  0%, 100% {
+    box-shadow:
+      0 0 45px rgba(0, 102, 255, 0.16),
+      0 0 90px rgba(13, 16, 21, 0.50);
+  }
+
+  50% {
+    box-shadow:
+      0 0 60px rgba(0, 102, 255, 0.24),
+      0 0 110px rgba(13, 16, 21, 0.60);
+  }
 }
 
 .device-panel__dot {
