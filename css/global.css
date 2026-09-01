@@ -595,46 +595,57 @@ h4 {
 
 @media (max-width: 860px) {
 
+  /* ---------- NAVBAR MOBILE ---------- */
+
   .navbar {
-    --navbar-height: 58px;
+    --navbar-height: 42px;
   }
 
   .navbar__inner {
     height: var(--navbar-height);
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: 14px;
+    padding-right: 14px;
   }
 
+  /* Logo pequeño */
+  .navbar__logo-mark {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    font-size: 0.68rem;
+  }
+
+  /* Ocultar navegación de escritorio */
   .navbar__links,
   .navbar__right .btn,
   .navbar__right .navbar__control {
     display: none;
   }
 
-  .navbar__logo-mark {
-    width: 29px;
-    height: 29px;
-    border-radius: 8px;
-    font-size: 0.88rem;
-  }
-
+  /* Menú hamburguesa */
   .navbar__toggle {
     display: flex;
-
-    width: 25px;
-    height: 25px;
-    gap: 4px;
+    width: 22px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
   }
 
   .navbar__toggle span {
-    width: 18px;
-    height: 1.8px;
+    width: 16px;
+    height: 1.5px;
   }
 
+  /* Ocultar la tercera raya */
+  .navbar__toggle span:nth-child(3) {
+    display: none;
+  }
+
+  /* Drawer */
   .mobile-controls {
     display: flex;
     flex-direction: column;
-
     margin-bottom: 28px;
   }
 }
