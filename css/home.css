@@ -262,8 +262,7 @@
   padding-bottom: 100px;
 }
 
-
-/* ---------- TOP: IMAGE + TEXT ---------- */
+/* ---------- IMAGEN + TEXTO ---------- */
 
 .valadal-section__top {
   display: grid;
@@ -271,9 +270,6 @@
   gap: 70px;
   align-items: center;
 }
-
-
-/* ---------- IMAGE ---------- */
 
 .valadal-section__visual {
   display: flex;
@@ -287,21 +283,13 @@
   max-width: 330px;
   height: auto;
   object-fit: contain;
-
-  /* Sombra sutil — sin glow */
-  filter: drop-shadow(
-    0 16px 24px rgba(0, 0, 0, 0.10)
-  );
-
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.10));
   transition: transform 0.4s var(--ease);
 }
 
 .valadal-section__image:hover {
   transform: translateY(-5px);
 }
-
-
-/* ---------- TEXT ---------- */
 
 .valadal-section__content {
   max-width: 680px;
@@ -313,7 +301,7 @@
 
 
 /* ============================================================
-   VALUES — 4 COLUMNAS HORIZONTALES
+   VALUES — UNA SOLA FILA HORIZONTAL
    ============================================================ */
 
 .valadal-section .values-grid {
@@ -329,10 +317,10 @@
 }
 
 .valadal-section .value-item__index {
+  display: block;
   font-family: var(--font-display);
   color: var(--blue);
   font-size: 0.9rem;
-  display: block;
   margin-bottom: 10px;
 }
 
@@ -361,8 +349,52 @@
 .valadal-section .value-item:nth-child(4) {
   transition-delay: 270ms;
 }
+
+
+/* ============================================================
+   MOBILE
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  .valadal-section {
+    padding-top: 50px;
+    padding-bottom: 72px;
+  }
+
+  .valadal-section__top {
+    grid-template-columns: 1fr;
+    gap: 42px;
+  }
+
+  .valadal-section__visual {
+    order: 1;
+  }
+
+  .valadal-section__content {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .valadal-section__image {
+    max-width: 280px;
+  }
+
+  .valadal-section .values-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 28px 20px;
+    margin-top: 55px;
+  }
 }
 
+@media (max-width: 520px) {
+
+  .valadal-section .values-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+}
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
   display: grid;
