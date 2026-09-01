@@ -162,18 +162,6 @@
   .float-card--2, .float-card--3 { right: 4%; }
 }
 
-/* ---------- WHAT WE DO ---------- */
-.wwd__title { 
-  font-size: clamp(1.9rem, 3.6vw, 2.9rem); 
-}
-
-.wwd__grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 48px;
-  align-items: start;
-  margin-top: 28px;
-}
 
 /* ---------- REPAIR PREVIEW ---------- */
 .repair-preview__grid {
@@ -265,49 +253,109 @@
   .wwd__grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
-/* ---------- VALADAL VALUES ---------- */
+/* ============================================================
+VALADAL INTRO — REPAIR · BUILD · CREATE
+============================================================ */
 
-.values-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 24px;
+.valadal-intro {
+padding-top: 72px;
+padding-bottom: 100px;
 }
 
-.value-item {
-  border-top: 1px solid var(--border);
-  padding-top: 20px;
+.valadal-intro__grid {
+display: grid;
+grid-template-columns: 0.9fr 1.1fr;
+gap: 80px;
+align-items: center;
 }
 
-.value-item__index {
-  font-family: var(--font-display);
-  color: var(--blue);
-  font-size: 0.9rem;
-  display: block;
-  margin-bottom: 10px;
+/* ---------- VISUAL ---------- */
+
+.valadal-intro__visual {
+display: flex;
+align-items: center;
+justify-content: center;
+min-height: 360px;
 }
 
-.value-item h3 {
-  font-size: 1.1rem;
-  margin-bottom: 8px;
+.valadal-intro__image {
+width: 100%;
+max-width: 430px;
+height: auto;
+object-fit: contain;
+
+/* Sin glow */
+filter: drop-shadow(0 20px 28px rgba(0, 0, 0, 0.12));
+
+transition: transform 0.4s var(--ease);
 }
 
-.value-item p {
-  color: var(--text-secondary);
-  font-size: 0.92rem;
-  line-height: 1.55;
+.valadal-intro__image:hover {
+transform: translateY(-6px);
 }
+
+/* ---------- CONTENT ---------- */
+
+.valadal-intro__content {
+max-width: 620px;
+}
+
+.valadal-intro__eyebrow {
+color: var(--blue);
+font-size: 0.85rem;
+font-weight: 600;
+letter-spacing: 0.01em;
+margin-bottom: 18px;
+}
+
+.valadal-intro__title {
+font-family: var(--font-display);
+font-size: clamp(2.2rem, 4vw, 3.4rem);
+line-height: 1.05;
+letter-spacing: -0.035em;
+margin-bottom: 26px;
+}
+
+.valadal-intro__text {
+max-width: 590px;
+color: var(--text-secondary);
+font-size: 1.02rem;
+line-height: 1.75;
+}
+
+/* ---------- MOBILE ---------- */
 
 @media (max-width: 860px) {
-  .values-grid {
-    grid-template-columns: 1fr 1fr;
-  }
+
+.valadal-intro {
+padding-top: 48px;
+padding-bottom: 72px;
 }
 
-@media (max-width: 520px) {
-  .values-grid {
-    grid-template-columns: 1fr;
-  }
+.valadal-intro__grid {
+grid-template-columns: 1fr;
+gap: 36px;
 }
+
+.valadal-intro__visual {
+min-height: 260px;
+order: 1;
+}
+
+.valadal-intro__content {
+order: 2;
+}
+
+.valadal-intro__image {
+max-width: 340px;
+}
+
+.valadal-intro__title {
+font-size: clamp(2rem, 8vw, 2.8rem);
+}
+
+}
+
 
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
@@ -424,34 +472,4 @@ html[data-theme="dark"] .work-teaser__item span {
   background: rgba(0,0,0,0.55);
 }
 
-/* ---------- VALADAL — WHAT WE DO + WHY ---------- */
 
-.wwd-values {
-  padding-top: 20px;
-}
-
-.wwd-values__intro {
-  max-width: 820px;
-}
-
-.wwd-values__title {
-  max-width: 760px;
-  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
-  margin-bottom: 26px;
-}
-
-.wwd-values__lead {
-  max-width: 720px;
-  font-size: 1.05rem;
-  line-height: 1.7;
-}
-
-.wwd-values__grid {
-  margin-top: 72px;
-}
-
-@media (max-width: 860px) {
-  .wwd-values {
-    padding-top: 10px;
-  }
-}
