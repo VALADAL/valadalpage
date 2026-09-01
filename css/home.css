@@ -411,7 +411,6 @@
 
 }
 
-}
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
   display: grid;
@@ -449,9 +448,17 @@
 .repair-preview__grid .category-card:nth-child(3) { transition-delay: 180ms; }
 .digital-band__grid .digital-band__item:nth-child(2) { transition-delay: 90ms; }
 .digital-band__grid .digital-band__item:nth-child(3) { transition-delay: 180ms; }
-.values-grid .value-item:nth-child(2) { transition-delay: 90ms; }
-.values-grid .value-item:nth-child(3) { transition-delay: 180ms; }
-.values-grid .value-item:nth-child(4) { transition-delay: 270ms; }
+.valadal-section .values-grid .value-item:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.valadal-section .values-grid .value-item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.valadal-section .values-grid .value-item:nth-child(4) {
+  transition-delay: 270ms;
+}
 .work-teaser__grid .work-teaser__item:nth-child(2) { transition-delay: 90ms; }
 .work-teaser__grid .work-teaser__item:nth-child(3) { transition-delay: 180ms; }
 .work-teaser__grid .work-teaser__item:nth-child(4) { transition-delay: 270ms; }
