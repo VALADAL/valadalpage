@@ -1,4 +1,4 @@
-```javascript
+
 // ============================================================
 // VALADAL — script.js
 // Archivo compartido por todas las páginas.
