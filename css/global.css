@@ -595,14 +595,40 @@ h4 {
 
 @media (max-width: 860px) {
 
+  .navbar {
+    --navbar-height: 58px;
+  }
+
+  .navbar__inner {
+    height: var(--navbar-height);
+    padding-left: 18px;
+    padding-right: 18px;
+  }
+
   .navbar__links,
   .navbar__right .btn,
   .navbar__right .navbar__control {
     display: none;
   }
 
+  .navbar__logo-mark {
+    width: 29px;
+    height: 29px;
+    border-radius: 8px;
+    font-size: 0.88rem;
+  }
+
   .navbar__toggle {
     display: flex;
+
+    width: 25px;
+    height: 25px;
+    gap: 4px;
+  }
+
+  .navbar__toggle span {
+    width: 18px;
+    height: 1.8px;
   }
 
   .mobile-controls {
@@ -612,7 +638,6 @@ h4 {
     margin-bottom: 28px;
   }
 }
-
 /* ============================================================
    FOOTER
    ============================================================ */
