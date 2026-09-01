@@ -415,3 +415,26 @@ html[data-theme="dark"] .value-item {
 html[data-theme="dark"] .work-teaser__item span {
   background: rgba(0,0,0,0.55);
 }
+
+/* ---------- VALADAL — WHAT WE DO + WHY ---------- */
+
+.wwd-values__intro {
+  max-width: 820px;
+}
+
+.wwd-values__title {
+  max-width: 760px;
+  font-size: clamp(2.2rem, 4.2vw, 3.4rem);
+  margin-bottom: 26px;
+}
+
+.wwd-values__lead {
+  max-width: 720px;
+  font-size: 1.05rem;
+  line-height: 1.7;
+}
+
+.wwd-values__grid {
+  margin-top: 72px;
+}
+
