@@ -513,15 +513,11 @@ h4 {
 }
 
 .navbar__toggle.is-active span:nth-child(1) {
-  transform: translateY(7px) rotate(45deg);
+  transform: translateY(3.25px) rotate(45deg);
 }
 
 .navbar__toggle.is-active span:nth-child(2) {
-  opacity: 0;
-}
-
-.navbar__toggle.is-active span:nth-child(3) {
-  transform: translateY(-7px) rotate(-45deg);
+  transform: translateY(-3.25px) rotate(-45deg);
 }
 
 /* ============================================================
@@ -635,11 +631,6 @@ h4 {
   .navbar__toggle span {
     width: 16px;
     height: 1.5px;
-  }
-
-  /* Ocultar la tercera raya */
-  .navbar__toggle span:nth-child(3) {
-    display: none;
   }
 
   /* Drawer */
