@@ -88,9 +88,9 @@
 
   filter:
     drop-shadow(0 28px 40px rgba(0, 0, 0, 0.22))
-    drop-shadow(0 0 22px rgba(0, 163, 255, 0.45))
-    drop-shadow(0 0 55px rgba(0, 102, 255, 0.35))
-    drop-shadow(0 0 90px rgba(0, 163, 255, 0.18));
+    drop-shadow(0 0 22px rgba(0, 70, 180, 0.28))
+    drop-shadow(0 0 55px rgba(0, 55, 160, 0.20))
+    drop-shadow(0 0 90px rgba(0, 45, 130, 0.12));
    
   animation: pc-float 5s ease-in-out infinite;
 }
