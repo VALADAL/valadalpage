@@ -163,18 +163,22 @@
 }
 
 /* ---------- WHAT WE DO ---------- */
-.wwd {
-  margin-top: -100px;
-  position: relative;
-  z-index: 2;
+
+.wwd.section {
+  padding-top: 20px;
+  padding-bottom: 60px;
 }
-.wwd__title { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
+
+.wwd__title {
+  font-size: clamp(1.9rem, 3.6vw, 2.9rem);
+}
+
 .wwd__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
-  margin-top: 28px;
+  margin-top: 20px;
 }
 
 /* ---------- REPAIR PREVIEW ---------- */
