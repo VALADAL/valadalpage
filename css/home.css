@@ -173,12 +173,17 @@
   font-size: clamp(1.9rem, 3.6vw, 2.9rem);
 }
 
+.wwd {
+  padding-top: 25px;
+  padding-bottom: 70px;
+}
+
 .wwd__grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 48px;
   align-items: start;
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 /* ---------- REPAIR PREVIEW ---------- */
