@@ -264,8 +264,8 @@
 
 .valadal-section__grid {
   display: grid;
-  grid-template-columns: 0.85fr 1.15fr;
-  gap: 80px;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 70px;
   align-items: center;
 }
 
@@ -279,29 +279,56 @@
 
 .valadal-section__image {
   width: 100%;
-  max-width: 440px;
+  max-width: 330px;
   height: auto;
   object-fit: contain;
 
-  /* Sombra MUY ligera, sin glow */
-  filter: drop-shadow(0 18px 28px rgba(0, 0, 0, 0.10));
+  /* Sin glow */
+  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.10));
 }
 
 /* ---------- CONTENIDO ---------- */
 
 .valadal-section__content {
-  max-width: 680px;
+  max-width: 700px;
 }
 
 .valadal-section__lead {
   max-width: 620px;
-  margin-bottom: 42px;
+  margin-bottom: 48px;
 }
 
-/* ---------- NÚMEROS ---------- */
+/* ---------- VALORES ---------- */
 
 .valadal-section__values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
   margin-top: 0;
+}
+
+.valadal-section__values .value-item {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+}
+
+.valadal-section__values .value-item__index {
+  display: block;
+  font-family: var(--font-display);
+  color: var(--blue);
+  font-size: 0.88rem;
+  margin-bottom: 10px;
+}
+
+.valadal-section__values .value-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 7px;
+}
+
+.valadal-section__values .value-item p {
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+  line-height: 1.5;
 }
 
 /* ---------- MOBILE ---------- */
@@ -315,7 +342,7 @@
 
   .valadal-section__grid {
     grid-template-columns: 1fr;
-    gap: 48px;
+    gap: 42px;
   }
 
   .valadal-section__visual {
@@ -327,11 +354,23 @@
   }
 
   .valadal-section__image {
-    max-width: 360px;
+    max-width: 280px;
+  }
+
+  .valadal-section__values {
+    grid-template-columns: 1fr 1fr;
+    gap: 24px 18px;
   }
 
 }
 
+@media (max-width: 520px) {
+
+  .valadal-section__values {
+    grid-template-columns: 1fr;
+  }
+
+}
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
   display: grid;
