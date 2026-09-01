@@ -253,28 +253,17 @@
   .wwd__grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
-/* ============================================================
-   VALADAL INTRO + VALUES
-   ============================================================ */
-
-.valadal-section {
-  padding-top: 70px;
-  padding-bottom: 100px;
-}
-
-.valadal-section__grid {
+.valadal-section__top {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
   gap: 70px;
   align-items: center;
 }
 
-/* ---------- IMAGEN ---------- */
-
 .valadal-section__visual {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
 .valadal-section__image {
@@ -282,75 +271,34 @@
   max-width: 330px;
   height: auto;
   object-fit: contain;
-
-  /* Sin glow */
   filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.10));
 }
 
-/* ---------- CONTENIDO ---------- */
-
 .valadal-section__content {
-  max-width: 700px;
+  max-width: 680px;
 }
 
 .valadal-section__lead {
   max-width: 620px;
-  margin-bottom: 48px;
 }
 
-/* ---------- VALORES ---------- */
-
+/* LOS NÚMEROS VAN DEBAJO DE TODO */
 .valadal-section__values {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 22px;
-  margin-top: 0;
+  gap: 24px;
+  margin-top: 70px;
 }
 
 .valadal-section__values .value-item {
   border-top: 1px solid var(--border);
-  padding-top: 18px;
+  padding-top: 20px;
 }
-
-.valadal-section__values .value-item__index {
-  display: block;
-  font-family: var(--font-display);
-  color: var(--blue);
-  font-size: 0.88rem;
-  margin-bottom: 10px;
-}
-
-.valadal-section__values .value-item h3 {
-  font-size: 1.05rem;
-  margin-bottom: 7px;
-}
-
-.valadal-section__values .value-item p {
-  color: var(--text-secondary);
-  font-size: 0.86rem;
-  line-height: 1.5;
-}
-
-/* ---------- MOBILE ---------- */
 
 @media (max-width: 860px) {
-
-  .valadal-section {
-    padding-top: 50px;
-    padding-bottom: 72px;
-  }
-
-  .valadal-section__grid {
+  .valadal-section__top {
     grid-template-columns: 1fr;
-    gap: 42px;
-  }
-
-  .valadal-section__visual {
-    order: 1;
-  }
-
-  .valadal-section__content {
-    order: 2;
+    gap: 40px;
   }
 
   .valadal-section__image {
@@ -359,18 +307,15 @@
 
   .valadal-section__values {
     grid-template-columns: 1fr 1fr;
-    gap: 24px 18px;
   }
-
 }
 
 @media (max-width: 520px) {
-
   .valadal-section__values {
     grid-template-columns: 1fr;
   }
-
 }
+
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
   display: grid;
