@@ -253,6 +253,20 @@
   .wwd__grid { grid-template-columns: 1fr; gap: 24px; }
 }
 
+/* ============================================================
+   VALADAL — INTRO + VALUES
+   ============================================================ */
+
+.valadal-section {
+  padding-top: 70px;
+  padding-bottom: 100px;
+}
+
+
+/* ============================================================
+   TOP — IMAGE + CONTENT
+   ============================================================ */
+
 .valadal-section__top {
   display: grid;
   grid-template-columns: 0.8fr 1.2fr;
@@ -260,19 +274,38 @@
   align-items: center;
 }
 
+
+/* ---------- IMAGE ---------- */
+
 .valadal-section__visual {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .valadal-section__image {
+  display: block;
+
   width: 100%;
   max-width: 330px;
   height: auto;
+
   object-fit: contain;
-  filter: drop-shadow(0 16px 24px rgba(0, 0, 0, 0.10));
+
+  /* Sombra sutil — SIN glow azul */
+  filter: drop-shadow(
+    0 16px 24px rgba(0, 0, 0, 0.10)
+  );
+
+  transition: transform 0.4s var(--ease);
 }
+
+.valadal-section__image:hover {
+  transform: translateY(-5px);
+}
+
+
+/* ---------- CONTENT ---------- */
 
 .valadal-section__content {
   max-width: 680px;
@@ -282,40 +315,148 @@
   max-width: 620px;
 }
 
-/* LOS NÚMEROS VAN DEBAJO DE TODO */
-.valadal-section__values {
+
+/* ============================================================
+   VALUES
+   ============================================================ */
+
+.valadal-section .values-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
+
   gap: 24px;
+
+  /*
+    Los valores empiezan DESPUÉS de toda
+    la fila de imagen + texto.
+  */
   margin-top: 70px;
 }
 
-.valadal-section__values .value-item {
+.valadal-section .value-item {
   border-top: 1px solid var(--border);
+
   padding-top: 20px;
 }
 
+
+/* Número */
+
+.valadal-section .value-item__index {
+  display: block;
+
+  font-family: var(--font-display);
+
+  color: var(--blue);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 10px;
+}
+
+
+/* Título */
+
+.valadal-section .value-item h3 {
+  font-size: 1.1rem;
+
+  margin-bottom: 8px;
+}
+
+
+/* Descripción */
+
+.valadal-section .value-item p {
+  color: var(--text-secondary);
+
+  font-size: 0.92rem;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   STAGGER
+   ============================================================ */
+
+.valadal-section .value-item:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.valadal-section .value-item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.valadal-section .value-item:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+
+/* ============================================================
+   TABLET / MOBILE
+   ============================================================ */
+
 @media (max-width: 860px) {
+
+  .valadal-section {
+    padding-top: 50px;
+    padding-bottom: 72px;
+  }
+
+
+  /* Imagen arriba, texto debajo */
+
   .valadal-section__top {
     grid-template-columns: 1fr;
-    gap: 40px;
+
+    gap: 42px;
   }
+
+
+  .valadal-section__visual {
+    order: 1;
+  }
+
+
+  .valadal-section__content {
+    order: 2;
+
+    max-width: 100%;
+  }
+
 
   .valadal-section__image {
     max-width: 280px;
   }
 
-  .valadal-section__values {
+
+  /* Valores */
+
+  .valadal-section .values-grid {
     grid-template-columns: 1fr 1fr;
+
+    gap: 28px 20px;
+
+    margin-top: 55px;
   }
+
 }
+
+
+/* ============================================================
+   SMALL MOBILE
+   ============================================================ */
 
 @media (max-width: 520px) {
-  .valadal-section__values {
-    grid-template-columns: 1fr;
-  }
-}
 
+  .valadal-section .values-grid {
+    grid-template-columns: 1fr;
+
+    gap: 24px;
+  }
+
+}
 /* ---------- SELECTED WORK TEASER ---------- */
 .work-teaser__grid {
   display: grid;
