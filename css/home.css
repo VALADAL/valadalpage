@@ -55,6 +55,23 @@
   display: none;
 }*/
 
+.device-panel__core {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100px;
+  height: 230px;
+  transform: translate(-50%, -50%);
+  border-radius: 50px;
+  background: linear-gradient(180deg, var(--blue-bright), var(--blue));
+
+  box-shadow:
+    0 0 35px rgba(0, 102, 255, 0.16),
+    0 0 80px rgba(0, 102, 255, 0.08);
+
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
 .hero-pc {
   position: absolute;
   z-index: 2;
