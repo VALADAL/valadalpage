@@ -47,7 +47,7 @@
   box-shadow: var(--shadow-card);
 }
 
-.device-panel__grid {
+/*.device-panel__grid {
   position: absolute;
   inset: 0;
   background-image:
@@ -56,7 +56,7 @@
   background-size: 32px 32px;
 }
 
-/*.device-panel__core {
+.device-panel__core {
   position: absolute;
   top: 50%; left: 50%;
   width: 100px; height: 230px;
@@ -71,8 +71,8 @@
   position: absolute;
   z-index: 2;
 
-  width: 72%;
-  max-width: 700px;
+  width: 92%;
+  max-width: 520px;
 
   left: 50%;
   top: 50%;
@@ -82,8 +82,8 @@
   object-fit: contain;
 
   filter:
-    drop-shadow(0 24px 35px rgba(0, 0, 0, 0.20))
-    drop-shadow(0 0 28px rgba(0, 163, 255, 0.12));
+    drop-shadow(0 28px 40px rgba(0, 0, 0, 0.22))
+    drop-shadow(0 0 32px rgba(0, 163, 255, 0.14));
 
   animation: pc-float 5s ease-in-out infinite;
 }
