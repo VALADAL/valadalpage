@@ -39,9 +39,9 @@
 
 .hero__actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
-/* Abstract tech visual
+/* Abstract tech visual*/
 .hero__visual { position: relative; min-height: 440px; }
-
+/*
 .device-panel {
   position: relative;
   height: 440px;
