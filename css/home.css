@@ -38,7 +38,7 @@
 /* Abstract tech visual */
 .hero__visual { position: relative; min-height: 440px; }
 
-.device-panel {
+/*.device-panel {
   position: relative;
   height: 440px;
   border-radius: var(--radius-lg);
@@ -47,7 +47,7 @@
   box-shadow: var(--shadow-card);
 }
 
-/*.device-panel__grid {
+.device-panel__grid {
   position: absolute;
   inset: 0;
   background-image:
