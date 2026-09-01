@@ -172,7 +172,7 @@
   .hero__content {
     position: relative;
     z-index: 3;
-    max-width: 62%;
+    max-width: 64%;
   }
 
   .hero__title {
@@ -203,10 +203,11 @@
 
   .hero__visual {
     position: absolute;
+
     z-index: 1;
 
-    top: 45px;
-    right: -20px;
+    top: 40px;
+    right: -28px;
 
     width: 48%;
     min-height: 220px;
@@ -230,7 +231,6 @@
     filter:
       drop-shadow(0 16px 24px rgba(0, 0, 0, 0.20))
       drop-shadow(0 0 18px rgba(0, 70, 180, 0.24));
-
   }
 
 
@@ -239,8 +239,8 @@
   .float-card {
     padding: 0;
 
-    width: 7px;
-    height: 7px;
+    width: 6px;
+    height: 6px;
 
     border-radius: 50%;
 
@@ -258,21 +258,20 @@
 
   .float-card--1 {
     top: 27%;
-    left: 12%;
+    left: 5%;
   }
 
   .float-card--2 {
     top: 43%;
-    right: 4%;
+    right: 0;
   }
 
   .float-card--3 {
     top: 59%;
-    right: 18%;
+    right: 15%;
   }
 
 }
-
 
 /* ---------- REPAIR PREVIEW ---------- */
 .repair-preview__grid {
