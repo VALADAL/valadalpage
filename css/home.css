@@ -5,7 +5,11 @@
 /* ---------- HERO ---------- */
 .hero {
   padding: 84px 0 60px;
-  background: linear-gradient(180deg, #FBFCFF 0%, var(--white) 65%);
+  background: linear-gradient(
+    180deg,
+    var(--hero-bg-start) 0%,
+    var(--page-bg) 100%
+  );
   overflow: hidden;
 }
 
