@@ -5,6 +5,7 @@
    ============================================================ */
 
 :root {
+  --hero-bg-start: #FBFCFF; 
   --white: #FFFFFF;
   --off-white: #F7F8FA;
   --gray-light: #E5E7EB;
@@ -53,6 +54,7 @@
    ============================================================ */
 
 html[data-theme="dark"] {
+  --hero-bg-start: #0D1015; 
   --white: #111111;
   --off-white: #181818;
   --gray-light: #2C2C2C;
