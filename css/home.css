@@ -163,6 +163,11 @@
 }
 
 /* ---------- WHAT WE DO ---------- */
+.wwd {
+  margin-top: -40px;
+  position: relative;
+  z-index: 2;
+}
 .wwd__title { font-size: clamp(1.9rem, 3.6vw, 2.9rem); }
 .wwd__grid {
   display: grid;
