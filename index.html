@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Valadal — Technology for the Real World</title>
+  <meta name="description" content="Valadal repairs computers, smartphones and gaming consoles, and builds websites, systems and automation for growing businesses.">
+
+  <meta property="og:title" content="Valadal — Technology for the Real World">
+  <meta property="og:description" content="Repair and Digital Solutions, under one technology company.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valadal.com/">
+
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/global.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body>
+
+  <!-- ============ NAVBAR ============ -->
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+      <a href="#top" class="navbar__logo">
+        <span class="navbar__logo-mark">V</span>
+        Valadal
+      </a>
+
+      <nav class="navbar__links">
+        <a href="#top" class="nav-link is-active">Home</a>
+        <a href="repair/index.html" class="nav-link">Repair</a>
+        <a href="digital/index.html" class="nav-link">Digital</a>
+        <a href="work/index.html" class="nav-link">Work</a>
+        <a href="about/index.html" class="nav-link">About</a>
+        <a href="contact/index.html" class="nav-link">Contact</a>
+      </nav>
+
+      <div class="navbar__right">
+        <a href="contact/index.html" class="btn btn--primary btn--small">Get a Quote</a>
+        <button class="navbar__toggle" id="navToggle" aria-label="Open menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Fullscreen mobile drawer -->
+  <div class="nav-drawer" id="navDrawer">
+    <nav class="nav-drawer__links">
+      <a href="#top">Home</a>
+      <a href="repair/index.html">Repair</a>
+      <a href="digital/index.html">Digital</a>
+      <a href="work/index.html">Work</a>
+      <a href="about/index.html">About</a>
+      <a href="contact/index.html">Contact</a>
+    </nav>
+    <a href="contact/index.html" class="btn btn--primary nav-drawer__cta">Get a Quote</a>
+  </div>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__inner">
+      <div class="hero__content">
+        <span class="pill">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/><path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          Repair &amp; Digital Solutions
+        </span>
+
+        <h1 class="hero__title">
+          <span class="hero__title-line hero__title-line--dark">Technology for the</span>
+          <span class="hero__title-line hero__title-line--accent">real world.</span>
+        </h1>
+
+        <p class="hero__subtitle">
+          Technical and digital solutions built for what's next — from repairing
+          the devices you rely on, to building the systems your business needs.
+        </p>
+
+        <div class="hero__actions">
+          <a href="#what-we-do" class="btn btn--primary">Explore Services</a>
+          <a href="contact/index.html" class="btn btn--ghost">Contact Valadal</a>
+        </div>
+      </div>
+
+      <div class="hero__visual">
+        <div class="device-panel">
+          <div class="device-panel__grid"></div>
+          <div class="device-panel__core"></div>
+        </div>
+        <div class="float-card float-card--1"><span class="float-card__icon">◎</span><span>Free diagnosis</span></div>
+        <div class="float-card float-card--2"><span class="float-card__icon">✓</span><span>Certified repair</span></div>
+        <div class="float-card float-card--3"><span class="float-card__icon">◈</span><span>48h turnaround</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ WHAT WE DO ============ -->
+  <section class="section" id="what-we-do">
+    <div class="container">
+      <p class="eyebrow reveal">What we do</p>
+      <div class="wwd__grid">
+        <h2 class="wwd__title reveal">We repair. We build. We create.</h2>
+        <p class="section-lead reveal">
+          Valadal started as a repair workshop, but it's grown into something bigger.
+          Today we combine hands-on technical repair with digital solutions design and
+          development — so the technology you already own works better, and the technology
+          your business needs gets built right the first time.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ REPAIR PREVIEW ============ -->
+  <section class="section" style="padding-top: 0;">
+    <div class="container">
+      <p class="eyebrow reveal">Repair</p>
+      <h2 class="section-title reveal">Keep your tech alive.</h2>
+
+      <div class="repair-preview__grid">
+        <div class="category-card reveal">
+          <div class="category-card__top">
+            <span class="category-card__index">01</span>
+            <span class="category-card__icon">💻</span>
+          </div>
+          <h3>Computers</h3>
+          <p class="category-card__sub">Laptops · MacBook · PC</p>
+          <p class="category-card__desc">Diagnosis, repair, maintenance and upgrades for every kind of computer.</p>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-card__top">
+            <span class="category-card__index">02</span>
+            <span class="category-card__icon">📱</span>
+          </div>
+          <h3>Smartphones</h3>
+          <p class="category-card__sub">iPhone · Android</p>
+          <p class="category-card__desc">Diagnosis, repair and maintenance to get your phone back to normal.</p>
+        </div>
+
+        <div class="category-card reveal">
+          <div class="category-card__top">
+            <span class="category-card__index">03</span>
+            <span class="category-card__icon">🎮</span>
+          </div>
+          <h3>Gaming</h3>
+          <p class="category-card__sub">PlayStation · Xbox · Controllers</p>
+          <p class="category-card__desc">HDMI repair, drift fixes, cleaning and full console diagnostics.</p>
+        </div>
+      </div>
+
+      <a href="repair/index.html" class="btn btn--dark reveal">Explore Repair →</a>
+    </div>
+  </section>
+
+  <!-- ============ DIGITAL SOLUTIONS PREVIEW ============ -->
+  <section class="section digital-band">
+    <div class="container digital-band__inner">
+      <p class="eyebrow eyebrow--onblack reveal">Digital Solutions</p>
+      <h2 class="section-title section-title--light reveal">Build what's next.</h2>
+      <p class="section-lead section-lead--light reveal">
+        Websites, custom systems and automation designed to help your business
+        run smarter — built with the same care we put into every repair.
+      </p>
+
+      <div class="digital-band__grid">
+        <div class="digital-band__item reveal">
+          <h4>Web</h4>
+          <p>Websites, landing pages and business websites.</p>
+        </div>
+        <div class="digital-band__item reveal">
+          <h4>Systems</h4>
+          <p>Custom tools, internal systems and business utilities.</p>
+        </div>
+        <div class="digital-band__item reveal">
+          <h4>Automation</h4>
+          <p>Workflows, automation and digital processes.</p>
+        </div>
+      </div>
+
+      <a href="digital/index.html" class="btn btn--outline-light reveal">Explore Digital →</a>
+    </div>
+  </section>
+
+  <!-- ============ WHY VALADAL ============ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow reveal">Why Valadal</p>
+      <h2 class="section-title reveal">Built on the same four principles, every time.</h2>
+
+      <div class="values-grid">
+        <div class="value-item reveal">
+          <span class="value-item__index">01</span>
+          <h3>Precision</h3>
+          <p>Careful, methodical technical work — nothing rushed.</p>
+        </div>
+        <div class="value-item reveal">
+          <span class="value-item__index">02</span>
+          <h3>Transparency</h3>
+          <p>Clear communication about what's wrong and what it takes to fix it.</p>
+        </div>
+        <div class="value-item reveal">
+          <span class="value-item__index">03</span>
+          <h3>Quality</h3>
+          <p>Solutions built to actually last, not just to pass inspection.</p>
+        </div>
+        <div class="value-item reveal">
+          <span class="value-item__index">04</span>
+          <h3>Innovation</h3>
+          <p>Technology with an eye on where things are headed next.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTED WORK TEASER ============ -->
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow reveal">Selected work</p>
+      <h2 class="section-title reveal">Real work. Real solutions.</h2>
+      <p class="section-lead reveal">We're documenting every project as we complete it. Here's the kind of work you'll find on the full portfolio.</p>
+
+      <div class="work-teaser__grid">
+        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0A0A0A, #1c2530);"><span>Gaming</span></div>
+        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0066FF, #00A3FF);"><span>Computers</span></div>
+        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #E5E7EB, #6B7280);"><span>Smartphones</span></div>
+        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0A0A0A, #0066FF);"><span>Digital</span></div>
+      </div>
+
+      <a href="work/index.html" class="btn btn--ghost reveal">View all work →</a>
+    </div>
+  </section>
+
+  <!-- ============ ABOUT TEASER ============ -->
+  <section class="section">
+    <div class="container about-teaser__inner">
+      <div>
+        <p class="eyebrow reveal">About</p>
+        <h2 class="section-title reveal">Technology should work for you.</h2>
+      </div>
+      <div>
+        <p class="section-lead reveal">
+          Valadal is a technology company built on two divisions — repair and digital
+          solutions — and one idea: understand the problem, find the solution, make it work.
+        </p>
+        <a href="about/index.html" class="btn btn--ghost reveal" style="margin-top: 20px;">Learn more →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal">Let's make it work.</h2>
+      <a href="contact/index.html" class="btn btn--primary reveal">Get a Quote →</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__top">
+      <div class="footer__brand">
+        <span class="navbar__logo-mark">V</span>
+        <div>
+          <p class="footer__name">Valadal</p>
+          <p class="footer__tagline">Technology for the real world.</p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+        <div class="footer__col">
+          <h4>Company</h4>
+          <a href="repair/index.html">Repair</a>
+          <a href="digital/index.html">Digital</a>
+          <a href="work/index.html">Work</a>
+          <a href="about/index.html">About</a>
+          <a href="contact/index.html">Contact</a>
+        </div>
+        <div class="footer__col">
+          <h4>Get in touch</h4>
+          <a href="https://wa.me/523300000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:hola@valadal.com">Email</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© 2026 Valadal</span>
+      <span>Guadalajara, Jalisco, México</span>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+/* ============================================================
+   VALADAL — digital.css
+   ============================================================ */
+
+.digital-areas {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  background: var(--gray-light);
+  border: 1px solid var(--gray-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: 20px;
+}
+
+.digital-area {
+  background: var(--white);
+  padding: 56px;
+  display: grid;
+  grid-template-columns: 120px 1fr 1fr;
+  gap: 32px;
+  align-items: start;
+  transition: background 0.25s ease;
+}
+.digital-area:hover { background: var(--off-white); }
+
+.digital-area__index {
+  font-family: var(--font-display);
+  font-size: 1.6rem;
+  color: var(--blue);
+}
+
+.digital-area__body h3 { font-size: 1.5rem; margin-bottom: 10px; }
+.digital-area__body p { color: var(--gray-medium); line-height: 1.6; }
+
+.digital-area__list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.digital-area__list li {
+  font-size: 0.94rem;
+  color: var(--black);
+  padding-left: 18px;
+  position: relative;
+}
+.digital-area__list li::before {
+  content: "";
+  position: absolute;
+  left: 0; top: 9px;
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--blue);
+}
+
+/* Abstract visual strip used at top of /digital hero */
+.digital-visual {
+  height: 220px;
+  border-radius: var(--radius-lg);
+  margin-top: 40px;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #061A40 0%, var(--blue) 55%, var(--blue-bright) 100%);
+}
+.digital-visual__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(to right, rgba(255,255,255,0.08) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255,255,255,0.08) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+.digital-visual__orb {
+  position: absolute;
+  width: 260px; height: 260px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.14);
+  filter: blur(30px);
+  top: -80px; right: 10%;
+}
+
+@media (max-width: 860px) {
+  .digital-area { grid-template-columns: 1fr; padding: 40px 28px; }
+}

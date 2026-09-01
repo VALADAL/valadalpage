@@ -1,0 +1,44 @@
+/* ============================================================
+   VALADAL — about.css
+   ============================================================ */
+
+.about-intro {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: start;
+}
+
+.about-intro__philosophy {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 28px;
+  border-radius: var(--radius-lg);
+  background: var(--off-white);
+  border: 1px solid var(--gray-light);
+}
+.about-intro__philosophy span {
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+.about-intro__philosophy span.is-current { color: var(--blue); }
+
+.about-values {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  margin-top: 44px;
+}
+
+.about-values .value-item:nth-child(2) { transition-delay: 90ms; }
+.about-values .value-item:nth-child(3) { transition-delay: 180ms; }
+.about-values .value-item:nth-child(4) { transition-delay: 270ms; }
+
+@media (max-width: 860px) {
+  .about-intro { grid-template-columns: 1fr; }
+  .about-values { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 520px) {
+  .about-values { grid-template-columns: 1fr; }
+}
