@@ -1,3 +1,4 @@
+
 // ============================================================
 // VALADAL — script.js
 // Archivo compartido por todas las páginas.
@@ -231,11 +232,15 @@ function applyLanguage(language, animate = true) {
 
     localStorage.setItem("valadal-language", language);
 
-    const languageLabel = document.getElementById("languageLabel");
-    const mobileLanguageLabel = document.getElementById("mobileLanguageLabel");
+    const languageLabel =
+      document.getElementById("languageLabel");
+
+    const mobileLanguageLabel =
+      document.getElementById("mobileLanguageLabel");
 
     if (languageLabel) {
-      languageLabel.textContent = language === "es" ? "EN" : "ES";
+      languageLabel.textContent =
+        language === "es" ? "EN" : "ES";
     }
 
     if (mobileLanguageLabel) {
@@ -271,7 +276,9 @@ function applyLanguage(language, animate = true) {
 // LANGUAGE BUTTONS
 // ============================================================
 
-const languageToggle = document.getElementById("languageToggle");
+const languageToggle =
+  document.getElementById("languageToggle");
+
 const mobileLanguageToggle =
   document.getElementById("mobileLanguageToggle");
 
@@ -294,11 +301,17 @@ function toggleLanguage() {
 
 
 if (languageToggle) {
-  languageToggle.addEventListener("click", toggleLanguage);
+  languageToggle.addEventListener(
+    "click",
+    toggleLanguage
+  );
 }
 
 if (mobileLanguageToggle) {
-  mobileLanguageToggle.addEventListener("click", toggleLanguage);
+  mobileLanguageToggle.addEventListener(
+    "click",
+    toggleLanguage
+  );
 }
 
 
@@ -324,13 +337,18 @@ function getPreferredTheme() {
   const savedTheme =
     localStorage.getItem("valadal-theme");
 
-  if (savedTheme === "light" || savedTheme === "dark") {
+  if (
+    savedTheme === "light" ||
+    savedTheme === "dark"
+  ) {
     return savedTheme;
   }
 
   if (
     window.matchMedia &&
-    window.matchMedia("(prefers-color-scheme: dark)").matches
+    window.matchMedia(
+      "(prefers-color-scheme: dark)"
+    ).matches
   ) {
     return "dark";
   }
@@ -341,18 +359,25 @@ function getPreferredTheme() {
 
 function applyTheme(theme) {
 
-  document.documentElement.dataset.theme = theme;
+  document.documentElement.dataset.theme =
+    theme;
 
-  localStorage.setItem("valadal-theme", theme);
+  localStorage.setItem(
+    "valadal-theme",
+    theme
+  );
 
-  const isDark = theme === "dark";
+  const isDark =
+    theme === "dark";
 
   if (themeIcon) {
-    themeIcon.textContent = isDark ? "☀" : "☾";
+    themeIcon.textContent =
+      isDark ? "☀" : "☾";
   }
 
   if (mobileThemeIcon) {
-    mobileThemeIcon.textContent = isDark ? "☀" : "☾";
+    mobileThemeIcon.textContent =
+      isDark ? "☀" : "☾";
   }
 
   const mobileThemeText =
@@ -362,7 +387,9 @@ function applyTheme(theme) {
 
   if (mobileThemeText) {
     mobileThemeText.textContent =
-      isDark ? "Modo claro" : "Modo oscuro";
+      isDark
+        ? "Modo claro"
+        : "Modo oscuro";
   }
 }
 
@@ -373,21 +400,30 @@ applyTheme(getPreferredTheme());
 function toggleTheme() {
 
   const currentTheme =
-    document.documentElement.dataset.theme || "light";
+    document.documentElement.dataset.theme ||
+    "light";
 
   const newTheme =
-    currentTheme === "dark" ? "light" : "dark";
+    currentTheme === "dark"
+      ? "light"
+      : "dark";
 
   applyTheme(newTheme);
 }
 
 
 if (themeToggle) {
-  themeToggle.addEventListener("click", toggleTheme);
+  themeToggle.addEventListener(
+    "click",
+    toggleTheme
+  );
 }
 
 if (mobileThemeToggle) {
-  mobileThemeToggle.addEventListener("click", toggleTheme);
+  mobileThemeToggle.addEventListener(
+    "click",
+    toggleTheme
+  );
 }
 
 
@@ -404,9 +440,17 @@ function updateNavbarOnScroll() {
   if (!navbar) return;
 
   if (window.scrollY > 8) {
-    navbar.classList.add("is-scrolled");
+
+    navbar.classList.add(
+      "is-scrolled"
+    );
+
   } else {
-    navbar.classList.remove("is-scrolled");
+
+    navbar.classList.remove(
+      "is-scrolled"
+    );
+
   }
 }
 
@@ -432,43 +476,58 @@ const navDrawer =
 
 if (navToggle && navDrawer) {
 
-  navToggle.addEventListener("click", () => {
+  navToggle.addEventListener(
+    "click",
+    () => {
 
-    const isOpen =
-      navDrawer.classList.toggle("is-open");
+      const isOpen =
+        navDrawer.classList.toggle(
+          "is-open"
+        );
 
-    navToggle.classList.toggle(
-      "is-active",
-      isOpen
-    );
-
-    navToggle.setAttribute(
-      "aria-expanded",
-      isOpen
-    );
-
-    document.body.style.overflow =
-      isOpen ? "hidden" : "";
-  });
-
-
-  navDrawer.querySelectorAll("a").forEach((link) => {
-
-    link.addEventListener("click", () => {
-
-      navDrawer.classList.remove("is-open");
-
-      navToggle.classList.remove("is-active");
+      navToggle.classList.toggle(
+        "is-active",
+        isOpen
+      );
 
       navToggle.setAttribute(
         "aria-expanded",
-        "false"
+        isOpen
       );
 
-      document.body.style.overflow = "";
-    });
+      document.body.style.overflow =
+        isOpen ? "hidden" : "";
+    }
+  );
 
-  });
+
+  navDrawer
+    .querySelectorAll("a")
+    .forEach((link) => {
+
+      link.addEventListener(
+        "click",
+        () => {
+
+          navDrawer.classList.remove(
+            "is-open"
+          );
+
+          navToggle.classList.remove(
+            "is-active"
+          );
+
+          navToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+          document.body.style.overflow =
+            "";
+        }
+      );
+
+    });
 }
 
 
@@ -505,7 +564,9 @@ document.head.appendChild(
 // ============================================================
 
 const revealElements =
-  document.querySelectorAll(".reveal");
+  document.querySelectorAll(
+    ".reveal"
+  );
 
 
 if (
@@ -519,7 +580,9 @@ if (
 
         entries.forEach((entry) => {
 
-          if (entry.isIntersecting) {
+          if (
+            entry.isIntersecting
+          ) {
 
             entry.target.classList.add(
               "is-visible"
@@ -535,7 +598,8 @@ if (
       },
       {
         threshold: 0.15,
-        rootMargin: "0px 0px -60px 0px"
+        rootMargin:
+          "0px 0px -60px 0px"
       }
     );
 
@@ -547,7 +611,9 @@ if (
 } else {
 
   revealElements.forEach((el) => {
-    el.classList.add("is-visible");
+    el.classList.add(
+      "is-visible"
+    );
   });
 
 }
@@ -558,38 +624,50 @@ if (
 // ============================================================
 
 const filterButtons =
-  document.querySelectorAll(".filter-btn");
+  document.querySelectorAll(
+    ".filter-btn"
+  );
 
 const workPieces =
-  document.querySelectorAll(".work-piece");
+  document.querySelectorAll(
+    ".work-piece"
+  );
 
 
 filterButtons.forEach((button) => {
 
-  button.addEventListener("click", () => {
+  button.addEventListener(
+    "click",
+    () => {
 
-    filterButtons.forEach((b) => {
-      b.classList.remove("is-active");
-    });
+      filterButtons.forEach((b) => {
+        b.classList.remove(
+          "is-active"
+        );
+      });
 
-    button.classList.add("is-active");
+      button.classList.add(
+        "is-active"
+      );
 
-    const filter =
-      button.dataset.filter;
+      const filter =
+        button.dataset.filter;
 
-    workPieces.forEach((piece) => {
+      workPieces.forEach((piece) => {
 
-      const category =
-        piece.dataset.category;
+        const category =
+          piece.dataset.category;
 
-      const shouldShow =
-        filter === "all" ||
-        category === filter;
+        const shouldShow =
+          filter === "all" ||
+          category === filter;
 
-      piece.hidden = !shouldShow;
-    });
+        piece.hidden =
+          !shouldShow;
+      });
 
-  });
+    }
+  );
 
 });
 
@@ -599,7 +677,9 @@ filterButtons.forEach((button) => {
 // ============================================================
 
 const contactForm =
-  document.getElementById("contactForm");
+  document.getElementById(
+    "contactForm"
+  );
 
 
 if (contactForm) {
@@ -613,7 +693,9 @@ if (contactForm) {
     params.get("service");
 
   const serviceSelect =
-    contactForm.querySelector("#service");
+    contactForm.querySelector(
+      "#service"
+    );
 
 
   if (
@@ -626,7 +708,8 @@ if (contactForm) {
         serviceSelect.options
       ).find(
         (option) =>
-          option.value === requestedService
+          option.value ===
+          requestedService
       );
 
     if (match) {
@@ -648,27 +731,220 @@ if (contactForm) {
         );
 
       if (successMessage) {
+
         successMessage.classList.add(
           "is-visible"
         );
+
       }
 
       contactForm.reset();
     }
   );
 }
-document.querySelectorAll(".float-card").forEach(card => {
-  card.addEventListener("click", () => {
 
-    if (window.innerWidth > 860) return;
 
-    document.querySelectorAll(".float-card.is-expanded").forEach(other => {
-      if (other !== card) {
-        other.classList.remove("is-expanded");
-      }
-    });
+// ============================================================
+// 9. HERO FLOAT CARDS
+// AUTOMATIC LOOP — MOBILE + DESKTOP
+// ============================================================
 
-    card.classList.toggle("is-expanded");
+const floatCards =
+  document.querySelectorAll(
+    ".float-card"
+  );
+
+let floatIndex = 0;
+let floatTimer = null;
+
+
+// ------------------------------------------------------------
+// MOBILE
+// Abre una tarjeta durante 5 segundos.
+// ------------------------------------------------------------
+
+function showMobileFloatCard() {
+
+  if (window.innerWidth > 860) {
+    return;
+  }
+
+  floatCards.forEach((card) => {
+    card.classList.remove(
+      "is-expanded"
+    );
   });
+
+  if (floatCards.length) {
+
+    floatCards[floatIndex]
+      .classList.add(
+        "is-expanded"
+      );
+
+    floatIndex =
+      (floatIndex + 1) %
+      floatCards.length;
+  }
+}
+
+
+// ------------------------------------------------------------
+// DESKTOP
+// Hace que una tarjeta destaque cada 5 segundos.
+// ------------------------------------------------------------
+
+function showDesktopFloatCard() {
+
+  if (window.innerWidth <= 860) {
+    return;
+  }
+
+  floatCards.forEach((card) => {
+    card.classList.remove(
+      "is-active"
+    );
+  });
+
+  if (floatCards.length) {
+
+    floatCards[floatIndex]
+      .classList.add(
+        "is-active"
+      );
+
+    floatIndex =
+      (floatIndex + 1) %
+      floatCards.length;
+  }
+}
+
+
+// ------------------------------------------------------------
+// CICLO AUTOMÁTICO
+// ------------------------------------------------------------
+
+function startFloatLoop() {
+
+  clearInterval(
+    floatTimer
+  );
+
+  if (!floatCards.length) {
+    return;
+  }
+
+  // Mostrar inmediatamente
+  if (window.innerWidth <= 860) {
+
+    showMobileFloatCard();
+
+  } else {
+
+    showDesktopFloatCard();
+
+  }
+
+
+  // Cambiar cada 5 segundos
+  floatTimer =
+    setInterval(() => {
+
+      if (
+        window.innerWidth <= 860
+      ) {
+
+        showMobileFloatCard();
+
+      } else {
+
+        showDesktopFloatCard();
+
+      }
+
+    }, 5000);
+}
+
+
+// ------------------------------------------------------------
+// CLICK MANUAL
+// Si el usuario toca una tarjeta en móvil,
+// el ciclo se pausa.
+// ------------------------------------------------------------
+
+floatCards.forEach((card) => {
+
+  card.addEventListener(
+    "click",
+    () => {
+
+      if (
+        window.innerWidth > 860
+      ) {
+        return;
+      }
+
+      clearInterval(
+        floatTimer
+      );
+
+      floatCards.forEach(
+        (other) => {
+
+          if (other !== card) {
+
+            other.classList.remove(
+              "is-expanded"
+            );
+
+          }
+
+        }
+      );
+
+      card.classList.toggle(
+        "is-expanded"
+      );
+
+
+      // Reiniciar el ciclo después
+      // de 8 segundos.
+      clearTimeout(
+        card._floatRestartTimer
+      );
+
+      card._floatRestartTimer =
+        setTimeout(() => {
+
+          floatIndex = 0;
+
+          startFloatLoop();
+
+        }, 8000);
+
+    }
+  );
+
 });
+
+
+// ------------------------------------------------------------
+// REINICIAR SI CAMBIA EL TAMAÑO
+// ------------------------------------------------------------
+
+window.addEventListener(
+  "resize",
+  () => {
+
+    startFloatLoop();
+
+  }
+);
+
+
+// ------------------------------------------------------------
+// INICIAR
+// ------------------------------------------------------------
+
+startFloatLoop();
 
