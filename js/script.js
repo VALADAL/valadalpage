@@ -657,4 +657,18 @@ if (contactForm) {
     }
   );
 }
+document.querySelectorAll(".float-card").forEach(card => {
+  card.addEventListener("click", () => {
+
+    if (window.innerWidth > 860) return;
+
+    document.querySelectorAll(".float-card.is-expanded").forEach(other => {
+      if (other !== card) {
+        other.classList.remove("is-expanded");
+      }
+    });
+
+    card.classList.toggle("is-expanded");
+  });
+});
 
