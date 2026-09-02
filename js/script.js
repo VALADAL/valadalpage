@@ -369,6 +369,16 @@ function applyTheme(theme) {
   const isDark =
     theme === "dark";
 
+  const themeColorMeta =
+    document.getElementById("theme-color-meta");
+
+  if (themeColorMeta) {
+    themeColorMeta.setAttribute(
+      "content",
+      isDark ? "#0A0A0A" : "#FFFFFF"
+    );
+  }
+
   if (themeIcon) {
     themeIcon.textContent =
       isDark ? "◐" : "◐";
