@@ -43,29 +43,80 @@
         <a href="contact/index.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
       </nav>
 
-      <div class="navbar__right">
+<div class="navbar__right">
 
-        <!-- Language -->
-        <button class="navbar__control" id="languageToggle" type="button" aria-label="Cambiar idioma">
-          <span id="languageLabel">EN</span>
-        </button>
+  <a href="contact/index.html"
+     class="btn btn--primary btn--small"
+     data-i18n="nav.quote">
+    Cotizar
+  </a>
 
-        <!-- Theme -->
-        <button class="navbar__control navbar__theme" id="themeToggle" type="button" aria-label="Cambiar tema">
-          <span id="themeIcon">☾</span>
-        </button>
+  <div class="accessibility-control" id="accessibilityControl">
 
-        <a href="contact/index.html" class="btn btn--primary btn--small" data-i18n="nav.quote">
-          Cotizar
-        </a>
+    <button
+      class="accessibility-toggle"
+      id="accessibilityToggle"
+      type="button"
+      aria-label="Accesibilidad"
+      aria-expanded="false">
 
-        <button class="navbar__toggle" id="navToggle" aria-label="Abrir menú" aria-expanded="false">
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+      <svg viewBox="0 0 24 24"
+           fill="none"
+           stroke="currentColor"
+           stroke-width="1.8"
+           stroke-linecap="round"
+           stroke-linejoin="round">
 
-      </div>
+        <circle cx="12" cy="5" r="2"/>
+        <path d="M5 8h14"/>
+        <path d="M12 8v11"/>
+        <path d="M8 21l4-10 4 10"/>
+      </svg>
+
+    </button>
+
+
+    <div class="accessibility-options">
+
+      <button
+        class="accessibility-option"
+        id="languageToggle"
+        type="button"
+        aria-label="Cambiar idioma">
+
+        <span id="languageLabel">EN</span>
+
+      </button>
+
+
+      <button
+        class="accessibility-option"
+        id="themeToggle"
+        type="button"
+        aria-label="Cambiar modo">
+
+        <span id="themeIcon">◐</span>
+
+      </button>
+
+    </div>
+
+  </div>
+
+
+  <button
+    class="navbar__toggle"
+    id="navToggle"
+    aria-label="Abrir menú"
+    aria-expanded="false">
+
+    <span></span>
+    <span></span>
+    <span></span>
+
+  </button>
+
+</div>
     </div>
   </header>
 
