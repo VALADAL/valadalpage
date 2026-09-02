@@ -636,7 +636,7 @@
 
   gap: 18px;
 
-  margin: 40px 0 0;
+  margin: 40px 0 20px;
 }
 
 .work-teaser__item {
@@ -1486,7 +1486,7 @@ html[data-theme="dark"]
 
     margin-top: 20px;
 
-    margin-bottom: 0;
+    margin-bottom: 12;
   }
 
 
