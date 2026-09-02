@@ -1254,6 +1254,8 @@ html[data-theme="dark"]
 
   .float-card.is-expanded {
     width: max-content;
+     
+    animation-play-state: paused; 
 
     height: 30px;
 
@@ -1298,15 +1300,6 @@ html[data-theme="dark"]
     top: 68%;
     right: 20%;
   }
-  .float-card {
-  will-change: transform;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
-}
-
-.float-card.is-expanded {
-  animation-play-state: paused;
-} 
 
 
   /* ----------------------------------------------------------
