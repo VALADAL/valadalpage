@@ -1,11 +1,10 @@
-
 /* ============================================================
    VALADAL — global.css
    Estilos compartidos por TODAS las páginas.
    ============================================================ */
 
 :root {
-  --hero-bg-start: #FBFCFF; 
+  --hero-bg-start: #FBFCFF;
   --white: #FFFFFF;
   --off-white: #F7F8FA;
   --gray-light: #E5E7EB;
@@ -49,12 +48,14 @@
   --hero-bg-start: #FBFCFF;
 }
 
+
 /* ============================================================
    DARK MODE
    ============================================================ */
 
 html[data-theme="dark"] {
-  --hero-bg-start: #0D1015; 
+  --hero-bg-start: #0D1015;
+
   --white: #111111;
   --off-white: #181818;
   --gray-light: #2C2C2C;
@@ -81,7 +82,10 @@ html[data-theme="dark"] {
     0 12px 32px rgba(0, 0, 0, 0.40);
 }
 
-/* ---------- Reset ---------- */
+
+/* ============================================================
+   RESET
+   ============================================================ */
 
 * {
   box-sizing: border-box;
@@ -177,6 +181,7 @@ select {
   }
 }
 
+
 /* ============================================================
    TYPOGRAPHY
    ============================================================ */
@@ -196,9 +201,11 @@ h4 {
   display: inline-flex;
   align-items: center;
   gap: 8px;
+
   font-size: 0.85rem;
   font-weight: 600;
   color: var(--blue);
+
   margin-bottom: 14px;
 }
 
@@ -245,6 +252,7 @@ h4 {
   }
 }
 
+
 /* ============================================================
    BUTTONS
    ============================================================ */
@@ -253,8 +261,11 @@ h4 {
   display: inline-flex;
   align-items: center;
   gap: 6px;
+
   padding: 15px 30px;
+
   border-radius: var(--radius-pill);
+
   font-weight: 600;
   font-size: 0.95rem;
 
@@ -312,6 +323,7 @@ h4 {
   font-size: 0.88rem;
 }
 
+
 /* ============================================================
    LANGUAGE / THEME CONTROLS
    ============================================================ */
@@ -352,6 +364,7 @@ h4 {
   padding: 0;
 }
 
+
 /* ============================================================
    PILL
    ============================================================ */
@@ -362,6 +375,7 @@ h4 {
   gap: 8px;
 
   padding: 8px 16px;
+
   border-radius: var(--radius-pill);
 
   background: var(--surface-soft);
@@ -373,18 +387,24 @@ h4 {
   margin-bottom: 24px;
 }
 
+
 /* ============================================================
    TAG CHIPS
    ============================================================ */
 
 .chip {
   font-size: 0.8rem;
+
   padding: 6px 12px;
+
   border-radius: var(--radius-pill);
+
   background: var(--surface);
   color: var(--text-main);
+
   border: 1px solid var(--border);
 }
+
 
 /* ============================================================
    NAVBAR
@@ -393,6 +413,7 @@ h4 {
 .navbar {
   position: sticky;
   top: 0;
+
   z-index: 200;
 
   background: var(--navbar-bg);
@@ -416,6 +437,7 @@ h4 {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
   height: var(--navbar-height);
 }
 
@@ -454,9 +476,11 @@ h4 {
 .nav-link {
   font-size: 0.94rem;
   font-weight: 500;
+
   color: var(--text-main);
 
   position: relative;
+
   padding: 4px 0;
 }
 
@@ -464,6 +488,7 @@ h4 {
   content: "";
 
   position: absolute;
+
   left: 0;
   bottom: 0;
 
@@ -520,14 +545,17 @@ h4 {
   transform: translateY(-3.25px) rotate(-45deg);
 }
 
+
 /* ============================================================
    MOBILE DRAWER
    ============================================================ */
 
 .nav-drawer {
   position: fixed;
+
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100dvh;
 
@@ -553,27 +581,6 @@ h4 {
 .nav-drawer.is-open {
   transform: translate3d(0, 0, 0);
 }
-  position: fixed;
-  inset: 0;
-  z-index: 190;
-
-  background: var(--page-bg);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-
-  padding: 50px 32px 32px;
-
-  transform: translateX(100%);
-
-  transition:
-    transform 0.35s var(--ease);
-}
-
-.nav-drawer.is-open {
-  transform: translateX(0);
-}
 
 .nav-drawer__links {
   display: flex;
@@ -597,72 +604,56 @@ h4 {
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-  /* -----------------------------------------------------------------------------------  MOBILE ------------------------------------------------------------------- */
+/* ============================================================
+   MOBILE NAVBAR
+   ============================================================ */
 
 @media (max-width: 860px) {
 
-  /* ---------- NAVBAR MOBILE ---------- */
-
   .navbar {
-   position: fixed;
-   top: 0;
-   left: 0;
-   width: 100%;
-   z-index: 1000;  
+    position: fixed;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+
+    z-index: 1000;
+
     --navbar-height: 42px;
   }
 
   .navbar__inner {
     height: var(--navbar-height);
+
     padding-left: 14px;
     padding-right: 14px;
   }
 
-  /* Logo pequeño */
   .navbar__logo-mark {
     width: 22px;
     height: 22px;
+
     border-radius: 6px;
+
     font-size: 0.68rem;
   }
 
-  /* Ocultar navegación de escritorio */
   .navbar__links,
   .navbar__right .btn,
   .navbar__right .navbar__control {
     display: none;
   }
 
-  /* Menú hamburguesa */
   .navbar__toggle {
     display: flex;
+
     width: 22px;
     height: 20px;
+
     flex-direction: column;
     justify-content: center;
+
     gap: 5px;
   }
 
@@ -670,8 +661,9 @@ h4 {
     width: 16px;
     height: 1.5px;
   }
-
 }
+
+
 /* ============================================================
    FOOTER
    ============================================================ */
@@ -700,6 +692,7 @@ h4 {
   align-items: flex-start;
 
   gap: 12px;
+
   max-width: 320px;
 }
 
@@ -711,6 +704,7 @@ h4 {
 
 .footer__tagline {
   font-size: 0.88rem;
+
   color: rgba(255,255,255,0.55);
 
   margin-top: 4px;
@@ -720,6 +714,7 @@ h4 {
   display: flex;
 
   gap: 64px;
+
   flex-wrap: wrap;
 }
 
@@ -739,6 +734,7 @@ h4 {
   display: block;
 
   font-size: 0.92rem;
+
   color: rgba(255,255,255,0.85);
 
   padding: 5px 0;
@@ -750,17 +746,21 @@ h4 {
 
 .footer__bottom {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
   flex-wrap: wrap;
+
   gap: 12px;
 
   padding-top: 24px;
 
   font-size: 0.82rem;
+
   color: rgba(255,255,255,0.45);
 }
+
 
 /* ============================================================
    FINAL CTA
@@ -768,11 +768,13 @@ h4 {
 
 .final-cta {
   text-align: center;
+
   padding: 100px 0;
 }
 
 .final-cta h2 {
   font-size: clamp(2rem, 4vw, 3.2rem);
+
   margin-bottom: 28px;
 }
 
@@ -780,12 +782,14 @@ h4 {
   margin: 0 auto;
 }
 
+
 /* ============================================================
    REVEAL
    ============================================================ */
 
 .reveal {
   opacity: 0;
+
   transform: translateY(18px);
 
   transition:
@@ -795,6 +799,7 @@ h4 {
 
 .reveal.is-visible {
   opacity: 1;
+
   transform: translateY(0);
 }
 
@@ -802,23 +807,27 @@ h4 {
   transition-delay: calc(var(--stagger-i, 0) * 70ms);
 }
 
+
 /* ============================================================
    PAGE HERO
    ============================================================ */
 
 .page-hero {
   padding: 72px 0 56px;
+
   border-bottom: 1px solid var(--border);
 }
 
 .page-hero h1 {
   font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+
   max-width: 720px;
 }
 
 .page-hero .section-lead {
   margin-top: 18px;
 }
+
 
 /* ============================================================
    UTILITY
@@ -832,6 +841,11 @@ h4 {
   margin-left: auto;
   margin-right: auto;
 }
+
+
+/* ============================================================
+   MOBILE MENU LOCK
+   ============================================================ */
 
 @media (max-width: 860px) {
 
