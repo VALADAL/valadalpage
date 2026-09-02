@@ -956,6 +956,8 @@ html[data-theme="dark"] .work-teaser__item span {
 
     border-radius: 999px;
 
+    gap: 7px: 
+
     box-shadow:
       0 8px 22px rgba(0, 0, 0, 0.16);
   }
@@ -972,12 +974,16 @@ html[data-theme="dark"] .work-teaser__item span {
 
   /* Diagnóstico */
   .float-card--1 {
+   animation:
+   float-bubble-1 5.5s ease-in-out infinite; 
     top: 40%;
-    left: -50%;
+    left: 40%;
   }
 
   /* Reparación */
   .float-card--2 {
+   animation:
+   float-bubble-2 6.5s ease-in-out infinite; 
     top: 10%;
     right: 20%;
 
@@ -986,9 +992,61 @@ html[data-theme="dark"] .work-teaser__item span {
 
   /* Entregas */
   .float-card--3 {
+   animation:
+   float-bubble-3 5.9s ease-in-out infinite; 
     top: 68%;
     right: 20%;
   }
+
+   @keyframes float-bubble-1 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(8px, -10px)
+      rotate(1deg);
+  }
+}
+
+
+@keyframes float-bubble-2 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(-9px, 7px)
+      rotate(-1deg);
+  }
+}
+
+
+@keyframes float-bubble-3 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(7px, 9px)
+      rotate(1deg);
+  }
+}
 
 
   /* ----------------------------------------------------------
