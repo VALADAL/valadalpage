@@ -879,13 +879,13 @@ html[data-theme="dark"] .work-teaser__item span {
   /* Diagnóstico */
   .float-card--1 {
     top: 40%;
-    right: 755%;
+    right: 60%;
   }
 
   /* Reparación — crece hacia la izquierda */
   .float-card--2 {
     top: 10%;
-    right: 25%;
+    right: 20%;
 
     transform-origin: right center;
   }
@@ -893,7 +893,7 @@ html[data-theme="dark"] .work-teaser__item span {
   /* Entregas */
   .float-card--3 {
     top: 78%;
-    right: 25%;
+    right: 20%;
   }
 
 
