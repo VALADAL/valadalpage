@@ -1295,9 +1295,9 @@ html[data-theme="dark"]
     min-width: 0;
     width: 100%;
 
-    padding: 13px 10px;
+    padding: 13px 1px;
 
-    border-radius: 13px;
+    border-radius: 5px;
 
     overflow: hidden;
 
@@ -1351,7 +1351,7 @@ html[data-theme="dark"]
 
     overflow: hidden;
 
-    padding-top: 32px;
+    padding-top: 12px;
     padding-bottom: 22px;
 
     /* REDUCE ESPACIO CON REPAIR */
@@ -1420,8 +1420,8 @@ html[data-theme="dark"]
      ---------------------------------------------------------- */
 
   .valadal-section {
-    padding-top: 25px;
-    padding-bottom: 30px;
+    padding-top: 12px;
+    padding-bottom: 12px;
 
     /* ACERCAR DIGITAL → VALADAL */
     margin-top: -10px;
@@ -1491,7 +1491,7 @@ html[data-theme="dark"]
       repeat(2, 1fr);
 
     margin-top: 20px;
-    margin-bottom: 12px;
+    margin-bottom: 1px;
   }
 
   .work-teaser .section-title,
