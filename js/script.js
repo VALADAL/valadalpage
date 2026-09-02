@@ -372,12 +372,12 @@ function applyTheme(theme) {
 
   if (themeIcon) {
     themeIcon.textContent =
-      isDark ? "☀" : "☾";
+      isDark ? "◐" : "◐";
   }
 
   if (mobileThemeIcon) {
     mobileThemeIcon.textContent =
-      isDark ? "☀" : "☾";
+      isDark ? "◐" : "◐";
   }
 
   const mobileThemeText =
