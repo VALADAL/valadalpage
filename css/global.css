@@ -568,30 +568,31 @@ h4 {
   align-self: flex-start;
 }
 
-.nav-drawer__accessibility {
-  display: none;
-}
 
-.mobile-controls {
-  display: none;
-}
 
-.mobile-control {
-  display: flex;
-  align-items: center;
-  gap: 10px;
 
-  width: 100%;
 
-  padding: 12px 0;
 
-  color: var(--text-main);
 
-  font-size: 0.95rem;
-  font-weight: 500;
 
-  border-bottom: 1px solid var(--border);
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  /* -----------------------------------------------------------------------------------  MOBILE ------------------------------------------------------------------- */
 
 @media (max-width: 860px) {
 
