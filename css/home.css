@@ -977,6 +977,10 @@ html[data-theme="dark"]
 
 @media (max-width: 860px) {
 
+  /* ----------------------------------------------------------
+     GLOBAL
+     ---------------------------------------------------------- */
+
   html,
   body {
     width: 100%;
@@ -1088,6 +1092,7 @@ html[data-theme="dark"]
     height: 11px;
   }
 
+  /* TÍTULO PRINCIPAL — REFERENCIA */
   .hero__title {
     font-size:
       clamp(1.55rem, 6vw, 2rem);
@@ -1097,6 +1102,7 @@ html[data-theme="dark"]
     margin-bottom: 14px;
   }
 
+  /* DESCRIPCIÓN PRINCIPAL — REFERENCIA */
   .hero__subtitle {
     font-size: 0.72rem;
 
@@ -1299,6 +1305,14 @@ html[data-theme="dark"]
      REPAIR
      ---------------------------------------------------------- */
 
+  /* TÍTULOS DE SECCIÓN — MISMA ESCALA QUE HERO */
+  .section-title {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
+
+    line-height: 1.04;
+  }
+
   .repair-preview__grid {
     display: grid;
 
@@ -1315,13 +1329,6 @@ html[data-theme="dark"]
 
   .repair-preview__grid ~ .btn {
     display: none;
-  }
-
-  .section-title {
-    font-size:
-      clamp(1.55rem, 6vw, 2rem);
-
-    line-height: 1.04;
   }
 
   .category-card {
@@ -1353,6 +1360,7 @@ html[data-theme="dark"]
     height: 18px;
   }
 
+  /* MISMA ESCALA DE TÍTULO DE TARJETA */
   .category-card h3 {
     font-size: 0.72rem;
 
@@ -1410,6 +1418,7 @@ html[data-theme="dark"]
     margin: 16px 0 8px;
   }
 
+  /* LOS RECUADROS SE QUEDAN IGUAL */
   .digital-band__item {
     min-width: 0;
 
@@ -1427,6 +1436,31 @@ html[data-theme="dark"]
     color: #ffffff;
   }
 
+  /*
+     TÍTULO DE DIGITAL:
+     MISMA JERARQUÍA VISUAL QUE LOS TÍTULOS DE SECCIÓN
+  */
+  .digital-band__title,
+  .digital-band > h2,
+  .digital-band .section-title {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
+
+    line-height: 1.04;
+  }
+
+  /*
+     DESCRIPCIÓN DE DIGITAL:
+     MISMA ESCALA QUE HERO
+  */
+  .digital-band__subtitle,
+  .digital-band > p {
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+  }
+
+  /* TARJETAS DIGITALES — NO CAMBIAR */
   .digital-band__item h4 {
     font-size: 0.68rem;
 
@@ -1467,6 +1501,30 @@ html[data-theme="dark"]
     max-width: 100%;
   }
 
+  /*
+     TÍTULO PRINCIPAL:
+     MISMA ESCALA QUE HERO / REPAIR
+  */
+  .valadal-section .section-title,
+  .valadal-section h2 {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
+
+    line-height: 1.04;
+  }
+
+  /*
+     DESCRIPCIÓN:
+     MISMA ESCALA QUE HERO
+  */
+  .valadal-section__content > p,
+  .valadal-section__intro,
+  .valadal-section .section-subtitle {
+    font-size: 0.72rem;
+
+    line-height: 1.5;
+  }
+
   .valadal-section .values-grid {
     grid-template-columns: 1fr 1fr;
 
@@ -1486,7 +1544,31 @@ html[data-theme="dark"]
 
     margin-top: 20px;
 
-    margin-bottom: 12;
+    margin-bottom: 12px;
+  }
+
+  /*
+     TÍTULO:
+     MISMA ESCALA QUE HERO / REPAIR
+  */
+  .work-teaser .section-title,
+  .work-teaser h2 {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
+
+    line-height: 1.04;
+  }
+
+  /*
+     DESCRIPCIÓN:
+     MISMA ESCALA QUE HERO
+  */
+  .work-teaser > p,
+  .work-teaser__subtitle,
+  .work-teaser .section-subtitle {
+    font-size: 0.72rem;
+
+    line-height: 1.5;
   }
 
 
@@ -1496,6 +1578,30 @@ html[data-theme="dark"]
 
   .about-teaser__inner {
     grid-template-columns: 1fr;
+  }
+
+  /*
+     TÍTULO:
+     MISMA ESCALA QUE HERO / REPAIR
+  */
+  .about-teaser .section-title,
+  .about-teaser h2 {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
+
+    line-height: 1.04;
+  }
+
+  /*
+     DESCRIPCIÓN:
+     MISMA ESCALA QUE HERO
+  */
+  .about-teaser > p,
+  .about-teaser__subtitle,
+  .about-teaser .section-subtitle {
+    font-size: 0.72rem;
+
+    line-height: 1.5;
   }
 
 
@@ -1579,4 +1685,3 @@ html[data-theme="dark"]
   }
 
 }
-
