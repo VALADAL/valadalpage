@@ -987,11 +987,41 @@ html[data-theme="dark"]
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* ============================================================
    12 — MOBILE
    ============================================================ */
 
 @media (max-width: 860px) {
+
+  /* ============================================================
+     BASE
+     ============================================================ */
 
   html,
   body {
@@ -1000,7 +1030,10 @@ html[data-theme="dark"]
     overflow-x: hidden;
   }
 
-  /* ---------- NAVBAR ---------- */
+
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
 
   .navbar {
     position: fixed;
@@ -1050,7 +1083,7 @@ html[data-theme="dark"]
      ============================================================ */
 
   .hero {
-    padding: 62px 0 20px;
+    padding: 62px 0 20px !important;
     width: 100%;
     max-width: 100%;
   }
@@ -1110,7 +1143,9 @@ html[data-theme="dark"]
   }
 
 
-  /* ---------- HERO PC ---------- */
+  /* ============================================================
+     HERO PC
+     ============================================================ */
 
   .hero__visual {
     position: absolute;
@@ -1247,34 +1282,66 @@ html[data-theme="dark"]
     line-height: 1.5;
   }
 
+  .valadal-section__lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+  }
+
 
   /* ============================================================
      REPAIR
      ============================================================ */
 
+  .repair-preview {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
   .repair-preview__grid {
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
+
     width: 100%;
     max-width: 100%;
-    margin: 15px 0 0;
+
+    margin: 15px 0 0 !important;
+    padding: 0 !important;
   }
 
   .repair-preview__grid ~ .btn {
     display: none;
   }
 
+  /*
+   * TARJETAS DE REPARACIÓN
+   * Más aire interno y contenido centrado.
+   */
+
   .category-card {
     min-width: 0;
     width: 100%;
-    padding: 13px 1px;
-    border-radius: 5px;
+    box-sizing: border-box;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    padding: 14px 7px 15px !important;
+
+    border-radius: 7px;
     overflow: hidden;
   }
 
   .category-card__top {
-    margin-bottom: 9px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 10px !important;
   }
 
   .category-card__index {
@@ -1284,51 +1351,65 @@ html[data-theme="dark"]
   .category-card__icon {
     width: 18px;
     height: 18px;
+    flex-shrink: 0;
   }
 
   .category-card h3 {
+    width: 100%;
+    margin: 0 0 5px !important;
+
     font-size: 0.72rem;
     line-height: 1.15;
-    margin-bottom: 4px;
+
+    text-align: center;
   }
 
   .category-card__sub {
+    width: 100%;
+    margin: 0 0 7px !important;
+
     font-size: 0.55rem;
     line-height: 1.25;
-    margin-bottom: 7px;
+
+    text-align: center;
   }
 
   .category-card p.category-card__desc {
+    width: 100%;
+    margin: 0 !important;
+
     font-size: 0.56rem;
     line-height: 1.35;
-    margin: 0;
+
+    text-align: center;
   }
 
 
   /* ============================================================
-     TODO LO QUE VIENE DESPUÉS DE REPAIR
-     SIN ESPACIOS GRANDES ENTRE SECCIONES
+     DIGITAL
+     PEGADO DIRECTAMENTE A REPAIR
      ============================================================ */
 
   .digital-band {
     width: auto;
     max-width: calc(100% - 24px);
-    margin: 0 12px;
-    margin-top: 0;
+
+    margin: 0 12px !important;
+    padding: 12px 0 12px !important;
+
     border-radius: 18px;
     overflow: hidden;
-    padding-top: 12px;
-    padding-bottom: 12px;
   }
 
   .digital-band__inner {
-    padding-top: 0;
-    padding-bottom: 0;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .digital-band .section-title {
     font-size: clamp(1.55rem, 6vw, 2rem);
     line-height: 1.04;
+    margin-top: 0 !important;
   }
 
   .digital-band .section-lead--light {
@@ -1341,7 +1422,9 @@ html[data-theme="dark"]
     display: grid;
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-    margin: 16px 0 0;
+
+    margin: 16px 0 0 !important;
+    padding: 0 !important;
   }
 
   .digital-band__item {
@@ -1372,16 +1455,18 @@ html[data-theme="dark"]
 
   /* ============================================================
      VALADAL
+     PEGADO A DIGITAL
      ============================================================ */
 
   .valadal-section {
-    padding-top: 12px;
-    padding-bottom: 12px;
-    margin-top: 0;
+    margin: 0 !important;
+    padding: 12px 0 !important;
   }
 
   .valadal-section__top {
     display: block;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .valadal-section__visual {
@@ -1391,6 +1476,8 @@ html[data-theme="dark"]
   .valadal-section__content {
     display: block;
     max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .valadal-section .section-title {
@@ -1407,11 +1494,15 @@ html[data-theme="dark"]
     display: grid;
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
-    margin-top: 20px;
+
+    margin: 20px 0 0 !important;
+    padding: 0 !important;
   }
 
   .valadal-section .value-item {
     min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .valadal-section .value-item__index {
@@ -1432,18 +1523,21 @@ html[data-theme="dark"]
 
   /* ============================================================
      WORK
+     PEGADO A VALADAL
      ============================================================ */
 
   .work-teaser {
-    margin-top: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    margin: 0 !important;
+    padding: 12px 0 !important;
   }
 
   .work-teaser__grid {
+    display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-top: 16px;
-    margin-bottom: 0;
+    gap: 8px;
+
+    margin: 16px 0 0 !important;
+    padding: 0 !important;
   }
 
   .work-teaser .section-title,
@@ -1462,16 +1556,18 @@ html[data-theme="dark"]
 
   /* ============================================================
      ABOUT
+     PEGADO A WORK
      ============================================================ */
 
   .about-teaser {
-    margin-top: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    margin: 0 !important;
+    padding: 12px 0 !important;
   }
 
   .about-teaser__inner {
     grid-template-columns: 1fr;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   .about-teaser .section-title,
@@ -1490,21 +1586,23 @@ html[data-theme="dark"]
 
   /* ============================================================
      CTA
+     PEGADO A ABOUT
      ============================================================ */
 
   .final-cta {
-    margin-top: 0;
-    padding-top: 12px;
-    padding-bottom: 12px;
+    margin: 0 !important;
+    padding: 12px 0 !important;
   }
 
 
   /* ============================================================
      FOOTER
+     PEGADO AL CTA
      ============================================================ */
 
   .footer {
-    margin-top: 0;
+    margin: 0 !important;
+    padding-top: 12px !important;
   }
 
   .footer__name {
