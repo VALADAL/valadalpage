@@ -730,7 +730,7 @@ html[data-theme="dark"] .work-teaser__item span {
      ---------------------------------------------------------- */
 
   .hero {
-    padding: 42px 0 80px;
+    padding: 20px 0 80px;
 
     width: 100%;
     max-width: 100%;
@@ -960,7 +960,7 @@ html[data-theme="dark"] .work-teaser__item span {
   /* Diagnóstico */
   .float-card--1 {
     top: 40%;
-    left: 0;
+    left: -50%;
   }
 
   /* Reparación */
@@ -973,7 +973,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
   /* Entregas */
   .float-card--3 {
-    top: 50%;
+    top: 68%;
     right: 20%;
   }
 
@@ -994,7 +994,7 @@ html[data-theme="dark"] .work-teaser__item span {
     width: 100%;
     max-width: 100%;
 
-    margin: 24px 0 24px;
+    margin: 15px 0 24px;
   }
 
   .category-card {
