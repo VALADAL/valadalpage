@@ -1,0 +1,1710 @@
+/* ============================================================
+   VALADAL — home.css
+   Estilos exclusivos del Home
+   ============================================================ */
+
+
+/* ============================================================
+   01 — HERO
+   ============================================================ */
+
+.hero {
+  padding: 84px 0 150px;
+
+  background: linear-gradient(
+    180deg,
+    var(--hero-bg-start) 0%,
+    var(--page-bg) 100%
+  );
+
+  overflow: hidden;
+}
+
+.hero__inner {
+  display: grid;
+
+  grid-template-columns: 1.05fr 0.95fr;
+
+  gap: 48px;
+
+  align-items: center;
+
+  min-height: 440px;
+}
+
+.hero__title {
+  display: flex;
+  flex-direction: column;
+
+  font-size: clamp(2.3rem, 4.6vw, 3.6rem);
+
+  margin-bottom: 22px;
+}
+
+.hero__title-line--dark {
+  color: var(--black);
+}
+
+.hero__title-line--accent {
+  color: var(--blue);
+}
+
+.hero__subtitle {
+  font-size: 1.1rem;
+
+  color: var(--gray-medium);
+
+  max-width: 460px;
+
+  margin-bottom: 34px;
+
+  line-height: 1.65;
+}
+
+.hero__actions {
+  display: flex;
+
+  gap: 14px;
+
+  flex-wrap: wrap;
+}
+
+
+/* ============================================================
+   02 — HERO VISUAL / PC
+   ============================================================ */
+
+.hero__visual {
+  position: relative;
+
+  min-height: 440px;
+}
+
+/*
+   IMPORTANTE:
+   El device-panel es transparente.
+   No se coloca ningún fondo detrás de la PC.
+*/
+
+.device-panel {
+  position: relative;
+
+  width: 100%;
+  height: 440px;
+
+  background: transparent !important;
+
+  box-shadow: none !important;
+
+  overflow: visible;
+}
+
+.device-panel__core {
+  position: absolute;
+
+  top: 50%;
+  left: 50%;
+
+  width: 100px;
+  height: 230px;
+
+  transform: translate(-50%, -50%);
+
+  border-radius: 50px;
+
+  background: linear-gradient(
+    180deg,
+    var(--blue-bright),
+    var(--blue)
+  );
+
+  box-shadow:
+    0 0 35px rgba(0, 102, 255, 0.16),
+    0 0 80px rgba(0, 102, 255, 0.08);
+
+  animation: pulse-glow 4s ease-in-out infinite;
+}
+
+.hero-pc {
+  position: absolute;
+
+  z-index: 2;
+
+  width: 92%;
+
+  max-width: 520px;
+
+  left: 50%;
+  top: 50%;
+
+  transform: translate(-50%, -50%);
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 28px 40px rgba(0, 0, 0, 0.22)
+    )
+    drop-shadow(
+      0 0 22px rgba(0, 70, 180, 0.28)
+    )
+    drop-shadow(
+      0 0 55px rgba(0, 55, 160, 0.20)
+    )
+    drop-shadow(
+      0 0 90px rgba(0, 45, 130, 0.12)
+    );
+
+  animation: pc-float 5s ease-in-out infinite;
+}
+
+@keyframes pc-float {
+
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  50% {
+    transform:
+      translate(
+        -50%,
+        calc(-50% - 8px)
+      );
+  }
+}
+
+@keyframes pulse-glow {
+
+  0%,
+  100% {
+    box-shadow:
+      0 0 35px rgba(0, 102, 255, 0.14),
+      0 0 80px rgba(0, 102, 255, 0.06);
+  }
+
+  50% {
+    box-shadow:
+      0 0 45px rgba(0, 102, 255, 0.20),
+      0 0 95px rgba(0, 102, 255, 0.09);
+  }
+}
+
+.device-panel__dot {
+  position: absolute;
+
+  width: 5px;
+  height: 5px;
+
+  border-radius: 50%;
+
+  background: var(--blue);
+
+  opacity: 0.5;
+}
+
+
+/* ============================================================
+   03 — FLOAT CARDS
+   ============================================================ */
+
+.float-card {
+  position: absolute;
+
+  z-index: 5;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  width: auto;
+  height: auto;
+
+  padding: 12px 16px;
+
+  background: var(--white);
+
+  color: var(--text-main);
+
+  border-radius: var(--radius-md);
+
+  box-shadow: var(--shadow-lifted);
+
+  font-size: 0.86rem;
+
+  font-weight: 500;
+
+  opacity: 1;
+
+  overflow: visible;
+
+  cursor: default;
+
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease),
+    opacity 0.4s ease;
+}
+
+
+/*
+   ICONOS SIEMPRE AZULES
+   No dependen del tema.
+*/
+
+.float-card__icon {
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  width: 26px;
+  height: 26px;
+
+  flex-shrink: 0;
+
+  border-radius: 8px;
+
+  background: rgba(0, 102, 255, 0.12);
+
+  color: #0066FF;
+
+  font-size: 0.9rem;
+}
+
+
+/* Posición escritorio */
+
+.float-card--1 {
+  animation:
+    float-bubble-1 5.5s ease-in-out infinite;
+
+  top: 10%;
+  left: -6%;
+}
+
+.float-card--2 {
+  animation:
+    float-bubble-2 6.5s ease-in-out infinite;
+
+  top: 74%;
+  right: -8%;
+}
+
+.float-card--3 {
+  animation:
+    float-bubble-3 5.9s ease-in-out infinite;
+
+  top: 44%;
+  right: -10%;
+}
+
+
+@keyframes float-bubble-1 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(8px, -10px)
+      rotate(1deg);
+  }
+}
+
+@keyframes float-bubble-2 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(-9px, 7px)
+      rotate(-1deg);
+  }
+}
+
+@keyframes float-bubble-3 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(7px, 9px)
+      rotate(1deg);
+  }
+}
+
+.float-card.is-active {
+  box-shadow:
+    0 16px 36px rgba(0, 102, 255, 0.20),
+    0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+
+/* ============================================================
+   04 — REPAIR PREVIEW
+   ============================================================ */
+
+.repair-preview__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 24px;
+
+  margin: 44px 0 40px;
+}
+
+.category-card {
+  padding: 32px;
+
+  border-radius: var(--radius-lg);
+
+  background: var(--white);
+
+  border: 1px solid var(--gray-light);
+
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease),
+    border-color 0.25s var(--ease);
+}
+
+.category-card:hover {
+  transform: translateY(-4px);
+
+  box-shadow: var(--shadow-card);
+
+  border-color: var(--gray-medium);
+}
+
+.category-card__top {
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+
+  margin-bottom: 18px;
+}
+
+.category-card__index {
+  font-family: var(--font-display);
+
+  color: var(--gray-medium);
+
+  font-size: 0.9rem;
+}
+
+.category-card__icon {
+  width: 27px;
+  height: 27px;
+
+  color: var(--blue);
+
+  display: inline-flex;
+
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.category-card__icon svg {
+  width: 27px;
+  height: 27px;
+
+  display: block;
+
+  stroke: currentColor;
+}
+
+.category-card h3 {
+  font-size: 1.25rem;
+
+  margin-bottom: 6px;
+}
+
+.category-card__sub {
+  color: var(--blue);
+
+  font-size: 0.86rem;
+
+  font-weight: 500;
+
+  margin-bottom: 14px;
+}
+
+.category-card p.category-card__desc {
+  color: var(--gray-medium);
+
+  font-size: 0.92rem;
+}
+
+
+/* ============================================================
+   05 — DIGITAL SOLUTIONS
+   ============================================================ */
+
+.digital-band {
+  background: var(--blue);
+
+  border-radius: var(--radius-lg);
+
+  margin: 0 24px;
+
+  padding-top: 56px;
+  padding-bottom: 56px;
+}
+
+.digital-band__inner {
+  max-width: 700px;
+}
+
+.digital-band__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, 1fr);
+
+  gap: 20px;
+
+  margin: 36px 0 40px;
+}
+
+.digital-band__item {
+  padding: 22px;
+
+  border-radius: var(--radius-md);
+
+  background: rgba(255, 255, 255, 0.1);
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.digital-band__item h4 {
+  color: #ffffff;
+
+  font-size: 1.05rem;
+
+  margin-bottom: 8px;
+}
+
+.digital-band__item p {
+  color: rgba(255, 255, 255, 0.75);
+
+  font-size: 0.88rem;
+
+  line-height: 1.55;
+}
+
+
+/* ICONOS DIGITALES */
+
+.digital-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  margin-bottom: 12px;
+
+  flex-shrink: 0;
+}
+
+.digital-icon svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  stroke: currentColor;
+}
+
+
+/* ============================================================
+   06 — VALADAL
+   ============================================================ */
+
+.valadal-section {
+  padding-top: 70px;
+
+  padding-bottom: 55px;
+}
+
+.valadal-section__top {
+  display: grid;
+
+  grid-template-columns:
+    0.8fr 1.2fr;
+
+  gap: 70px;
+
+  align-items: center;
+}
+
+.valadal-section__visual {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+}
+
+.valadal-section__image {
+  display: block;
+
+  width: 100%;
+
+  max-width: 330px;
+
+  height: auto;
+
+  object-fit: contain;
+
+  filter:
+    drop-shadow(
+      0 16px 24px rgba(0, 0, 0, 0.10)
+    );
+
+  transition:
+    transform 0.4s var(--ease);
+}
+
+.valadal-section__image:hover {
+  transform: translateY(-5px);
+}
+
+.valadal-section__content {
+  max-width: 680px;
+}
+
+.valadal-section__lead {
+  max-width: 620px;
+}
+
+.valadal-section .values-grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 24px;
+
+  margin-top: 70px;
+}
+
+.valadal-section .value-item {
+  border-top:
+    1px solid var(--gray-light);
+
+  padding-top: 20px;
+}
+
+.valadal-section .value-item__index {
+  display: block;
+
+  font-family: var(--font-display);
+
+  color: var(--blue);
+
+  font-size: 0.9rem;
+
+  margin-bottom: 10px;
+}
+
+.valadal-section .value-item h3 {
+  font-size: 1.1rem;
+
+  margin-bottom: 8px;
+}
+
+.valadal-section .value-item p {
+  color: var(--gray-medium);
+
+  font-size: 0.92rem;
+
+  line-height: 1.55;
+}
+
+
+/* ============================================================
+   07 — SELECTED WORK
+   ============================================================ */
+
+.work-teaser__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(4, 1fr);
+
+  gap: 18px;
+
+  margin: 40px 0 20px;
+}
+
+.work-teaser__item {
+  aspect-ratio: 1 / 1;
+
+  border-radius: var(--radius-md);
+
+  position: relative;
+
+  overflow: hidden;
+
+  display: flex;
+
+  align-items: flex-end;
+
+  padding: 16px;
+}
+
+.work-teaser__item span {
+  position: relative;
+
+  z-index: 1;
+
+  color: var(--white);
+
+  font-size: 0.82rem;
+
+  font-weight: 600;
+
+  background: rgba(10, 10, 10, 0.35);
+
+  padding: 5px 10px;
+
+  border-radius: var(--radius-pill);
+
+  backdrop-filter: blur(4px);
+}
+
+
+/* ============================================================
+   08 — ABOUT
+   ============================================================ */
+
+.about-teaser__inner {
+  display: grid;
+
+  grid-template-columns:
+    1fr 1fr;
+
+  gap: 48px;
+
+  align-items: center;
+}
+
+
+/* ============================================================
+   09 — STAGGER
+   ============================================================ */
+
+.repair-preview__grid
+.category-card:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.repair-preview__grid
+.category-card:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.digital-band__grid
+.digital-band__item:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.digital-band__grid
+.digital-band__item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.values-grid
+.value-item:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.values-grid
+.value-item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.values-grid
+.value-item:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+.work-teaser__grid
+.work-teaser__item:nth-child(2) {
+  transition-delay: 90ms;
+}
+
+.work-teaser__grid
+.work-teaser__item:nth-child(3) {
+  transition-delay: 180ms;
+}
+
+.work-teaser__grid
+.work-teaser__item:nth-child(4) {
+  transition-delay: 270ms;
+}
+
+
+/* ============================================================
+   10 — DARK MODE
+   ============================================================ */
+
+/*
+   NO ponemos fondo al device-panel en dark mode.
+   La PC queda directamente sobre el fondo del hero.
+*/
+
+html[data-theme="dark"] .hero {
+  background: linear-gradient(
+    180deg,
+    #0D1015 0%,
+    #0A0A0A 75%,
+    #0A0A0A 100%
+  );
+}
+
+
+/*
+   ELIMINADO:
+   html[data-theme="dark"] .device-panel
+   html[data-theme="dark"] .device-panel__grid
+
+   Así no aparece ningún rectángulo gris detrás de la PC.
+*/
+
+html[data-theme="dark"] .category-card {
+  background: var(--surface);
+
+  border-color: var(--border);
+}
+
+html[data-theme="dark"] .category-card:hover {
+  border-color: #555555;
+}
+
+
+/*
+   Las tarjetas flotantes cambian de fondo,
+   pero sus iconos permanecen azules.
+*/
+
+html[data-theme="dark"] .float-card {
+  background: var(--surface);
+
+  color: var(--text-main);
+}
+
+html[data-theme="dark"] .float-card__icon {
+  background: rgba(0, 102, 255, 0.14);
+
+  color: #0066FF;
+}
+
+html[data-theme="dark"] .value-item {
+  border-top-color: var(--border);
+}
+
+html[data-theme="dark"] .work-teaser__item span {
+  background: rgba(0, 0, 0, 0.55);
+}
+
+
+/* ============================================================
+   11 — ACCESIBILIDAD
+   ============================================================ */
+
+.accessibility-control {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.accessibility-toggle {
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 1px solid var(--gray-light);
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--text-main);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.accessibility-toggle:hover {
+  border-color: var(--blue);
+
+  color: var(--blue);
+
+  transform: translateY(-1px);
+}
+
+.accessibility-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.accessibility-options {
+  position: absolute;
+
+  right: 0;
+
+  top: calc(100% + 10px);
+
+  display: flex;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-6px)
+    scale(0.92);
+
+  transform-origin:
+    top right;
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+
+  z-index: 20;
+}
+
+.accessibility-control.is-open
+.accessibility-options {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.accessibility-option {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--gray-light);
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--text-main);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.accessibility-option:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--blue);
+
+  color: var(--blue);
+}
+
+html[data-theme="dark"]
+.accessibility-toggle,
+html[data-theme="dark"]
+.accessibility-option {
+  background: var(--surface);
+
+  border-color: var(--border);
+
+  color: var(--text-main);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ============================================================
+   12 — MOBILE
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  /* ============================================================
+     BASE
+     ============================================================ */
+
+  html,
+  body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+  }
+
+
+  /* ============================================================
+     NAVBAR
+     ============================================================ */
+
+  .navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    --navbar-height: 42px;
+  }
+
+  .navbar__inner {
+    height: var(--navbar-height);
+    padding-left: 14px;
+    padding-right: 14px;
+  }
+
+  .navbar__logo-mark {
+    width: 22px;
+    height: 22px;
+    border-radius: 6px;
+    font-size: 0.68rem;
+  }
+
+  .navbar__links,
+  .navbar__right .btn,
+  .navbar__right .navbar__control {
+    display: none;
+  }
+
+  .navbar__toggle {
+    display: flex;
+    width: 22px;
+    height: 20px;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .navbar__toggle span {
+    width: 16px;
+    height: 1.5px;
+  }
+
+
+  /* ============================================================
+     HERO
+     ============================================================ */
+
+  .hero {
+    padding: 62px 0 20px !important;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .hero__inner {
+    display: block;
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    min-height: 0;
+  }
+
+  .hero__content {
+    position: relative;
+    z-index: 3;
+    max-width: 58%;
+    min-width: 0;
+  }
+
+  .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 16px;
+  }
+
+  .pill svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .hero__title {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    margin-bottom: 14px;
+  }
+
+  .hero__subtitle {
+    font-size: 0.72rem;
+    line-height: 1.5;
+    max-width: 100%;
+    margin-bottom: 20px;
+  }
+
+  .hero__actions {
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin-top: -6px;
+  }
+
+  .hero__actions .btn {
+    font-size: 0.68rem;
+    padding: 8px 13px;
+    white-space: nowrap;
+  }
+
+
+  /* ============================================================
+     HERO PC
+     ============================================================ */
+
+  .hero__visual {
+    position: absolute;
+    z-index: 1;
+    top: 30px;
+    right: 3%;
+    width: 42%;
+    height: auto;
+    pointer-events: auto;
+  }
+
+  .device-panel {
+    position: relative;
+    width: 100%;
+    height: 190px;
+    background: transparent !important;
+    box-shadow: none !important;
+    overflow: visible;
+  }
+
+  .hero-pc {
+    position: absolute;
+    z-index: 2;
+    width: 75%;
+    max-width: none;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: contain;
+    filter:
+      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18))
+      drop-shadow(0 0 13px rgba(0, 70, 180, 0.20));
+    animation: pc-float 5s ease-in-out infinite;
+  }
+
+
+  /* ============================================================
+     FLOATING CARDS
+     ============================================================ */
+
+  .float-card {
+    pointer-events: auto;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    width: 18px;
+    height: 18px;
+    padding: 0;
+    border-radius: 50%;
+    background: var(--white);
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
+    overflow: hidden;
+    font-size: 0.54rem;
+    line-height: 1.2;
+    white-space: nowrap;
+    transition:
+      width 0.35s var(--ease),
+      height 0.35s var(--ease),
+      border-radius 0.35s var(--ease),
+      padding 0.35s var(--ease),
+      box-shadow 0.35s var(--ease);
+  }
+
+  .float-card__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    border-radius: 50%;
+    background: #0066FF !important;
+    color: #FFFFFF !important;
+    font-size: 0.55rem;
+  }
+
+  .float-card > span:not(.float-card__icon) {
+    opacity: 0;
+    white-space: nowrap;
+    transition: opacity 0.2s ease;
+  }
+
+  .float-card.is-expanded {
+    width: max-content;
+    height: 30px;
+    padding: 5px 9px 5px 5px;
+    border-radius: 999px;
+    gap: 7px;
+    animation-play-state: paused;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  .float-card.is-expanded > span:not(.float-card__icon) {
+    opacity: 1;
+  }
+
+  .float-card--1 {
+    animation: float-bubble-1 5.5s ease-in-out infinite;
+    top: 18%;
+    left: 15%;
+  }
+
+  .float-card--2 {
+    animation: float-bubble-2 6.5s ease-in-out infinite;
+    top: 3%;
+    right: 10%;
+    transform-origin: right center;
+  }
+
+  .float-card--3 {
+    animation: float-bubble-3 5.9s ease-in-out infinite;
+    top: 30%;
+    right: 10%;
+  }
+
+
+  /* ============================================================
+     TEXTOS GENERALES
+     ============================================================ */
+
+  .section-title {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .section-lead {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+  .section-lead--light {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+  }
+
+  .valadal-section__lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+  }
+
+
+  /* ============================================================
+     REPAIR
+     ============================================================ */
+
+  .repair-preview {
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .repair-preview__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 14px;
+
+    width: 100%;
+    max-width: 100%;
+
+    margin: 24px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .repair-preview__grid ~ .btn {
+    display: none;
+  }
+
+  /*
+   * TARJETAS DE REPARACIÓN
+   * Mismo estilo que escritorio (alineado a la izquierda),
+   * apiladas en una columna para mobile.
+   */
+
+  .category-card {
+    min-width: 0;
+    width: 100%;
+    box-sizing: border-box;
+
+    display: block;
+    text-align: left;
+
+    padding: 22px !important;
+
+    border-radius: var(--radius-lg);
+    overflow: hidden;
+  }
+
+  .category-card__top {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    margin-bottom: 14px !important;
+  }
+
+  .category-card__index {
+    font-size: 0.78rem;
+  }
+
+  .category-card__icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+
+  .category-card h3 {
+    width: 100%;
+    margin: 0 0 5px !important;
+
+    font-size: 1rem;
+    line-height: 1.2;
+
+    text-align: left;
+  }
+
+  .category-card__sub {
+    width: 100%;
+    margin: 0 0 8px !important;
+
+    font-size: 0.72rem;
+    line-height: 1.3;
+
+    text-align: left;
+  }
+
+  .category-card p.category-card__desc {
+    width: 100%;
+    margin: 0 !important;
+
+    font-size: 0.75rem;
+    line-height: 1.4;
+
+    text-align: left;
+  }
+
+
+  /* ============================================================
+     DIGITAL
+     PEGADO DIRECTAMENTE A REPAIR
+     ============================================================ */
+
+  .digital-band {
+    width: auto;
+    max-width: calc(100% - 24px);
+
+    margin: 0 12px !important;
+    padding: 40px 0 !important;
+
+    border-radius: 18px;
+    overflow: hidden;
+  }
+
+  .digital-band__inner {
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
+  }
+
+  .digital-band .section-title {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    margin-top: 0 !important;
+  }
+
+  .digital-band .section-lead--light {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    max-width: 100%;
+  }
+
+  .digital-band__grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
+
+    margin: 16px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .digital-band__item {
+    min-width: 0;
+    padding: 12px 9px;
+    border-radius: 11px;
+  }
+
+  .digital-band__item .digital-icon {
+    width: 20px;
+    height: 20px;
+    margin-bottom: 12px;
+    color: #ffffff;
+  }
+
+  .digital-band__item h4 {
+    font-size: 0.68rem;
+    line-height: 1.15;
+    margin-bottom: 5px;
+    color: #ffffff;
+  }
+
+  .digital-band__item p {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+
+  /* ============================================================
+     VALADAL
+     PEGADO A DIGITAL
+     ============================================================ */
+
+  .valadal-section {
+    margin: 0 !important;
+    padding: 40px 0 !important;
+  }
+
+  .valadal-section__top {
+    display: block;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .valadal-section__visual {
+    display: none;
+  }
+
+  .valadal-section__content {
+    display: block;
+    max-width: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .valadal-section .section-title {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .valadal-section__content > p {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+  }
+
+  .valadal-section .values-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+
+    margin: 20px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .valadal-section .value-item {
+    min-width: 0;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  .valadal-section .value-item__index {
+    font-size: 0.58rem;
+  }
+
+  .valadal-section .value-item h3 {
+    font-size: 0.72rem;
+    line-height: 1.15;
+    margin-bottom: 5px;
+  }
+
+  .valadal-section .value-item p {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+
+  /* ============================================================
+     WORK
+     PEGADO A VALADAL
+     ============================================================ */
+
+  .work-teaser {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+  }
+
+  .work-teaser__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+
+    margin: 16px 0 0 !important;
+    padding: 0 !important;
+  }
+
+  .work-teaser .section-title,
+  .work-teaser h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .work-teaser > p,
+  .work-teaser__subtitle,
+  .work-teaser .section-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+
+  /* ============================================================
+     ABOUT
+     PEGADO A WORK
+     ============================================================ */
+
+  .about-teaser {
+    margin: 0 !important;
+    padding: 12px 0 !important;
+  }
+
+  .about-teaser__inner {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .about-teaser .section-title,
+  .about-teaser h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .about-teaser > p,
+  .about-teaser__subtitle,
+  .about-teaser .section-subtitle {
+    font-size: 0.72rem;
+    line-height: 1.5;
+  }
+
+
+  /* ============================================================
+     CTA
+     PEGADO A ABOUT
+     ============================================================ */
+
+  .final-cta {
+    margin: 0 !important;
+    padding: 64px 0 !important;
+  }
+
+
+  /* ============================================================
+     FOOTER
+     PEGADO AL CTA
+     ============================================================ */
+
+  .footer {
+    margin: 0 !important;
+    padding-top: 40px !important;
+  }
+
+  .footer__name {
+    font-size: 0.72rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+  .footer__col h4 {
+    font-size: 0.62rem;
+  }
+
+  .footer__col a {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+  .footer__bottom {
+    font-size: 0.52rem;
+    line-height: 1.3;
+  }
+
+
+  /* ============================================================
+     ACCESIBILIDAD
+     ============================================================ */
+
+  .nav-drawer__accessibility {
+    display: none !important;
+  }
+
+  .accessibility-control {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+
+  .accessibility-toggle {
+    width: 24px;
+    height: 24px;
+    border: none;
+    background: transparent;
+    font-size: 0.8rem;
+  }
+
+  .accessibility-toggle svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .accessibility-options {
+    position: absolute;
+    right: 30px;
+    top: 50%;
+    transform: translateY(-50%) scale(0.92);
+    transform-origin: right center;
+    display: flex;
+    gap: 5px;
+  }
+
+  .accessibility-control.is-open .accessibility-options {
+    transform: translateY(-50%) scale(1);
+  }
+
+  .accessibility-option {
+    width: 27px;
+    height: 27px;
+    font-size: 0.58rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
+  }
+}
+
+
+/* ============================================================
+   EXTRA SMALL
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .valadal-section .values-grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .valadal-section .value-item h3 {
+    font-size: 0.68rem;
+  }
+
+  .valadal-section .value-item p {
+    font-size: 0.52rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.52rem;
+  }
+
+  .footer__col a {
+    font-size: 0.52rem;
+  }
+
+  .footer__bottom {
+    font-size: 0.5rem;
+  }
+}
