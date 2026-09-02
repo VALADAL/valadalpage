@@ -1,3 +1,4 @@
+
 /* ============================================================
    VALADAL — home.css
    Estilos exclusivos del Home
@@ -186,7 +187,6 @@
 
 /* ============================================================
    03 — FLOAT CARDS
-   ESCRITORIO
    ============================================================ */
 
 .float-card {
@@ -222,6 +222,11 @@
   overflow: visible;
 
   cursor: default;
+
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease),
+    opacity 0.4s ease;
 }
 
 .float-card__icon {
@@ -245,25 +250,26 @@
 }
 
 .float-card--1 {
- animation:
- float-bubble-1 5.5s ease-in-out infinite; 
+  animation: float-bubble-1 5.5s ease-in-out infinite;
+
   top: 10%;
   left: -6%;
 }
 
 .float-card--2 {
-animation:
- float-bubble-2 6.5s ease-in-out infinite;
+  animation: float-bubble-2 6.5s ease-in-out infinite;
+
   top: 74%;
   right: -8%;
 }
 
 .float-card--3 {
-animation:
-float-bubble-3 5.9s ease-in-out infinite;   
+  animation: float-bubble-3 5.9s ease-in-out infinite;
+
   top: 44%;
   right: -10%;
 }
+
 @keyframes float-bubble-1 {
 
   0%,
@@ -279,7 +285,6 @@ float-bubble-3 5.9s ease-in-out infinite;
       rotate(1deg);
   }
 }
-
 
 @keyframes float-bubble-2 {
 
@@ -297,7 +302,6 @@ float-bubble-3 5.9s ease-in-out infinite;
   }
 }
 
-
 @keyframes float-bubble-3 {
 
   0%,
@@ -313,19 +317,13 @@ float-bubble-3 5.9s ease-in-out infinite;
       rotate(1deg);
   }
 }
-.float-card {
-  transition:
-    transform 0.4s var(--ease),
-    box-shadow 0.4s var(--ease),
-    opacity 0.4s ease;
-}
 
 .float-card.is-active {
-  transform: translateY(-4px) scale(1.04);
-
   box-shadow:
-    0 14px 32px rgba(0, 0, 0, 0.18);
+    0 16px 36px rgba(0, 102, 255, 0.20),
+    0 6px 18px rgba(0, 0, 0, 0.12);
 }
+
 
 /* ============================================================
    04 — REPAIR PREVIEW
@@ -439,6 +437,9 @@ float-bubble-3 5.9s ease-in-out infinite;
   border-radius: var(--radius-lg);
 
   margin: 0 24px;
+
+  padding-top: 56px;
+  padding-bottom: 56px;
 }
 
 .digital-band__inner {
@@ -462,6 +463,14 @@ float-bubble-3 5.9s ease-in-out infinite;
   border-radius: var(--radius-md);
 
   background: rgba(255, 255, 255, 0.1);
+
+  text-decoration: none;
+
+  color: inherit;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
 }
 
 .digital-band__item h4 {
@@ -481,6 +490,32 @@ float-bubble-3 5.9s ease-in-out infinite;
 }
 
 
+/* ICONOS DIGITALES — ESCRITORIO */
+
+.digital-icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  color: #ffffff;
+
+  flex-shrink: 0;
+}
+
+.digital-icon svg {
+  width: 24px;
+  height: 24px;
+
+  display: block;
+
+  stroke: currentColor;
+}
+
+
 /* ============================================================
    06 — VALADAL
    ============================================================ */
@@ -488,7 +523,7 @@ float-bubble-3 5.9s ease-in-out infinite;
 .valadal-section {
   padding-top: 70px;
 
-  padding-bottom: 100px;
+  padding-bottom: 55px;
 }
 
 .valadal-section__top {
@@ -599,7 +634,7 @@ float-bubble-3 5.9s ease-in-out infinite;
 
   gap: 18px;
 
-  margin: 40px 0 36px;
+  margin: 40px 0 0;
 }
 
 .work-teaser__item {
@@ -775,7 +810,151 @@ html[data-theme="dark"] .work-teaser__item span {
 
 
 /* ============================================================
-   11 — MOBILE
+   11 — ACCESIBILIDAD
+   ============================================================ */
+
+.accessibility-control {
+  position: relative;
+
+  display: flex;
+
+  align-items: center;
+}
+
+.accessibility-toggle {
+  width: 36px;
+  height: 36px;
+
+  padding: 0;
+
+  border: 1px solid var(--gray-light);
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--text-main);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.accessibility-toggle:hover {
+  border-color: var(--blue);
+
+  color: var(--blue);
+
+  transform: translateY(-1px);
+}
+
+.accessibility-toggle svg {
+  width: 18px;
+  height: 18px;
+}
+
+.accessibility-options {
+  position: absolute;
+
+  right: 0;
+
+  top: calc(100% + 10px);
+
+  display: flex;
+
+  gap: 7px;
+
+  opacity: 0;
+
+  visibility: hidden;
+
+  transform:
+    translateY(-6px)
+    scale(0.92);
+
+  transform-origin:
+    top right;
+
+  transition:
+    opacity 0.22s ease,
+    visibility 0.22s ease,
+    transform 0.22s ease;
+
+  z-index: 20;
+}
+
+.accessibility-control.is-open
+.accessibility-options {
+  opacity: 1;
+
+  visibility: visible;
+
+  transform:
+    translateY(0)
+    scale(1);
+}
+
+.accessibility-option {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid var(--gray-light);
+
+  border-radius: 50%;
+
+  background: var(--white);
+
+  color: var(--text-main);
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  cursor: pointer;
+
+  font-size: 0.7rem;
+
+  font-weight: 700;
+
+  box-shadow: var(--shadow-card);
+
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    color 0.2s ease;
+}
+
+.accessibility-option:hover {
+  transform: translateY(-2px);
+
+  border-color: var(--blue);
+
+  color: var(--blue);
+}
+
+html[data-theme="dark"]
+.accessibility-toggle,
+html[data-theme="dark"]
+.accessibility-option {
+  background: var(--surface);
+
+  border-color: var(--border);
+
+  color: var(--text-main);
+}
+
+
+/* ============================================================
+   12 — MOBILE
    ============================================================ */
 
 @media (max-width: 860px) {
@@ -787,7 +966,9 @@ html[data-theme="dark"] .work-teaser__item span {
   html,
   body {
     width: 100%;
+
     max-width: 100%;
+
     overflow-x: hidden;
   }
 
@@ -800,6 +981,7 @@ html[data-theme="dark"] .work-teaser__item span {
     padding: 20px 0 30px;
 
     width: 100%;
+
     max-width: 100%;
   }
 
@@ -809,6 +991,7 @@ html[data-theme="dark"] .work-teaser__item span {
     position: relative;
 
     width: 100%;
+
     max-width: 100%;
 
     min-height: 0;
@@ -858,19 +1041,23 @@ html[data-theme="dark"] .work-teaser__item span {
     margin-bottom: 20px;
   }
 
-.hero__actions {
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
-  flex-wrap: nowrap;
-}
-   
+  .hero__actions {
+    flex-direction: row;
 
-.hero__actions .btn {
-  font-size: 0.68rem;
-  padding: 8px 13px;
-  white-space: nowrap;
-}
+    align-items: center;
+
+    gap: 8px;
+
+    flex-wrap: nowrap;
+  }
+
+  .hero__actions .btn {
+    font-size: 0.68rem;
+
+    padding: 8px 13px;
+
+    white-space: nowrap;
+  }
 
 
   /* ----------------------------------------------------------
@@ -925,7 +1112,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
 
   /* ----------------------------------------------------------
-     FLOAT CARDS — MOBILE DOTS
+     FLOAT CARDS — MOBILE
      ---------------------------------------------------------- */
 
   .float-card {
@@ -937,7 +1124,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
     align-items: center;
 
-    gap: 7;
+    gap: 7px;
 
     width: 18px;
 
@@ -972,7 +1159,6 @@ html[data-theme="dark"] .work-teaser__item span {
     display: flex;
 
     align-items: center;
-
     justify-content: center;
 
     width: 18px;
@@ -1010,7 +1196,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
     border-radius: 999px;
 
-    gap: 7px: 
+    gap: 7px;
 
     box-shadow:
       0 8px 22px rgba(0, 0, 0, 0.16);
@@ -1023,327 +1209,280 @@ html[data-theme="dark"] .work-teaser__item span {
 
 
   /* ----------------------------------------------------------
-     PUNTOS — CALIBRACIÓN
+     PUNTOS
      ---------------------------------------------------------- */
 
-  /* Diagnóstico */
   .float-card--1 {
-   animation:
-   float-bubble-1 5.5s ease-in-out infinite; 
+    animation:
+      float-bubble-1 5.5s ease-in-out infinite;
+
     top: 40%;
+
     left: 13%;
   }
 
-  /* Reparación */
   .float-card--2 {
-   animation:
-   float-bubble-2 6.5s ease-in-out infinite; 
+    animation:
+      float-bubble-2 6.5s ease-in-out infinite;
+
     top: 10%;
+
     right: 20%;
 
     transform-origin: right center;
   }
 
-  /* Entregas */
   .float-card--3 {
-   animation:
-   float-bubble-3 5.9s ease-in-out infinite; 
+    animation:
+      float-bubble-3 5.9s ease-in-out infinite;
+
     top: 68%;
+
     right: 20%;
   }
 
-   @keyframes float-bubble-1 {
 
-  0%,
-  100% {
-    transform:
-      translate(0, 0)
-      rotate(0deg);
+  /* ----------------------------------------------------------
+     REPAIR
+     ---------------------------------------------------------- */
+
+  .repair-preview__grid {
+    display: grid;
+
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
+
+    gap: 8px;
+
+    width: 100%;
+
+    max-width: 100%;
+
+    margin: 15px 0 24px;
   }
 
-  50% {
-    transform:
-      translate(8px, -10px)
-      rotate(1deg);
-  }
-}
-
-
-@keyframes float-bubble-2 {
-
-  0%,
-  100% {
-    transform:
-      translate(0, 0)
-      rotate(0deg);
+  .repair-preview__grid ~ .btn {
+    display: none;
   }
 
-  50% {
-    transform:
-      translate(-9px, 7px)
-      rotate(-1deg);
-  }
-}
+  .section-title {
+    font-size:
+      clamp(1.55rem, 6vw, 2rem);
 
-
-@keyframes float-bubble-3 {
-
-  0%,
-  100% {
-    transform:
-      translate(0, 0)
-      rotate(0deg);
+    line-height: 1.04;
   }
 
-  50% {
-    transform:
-      translate(7px, 9px)
-      rotate(1deg);
+  .category-card {
+    min-width: 0;
+
+    width: 100%;
+
+    padding: 13px 10px;
+
+    border-radius: 13px;
+
+    overflow: hidden;
+
+    text-decoration: none;
+
+    color: inherit;
+
+    cursor: pointer;
+
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
   }
-}
 
+  .category-card:active {
+    transform: scale(0.97);
+  }
 
-/* ----------------------------------------------------------
-   REPAIR
-   3 CARDS HORIZONTALES
-   ---------------------------------------------------------- */
+  .category-card__top {
+    margin-bottom: 9px;
+  }
 
-.repair-preview__grid {
-  display: grid;
+  .category-card__index {
+    font-size: 0.58rem;
+  }
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+  .category-card__icon {
+    width: 18px;
+    height: 18px;
+  }
 
-  gap: 8px;
+  .category-card__icon svg {
+    width: 18px;
+    height: 18px;
+  }
 
-  width: 100%;
-  max-width: 100%;
+  .category-card h3 {
+    font-size: 0.72rem;
 
-  margin: 15px 0 24px;
-}
+    line-height: 1.15;
 
+    margin-bottom: 4px;
 
-/* TÍTULO REPAIR — MISMO TAMAÑO QUE EL HERO */
+    overflow-wrap: anywhere;
+  }
 
-.repair-preview__grid ~ .btn {
-  display: none;
-}
+  .category-card__sub {
+    font-size: 0.55rem;
 
+    line-height: 1.25;
 
-/* Si el título de Repair usa .section-title */
-.section-title {
-  font-size: clamp(1.55rem, 6vw, 2rem);
-  line-height: 1.04;
-}
+    margin-bottom: 7px;
 
+    overflow-wrap: anywhere;
+  }
 
-/* TARJETAS */
+  .category-card p.category-card__desc {
+    font-size: 0.56rem;
 
-.category-card {
-  min-width: 0;
+    line-height: 1.35;
 
-  width: 100%;
+    margin: 0;
 
-  padding: 13px 10px;
+    overflow-wrap: anywhere;
+  }
 
-  border-radius: 13px;
 
-  overflow: hidden;
+  /* ----------------------------------------------------------
+     DIGITAL
+     ---------------------------------------------------------- */
 
-text-decoration: none;
-color: inherit;   
+  .digital-band {
+    width: auto;
 
-  cursor: pointer;
+    max-width:
+      calc(100% - 24px);
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
+    margin: 0 12px;
 
-.category-card:active {
-  transform: scale(0.97);
-}
+    border-radius: 18px;
 
+    overflow: hidden;
 
-.category-card__top {
-  margin-bottom: 9px;
-}
+    padding-top: 32px;
 
-.category-card__index {
-  font-size: 0.58rem;
-}
+    padding-bottom: 32px;
+  }
 
-.category-card__icon {
-  width: 18px;
-  height: 18px;
-}
+  .digital-band__grid {
+    display: grid;
 
-.category-card__icon svg {
-  width: 18px;
-  height: 18px;
-}
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
 
-.category-card h3 {
-  font-size: 0.72rem;
+    gap: 8px;
 
-  line-height: 1.15;
+    width: 100%;
 
-  margin-bottom: 4px;
+    max-width: 100%;
 
-  overflow-wrap: anywhere;
-}
+    margin: 16px 0 8px;
+  }
 
-.category-card__sub {
-  font-size: 0.55rem;
+  .digital-band__item {
+    min-width: 0;
 
-  line-height: 1.25;
+    width: 100%;
 
-  margin-bottom: 7px;
+    padding: 12px 9px;
 
-  overflow-wrap: anywhere;
-}
+    border-radius: 11px;
 
-.category-card p.category-card__desc {
-  font-size: 0.56rem;
+    overflow: hidden;
 
-  line-height: 1.35;
+    text-decoration: none;
 
-  margin: 0;
+    color: inherit;
 
-  overflow-wrap: anywhere;
-}
+    cursor: pointer;
 
+    transition:
+      transform 0.25s ease,
+      box-shadow 0.25s ease;
+  }
 
-/* ----------------------------------------------------------
-   DIGITAL
-   3 ITEMS HORIZONTALES
-   ---------------------------------------------------------- */
+  .digital-band__item:active {
+    transform: scale(0.97);
+  }
 
-.digital-band {
-  width: auto;
 
-  max-width: calc(100% - 24px);
+  /* ICONOS DIGITALES MOBILE */
 
-  margin: 0 12px;
+  .digital-band__item .digital-icon {
+    width: 20px;
 
-  border-radius: 18px;
+    height: 20px;
 
-  overflow: hidden;
-}
+    margin-bottom: 8px;
 
-.digital-band__grid {
-  display: grid;
+    color: #ffffff;
 
-  grid-template-columns:
-    repeat(3, minmax(0, 1fr));
+    display: flex;
 
-  gap: 8px;
+    align-items: center;
 
-  width: 100%;
-  max-width: 100%;
+    justify-content: center;
+  }
 
-  margin: 22px 0 24px;
-}
+  .digital-band__item .digital-icon svg {
+    width: 20px;
 
-.digital-band__item {
-  min-width: 0;
+    height: 20px;
 
-  width: 100%;
+    stroke: currentColor;
+  }
 
-  padding: 12px 9px;
 
-  border-radius: 11px;
+  /* TEXTO DIGITAL */
 
-  overflow: hidden;
-   
-text-decoration: none;
-color: inherit;
-   
-  cursor: pointer;
+  .digital-band__item h4 {
+    font-size: 0.68rem;
 
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
-}
+    line-height: 1.15;
 
-.digital-band__item:active {
-  transform: scale(0.97);
-}
+    margin-bottom: 5px;
 
+    overflow-wrap: anywhere;
+  }
 
-/* ICONOS DIGITALES */
+  .digital-band__item p {
+    font-size: 0.55rem;
 
-.digital-band__item .digital-icon {
-  width: 20px;
-  height: 20px;
+    line-height: 1.35;
 
-  margin-bottom: 8px;
+    margin: 0;
 
-  color: #ffffff;
+    overflow-wrap: anywhere;
+  }
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.digital-band__item .digital-icon svg {
-  width: 20px;
-  height: 20px;
-
-  stroke: currentColor;
-}
-
-
-/* TEXTO */
-
-.digital-band__item h4 {
-  font-size: 0.68rem;
-
-  line-height: 1.15;
-
-  margin-bottom: 5px;
-
-  overflow-wrap: anywhere;
-}
-
-.digital-band__item p {
-  font-size: 0.55rem;
-
-  line-height: 1.35;
-
-  margin: 0;
-
-  overflow-wrap: anywhere;
-}
 
   /* ----------------------------------------------------------
      VALADAL
      ---------------------------------------------------------- */
 
   .valadal-section {
-    padding-top: 50px;
+    padding-top: 35px;
 
-    padding-bottom: 72px;
+    padding-bottom: 45px;
   }
 
   .valadal-section__top {
-    grid-template-columns: 1fr;
-
-    gap: 42px;
+    display: block;
   }
 
+  /* OCULTAR CHIP.PNG EN MOBILE */
   .valadal-section__visual {
-    order: 1;
+    display: none;
   }
 
   .valadal-section__content {
-    order: 2;
+    display: block;
 
     max-width: 100%;
-  }
-
-  .valadal-section__image {
-    max-width: 280px;
   }
 
   .valadal-section .values-grid {
@@ -1363,6 +1502,10 @@ color: inherit;
   .work-teaser__grid {
     grid-template-columns:
       repeat(2, 1fr);
+
+    margin-top: 20px;
+
+    margin-bottom: 0;
   }
 
 
@@ -1373,11 +1516,78 @@ color: inherit;
   .about-teaser__inner {
     grid-template-columns: 1fr;
   }
+
+
+  /* ----------------------------------------------------------
+     ACCESIBILIDAD MOBILE
+     ---------------------------------------------------------- */
+
+  .accessibility-control {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+  }
+
+  .accessibility-toggle {
+    width: 24px;
+
+    height: 24px;
+
+    border: none;
+
+    background: transparent;
+
+    font-size: 0.8rem;
+  }
+
+  .accessibility-toggle svg {
+    width: 15px;
+
+    height: 15px;
+  }
+
+  .accessibility-options {
+    position: absolute;
+
+    right: 30px;
+
+    top: 50%;
+
+    transform:
+      translateY(-50%)
+      scale(0.92);
+
+    transform-origin:
+      right center;
+
+    gap: 5px;
+  }
+
+  .accessibility-control.is-open
+  .accessibility-options {
+    transform:
+      translateY(-50%)
+      scale(1);
+  }
+
+  .accessibility-option {
+    width: 27px;
+
+    height: 27px;
+
+    font-size: 0.58rem;
+
+    box-shadow:
+      0 5px 14px rgba(0, 0, 0, 0.14);
+  }
+
 }
 
 
 /* ============================================================
-   12 — SMALL PHONES
+   13 — SMALL PHONES
    ============================================================ */
 
 @media (max-width: 520px) {
@@ -1394,3 +1604,4 @@ color: inherit;
 /* ============================================================
    FIN
    ============================================================ */
+
