@@ -594,6 +594,11 @@ h4 {
   /* ---------- NAVBAR MOBILE ---------- */
 
   .navbar {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100%;
+   z-index: 1000;  
     --navbar-height: 42px;
   }
 
@@ -633,12 +638,6 @@ h4 {
     height: 1.5px;
   }
 
-  /* Drawer */
-  .mobile-controls {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 28px;
-  }
 }
 /* ============================================================
    FOOTER
