@@ -947,15 +947,24 @@ floatCards.forEach((card) => {
 // REINICIAR SI CAMBIA EL TAMAÑO
 // ------------------------------------------------------------
 
+let lastWindowWidth = window.innerWidth;
+
 window.addEventListener(
   "resize",
   () => {
 
-    startFloatLoop();
+    const currentWidth = window.innerWidth;
+
+    if (currentWidth !== lastWindowWidth) {
+
+      lastWindowWidth = currentWidth;
+
+      startFloatLoop();
+
+    }
 
   }
 );
-
 
 // ------------------------------------------------------------
 // INICIAR
