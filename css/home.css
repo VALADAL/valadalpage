@@ -81,6 +81,19 @@
   min-height: 440px;
 }
 
+.device-panel {
+  position: relative;
+  width: 100%;
+  height: 440px;
+  overflow: visible;
+}
+
+.device-panel__grid {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
 .device-panel__core {
   position: absolute;
 
