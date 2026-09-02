@@ -88,12 +88,6 @@
   overflow: visible;
 }
 
-.device-panel__grid {
-  position: absolute;
-  inset: 0;
-  pointer-events: none;
-}
-
 .device-panel__core {
   position: absolute;
 
@@ -1123,20 +1117,21 @@ html[data-theme="dark"]
     overflow: visible;
   }
 
-  .hero-pc {
-    width: 75%;
-    max-width: none;
-    left: 50%;
-    top: 50%;
-
-    filter:
-      drop-shadow(
-        0 10px 16px rgba(0, 0, 0, 0.18)
-      )
-      drop-shadow(
-        0 0 13px rgba(0, 70, 180, 0.20)
-      );
-  }
+.hero-pc {
+  position: absolute;
+  z-index: 2;
+  width: 92%;
+  max-width: 520px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  object-fit: contain;
+  filter: drop-shadow(0 28px 40px rgba(0,0,0,.22))
+          drop-shadow(0 0 22px rgba(0,70,180,.28))
+          drop-shadow(0 0 55px rgba(0,55,160,.20))
+          drop-shadow(0 0 90px rgba(0,45,130,.12));
+  animation: pc-float 5s ease-in-out infinite;
+}
 
 
   /* ----------------------------------------------------------
