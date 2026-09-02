@@ -1392,7 +1392,7 @@ html[data-theme="dark"]
 
     width: 100%;
 
-    padding: 13px 1px;
+    padding: 13px 12px;
 
     border-radius: 5px;
 
@@ -1404,7 +1404,7 @@ html[data-theme="dark"]
   }
 
   .category-card__top {
-    margin-bottom: 9px;
+    margin-bottom: 0px;
   }
 
   .category-card__index {
@@ -1456,10 +1456,10 @@ html[data-theme="dark"]
 
     overflow: hidden;
 
-    padding-top: 12px;
+    padding-top: 3px;
     padding-bottom: 22px;
 
-    margin-top: -8px;
+    margin-top: -20px;
   }
 
   .digital-band__inner {
@@ -1534,9 +1534,8 @@ html[data-theme="dark"]
   .valadal-section {
     padding-top: 12px;
 
-    padding-bottom: 12px;
+    padding-bottom: 0px;
 
-    margin-top: -10px;
   }
 
   .valadal-section__top {
@@ -1607,7 +1606,7 @@ html[data-theme="dark"]
     grid-template-columns:
       repeat(2, 1fr);
 
-    margin-top: 20px;
+    margin-top: 0px;
 
     margin-bottom: 1px;
   }
