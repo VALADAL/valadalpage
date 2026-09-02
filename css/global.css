@@ -568,6 +568,10 @@ h4 {
   align-self: flex-start;
 }
 
+.nav-drawer__accessibility {
+  display: none;
+}
+
 .mobile-controls {
   display: none;
 }
@@ -798,5 +802,35 @@ h4 {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+}
+.nav-drawer__accessibility {
+  position: absolute;
+
+  right: 24px;
+  bottom: 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 7px;
+}
+
+.nav-drawer__accessibility .accessibility-option {
+  width: 34px;
+  height: 34px;
+
+  font-size: 0.62rem;
+
+  background: var(--surface);
+
+  border: 1px solid var(--border);
+
+  box-shadow: var(--shadow-card);
+}
+
+.nav-drawer__accessibility .accessibility-option:hover {
+  border-color: var(--blue);
+  color: var(--blue);
 }
 
