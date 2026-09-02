@@ -245,20 +245,74 @@
 }
 
 .float-card--1 {
+ animation:
+ float-bubble-1 5.5s ease-in-out infinite; 
   top: 10%;
   left: -6%;
 }
 
 .float-card--2 {
+animation:
+ float-bubble-2 6.5s ease-in-out infinite;
   top: 74%;
   right: -8%;
 }
 
 .float-card--3 {
+animation:
+float-bubble-3 5.9s ease-in-out infinite;   
   top: 44%;
   right: -10%;
 }
+@keyframes float-bubble-1 {
 
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(8px, -10px)
+      rotate(1deg);
+  }
+}
+
+
+@keyframes float-bubble-2 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(-9px, 7px)
+      rotate(-1deg);
+  }
+}
+
+
+@keyframes float-bubble-3 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(7px, 9px)
+      rotate(1deg);
+  }
+}
 .float-card {
   transition:
     transform 0.4s var(--ease),
