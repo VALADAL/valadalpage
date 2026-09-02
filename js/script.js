@@ -1,4 +1,3 @@
-
 // ============================================================
 // VALADAL — script.js
 // Archivo compartido por todas las páginas.
@@ -1035,5 +1034,3 @@ if (accessibilityControl && accessibilityToggle) {
       });
 
     });
-
-}
