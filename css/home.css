@@ -878,22 +878,22 @@ html[data-theme="dark"] .work-teaser__item span {
 
   /* Diagnóstico */
   .float-card--1 {
-    top: 82%;
-    left: -50%;
+    top: 40%;
+    right: 755%;
   }
 
   /* Reparación — crece hacia la izquierda */
   .float-card--2 {
-    top: 20%;
-    right: 50%;
+    top: 10%;
+    right: 25%;
 
     transform-origin: right center;
   }
 
   /* Entregas */
   .float-card--3 {
-    top: 72%;
-    right: 50%;
+    top: 78%;
+    right: 25%;
   }
 
 
