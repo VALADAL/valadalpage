@@ -1150,6 +1150,9 @@ html[data-theme="dark"] .work-teaser__item span {
 
   overflow: hidden;
 
+text-decoration: none;
+color: inherit;   
+
   cursor: pointer;
 
   transition:
@@ -1252,7 +1255,10 @@ html[data-theme="dark"] .work-teaser__item span {
   border-radius: 11px;
 
   overflow: hidden;
-
+   
+text-decoration: none;
+color: inherit;
+   
   cursor: pointer;
 
   transition:
