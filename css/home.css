@@ -1313,7 +1313,22 @@ html[data-theme="dark"]
 
     line-height: 1.04;
   }
+.section-lead {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
 
+.section-lead--light {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+.valadal-section__lead {
+  font-size: 0.72rem;
+  line-height: 1.5;
+}
+
+   
   .repair-preview__grid {
     display: grid;
 
