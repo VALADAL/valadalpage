@@ -1,4 +1,4 @@
-  
+```html
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -31,134 +31,212 @@
 
       <a href="#top" class="navbar__logo">
         <span class="navbar__logo-mark">V</span>
-        
       </a>
 
+      <!-- DESKTOP NAVIGATION -->
       <nav class="navbar__links">
-        <a href="#top" class="nav-link is-active" data-i18n="nav.home">Inicio</a>
-        <a href="repair/index.html" class="nav-link" data-i18n="nav.repair">Reparación</a>
-        <a href="digital/index.html" class="nav-link" data-i18n="nav.digital">Digital</a>
-        <a href="work/index.html" class="nav-link" data-i18n="nav.work">Proyectos</a>
-        <a href="about/index.html" class="nav-link" data-i18n="nav.about">Nosotros</a>
-        <a href="contact/index.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+        <a href="#top" class="nav-link is-active" data-i18n="nav.home">
+          Inicio
+        </a>
+
+        <a href="repair/index.html" class="nav-link" data-i18n="nav.repair">
+          Reparación
+        </a>
+
+        <a href="digital/index.html" class="nav-link" data-i18n="nav.digital">
+          Digital
+        </a>
+
+        <a href="work/index.html" class="nav-link" data-i18n="nav.work">
+          Proyectos
+        </a>
+
+        <a href="about/index.html" class="nav-link" data-i18n="nav.about">
+          Nosotros
+        </a>
+
+        <a href="contact/index.html" class="nav-link" data-i18n="nav.contact">
+          Contacto
+        </a>
       </nav>
 
-<div class="navbar__right">
+      <!-- RIGHT SIDE -->
+      <div class="navbar__right">
 
-  <a href="contact/index.html"
-     class="btn btn--primary btn--small"
-     data-i18n="nav.quote">
-    Cotizar
-  </a>
+        <!-- COTIZAR -->
+        <a href="contact/index.html"
+           class="btn btn--primary btn--small"
+           data-i18n="nav.quote">
+          Cotizar
+        </a>
 
-  <div class="accessibility-control" id="accessibilityControl">
+        <!-- DESKTOP ACCESSIBILITY -->
+        <div class="accessibility-control" id="accessibilityControl">
 
-    <button
-      class="accessibility-toggle"
-      id="accessibilityToggle"
-      type="button"
-      aria-label="Accesibilidad"
-      aria-expanded="false">
+          <button
+            class="accessibility-toggle"
+            id="accessibilityToggle"
+            type="button"
+            aria-label="Accesibilidad"
+            aria-expanded="false">
 
-      <svg viewBox="0 0 24 24"
-           fill="none"
-           stroke="currentColor"
-           stroke-width="1.8"
-           stroke-linecap="round"
-           stroke-linejoin="round">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round">
 
-        <circle cx="12" cy="5" r="2"/>
-        <path d="M5 8h14"/>
-        <path d="M12 8v11"/>
-        <path d="M8 21l4-10 4 10"/>
-      </svg>
+              <circle cx="12" cy="5" r="2"/>
+              <path d="M5 8h14"/>
+              <path d="M12 8v11"/>
+              <path d="M8 21l4-10 4 10"/>
 
-    </button>
+            </svg>
 
+          </button>
 
-    <div class="accessibility-options">
+          <div class="accessibility-options">
 
-      <button
-        class="accessibility-option"
-        id="languageToggle"
-        type="button"
-        aria-label="Cambiar idioma">
+            <!-- IDIOMA -->
+            <button
+              class="accessibility-option"
+              id="languageToggle"
+              type="button"
+              aria-label="Cambiar idioma">
 
-        <span id="languageLabel">EN</span>
+              <span id="languageLabel">EN</span>
 
-      </button>
+            </button>
 
+            <!-- TEMA -->
+            <button
+              class="accessibility-option"
+              id="themeToggle"
+              type="button"
+              aria-label="Cambiar modo">
 
-      <button
-        class="accessibility-option"
-        id="themeToggle"
-        type="button"
-        aria-label="Cambiar modo">
+              <span id="themeIcon">◐</span>
 
-        <span id="themeIcon">◐</span>
+            </button>
 
-      </button>
+          </div>
 
-    </div>
+        </div>
 
-  </div>
+        <!-- MOBILE MENU BUTTON -->
+        <button
+          class="navbar__toggle"
+          id="navToggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false">
 
+          <span></span>
+          <span></span>
+          <span></span>
 
-  <button
-    class="navbar__toggle"
-    id="navToggle"
-    aria-label="Abrir menú"
-    aria-expanded="false">
+        </button>
 
-    <span></span>
-    <span></span>
-    <span></span>
+      </div>
 
-  </button>
-
-</div>
     </div>
   </header>
+
 
   <!-- ============ MOBILE DRAWER ============ -->
   <div class="nav-drawer" id="navDrawer">
 
     <nav class="nav-drawer__links">
-      <a href="#top" data-i18n="nav.home">Inicio</a>
-      <a href="repair/index.html" data-i18n="nav.repair">Reparación</a>
-      <a href="digital/index.html" data-i18n="nav.digital">Digital</a>
-      <a href="work/index.html" data-i18n="nav.work">Proyectos</a>
-      <a href="about/index.html" data-i18n="nav.about">Nosotros</a>
-      <a href="contact/index.html" data-i18n="nav.contact">Contacto</a>
+
+      <a href="#top" data-i18n="nav.home">
+        Inicio
+      </a>
+
+      <a href="repair/index.html" data-i18n="nav.repair">
+        Reparación
+      </a>
+
+      <a href="digital/index.html" data-i18n="nav.digital">
+        Digital
+      </a>
+
+      <a href="work/index.html" data-i18n="nav.work">
+        Proyectos
+      </a>
+
+      <a href="about/index.html" data-i18n="nav.about">
+        Nosotros
+      </a>
+
+      <a href="contact/index.html" data-i18n="nav.contact">
+        Contacto
+      </a>
+
     </nav>
 
-    <a href="contact/index.html" class="btn btn--primary nav-drawer__cta" data-i18n="nav.quote">
+    <!-- MOBILE CTA -->
+    <a
+      href="contact/index.html"
+      class="btn btn--primary nav-drawer__cta"
+      data-i18n="nav.quote">
       Cotizar
     </a>
 
   </div>
 
+
   <!-- ============ HERO ============ -->
   <section class="hero" id="top">
+
     <div class="container hero__inner">
 
       <div class="hero__content">
 
         <span class="pill">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none">
-            <circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="2"/>
-            <path d="M12 7v5l3 3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+
+          <svg
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none">
+
+            <circle
+              cx="12"
+              cy="12"
+              r="9"
+              stroke="currentColor"
+              stroke-width="2"/>
+
+            <path
+              d="M12 7v5l3 3"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"/>
+
           </svg>
-          <span data-i18n="hero.pill">Reparación y Soluciones Digitales</span>
+
+          <span data-i18n="hero.pill">
+            Reparación y Soluciones Digitales
+          </span>
+
         </span>
 
         <h1 class="hero__title">
-          <span class="hero__title-line hero__title-line--dark" data-i18n="hero.title1">
+
+          <span
+            class="hero__title-line hero__title-line--dark"
+            data-i18n="hero.title1">
             Tecnología para el
           </span>
-          <span class="hero__title-line hero__title-line--accent" data-i18n="hero.title2">
+
+          <span
+            class="hero__title-line hero__title-line--accent"
+            data-i18n="hero.title2">
             mundo real.
           </span>
+
         </h1>
 
         <p class="hero__subtitle" data-i18n="hero.subtitle">
@@ -168,343 +246,527 @@
         </p>
 
         <div class="hero__actions">
-          <a href="#what-we-do" class="btn btn--primary" data-i18n="hero.explore">
+
+          <a
+            href="#what-we-do"
+            class="btn btn--primary"
+            data-i18n="hero.explore">
             Explorar servicios
           </a>
-          <a href="contact/index.html" class="btn btn--ghost" data-i18n="hero.contact">
+
+          <a
+            href="contact/index.html"
+            class="btn btn--ghost"
+            data-i18n="hero.contact">
             Contactar a Valadal
           </a>
+
         </div>
 
       </div>
 
+
+      <!-- HERO VISUAL -->
       <div class="hero__visual">
 
         <div class="device-panel">
-        <div class="device-panel__grid"></div>
+
+          <div class="device-panel__grid"></div>
 
           <img
-              src="assets/images/PC_2.PNG"
-              alt="VALADAL PC"
-              class="hero-pc"
-        >
+            src="assets/images/PC_2.PNG"
+            alt="VALADAL PC"
+            class="hero-pc">
+
         </div>
+
 
         <div class="float-card float-card--1">
-          <span class="float-card__icon">◎</span>
-          <span data-i18n="hero.free">Diagnóstico en menos de 5 horas</span>
+
+          <span class="float-card__icon">
+            ◎
+          </span>
+
+          <span data-i18n="hero.free">
+            Diagnóstico en menos de 5 horas
+          </span>
+
         </div>
+
 
         <div class="float-card float-card--2">
-          <span class="float-card__icon">✓</span>
-          <span data-i18n="hero.certified">Reparación profesional</span>
+
+          <span class="float-card__icon">
+            ✓
+          </span>
+
+          <span data-i18n="hero.certified">
+            Reparación profesional
+          </span>
+
         </div>
+
 
         <div class="float-card float-card--3">
-          <span class="float-card__icon">◈</span>
-          <span data-i18n="hero.turnaround">Entregas Nacional e Internacional</span>
+
+          <span class="float-card__icon">
+            ◈
+          </span>
+
+          <span data-i18n="hero.turnaround">
+            Entregas Nacional e Internacional
+          </span>
+
         </div>
 
       </div>
+
     </div>
+
   </section>
 
-<!-- ============ REPAIR PREVIEW ============ -->
-<section class="section" style="padding-top: 0;">
-  <div class="container">
 
-    <p class="eyebrow reveal" data-i18n="repair.eyebrow">Reparación</p>
+  <!-- ============ REPAIR PREVIEW ============ -->
+  <section class="section" style="padding-top: 0;">
 
-    <h2 class="section-title reveal" data-i18n="repair.title">
-      Mantén tu tecnología funcionando.
-    </h2>
+    <div class="container">
 
-    <div class="repair-preview__grid">
+      <p class="eyebrow reveal" data-i18n="repair.eyebrow">
+        Reparación
+      </p>
 
-      <!-- 01 — Computadoras -->
-      <a href="repair/index.html" class="category-card reveal">
-        <div class="category-card__top">
-          <span class="category-card__index">01</span>
+      <h2 class="section-title reveal" data-i18n="repair.title">
+        Mantén tu tecnología funcionando.
+      </h2>
 
-          <span class="category-card__icon">
-            <svg xmlns="http://www.w3.org/2000/svg"
-                 viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="#0066FF"
-                 stroke-width="2"
-                 stroke-linecap="round"
-                 stroke-linejoin="round">
-              <rect x="3" y="4" width="18" height="13" rx="2"/>
-              <path d="M8 21h8"/>
+
+      <div class="repair-preview__grid">
+
+        <!-- COMPUTADORAS -->
+        <a
+          href="repair/index.html"
+          class="category-card reveal">
+
+          <div class="category-card__top">
+
+            <span class="category-card__index">
+              01
+            </span>
+
+            <span class="category-card__icon">
+
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="#0066FF"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <rect x="3" y="4" width="18" height="13" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+
+              </svg>
+
+            </span>
+
+          </div>
+
+          <h3 data-i18n="repair.computers">
+            Computadoras
+          </h3>
+
+          <p class="category-card__sub">
+            Laptop · MacBook · PC
+          </p>
+
+          <p class="category-card__desc" data-i18n="repair.computersDesc">
+            Diagnóstico, reparación, mantenimiento y actualizaciones
+            para todo tipo de computadoras.
+          </p>
+
+        </a>
+
+
+        <!-- SMARTPHONES -->
+        <a
+          href="repair/index.html"
+          class="category-card reveal">
+
+          <div class="category-card__top">
+
+            <span class="category-card__index">
+              02
+            </span>
+
+            <span class="category-card__icon" aria-hidden="true">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <rect x="6" y="2.5" width="12" height="19" rx="2.5"/>
+                <path d="M10 5h4"/>
+                <path d="M11 18.5h2"/>
+
+              </svg>
+
+            </span>
+
+          </div>
+
+          <h3 data-i18n="repair.smartphones">
+            Smartphones
+          </h3>
+
+          <p class="category-card__sub">
+            iPhone · Android
+          </p>
+
+          <p class="category-card__desc" data-i18n="repair.smartphonesDesc">
+            Diagnóstico, reparación y mantenimiento para que tu teléfono
+            vuelva a funcionar correctamente.
+          </p>
+
+        </a>
+
+
+        <!-- GAMING -->
+        <a
+          href="repair/index.html"
+          class="category-card reveal">
+
+          <div class="category-card__top">
+
+            <span class="category-card__index">
+              03
+            </span>
+
+            <span class="category-card__icon" aria-hidden="true">
+
+              <svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.8"
+                stroke-linecap="round"
+                stroke-linejoin="round">
+
+                <path d="M6.5 8h11a4 4 0 0 1 3.8 5.2l-1.3 4.2a2.2 2.2 0 0 1-3.7 1l-2.3-2.4H10l-2.3 2.4a2.2 2.2 0 0 1-3.7-1l-1.3-4.2A4 4 0 0 1 6.5 8Z"/>
+                <path d="M7 11v4"/>
+                <path d="M5 13h4"/>
+                <circle cx="16.5" cy="12.5" r=".8"/>
+                <circle cx="18.5" cy="14.5" r=".8"/>
+
+              </svg>
+
+            </span>
+
+          </div>
+
+          <h3 data-i18n="repair.gaming">
+            Gaming
+          </h3>
+
+          <p class="category-card__sub">
+            PlayStation · Xbox · Controles
+          </p>
+
+          <p class="category-card__desc" data-i18n="repair.gamingDesc">
+            Reparación de HDMI, solución de drift, limpieza y diagnóstico
+            completo de consolas.
+          </p>
+
+        </a>
+
+      </div>
+
+
+      <a
+        href="repair/index.html"
+        class="btn btn--dark reveal"
+        data-i18n="repair.button">
+        Explorar reparación →
+      </a>
+
+    </div>
+
+  </section>
+
+
+  <!-- ============ DIGITAL SOLUTIONS ============ -->
+  <section class="section digital-band">
+
+    <div class="container digital-band__inner">
+
+      <p
+        class="eyebrow eyebrow--onblack reveal"
+        data-i18n="digital.eyebrow">
+        Soluciones Digitales
+      </p>
+
+      <h2
+        class="section-title section-title--light reveal"
+        data-i18n="digital.title">
+        Construye lo que viene.
+      </h2>
+
+      <p
+        class="section-lead section-lead--light reveal"
+        data-i18n="digital.text">
+        Sitios web, sistemas personalizados y automatizaciones diseñadas
+        para ayudar a tu empresa a trabajar de forma más inteligente —
+        construidos con el mismo cuidado que ponemos en cada reparación.
+      </p>
+
+
+      <div class="digital-band__grid">
+
+        <!-- WEB -->
+        <a
+          href="digital/index.html"
+          class="digital-band__item reveal">
+
+          <span class="digital-icon" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <rect x="3" y="4" width="18" height="15" rx="2"/>
+              <path d="M3 8h18"/>
+              <path d="M7 12h4"/>
+              <path d="M7 15h7"/>
+
+            </svg>
+
+          </span>
+
+          <h4 data-i18n="digital.web">
+            Web
+          </h4>
+
+          <p data-i18n="digital.webDesc">
+            Sitios web, landing pages y páginas empresariales.
+          </p>
+
+        </a>
+
+
+        <!-- SISTEMAS -->
+        <a
+          href="digital/index.html"
+          class="digital-band__item reveal">
+
+          <span class="digital-icon" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <rect x="3" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="14" y="3" width="7" height="7" rx="1.5"/>
+              <rect x="3" y="14" width="7" height="7" rx="1.5"/>
+              <rect x="14" y="14" width="7" height="7" rx="1.5"/>
+
+            </svg>
+
+          </span>
+
+          <h4 data-i18n="digital.systems">
+            Sistemas
+          </h4>
+
+          <p data-i18n="digital.systemsDesc">
+            Herramientas personalizadas, sistemas internos y utilidades empresariales.
+          </p>
+
+        </a>
+
+
+        <!-- AUTOMATIZACIÓN -->
+        <a
+          href="digital/index.html"
+          class="digital-band__item reveal">
+
+          <span class="digital-icon" aria-hidden="true">
+
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.8"
+              stroke-linecap="round"
+              stroke-linejoin="round">
+
+              <path d="M12 3v4"/>
               <path d="M12 17v4"/>
+              <path d="M3 12h4"/>
+              <path d="M17 12h4"/>
+              <circle cx="12" cy="12" r="4"/>
+              <path d="m5.6 5.6 2.8 2.8"/>
+              <path d="m15.6 15.6 2.8 2.8"/>
+              <path d="m18.4 5.6-2.8 2.8"/>
+              <path d="m8.4 15.6-2.8 2.8"/>
+
             </svg>
+
           </span>
-        </div>
 
-        <h3 data-i18n="repair.computers">Computadoras</h3>
-        <p class="category-card__sub">Laptop · MacBook · PC</p>
+          <h4 data-i18n="digital.automation">
+            Automatización
+          </h4>
 
-        <p class="category-card__desc" data-i18n="repair.computersDesc">
-          Diagnóstico, reparación, mantenimiento y actualizaciones para todo tipo de computadoras.
-        </p>
-      </a>
+          <p data-i18n="digital.automationDesc">
+            Flujos de trabajo, automatización y procesos digitales.
+          </p>
 
-
-      <!-- 02 — Smartphones -->
-      <a href="repair/index.html" class="category-card reveal">
-        <div class="category-card__top">
-          <span class="category-card__index">02</span>
-
-          <span class="category-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="1.8"
-                 stroke-linecap="round"
-                 stroke-linejoin="round">
-              <rect x="6" y="2.5" width="12" height="19" rx="2.5"></rect>
-              <path d="M10 5h4"></path>
-              <path d="M11 18.5h2"></path>
-            </svg>
-          </span>
-        </div>
-
-        <h3 data-i18n="repair.smartphones">Smartphones</h3>
-        <p class="category-card__sub">iPhone · Android</p>
-
-        <p class="category-card__desc" data-i18n="repair.smartphonesDesc">
-          Diagnóstico, reparación y mantenimiento para que tu teléfono vuelva a funcionar correctamente.
-        </p>
-      </a>
-
-
-      <!-- 03 — Gaming -->
-      <a href="repair/index.html" class="category-card reveal">
-        <div class="category-card__top">
-          <span class="category-card__index">03</span>
-
-          <span class="category-card__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"
-                 fill="none"
-                 stroke="currentColor"
-                 stroke-width="1.8"
-                 stroke-linecap="round"
-                 stroke-linejoin="round">
-              <path d="M6.5 8h11a4 4 0 0 1 3.8 5.2l-1.3 4.2a2.2 2.2 0 0 1-3.7 1l-2.3-2.4H10l-2.3 2.4a2.2 2.2 0 0 1-3.7-1l-1.3-4.2A4 4 0 0 1 6.5 8Z"></path>
-              <path d="M7 11v4"></path>
-              <path d="M5 13h4"></path>
-              <circle cx="16.5" cy="12.5" r=".8"></circle>
-              <circle cx="18.5" cy="14.5" r=".8"></circle>
-            </svg>
-          </span>
-        </div>
-
-        <h3 data-i18n="repair.gaming">Gaming</h3>
-        <p class="category-card__sub">PlayStation · Xbox · Controles</p>
-
-        <p class="category-card__desc" data-i18n="repair.gamingDesc">
-          Reparación de HDMI, solución de drift, limpieza y diagnóstico completo de consolas.
-        </p>
-      </a>
-
-    </div>
-
-    <a href="repair/index.html"
-       class="btn btn--dark reveal"
-       data-i18n="repair.button">
-      Explorar reparación →
-    </a>
-
-  </div>
-</section>
-  
-<!-- ============ DIGITAL SOLUTIONS ============ -->
-<section class="section digital-band">
-  <div class="container digital-band__inner">
-
-    <p class="eyebrow eyebrow--onblack reveal" data-i18n="digital.eyebrow">
-      Soluciones Digitales
-    </p>
-
-    <h2 class="section-title section-title--light reveal" data-i18n="digital.title">
-      Construye lo que viene.
-    </h2>
-
-    <p class="section-lead section-lead--light reveal" data-i18n="digital.text">
-      Sitios web, sistemas personalizados y automatizaciones diseñadas
-      para ayudar a tu empresa a trabajar de forma más inteligente —
-      construidos con el mismo cuidado que ponemos en cada reparación.
-    </p>
-
-
-    <div class="digital-band__grid">
-
-      <!-- WEB -->
-      <a href="digital/index.html" class="digital-band__item reveal">
-
-        <span class="digital-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"
-               fill="none"
-               stroke="currentColor"
-               stroke-width="1.8"
-               stroke-linecap="round"
-               stroke-linejoin="round">
-            <rect x="3" y="4" width="18" height="15" rx="2"/>
-            <path d="M3 8h18"/>
-            <path d="M7 12h4"/>
-            <path d="M7 15h7"/>
-          </svg>
-        </span>
-
-        <h4 data-i18n="digital.web">
-          Web
-        </h4>
-
-        <p data-i18n="digital.webDesc">
-          Sitios web, landing pages y páginas empresariales.
-        </p>
-
-      </a>
-
-
-      <!-- SISTEMAS -->
-      <a href="digital/index.html" class="digital-band__item reveal">
-
-        <span class="digital-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"
-               fill="none"
-               stroke="currentColor"
-               stroke-width="1.8"
-               stroke-linecap="round"
-               stroke-linejoin="round">
-            <rect x="3" y="3" width="7" height="7" rx="1.5"/>
-            <rect x="14" y="3" width="7" height="7" rx="1.5"/>
-            <rect x="3" y="14" width="7" height="7" rx="1.5"/>
-            <rect x="14" y="14" width="7" height="7" rx="1.5"/>
-          </svg>
-        </span>
-
-        <h4 data-i18n="digital.systems">
-          Sistemas
-        </h4>
-
-        <p data-i18n="digital.systemsDesc">
-          Herramientas personalizadas, sistemas internos y utilidades empresariales.
-        </p>
-
-      </a>
-
-
-      <!-- AUTOMATIZACIÓN -->
-      <a href="digital/index.html" class="digital-band__item reveal">
-
-        <span class="digital-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24"
-               fill="none"
-               stroke="currentColor"
-               stroke-width="1.8"
-               stroke-linecap="round"
-               stroke-linejoin="round">
-            <path d="M12 3v4"/>
-            <path d="M12 17v4"/>
-            <path d="M3 12h4"/>
-            <path d="M17 12h4"/>
-            <circle cx="12" cy="12" r="4"/>
-            <path d="m5.6 5.6 2.8 2.8"/>
-            <path d="m15.6 15.6 2.8 2.8"/>
-            <path d="m18.4 5.6-2.8 2.8"/>
-            <path d="m8.4 15.6-2.8 2.8"/>
-          </svg>
-        </span>
-
-        <h4 data-i18n="digital.automation">
-          Automatización
-        </h4>
-
-        <p data-i18n="digital.automationDesc">
-          Flujos de trabajo, automatización y procesos digitales.
-        </p>
-
-      </a>
-
-    </div>
-
-  </div>
-</section>
-
-  
-<!-- ============ VALADAL — INTRO + VALUES ============ -->
-<section class="section valadal-section">
-  <div class="container">
-
-    <!-- TOP: IMAGEN + TEXTO -->
-    <div class="valadal-section__top">
-
-      <!-- IMAGEN -->
-      <div class="valadal-section__visual reveal">
-        <img
-          src="assets/images/Chip.PNG"
-          alt="Tecnología VALADAL"
-          class="valadal-section__image"
-        >
-      </div>
-
-      <!-- TEXTO -->
-      <div class="valadal-section__content">
-
-        <p class="eyebrow reveal">
-          Reparamos · Construimos · Creamos
-        </p>
-
-        <h2 class="section-title reveal">
-          Tecnología que funciona.<br>
-          Soluciones que perduran.
-        </h2>
-
-        <p class="section-lead reveal valadal-section__lead">
-          VALADAL comenzó como un taller de reparación, pero se convirtió en algo más grande.
-          Hoy combinamos reparación técnica con diseño y desarrollo de soluciones digitales —
-          para que la tecnología que ya tienes funcione mejor y la tecnología que tu empresa
-          necesita se construya correctamente desde el principio.
-        </p>
+        </a>
 
       </div>
 
     </div>
 
+  </section>
 
-    <!-- VALUES: DEBAJO DE TODO -->
-<div class="values-grid">
 
-  <div class="value-item reveal">
-    <span class="value-item__index">01</span>
-    <h3>Precisión</h3>
-    <p>Diagnóstico antes que reemplazo.</p>
-  </div>
+  <!-- ============ VALADAL — INTRO + VALUES ============ -->
+  <section class="section valadal-section">
 
-  <div class="value-item reveal">
-    <span class="value-item__index">02</span>
-    <h3>Calidad</h3>
-    <p>Soluciones hechas para durar.</p>
-  </div>
+    <div class="container">
 
-  <div class="value-item reveal">
-    <span class="value-item__index">03</span>
-    <h3>Innovación</h3>
-    <p>Tecnología pensada para el futuro.</p>
-  </div>
+      <div class="valadal-section__top">
 
-  <div class="value-item reveal">
-    <span class="value-item__index">04</span>
-    <h3>Confianza</h3>
-    <p>Transparencia en cada proyecto.</p>
-  </div>
+        <!-- IMAGEN -->
+        <div class="valadal-section__visual reveal">
 
-  </div>
-</section>
+          <img
+            src="assets/images/Chip.PNG"
+            alt="Tecnología VALADAL"
+            class="valadal-section__image">
+
+        </div>
+
+
+        <!-- TEXTO -->
+        <div class="valadal-section__content">
+
+          <p class="eyebrow reveal">
+            Reparamos · Construimos · Creamos
+          </p>
+
+          <h2 class="section-title reveal">
+            Tecnología que funciona.<br>
+            Soluciones que perduran.
+          </h2>
+
+          <p class="section-lead reveal valadal-section__lead">
+            VALADAL comenzó como un taller de reparación, pero se convirtió
+            en algo más grande. Hoy combinamos reparación técnica con diseño
+            y desarrollo de soluciones digitales — para que la tecnología que
+            ya tienes funcione mejor y la tecnología que tu empresa necesita
+            se construya correctamente desde el principio.
+          </p>
+
+        </div>
+
+      </div>
+
+
+      <!-- VALUES -->
+      <div class="values-grid">
+
+        <div class="value-item reveal">
+
+          <span class="value-item__index">
+            01
+          </span>
+
+          <h3>
+            Precisión
+          </h3>
+
+          <p>
+            Diagnóstico antes que reemplazo.
+          </p>
+
+        </div>
+
+
+        <div class="value-item reveal">
+
+          <span class="value-item__index">
+            02
+          </span>
+
+          <h3>
+            Calidad
+          </h3>
+
+          <p>
+            Soluciones hechas para durar.
+          </p>
+
+        </div>
+
+
+        <div class="value-item reveal">
+
+          <span class="value-item__index">
+            03
+          </span>
+
+          <h3>
+            Innovación
+          </h3>
+
+          <p>
+            Tecnología pensada para el futuro.
+          </p>
+
+        </div>
+
+
+        <div class="value-item reveal">
+
+          <span class="value-item__index">
+            04
+          </span>
+
+          <h3>
+            Confianza
+          </h3>
+
+          <p>
+            Transparencia en cada proyecto.
+          </p>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </section>
+
 
   <!-- ============ SELECTED WORK ============ -->
   <section class="section">
+
     <div class="container">
 
       <p class="eyebrow reveal" data-i18n="work.eyebrow">
@@ -520,44 +782,84 @@
         Esto es el tipo de trabajo que encontrarás en nuestro portafolio completo.
       </p>
 
+
       <div class="work-teaser__grid">
 
-        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0A0A0A, #1c2530);">
-          <span data-i18n="work.gaming">Gaming</span>
+        <div
+          class="work-teaser__item reveal"
+          style="background: linear-gradient(160deg, #0A0A0A, #1c2530);">
+
+          <span data-i18n="work.gaming">
+            Gaming
+          </span>
+
         </div>
 
-        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0066FF, #00A3FF);">
-          <span data-i18n="work.computers">Computadoras</span>
+
+        <div
+          class="work-teaser__item reveal"
+          style="background: linear-gradient(160deg, #0066FF, #00A3FF);">
+
+          <span data-i18n="work.computers">
+            Computadoras
+          </span>
+
         </div>
 
-        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #E5E7EB, #6B7280);">
-          <span data-i18n="work.smartphones">Smartphones</span>
+
+        <div
+          class="work-teaser__item reveal"
+          style="background: linear-gradient(160deg, #E5E7EB, #6B7280);">
+
+          <span data-i18n="work.smartphones">
+            Smartphones
+          </span>
+
         </div>
 
-        <div class="work-teaser__item reveal" style="background: linear-gradient(160deg, #0A0A0A, #0066FF);">
-          <span data-i18n="work.digital">Digital</span>
+
+        <div
+          class="work-teaser__item reveal"
+          style="background: linear-gradient(160deg, #0A0A0A, #0066FF);">
+
+          <span data-i18n="work.digital">
+            Digital
+          </span>
+
         </div>
 
       </div>
 
-      <a href="work/index.html" class="btn btn--ghost reveal" data-i18n="work.button">
+
+      <a
+        href="work/index.html"
+        class="btn btn--ghost reveal"
+        data-i18n="work.button">
         Ver todos los proyectos →
       </a>
 
     </div>
+
   </section>
+
 
   <!-- ============ ABOUT ============ -->
   <section class="section">
+
     <div class="container about-teaser__inner">
 
       <div>
-        <p class="eyebrow reveal" data-i18n="about.eyebrow">Nosotros</p>
+
+        <p class="eyebrow reveal" data-i18n="about.eyebrow">
+          Nosotros
+        </p>
 
         <h2 class="section-title reveal" data-i18n="about.title">
           La tecnología debería trabajar para ti.
         </h2>
+
       </div>
+
 
       <div>
 
@@ -567,28 +869,41 @@
           encontrar la solución y hacer que funcione.
         </p>
 
-        <a href="about/index.html" class="btn btn--ghost reveal" style="margin-top: 20px;" data-i18n="about.button">
+        <a
+          href="about/index.html"
+          class="btn btn--ghost reveal"
+          style="margin-top: 20px;"
+          data-i18n="about.button">
           Conoce más →
         </a>
 
       </div>
+
     </div>
+
   </section>
+
 
   <!-- ============ FINAL CTA ============ -->
   <section class="final-cta">
+
     <div class="container">
 
       <h2 class="reveal" data-i18n="cta.title">
         Hagámoslo funcionar.
       </h2>
 
-      <a href="contact/index.html" class="btn btn--primary reveal" data-i18n="cta.button">
+      <a
+        href="contact/index.html"
+        class="btn btn--primary reveal"
+        data-i18n="cta.button">
         Cotizar →
       </a>
 
     </div>
+
   </section>
+
 
   <!-- ============ FOOTER ============ -->
   <footer class="footer">
@@ -597,37 +912,66 @@
 
       <div class="footer__brand">
 
-        <span class="navbar__logo-mark">V</span>
+        <span class="navbar__logo-mark">
+          V
+        </span>
 
         <div>
-          <p class="footer__name">Valadal</p>
+
+          <p class="footer__name">
+            Valadal
+          </p>
 
           <p class="footer__tagline" data-i18n="footer.tagline">
             Tecnología para el mundo real.
           </p>
+
         </div>
 
       </div>
+
 
       <div class="footer__cols">
 
         <div class="footer__col">
 
-          <h4 data-i18n="footer.company">Empresa</h4>
+          <h4 data-i18n="footer.company">
+            Empresa
+          </h4>
 
-          <a href="repair/index.html" data-i18n="nav.repair">Reparación</a>
-          <a href="digital/index.html" data-i18n="nav.digital">Digital</a>
-          <a href="work/index.html" data-i18n="nav.work">Proyectos</a>
-          <a href="about/index.html" data-i18n="nav.about">Nosotros</a>
-          <a href="contact/index.html" data-i18n="nav.contact">Contacto</a>
+          <a href="repair/index.html" data-i18n="nav.repair">
+            Reparación
+          </a>
+
+          <a href="digital/index.html" data-i18n="nav.digital">
+            Digital
+          </a>
+
+          <a href="work/index.html" data-i18n="nav.work">
+            Proyectos
+          </a>
+
+          <a href="about/index.html" data-i18n="nav.about">
+            Nosotros
+          </a>
+
+          <a href="contact/index.html" data-i18n="nav.contact">
+            Contacto
+          </a>
 
         </div>
 
+
         <div class="footer__col">
 
-          <h4 data-i18n="footer.contact">Contáctanos</h4>
+          <h4 data-i18n="footer.contact">
+            Contáctanos
+          </h4>
 
-          <a href="https://wa.me/523300000000" target="_blank" rel="noopener">
+          <a
+            href="https://wa.me/523300000000"
+            target="_blank"
+            rel="noopener">
             WhatsApp
           </a>
 
@@ -638,11 +982,15 @@
         </div>
 
       </div>
+
     </div>
+
 
     <div class="container footer__bottom">
 
-      <span>© 2026 Valadal</span>
+      <span>
+        © 2026 Valadal
+      </span>
 
       <span data-i18n="footer.location">
         Guadalajara, Jalisco, México
@@ -652,7 +1000,10 @@
 
   </footer>
 
+
+  <!-- ============ JAVASCRIPT ============ -->
   <script src="js/script.js"></script>
 
 </body>
 </html>
+```
