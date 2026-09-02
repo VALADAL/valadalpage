@@ -259,6 +259,19 @@
   right: -10%;
 }
 
+.float-card {
+  transition:
+    transform 0.4s var(--ease),
+    box-shadow 0.4s var(--ease),
+    opacity 0.4s ease;
+}
+
+.float-card.is-active {
+  transform: translateY(-4px) scale(1.04);
+
+  box-shadow:
+    0 14px 32px rgba(0, 0, 0, 0.18);
+}
 
 /* ============================================================
    04 — REPAIR PREVIEW
