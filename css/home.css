@@ -474,7 +474,7 @@
 }
 
 .digital-band__item h4 {
-  color: var(--white);
+  color: #ffffff;
 
   font-size: 1.05rem;
 
@@ -502,6 +502,8 @@
   justify-content: center;
 
   color: #ffffff;
+
+  margin-bottom: 12px;
 
   flex-shrink: 0;
 }
