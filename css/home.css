@@ -1031,7 +1031,7 @@ html[data-theme="dark"] .work-teaser__item span {
    animation:
    float-bubble-1 5.5s ease-in-out infinite; 
     top: 40%;
-    left: 20%;
+    left: 13%;
   }
 
   /* Reparación */
@@ -1103,149 +1103,212 @@ html[data-theme="dark"] .work-teaser__item span {
 }
 
 
-  /* ----------------------------------------------------------
-     REPAIR
-     3 CARDS HORIZONTALES
-     ---------------------------------------------------------- */
+/* ----------------------------------------------------------
+   REPAIR
+   3 CARDS HORIZONTALES
+   ---------------------------------------------------------- */
 
-  .repair-preview__grid {
-    display: grid;
+.repair-preview__grid {
+  display: grid;
 
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
 
-    gap: 8px;
+  gap: 8px;
 
-    width: 100%;
-    max-width: 100%;
+  width: 100%;
+  max-width: 100%;
 
-    margin: 15px 0 24px;
-  }
-
-  .category-card {
-    min-width: 0;
-
-    width: 100%;
-
-    padding: 13px 10px;
-
-    border-radius: 13px;
-
-    overflow: hidden;
-  }
-
-  .category-card__top {
-    margin-bottom: 9px;
-  }
-
-  .category-card__index {
-    font-size: 0.58rem;
-  }
-
-  .category-card__icon {
-    width: 18px;
-    height: 18px;
-  }
-
-  .category-card__icon svg {
-    width: 18px;
-    height: 18px;
-  }
-
-  .category-card h3 {
-    font-size: 0.72rem;
-
-    line-height: 1.15;
-
-    margin-bottom: 4px;
-
-    overflow-wrap: anywhere;
-  }
-
-  .category-card__sub {
-    font-size: 0.55rem;
-
-    line-height: 1.25;
-
-    margin-bottom: 7px;
-
-    overflow-wrap: anywhere;
-  }
-
-  .category-card p.category-card__desc {
-    font-size: 0.56rem;
-
-    line-height: 1.35;
-
-    margin: 0;
-
-    overflow-wrap: anywhere;
-  }
+  margin: 15px 0 24px;
+}
 
 
-  /* ----------------------------------------------------------
-     DIGITAL
-     3 ITEMS HORIZONTALES
-     ---------------------------------------------------------- */
+/* TÍTULO REPAIR — MISMO TAMAÑO QUE EL HERO */
 
-  .digital-band {
-    width: auto;
+.repair-preview__grid ~ .btn {
+  display: none;
+}
 
-    max-width: calc(100% - 24px);
 
-    margin: 0 12px;
+/* Si el título de Repair usa .section-title */
+.section-title {
+  font-size: clamp(1.55rem, 6vw, 2rem);
+  line-height: 1.04;
+}
 
-    border-radius: 18px;
 
-    overflow: hidden;
-  }
+/* TARJETAS */
 
-  .digital-band__grid {
-    display: grid;
+.category-card {
+  min-width: 0;
 
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
+  width: 100%;
 
-    gap: 8px;
+  padding: 13px 10px;
 
-    width: 100%;
-    max-width: 100%;
+  border-radius: 13px;
 
-    margin: 22px 0 24px;
-  }
+  overflow: hidden;
 
-  .digital-band__item {
-    min-width: 0;
+  cursor: pointer;
 
-    width: 100%;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
 
-    padding: 12px 9px;
+.category-card:active {
+  transform: scale(0.97);
+}
 
-    border-radius: 11px;
 
-    overflow: hidden;
-  }
+.category-card__top {
+  margin-bottom: 9px;
+}
 
-  .digital-band__item h4 {
-    font-size: 0.68rem;
+.category-card__index {
+  font-size: 0.58rem;
+}
 
-    line-height: 1.15;
+.category-card__icon {
+  width: 18px;
+  height: 18px;
+}
 
-    margin-bottom: 5px;
+.category-card__icon svg {
+  width: 18px;
+  height: 18px;
+}
 
-    overflow-wrap: anywhere;
-  }
+.category-card h3 {
+  font-size: 0.72rem;
 
-  .digital-band__item p {
-    font-size: 0.55rem;
+  line-height: 1.15;
 
-    line-height: 1.35;
+  margin-bottom: 4px;
 
-    margin: 0;
+  overflow-wrap: anywhere;
+}
 
-    overflow-wrap: anywhere;
-  }
+.category-card__sub {
+  font-size: 0.55rem;
 
+  line-height: 1.25;
+
+  margin-bottom: 7px;
+
+  overflow-wrap: anywhere;
+}
+
+.category-card p.category-card__desc {
+  font-size: 0.56rem;
+
+  line-height: 1.35;
+
+  margin: 0;
+
+  overflow-wrap: anywhere;
+}
+
+
+/* ----------------------------------------------------------
+   DIGITAL
+   3 ITEMS HORIZONTALES
+   ---------------------------------------------------------- */
+
+.digital-band {
+  width: auto;
+
+  max-width: calc(100% - 24px);
+
+  margin: 0 12px;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+}
+
+.digital-band__grid {
+  display: grid;
+
+  grid-template-columns:
+    repeat(3, minmax(0, 1fr));
+
+  gap: 8px;
+
+  width: 100%;
+  max-width: 100%;
+
+  margin: 22px 0 24px;
+}
+
+.digital-band__item {
+  min-width: 0;
+
+  width: 100%;
+
+  padding: 12px 9px;
+
+  border-radius: 11px;
+
+  overflow: hidden;
+
+  cursor: pointer;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.digital-band__item:active {
+  transform: scale(0.97);
+}
+
+
+/* ICONOS DIGITALES */
+
+.digital-band__item .digital-icon {
+  width: 20px;
+  height: 20px;
+
+  margin-bottom: 8px;
+
+  color: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.digital-band__item .digital-icon svg {
+  width: 20px;
+  height: 20px;
+
+  stroke: currentColor;
+}
+
+
+/* TEXTO */
+
+.digital-band__item h4 {
+  font-size: 0.68rem;
+
+  line-height: 1.15;
+
+  margin-bottom: 5px;
+
+  overflow-wrap: anywhere;
+}
+
+.digital-band__item p {
+  font-size: 0.55rem;
+
+  line-height: 1.35;
+
+  margin: 0;
+
+  overflow-wrap: anywhere;
+}
 
   /* ----------------------------------------------------------
      VALADAL
