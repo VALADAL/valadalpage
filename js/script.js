@@ -948,3 +948,68 @@ window.addEventListener(
 
 startFloatLoop();
 
+/* ============================================================
+   ACCESIBILIDAD
+   ============================================================ */
+
+const accessibilityControl =
+  document.getElementById("accessibilityControl");
+
+const accessibilityToggle =
+  document.getElementById("accessibilityToggle");
+
+if (accessibilityControl && accessibilityToggle) {
+
+  accessibilityToggle.addEventListener("click", (event) => {
+
+    event.stopPropagation();
+
+    const isOpen =
+      accessibilityControl.classList.toggle("is-open");
+
+    accessibilityToggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+  });
+
+
+  document.addEventListener("click", (event) => {
+
+    if (!accessibilityControl.contains(event.target)) {
+
+      accessibilityControl.classList.remove("is-open");
+
+      accessibilityToggle.setAttribute(
+        "aria-expanded",
+        "false"
+      );
+
+    }
+
+  });
+
+
+  document
+    .querySelectorAll(".accessibility-option")
+    .forEach((button) => {
+
+      button.addEventListener("click", () => {
+
+        setTimeout(() => {
+
+          accessibilityControl.classList.remove("is-open");
+
+          accessibilityToggle.setAttribute(
+            "aria-expanded",
+            "false"
+          );
+
+        }, 150);
+
+      });
+
+    });
+
+}
