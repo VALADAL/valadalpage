@@ -1,3 +1,4 @@
+```css
 /* ============================================================
    VALADAL — home.css
    Estilos exclusivos del Home
@@ -5,7 +6,7 @@
 
 
 /* ============================================================
-   01. HERO — DESKTOP
+   01 — HERO
    ============================================================ */
 
 .hero {
@@ -55,27 +56,14 @@
 }
 
 
-/* ---------- HERO VISUAL ---------- */
+/* ============================================================
+   02 — HERO VISUAL / PC
+   ============================================================ */
 
 .hero__visual {
   position: relative;
   min-height: 440px;
 }
-
-/*
-.device-panel {
-  position: relative;
-  height: 440px;
-  border-radius: var(--radius-lg);
-  background: transparent;
-  overflow: visible;
-  box-shadow: none;
-}
-
-.device-panel__grid {
-  display: none;
-}
-*/
 
 .device-panel__core {
   position: absolute;
@@ -124,11 +112,9 @@
   animation: pc-float 5s ease-in-out infinite;
 }
 
-
-/* ---------- HERO ANIMATIONS ---------- */
-
 @keyframes pc-float {
-  0%, 100% {
+  0%,
+  100% {
     transform: translate(-50%, -50%);
   }
 
@@ -141,7 +127,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow:
       0 0 35px rgba(0, 102, 255, 0.14),
       0 0 80px rgba(0, 102, 255, 0.06);
@@ -153,9 +140,6 @@
       0 0 95px rgba(0, 102, 255, 0.09);
   }
 }
-
-
-/* ---------- HERO DOT ---------- */
 
 .device-panel__dot {
   position: absolute;
@@ -170,7 +154,10 @@
 }
 
 
-/* ---------- FLOAT CARDS — DESKTOP ---------- */
+/* ============================================================
+   03 — FLOAT CARDS
+   ESCRITORIO
+   ============================================================ */
 
 .float-card {
   position: absolute;
@@ -178,17 +165,28 @@
 
   display: flex;
   align-items: center;
+
   gap: 10px;
+
+  width: auto;
+  height: auto;
 
   padding: 12px 16px;
 
   background: var(--white);
+  color: var(--text-main);
+
   border-radius: var(--radius-md);
 
   box-shadow: var(--shadow-lifted);
 
   font-size: 0.86rem;
   font-weight: 500;
+
+  opacity: 1;
+  overflow: visible;
+
+  cursor: default;
 }
 
 .float-card__icon {
@@ -198,6 +196,8 @@
 
   width: 26px;
   height: 26px;
+
+  flex-shrink: 0;
 
   border-radius: 8px;
 
@@ -224,12 +224,14 @@
 
 
 /* ============================================================
-   02. REPAIR PREVIEW — DESKTOP
+   04 — REPAIR PREVIEW
    ============================================================ */
 
 .repair-preview__grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 24px;
 
   margin: 44px 0 40px;
@@ -253,11 +255,13 @@
   transform: translateY(-4px);
 
   box-shadow: var(--shadow-card);
+
   border-color: var(--gray-medium);
 }
 
 .category-card__top {
   display: flex;
+
   justify-content: space-between;
   align-items: center;
 
@@ -266,7 +270,9 @@
 
 .category-card__index {
   font-family: var(--font-display);
+
   color: var(--gray-medium);
+
   font-size: 0.9rem;
 }
 
@@ -277,6 +283,7 @@
   color: var(--blue);
 
   display: inline-flex;
+
   align-items: center;
   justify-content: center;
 
@@ -294,11 +301,13 @@
 
 .category-card h3 {
   font-size: 1.25rem;
+
   margin-bottom: 6px;
 }
 
 .category-card__sub {
   color: var(--blue);
+
   font-size: 0.86rem;
   font-weight: 500;
 
@@ -307,12 +316,13 @@
 
 .category-card p.category-card__desc {
   color: var(--gray-medium);
+
   font-size: 0.92rem;
 }
 
 
 /* ============================================================
-   03. DIGITAL SOLUTIONS — DESKTOP
+   05 — DIGITAL SOLUTIONS
    ============================================================ */
 
 .digital-band {
@@ -329,7 +339,9 @@
 
 .digital-band__grid {
   display: grid;
+
   grid-template-columns: repeat(3, 1fr);
+
   gap: 20px;
 
   margin: 36px 0 40px;
@@ -355,12 +367,13 @@
   color: rgba(255, 255, 255, 0.75);
 
   font-size: 0.88rem;
+
   line-height: 1.55;
 }
 
 
 /* ============================================================
-   04. VALADAL — INTRO + VALUES
+   06 — VALADAL
    ============================================================ */
 
 .valadal-section {
@@ -368,11 +381,9 @@
   padding-bottom: 100px;
 }
 
-
-/* ---------- IMAGEN + TEXTO ---------- */
-
 .valadal-section__top {
   display: grid;
+
   grid-template-columns: 0.8fr 1.2fr;
 
   gap: 70px;
@@ -382,6 +393,7 @@
 
 .valadal-section__visual {
   display: flex;
+
   align-items: center;
   justify-content: center;
 }
@@ -391,6 +403,7 @@
 
   width: 100%;
   max-width: 330px;
+
   height: auto;
 
   object-fit: contain;
@@ -416,11 +429,9 @@
   max-width: 620px;
 }
 
-
-/* ---------- VALUES ---------- */
-
 .valadal-section .values-grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   gap: 24px;
@@ -438,6 +449,7 @@
   display: block;
 
   font-family: var(--font-display);
+
   color: var(--blue);
 
   font-size: 0.9rem;
@@ -455,16 +467,18 @@
   color: var(--gray-medium);
 
   font-size: 0.92rem;
+
   line-height: 1.55;
 }
 
 
 /* ============================================================
-   05. SELECTED WORK
+   07 — SELECTED WORK
    ============================================================ */
 
 .work-teaser__grid {
   display: grid;
+
   grid-template-columns: repeat(4, 1fr);
 
   gap: 18px;
@@ -478,9 +492,11 @@
   border-radius: var(--radius-md);
 
   position: relative;
+
   overflow: hidden;
 
   display: flex;
+
   align-items: flex-end;
 
   padding: 16px;
@@ -488,6 +504,7 @@
 
 .work-teaser__item span {
   position: relative;
+
   z-index: 1;
 
   color: var(--white);
@@ -506,11 +523,12 @@
 
 
 /* ============================================================
-   06. ABOUT TEASER
+   08 — ABOUT
    ============================================================ */
 
 .about-teaser__inner {
   display: grid;
+
   grid-template-columns: 1fr 1fr;
 
   gap: 48px;
@@ -520,52 +538,62 @@
 
 
 /* ============================================================
-   07. ANIMACIONES / STAGGER
+   09 — STAGGER
    ============================================================ */
 
-.repair-preview__grid .category-card:nth-child(2) {
+.repair-preview__grid
+.category-card:nth-child(2) {
   transition-delay: 90ms;
 }
 
-.repair-preview__grid .category-card:nth-child(3) {
+.repair-preview__grid
+.category-card:nth-child(3) {
   transition-delay: 180ms;
 }
 
-.digital-band__grid .digital-band__item:nth-child(2) {
+.digital-band__grid
+.digital-band__item:nth-child(2) {
   transition-delay: 90ms;
 }
 
-.digital-band__grid .digital-band__item:nth-child(3) {
+.digital-band__grid
+.digital-band__item:nth-child(3) {
   transition-delay: 180ms;
 }
 
-.valadal-section .values-grid .value-item:nth-child(2) {
+.values-grid
+.value-item:nth-child(2) {
   transition-delay: 90ms;
 }
 
-.valadal-section .values-grid .value-item:nth-child(3) {
+.values-grid
+.value-item:nth-child(3) {
   transition-delay: 180ms;
 }
 
-.valadal-section .values-grid .value-item:nth-child(4) {
+.values-grid
+.value-item:nth-child(4) {
   transition-delay: 270ms;
 }
 
-.work-teaser__grid .work-teaser__item:nth-child(2) {
+.work-teaser__grid
+.work-teaser__item:nth-child(2) {
   transition-delay: 90ms;
 }
 
-.work-teaser__grid .work-teaser__item:nth-child(3) {
+.work-teaser__grid
+.work-teaser__item:nth-child(3) {
   transition-delay: 180ms;
 }
 
-.work-teaser__grid .work-teaser__item:nth-child(4) {
+.work-teaser__grid
+.work-teaser__item:nth-child(4) {
   transition-delay: 270ms;
 }
 
 
 /* ============================================================
-   08. DARK MODE
+   10 — DARK MODE
    ============================================================ */
 
 html[data-theme="dark"] .hero {
@@ -601,6 +629,7 @@ html[data-theme="dark"] .device-panel__grid {
 
 html[data-theme="dark"] .category-card {
   background: var(--surface);
+
   border-color: var(--border);
 }
 
@@ -610,6 +639,7 @@ html[data-theme="dark"] .category-card:hover {
 
 html[data-theme="dark"] .float-card {
   background: var(--surface);
+
   color: var(--text-main);
 }
 
@@ -622,32 +652,21 @@ html[data-theme="dark"] .value-item {
 }
 
 html[data-theme="dark"] .work-teaser__item span {
-  background: rgba(0,0,0,0.55);
+  background: rgba(0, 0, 0, 0.55);
 }
 
 
 /* ============================================================
-   ============================================================
-   09. MOBILE — TODO EL HOME
-   ============================================================
+   11 — MOBILE
+   TODO EL RESPONSIVE DEL HOME
    ============================================================ */
 
 @media (max-width: 860px) {
 
 
-  /* ==========================================================
-     NAVBAR
-     ========================================================== */
-
-  /*
-     El navbar se controla principalmente desde global.css.
-     Aquí no necesitamos modificarlo.
-  */
-
-
-  /* ==========================================================
+  /* ----------------------------------------------------------
      HERO
-     ========================================================== */
+     ---------------------------------------------------------- */
 
   .hero {
     padding: 42px 0 80px;
@@ -655,14 +674,13 @@ html[data-theme="dark"] .work-teaser__item span {
 
   .hero__inner {
     display: block;
+
     position: relative;
   }
 
-
-  /* ---------- TEXTO ---------- */
-
   .hero__content {
     position: relative;
+
     z-index: 3;
 
     max-width: 58%;
@@ -684,7 +702,11 @@ html[data-theme="dark"] .work-teaser__item span {
   }
 
   .hero__title {
-    font-size: clamp(1.55rem, 6vw, 2rem);
+    font-size: clamp(
+      1.55rem,
+      6vw,
+      2rem
+    );
 
     line-height: 1.04;
 
@@ -703,6 +725,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
   .hero__actions {
     flex-direction: column;
+
     align-items: flex-start;
 
     gap: 8px;
@@ -715,16 +738,20 @@ html[data-theme="dark"] .work-teaser__item span {
   }
 
 
-  /* ---------- PC ---------- */
+  /* ----------------------------------------------------------
+     PC
+     ---------------------------------------------------------- */
 
   .hero__visual {
     position: absolute;
+
     z-index: 1;
 
     top: 30px;
     right: -22px;
 
     width: 48%;
+
     min-height: 190px;
 
     pointer-events: auto;
@@ -737,180 +764,256 @@ html[data-theme="dark"] .work-teaser__item span {
     height: 190px;
 
     background: transparent !important;
+
     box-shadow: none !important;
   }
 
   .hero-pc {
     width: 75%;
+
     max-width: none;
 
     left: 50%;
     top: 50%;
 
     filter:
-      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18))
-      drop-shadow(0 0 13px rgba(0, 70, 180, 0.20));
+      drop-shadow(
+        0 10px 16px rgba(0, 0, 0, 0.18)
+      )
+      drop-shadow(
+        0 0 13px rgba(0, 70, 180, 0.20)
+      );
   }
 
 
-  /* ---------- FLOAT CARDS ---------- */
+  /* ----------------------------------------------------------
+     FLOAT CARDS → DOTS
+     ---------------------------------------------------------- */
 
   .float-card {
     pointer-events: auto;
+
     cursor: pointer;
 
     display: flex;
+
     align-items: center;
 
-    gap: 5px;
+    gap: 0;
 
-    width: auto;
-    height: auto;
+    width: 18px;
+    height: 18px;
 
-    padding: 6px 8px;
+    padding: 0;
 
-    border-radius: 9px;
+    border-radius: 50%;
 
     background: var(--white);
 
     box-shadow:
-      0 5px 16px rgba(0, 0, 0, 0.10);
+      0 5px 16px rgba(0, 0, 0, 0.12);
+
+    overflow: hidden;
 
     font-size: 0.54rem;
+
     line-height: 1.2;
 
     white-space: nowrap;
+
+    transition:
+      width 0.35s var(--ease),
+      height 0.35s var(--ease),
+      border-radius 0.35s var(--ease),
+      padding 0.35s var(--ease),
+      box-shadow 0.35s var(--ease);
   }
 
   .float-card__icon {
     display: flex;
 
-    width: 15px;
-    height: 15px;
+    align-items: center;
+    justify-content: center;
 
-    border-radius: 5px;
+    width: 18px;
+    height: 18px;
+
+    min-width: 18px;
+
+    border-radius: 50%;
+
+    background: var(--blue);
+
+    color: var(--white);
 
     font-size: 0.55rem;
-
-    flex-shrink: 0;
   }
 
+  .float-card > span:not(.float-card__icon) {
+    opacity: 0;
+
+    white-space: nowrap;
+
+    transition:
+      opacity 0.2s ease;
+  }
+
+  .float-card.is-expanded {
+    width: max-content;
+
+    height: 30px;
+
+    padding: 5px 9px 5px 5px;
+
+    border-radius: 999px;
+
+    box-shadow:
+      0 8px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  .float-card.is-expanded
+  > span:not(.float-card__icon) {
+    opacity: 1;
+  }
+
+  /* Diagnóstico */
   .float-card--1 {
     top: 82%;
     left: -5%;
   }
 
+  /* Reparación — crece hacia la izquierda */
   .float-card--2 {
     top: 43%;
     right: -4%;
 
     transform-origin: right center;
-
-    justify-content: flex-end;
   }
 
-  .float-card--2.is-expanded {
-    flex-direction: row;
-  }
-
+  /* Entregas */
   .float-card--3 {
     top: 72%;
     right: -7%;
   }
 
 
-  /* ==========================================================
+  /* ----------------------------------------------------------
      REPAIR
-     ========================================================== */
+     3 CARDS HORIZONTALES Y COMPACTOS
+     ---------------------------------------------------------- */
 
   .repair-preview__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
 
-    gap: 14px;
+    gap: 8px;
 
-    margin: 28px 0 26px;
+    margin: 24px 0 24px;
   }
 
   .category-card {
-    padding: 20px;
+    min-width: 0;
+
+    padding: 13px 10px;
+
+    border-radius: 13px;
   }
 
   .category-card__top {
-    margin-bottom: 12px;
+    margin-bottom: 9px;
   }
 
   .category-card__index {
-    font-size: 0.65rem;
+    font-size: 0.58rem;
   }
 
   .category-card__icon {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
   }
 
   .category-card__icon svg {
-    width: 22px;
-    height: 22px;
+    width: 18px;
+    height: 18px;
   }
 
   .category-card h3 {
-    font-size: 0.9rem;
+    font-size: 0.72rem;
+
+    line-height: 1.15;
 
     margin-bottom: 4px;
   }
 
   .category-card__sub {
-    font-size: 0.65rem;
+    font-size: 0.55rem;
 
-    margin-bottom: 9px;
+    line-height: 1.25;
+
+    margin-bottom: 7px;
   }
 
   .category-card p.category-card__desc {
-    font-size: 0.68rem;
+    font-size: 0.56rem;
 
-    line-height: 1.45;
+    line-height: 1.35;
+
+    margin: 0;
   }
 
 
-  /* ==========================================================
+  /* ----------------------------------------------------------
      DIGITAL
-     ========================================================== */
+     3 ITEMS HORIZONTALES Y COMPACTOS
+     ---------------------------------------------------------- */
 
   .digital-band {
     margin: 0 12px;
+
+    border-radius: 18px;
   }
 
   .digital-band__grid {
-    grid-template-columns: 1fr;
+    grid-template-columns:
+      repeat(3, minmax(0, 1fr));
 
-    gap: 12px;
+    gap: 8px;
 
-    margin: 24px 0 26px;
+    margin: 22px 0 24px;
   }
 
   .digital-band__item {
-    padding: 16px;
+    min-width: 0;
+
+    padding: 12px 9px;
+
+    border-radius: 11px;
   }
 
   .digital-band__item h4 {
-    font-size: 0.8rem;
+    font-size: 0.68rem;
+
+    line-height: 1.15;
 
     margin-bottom: 5px;
   }
 
   .digital-band__item p {
-    font-size: 0.68rem;
+    font-size: 0.55rem;
 
-    line-height: 1.45;
+    line-height: 1.35;
+
+    margin: 0;
   }
 
 
-  /* ==========================================================
+  /* ----------------------------------------------------------
      VALADAL
-     ========================================================== */
+     ---------------------------------------------------------- */
 
   .valadal-section {
     padding-top: 50px;
+
     padding-bottom: 72px;
   }
 
@@ -943,18 +1046,19 @@ html[data-theme="dark"] .work-teaser__item span {
   }
 
 
-  /* ==========================================================
+  /* ----------------------------------------------------------
      SELECTED WORK
-     ========================================================== */
+     ---------------------------------------------------------- */
 
   .work-teaser__grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns:
+      repeat(2, 1fr);
   }
 
 
-  /* ==========================================================
+  /* ----------------------------------------------------------
      ABOUT
-     ========================================================== */
+     ---------------------------------------------------------- */
 
   .about-teaser__inner {
     grid-template-columns: 1fr;
@@ -963,7 +1067,7 @@ html[data-theme="dark"] .work-teaser__item span {
 
 
 /* ============================================================
-   10. MOBILE — TELÉFONOS PEQUEÑOS
+   12 — SMALL PHONES
    ============================================================ */
 
 @media (max-width: 520px) {
@@ -973,4 +1077,11 @@ html[data-theme="dark"] .work-teaser__item span {
 
     gap: 24px;
   }
+
 }
+
+
+/* ============================================================
+   FIN
+   ============================================================ */
+```
