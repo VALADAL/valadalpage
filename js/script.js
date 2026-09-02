@@ -476,27 +476,59 @@ const navDrawer =
 
 if (navToggle && navDrawer) {
 
+  function closeMobileMenu() {
+
+    navDrawer.classList.remove("is-open");
+
+    navToggle.classList.remove("is-active");
+
+    navToggle.setAttribute(
+      "aria-expanded",
+      "false"
+    );
+
+    document.documentElement.classList.remove(
+      "menu-open"
+    );
+
+    document.body.classList.remove(
+      "menu-open"
+    );
+  }
+
+
   navToggle.addEventListener(
     "click",
     () => {
 
       const isOpen =
-        navDrawer.classList.toggle(
-          "is-open"
+        !navDrawer.classList.contains("is-open");
+
+      if (isOpen) {
+
+        navDrawer.classList.add("is-open");
+
+        navToggle.classList.add("is-active");
+
+        navToggle.setAttribute(
+          "aria-expanded",
+          "true"
         );
 
-      navToggle.classList.toggle(
-        "is-active",
-        isOpen
-      );
+        document.documentElement.classList.add(
+          "menu-open"
+        );
 
-      navToggle.setAttribute(
-        "aria-expanded",
-        isOpen
-      );
+        document.body.classList.add(
+          "menu-open"
+        );
 
-      document.body.style.overflow =
-        isOpen ? "hidden" : "";
+      } else {
+
+        closeMobileMenu();
+
+      }
+
     }
   );
 
@@ -507,29 +539,12 @@ if (navToggle && navDrawer) {
 
       link.addEventListener(
         "click",
-        () => {
-
-          navDrawer.classList.remove(
-            "is-open"
-          );
-
-          navToggle.classList.remove(
-            "is-active"
-          );
-
-          navToggle.setAttribute(
-            "aria-expanded",
-            "false"
-          );
-
-          document.body.style.overflow =
-            "";
-        }
+        closeMobileMenu
       );
 
     });
-}
 
+}
 
 // ============================================================
 // 5. LANGUAGE TRANSITION CSS
