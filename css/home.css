@@ -1144,7 +1144,7 @@ html[data-theme="dark"]
   right: 0;
 
   width: 48%;
-  height: 190px;
+  height: auto;
 
   pointer-events: auto;
 }
@@ -1279,7 +1279,7 @@ html[data-theme="dark"]
     animation:
       float-bubble-1 5.5s ease-in-out infinite;
 
-    top: 15%;
+    top: 40%;
     left: 13%;
   }
 
@@ -1287,7 +1287,7 @@ html[data-theme="dark"]
     animation:
       float-bubble-2 6.5s ease-in-out infinite;
 
-    top: 0%;
+    top: 10%;
     right: 20%;
 
     transform-origin: right center;
@@ -1297,7 +1297,7 @@ html[data-theme="dark"]
     animation:
       float-bubble-3 5.9s ease-in-out infinite;
 
-    top: 43%;
+    top: 68%;
     right: 20%;
   }
 
