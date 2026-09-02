@@ -797,7 +797,7 @@ html[data-theme="dark"] .work-teaser__item span {
      ---------------------------------------------------------- */
 
   .hero {
-    padding: 20px 0 80px;
+    padding: 20px 0 30px;
 
     width: 100%;
     max-width: 100%;
@@ -858,19 +858,19 @@ html[data-theme="dark"] .work-teaser__item span {
     margin-bottom: 20px;
   }
 
-  .hero__actions {
-    flex-direction: column;
+.hero__actions {
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: nowrap;
+}
+   
 
-    align-items: flex-start;
-
-    gap: 8px;
-  }
-
-  .hero__actions .btn {
-    font-size: 0.68rem;
-
-    padding: 8px 13px;
-  }
+.hero__actions .btn {
+  font-size: 0.68rem;
+  padding: 8px 13px;
+  white-space: nowrap;
+}
 
 
   /* ----------------------------------------------------------
@@ -1031,7 +1031,7 @@ html[data-theme="dark"] .work-teaser__item span {
    animation:
    float-bubble-1 5.5s ease-in-out infinite; 
     top: 40%;
-    left: 27%;
+    left: 20%;
   }
 
   /* Reparación */
