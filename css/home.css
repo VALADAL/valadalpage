@@ -696,4 +696,77 @@ html[data-theme="dark"] .work-teaser__item span {
   background: rgba(0,0,0,0.55);
 }
 
+@media (max-width: 860px) {
+
+  /* ---------- REPAIR + DIGITAL — MOBILE ---------- */
+
+  .repair-preview__grid {
+    gap: 14px;
+    margin: 28px 0 26px;
+  }
+
+  .category-card {
+    padding: 20px;
+  }
+
+  .category-card__top {
+    margin-bottom: 12px;
+  }
+
+  .category-card__index {
+    font-size: 0.65rem;
+  }
+
+  .category-card__icon {
+    width: 22px;
+    height: 22px;
+  }
+
+  .category-card__icon svg {
+    width: 22px;
+    height: 22px;
+  }
+
+  .category-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 4px;
+  }
+
+  .category-card__sub {
+    font-size: 0.65rem;
+    margin-bottom: 9px;
+  }
+
+  .category-card p.category-card__desc {
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+
+  /* ---------- DIGITAL ---------- */
+
+  .digital-band {
+    margin: 0 12px;
+  }
+
+  .digital-band__grid {
+    gap: 12px;
+    margin: 24px 0 26px;
+  }
+
+  .digital-band__item {
+    padding: 16px;
+  }
+
+  .digital-band__item h4 {
+    font-size: 0.8rem;
+    margin-bottom: 5px;
+  }
+
+  .digital-band__item p {
+    font-size: 0.68rem;
+    line-height: 1.45;
+  }
+
+}
 
