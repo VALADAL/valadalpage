@@ -993,39 +993,26 @@ html[data-theme="dark"]
 
 @media (max-width: 860px) {
 
-  /* ----------------------------------------------------------
-     GLOBAL
-     ---------------------------------------------------------- */
-
   html,
   body {
     width: 100%;
     max-width: 100%;
-
     overflow-x: hidden;
   }
 
-
-  /* ----------------------------------------------------------
-     NAVBAR
-     ---------------------------------------------------------- */
+  /* ---------- NAVBAR ---------- */
 
   .navbar {
     position: fixed;
-
     top: 0;
     left: 0;
-
     width: 100%;
-
     z-index: 1000;
-
     --navbar-height: 42px;
   }
 
   .navbar__inner {
     height: var(--navbar-height);
-
     padding-left: 14px;
     padding-right: 14px;
   }
@@ -1033,9 +1020,7 @@ html[data-theme="dark"]
   .navbar__logo-mark {
     width: 22px;
     height: 22px;
-
     border-radius: 6px;
-
     font-size: 0.68rem;
   }
 
@@ -1047,13 +1032,10 @@ html[data-theme="dark"]
 
   .navbar__toggle {
     display: flex;
-
     width: 22px;
     height: 20px;
-
     flex-direction: column;
     justify-content: center;
-
     gap: 5px;
   }
 
@@ -1063,45 +1045,35 @@ html[data-theme="dark"]
   }
 
 
-  /* ----------------------------------------------------------
+  /* ============================================================
      HERO
-     ---------------------------------------------------------- */
+     ============================================================ */
 
   .hero {
     padding: 62px 0 20px;
-
     width: 100%;
     max-width: 100%;
   }
 
   .hero__inner {
     display: block;
-
     position: relative;
-
     width: 100%;
     max-width: 100%;
-
     min-height: 0;
   }
 
   .hero__content {
     position: relative;
-
     z-index: 3;
-
     max-width: 58%;
-
     min-width: 0;
   }
 
   .pill {
     padding: 6px 10px;
-
     gap: 5px;
-
     font-size: 0.65rem;
-
     margin-bottom: 16px;
   }
 
@@ -1112,141 +1084,89 @@ html[data-theme="dark"]
 
   .hero__title {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
-
     margin-bottom: 14px;
   }
 
   .hero__subtitle {
     font-size: 0.72rem;
-
     line-height: 1.5;
-
     max-width: 100%;
-
     margin-bottom: 20px;
   }
 
   .hero__actions {
     flex-direction: row;
-
     align-items: center;
-
     gap: 8px;
-
     flex-wrap: nowrap;
-
     margin-top: -6px;
   }
 
   .hero__actions .btn {
     font-size: 0.68rem;
-
     padding: 8px 13px;
-
     white-space: nowrap;
   }
 
 
-  /* ----------------------------------------------------------
-     PC MOBILE
-     ---------------------------------------------------------- */
+  /* ---------- HERO PC ---------- */
 
   .hero__visual {
     position: absolute;
-
     z-index: 1;
-
     top: 30px;
     right: 0;
-
     width: 48%;
-
     height: auto;
-
     pointer-events: auto;
   }
 
   .device-panel {
     position: relative;
-
     width: 100%;
-
     height: 190px;
-
     background: transparent !important;
-
     box-shadow: none !important;
-
     overflow: visible;
   }
 
   .hero-pc {
     position: absolute;
-
     z-index: 2;
-
     width: 75%;
-
     max-width: none;
-
     left: 50%;
     top: 50%;
-
-    transform:
-      translate(-50%, -50%);
-
+    transform: translate(-50%, -50%);
     object-fit: contain;
-
     filter:
-      drop-shadow(
-        0 10px 16px rgba(0, 0, 0, 0.18)
-      )
-      drop-shadow(
-        0 0 13px rgba(0, 70, 180, 0.20)
-      );
-
-    animation:
-      pc-float 5s ease-in-out infinite;
+      drop-shadow(0 10px 16px rgba(0, 0, 0, 0.18))
+      drop-shadow(0 0 13px rgba(0, 70, 180, 0.20));
+    animation: pc-float 5s ease-in-out infinite;
   }
 
 
-  /* ----------------------------------------------------------
-     FLOAT CARDS MOBILE
-     ---------------------------------------------------------- */
+  /* ============================================================
+     FLOATING CARDS
+     ============================================================ */
 
   .float-card {
     pointer-events: auto;
-
     cursor: pointer;
-
     display: flex;
-
     align-items: center;
-
     gap: 7px;
-
     width: 18px;
     height: 18px;
-
     padding: 0;
-
     border-radius: 50%;
-
     background: var(--white);
-
-    box-shadow:
-      0 5px 16px rgba(0, 0, 0, 0.12);
-
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.12);
     overflow: hidden;
-
     font-size: 0.54rem;
-
     line-height: 1.2;
-
     white-space: nowrap;
-
     transition:
       width 0.35s var(--ease),
       height 0.35s var(--ease),
@@ -1255,132 +1175,90 @@ html[data-theme="dark"]
       box-shadow 0.35s var(--ease);
   }
 
-  /*
-     Círculo azul SIEMPRE.
-     No cambia en dark mode.
-  */
-
   .float-card__icon {
     display: flex;
-
     align-items: center;
     justify-content: center;
-
     width: 18px;
     height: 18px;
-
     min-width: 18px;
-
     border-radius: 50%;
-
-    background: #0066FF;
-
-    color: #FFFFFF;
-
+    background: #0066FF !important;
+    color: #FFFFFF !important;
     font-size: 0.55rem;
   }
 
   .float-card > span:not(.float-card__icon) {
     opacity: 0;
-
     white-space: nowrap;
-
-    transition:
-      opacity 0.2s ease;
+    transition: opacity 0.2s ease;
   }
 
   .float-card.is-expanded {
     width: max-content;
-
-    animation-play-state: paused;
-
     height: 30px;
-
-    padding:
-      5px 9px 5px 5px;
-
+    padding: 5px 9px 5px 5px;
     border-radius: 999px;
-
     gap: 7px;
-
-    box-shadow:
-      0 8px 22px rgba(0, 0, 0, 0.16);
+    animation-play-state: paused;
+    box-shadow: 0 8px 22px rgba(0, 0, 0, 0.16);
   }
 
   .float-card.is-expanded > span:not(.float-card__icon) {
     opacity: 1;
   }
 
-
-  /* POSICIONES MOBILE */
-
   .float-card--1 {
-    animation:
-      float-bubble-1 5.5s ease-in-out infinite;
-
+    animation: float-bubble-1 5.5s ease-in-out infinite;
     top: 18%;
     left: 13%;
   }
 
   .float-card--2 {
-    animation:
-      float-bubble-2 6.5s ease-in-out infinite;
-
+    animation: float-bubble-2 6.5s ease-in-out infinite;
     top: 3%;
     right: 25%;
-
     transform-origin: right center;
   }
 
   .float-card--3 {
-    animation:
-      float-bubble-3 5.9s ease-in-out infinite;
-
+    animation: float-bubble-3 5.9s ease-in-out infinite;
     top: 33%;
     right: 25%;
   }
 
 
-  /* ----------------------------------------------------------
-     REPAIR
-     ---------------------------------------------------------- */
+  /* ============================================================
+     TEXTOS GENERALES
+     ============================================================ */
 
   .section-title {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
   }
 
   .section-lead {
     font-size: 0.72rem;
-
     line-height: 1.5;
   }
 
   .section-lead--light {
     font-size: 0.72rem !important;
-
     line-height: 1.5;
   }
 
-  .valadal-section__lead {
-    font-size: 0.72rem !important;
 
-    line-height: 1.5;
-  }
+  /* ============================================================
+     REPAIR
+     ============================================================ */
 
   .repair-preview__grid {
     display: grid;
-
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-
     width: 100%;
     max-width: 100%;
-
-    margin: 15px 0 8px;
+    margin: 15px 0 0;
   }
 
   .repair-preview__grid ~ .btn {
@@ -1389,22 +1267,14 @@ html[data-theme="dark"]
 
   .category-card {
     min-width: 0;
-
     width: 100%;
-
-    padding: 13px 12px;
-
+    padding: 13px 1px;
     border-radius: 5px;
-
     overflow: hidden;
-
-    text-decoration: none;
-
-    color: inherit;
   }
 
   .category-card__top {
-    margin-bottom: 0px;
+    margin-bottom: 9px;
   }
 
   .category-card__index {
@@ -1418,124 +1288,96 @@ html[data-theme="dark"]
 
   .category-card h3 {
     font-size: 0.72rem;
-
     line-height: 1.15;
-
     margin-bottom: 4px;
   }
 
   .category-card__sub {
     font-size: 0.55rem;
-
     line-height: 1.25;
-
     margin-bottom: 7px;
   }
 
   .category-card p.category-card__desc {
     font-size: 0.56rem;
-
     line-height: 1.35;
-
     margin: 0;
   }
 
 
-  /* ----------------------------------------------------------
-     DIGITAL
-     ---------------------------------------------------------- */
+  /* ============================================================
+     TODO LO QUE VIENE DESPUÉS DE REPAIR
+     SIN ESPACIOS GRANDES ENTRE SECCIONES
+     ============================================================ */
 
   .digital-band {
     width: auto;
-
     max-width: calc(100% - 24px);
-
     margin: 0 12px;
-
+    margin-top: 0;
     border-radius: 18px;
-
     overflow: hidden;
-
-    padding-top: 3px;
-    padding-bottom: 22px;
-
-    margin-top: -20px;
+    padding-top: 12px;
+    padding-bottom: 12px;
   }
 
   .digital-band__inner {
     padding-top: 0;
-
     padding-bottom: 0;
   }
 
   .digital-band .section-title {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
   }
 
   .digital-band .section-lead--light {
     font-size: 0.72rem !important;
-
     line-height: 1.5;
-
     max-width: 100%;
   }
 
   .digital-band__grid {
     display: grid;
-
-    grid-template-columns:
-      repeat(3, minmax(0, 1fr));
-
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 8px;
-
-    margin: 16px 0 8px;
+    margin: 16px 0 0;
   }
 
   .digital-band__item {
     min-width: 0;
-
     padding: 12px 9px;
-
     border-radius: 11px;
   }
 
   .digital-band__item .digital-icon {
     width: 20px;
     height: 20px;
-
     margin-bottom: 12px;
-
     color: #ffffff;
   }
 
   .digital-band__item h4 {
     font-size: 0.68rem;
-
     line-height: 1.15;
-
     margin-bottom: 5px;
-
     color: #ffffff;
   }
 
   .digital-band__item p {
     font-size: 0.55rem;
-
     line-height: 1.35;
   }
 
 
-  /* ----------------------------------------------------------
+  /* ============================================================
      VALADAL
-     ---------------------------------------------------------- */
+     ============================================================ */
 
   .valadal-section {
     padding-top: 12px;
-
-    padding-bottom: 0px;
-
+    padding-bottom: 12px;
+    margin-top: 0;
   }
 
   .valadal-section__top {
@@ -1548,31 +1390,24 @@ html[data-theme="dark"]
 
   .valadal-section__content {
     display: block;
-
     max-width: 100%;
   }
 
   .valadal-section .section-title {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
   }
 
   .valadal-section__content > p {
     font-size: 0.72rem !important;
-
     line-height: 1.5;
   }
 
   .valadal-section .values-grid {
     display: grid;
-
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
-
-    margin-top: 35px;
+    margin-top: 20px;
   }
 
   .valadal-section .value-item {
@@ -1585,36 +1420,35 @@ html[data-theme="dark"]
 
   .valadal-section .value-item h3 {
     font-size: 0.72rem;
-
     line-height: 1.15;
-
     margin-bottom: 5px;
   }
 
   .valadal-section .value-item p {
     font-size: 0.55rem;
-
     line-height: 1.35;
   }
 
 
-  /* ----------------------------------------------------------
+  /* ============================================================
      WORK
-     ---------------------------------------------------------- */
+     ============================================================ */
+
+  .work-teaser {
+    margin-top: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 
   .work-teaser__grid {
-    grid-template-columns:
-      repeat(2, 1fr);
-
-    margin-top: 0px;
-
-    margin-bottom: 1px;
+    grid-template-columns: repeat(2, 1fr);
+    margin-top: 16px;
+    margin-bottom: 0;
   }
 
   .work-teaser .section-title,
   .work-teaser h2 {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
   }
 
@@ -1622,14 +1456,19 @@ html[data-theme="dark"]
   .work-teaser__subtitle,
   .work-teaser .section-subtitle {
     font-size: 0.72rem;
-
     line-height: 1.5;
   }
 
 
-  /* ----------------------------------------------------------
+  /* ============================================================
      ABOUT
-     ---------------------------------------------------------- */
+     ============================================================ */
+
+  .about-teaser {
+    margin-top: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
 
   .about-teaser__inner {
     grid-template-columns: 1fr;
@@ -1638,7 +1477,6 @@ html[data-theme="dark"]
   .about-teaser .section-title,
   .about-teaser h2 {
     font-size: clamp(1.55rem, 6vw, 2rem);
-
     line-height: 1.04;
   }
 
@@ -1646,17 +1484,27 @@ html[data-theme="dark"]
   .about-teaser__subtitle,
   .about-teaser .section-subtitle {
     font-size: 0.72rem;
-
     line-height: 1.5;
   }
 
 
-  /* ----------------------------------------------------------
+  /* ============================================================
+     CTA
+     ============================================================ */
+
+  .final-cta {
+    margin-top: 0;
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+
+  /* ============================================================
      FOOTER
-     ---------------------------------------------------------- */
+     ============================================================ */
 
   .footer {
-    margin-top: -10px;
+    margin-top: 0;
   }
 
   .footer__name {
@@ -1665,7 +1513,6 @@ html[data-theme="dark"]
 
   .footer__tagline {
     font-size: 0.55rem;
-
     line-height: 1.35;
   }
 
@@ -1675,46 +1522,34 @@ html[data-theme="dark"]
 
   .footer__col a {
     font-size: 0.55rem;
-
     line-height: 1.35;
   }
 
   .footer__bottom {
     font-size: 0.52rem;
-
     line-height: 1.3;
   }
 
 
-  /* ----------------------------------------------------------
-     MOBILE MENU
-     ---------------------------------------------------------- */
+  /* ============================================================
+     ACCESIBILIDAD
+     ============================================================ */
 
   .nav-drawer__accessibility {
     display: none !important;
   }
 
-
-  /* ----------------------------------------------------------
-     ACCESSIBILITY CONTROL
-     ---------------------------------------------------------- */
-
   .accessibility-control {
     display: flex;
-
     align-items: center;
-
     gap: 4px;
   }
 
   .accessibility-toggle {
     width: 24px;
     height: 24px;
-
     border: none;
-
     background: transparent;
-
     font-size: 0.8rem;
   }
 
@@ -1725,51 +1560,35 @@ html[data-theme="dark"]
 
   .accessibility-options {
     position: absolute;
-
     right: 30px;
     top: 50%;
-
-    transform:
-      translateY(-50%)
-      scale(0.92);
-
+    transform: translateY(-50%) scale(0.92);
     transform-origin: right center;
-
     display: flex;
-
     gap: 5px;
   }
 
-  .accessibility-control.is-open
-  .accessibility-options {
-    transform:
-      translateY(-50%)
-      scale(1);
+  .accessibility-control.is-open .accessibility-options {
+    transform: translateY(-50%) scale(1);
   }
 
   .accessibility-option {
     width: 27px;
     height: 27px;
-
     font-size: 0.58rem;
-
-    box-shadow:
-      0 4px 12px rgba(0, 0, 0, 0.10);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.10);
   }
-
 }
 
 
 /* ============================================================
-   13 — SMALL PHONES
+   EXTRA SMALL
    ============================================================ */
 
 @media (max-width: 520px) {
 
   .valadal-section .values-grid {
-    grid-template-columns:
-      repeat(4, minmax(0, 1fr));
-
+    grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 8px;
   }
 
@@ -1792,5 +1611,4 @@ html[data-theme="dark"]
   .footer__bottom {
     font-size: 0.5rem;
   }
-
 }
