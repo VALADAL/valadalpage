@@ -377,10 +377,16 @@
     left: -5%;
   }
 
-  .float-card--2 {
-    top: 53%;
-    right: -2%;
-  }
+.float-card--2 {
+  top: 43%;
+  right: -4%;
+  transform-origin: right center;
+  justify-content: flex-end;
+}
+
+.float-card--2.is-expanded {
+  flex-direction: row;
+}
 
   .float-card--3 {
     top: 72%;
