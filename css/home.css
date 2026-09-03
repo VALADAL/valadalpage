@@ -1252,14 +1252,14 @@ html[data-theme="dark"]
   .float-card--2 {
     animation: float-bubble-2 6.5s ease-in-out infinite;
     top: 3%;
-    right: 10%;
+    right: 20%;
     transform-origin: right center;
   }
 
   .float-card--3 {
     animation: float-bubble-3 5.9s ease-in-out infinite;
     top: 30%;
-    right: 10%;
+    right: 25%;
   }
 
 
