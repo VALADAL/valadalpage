@@ -397,6 +397,7 @@
 .digital-process {
   max-width: 720px;
   margin-top: 44px;
+  padding-bottom: 64px;
 }
 
 .digital-process__step {
@@ -477,6 +478,7 @@
 .digital-faq {
   max-width: 760px;
   margin-top: 40px;
+  padding-bottom: 64px;
 
   display: flex;
   flex-direction: column;
@@ -571,6 +573,7 @@
 
 .digital-growth {
   background: var(--surface-soft);
+  padding: 72px 0;
 }
 
 .digital-growth__grid {
