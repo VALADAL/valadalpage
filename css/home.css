@@ -1152,7 +1152,7 @@ html[data-theme="dark"]
     z-index: 1;
     top: 30px;
     left: 48%;
-    right: 0%;
+    right: -15%;
     height: auto;
     pointer-events: auto;
   }
