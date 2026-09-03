@@ -1151,8 +1151,8 @@ html[data-theme="dark"]
     position: absolute;
     z-index: 1;
     top: 30px;
-    left: 50%;
-    right: 2%;
+    left: 48%;
+    right: 0%;
     height: auto;
     pointer-events: auto;
   }
