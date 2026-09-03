@@ -328,15 +328,21 @@
    ============================================================ */
 
 .gaming-section {
-  background: var(--black);
-  color: var(--white);
+  /* Usamos valores fijos (no var(--black)/var(--white)) a propósito:
+     esas variables se invierten en modo oscuro (--black pasa a ser
+     casi blanco), y por eso este panel se veía blanco al cambiar
+     de tema. En modo claro este panel se queda negro, como siempre. */
+  background: #0A0A0A;
+  color: #FFFFFF;
   border-radius: var(--radius-lg);
   margin: 0 24px;
   padding: 72px 40px;
   scroll-margin-top: calc(var(--navbar-height) + 12px);
+
+  transition: background-color 0.35s ease;
 }
 
-.gaming-section .repair-section__head h2 { color: var(--white); }
+.gaming-section .repair-section__head h2 { color: #FFFFFF; }
 .gaming-section .repair-section__head .section-lead { color: rgba(255, 255, 255, 0.7); }
 .gaming-section .eyebrow { color: var(--blue-bright); }
 
@@ -355,11 +361,16 @@
   color: var(--blue-bright);
 }
 
-.gaming-section .device-card h3 { color: var(--white); }
+.gaming-section .device-card h3 { color: #FFFFFF; }
 
 .gaming-section .device-card ul li {
   color: rgba(255, 255, 255, 0.6);
   border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* En modo oscuro este panel se vuelve azul en vez de negro. */
+html[data-theme="dark"] .gaming-section {
+  background: linear-gradient(160deg, #001C4D, var(--blue));
 }
 
 .gaming-services {
