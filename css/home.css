@@ -1259,7 +1259,7 @@ html[data-theme="dark"]
   .float-card--3 {
     animation: float-bubble-3 5.9s ease-in-out infinite;
     top: 30%;
-    right: 25%;
+    right: 30%;
   }
 
 
