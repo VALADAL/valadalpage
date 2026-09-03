@@ -862,6 +862,63 @@ html[data-theme="dark"]
 
 
 /* ============================================================
+   FLOATING ANIMATION (compartida)
+   La usan las float-card del home Y las repair-bubble de
+   /repair/. Antes solo vivía en home.css, por eso en repair
+   las burbujas se veían quietas: la animación apuntaba a un
+   @keyframes que no existía en esa página.
+   ============================================================ */
+
+@keyframes float-bubble-1 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(8px, -10px)
+      rotate(1deg);
+  }
+}
+
+@keyframes float-bubble-2 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(-9px, 7px)
+      rotate(-1deg);
+  }
+}
+
+@keyframes float-bubble-3 {
+
+  0%,
+  100% {
+    transform:
+      translate(0, 0)
+      rotate(0deg);
+  }
+
+  50% {
+    transform:
+      translate(7px, 9px)
+      rotate(1deg);
+  }
+}
+
+
+/* ============================================================
    FOOTER
    ============================================================ */
 
