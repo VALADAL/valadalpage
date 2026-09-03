@@ -51,6 +51,111 @@ const translations = {
       "Reparación de HDMI, solución de drift, limpieza y diagnóstico completo de consolas.",
     "repair.button": "Explorar reparación →",
 
+    "repair.page.eyebrow": "Reparación",
+    "repair.page.title": "La tecnología falla. Nosotros la hacemos funcionar de nuevo.",
+    "repair.page.lead": "Ve directo a lo que necesitas reparar.",
+
+    "repair.nav.computers": "Computadoras",
+    "repair.nav.laptops": "Laptops",
+    "repair.nav.apple": "MacBook y Apple",
+    "repair.nav.smartphones": "Smartphones",
+    "repair.nav.screens": "Pantallas",
+    "repair.nav.gaming": "Gaming",
+    "repair.nav.maintenance": "Mantenimiento",
+    "repair.nav.servers": "Servidores",
+
+    "repair.desktop.eyebrow": "01 — Computadoras",
+    "repair.desktop.title": "Computadoras de escritorio.",
+    "repair.desktop.lead":
+      "Trabajamos con computadoras de escritorio a nivel completo, desde problemas de software y configuración hasta diagnóstico y reparación de hardware.",
+    "repair.desktop.card.title": "Reparación integral",
+    "repair.desktop.gpu.title": "Tarjetas gráficas / GPU",
+    "repair.desktop.gpu.sub": "La GPU no solamente se limpia: se revisa como un sistema completo.",
+    "repair.desktop.psu.title": "Fuentes de poder",
+    "repair.desktop.cooling.title": "Gestión térmica y mantenimiento",
+    "repair.desktop.peripherals.title": "Periféricos de PC",
+
+    "repair.laptops.eyebrow": "02 — Laptops",
+    "repair.laptops.title": "Laptops de todas las marcas.",
+    "repair.laptops.lead":
+      "Trabajamos con laptops convencionales de diferentes marcas y modelos, con reparación completa de hardware.",
+    "repair.laptops.card.title": "Reparación completa",
+    "repair.laptops.thermal.title": "Mantenimiento y refrigeración",
+    "repair.laptops.peripherals.title": "Periféricos y accesorios",
+
+    "repair.apple.eyebrow": "03 — MacBook y Apple",
+    "repair.apple.title": "Reparación integral Apple.",
+    "repair.apple.lead": "Trabajamos con MacBook, iMac y computadoras de escritorio Apple.",
+    "repair.apple.card.title": "MacBook · iMac",
+    "repair.apple.thermal.title": "Mantenimiento y refrigeración",
+    "repair.apple.peripherals.title": "Periféricos Apple",
+
+    "repair.phones.eyebrow": "04 — Smartphones",
+    "repair.phones.title": "iPhone y Android.",
+    "repair.phones.lead":
+      "Reparación integral del dispositivo, desde lo convencional hasta problemas de hardware más complejos.",
+    "repair.phones.card.title": "Reparación integral",
+    "repair.phones.diag.title": "Diagnóstico electrónico",
+    "repair.phones.accessories.title": "Accesorios y periféricos",
+
+    "repair.screens.eyebrow": "05 — Pantallas",
+    "repair.screens.title": "Reparación de pantallas.",
+    "repair.screens.lead":
+      "Servicio para smartphones, laptops, monitores, computadoras y otros equipos electrónicos compatibles.",
+    "repair.screens.card.title": "Diagnóstico de pantalla",
+    "repair.screens.conn.title": "Conectores y alimentación",
+
+    "repair.gaming.eyebrow": "06 — Gaming",
+    "repair.gaming.title": "Consolas y controles.",
+    "repair.gaming.lead":
+      "Reparación integral de Xbox, PlayStation y otras plataformas, incluyendo controles especializados.",
+    "repair.gaming.consoles.title": "Consolas",
+    "repair.gaming.controllers.title": "Controles",
+    "repair.gaming.clean.title": "Limpieza y mantenimiento",
+
+    "repair.maint.eyebrow": "07 — Mantenimiento",
+    "repair.maint.title": "No hacemos solamente una \"limpieza\".",
+    "repair.maint.lead":
+      "Mantenimiento preventivo y correctivo enfocado en recuperar el funcionamiento y mejorar la vida útil del equipo.",
+    "repair.maint.step1.title": "Desmontaje",
+    "repair.maint.step1.text": "Inspección visual y desmontaje cuidadoso de componentes.",
+    "repair.maint.step2.title": "Limpieza profunda",
+    "repair.maint.step2.text": "Eliminación de polvo, ventiladores y disipadores.",
+    "repair.maint.step3.title": "Revisión térmica",
+    "repair.maint.step3.text": "Cambio de pasta y pads térmicos, revisión de conexiones.",
+    "repair.maint.step4.title": "Optimización",
+    "repair.maint.step4.text": "Optimización del cooling y del flujo de aire.",
+    "repair.maint.step5.title": "Pruebas",
+    "repair.maint.step5.text": "Pruebas de funcionamiento antes de entregar el equipo.",
+    "repair.maint.applies.title": "Aplicable a",
+
+    "repair.servers.eyebrow": "08 — Servidores",
+    "repair.servers.title": "Mantenimiento y refrigeración de servidores.",
+    "repair.servers.lead":
+      "Soluciones de mantenimiento y optimización térmica para servidores y equipos de alto uso.",
+    "repair.servers.card.title": "Mantenimiento",
+    "repair.servers.cooling.title": "Optimización térmica",
+    "repair.servers.peripherals.title": "Periféricos y accesorios",
+
+    "repair.soon.eyebrow": "Próximamente",
+    "repair.soon.title": "Estamos ampliando lo que reparamos.",
+    "repair.soon.badge": "Próximamente",
+    "repair.soon.audio.title": "Sistemas de audio",
+    "repair.soon.appliances.title": "Electrodomésticos",
+
+    "repair.why.eyebrow": "¿Por qué Valadal?",
+    "repair.why.title": "No nos limitamos a cambiar piezas.",
+    "repair.why.lead":
+      "Un equipo puede encender y seguir teniendo un problema térmico, eléctrico o electrónico que termine provocando una falla mayor. Por eso diagnosticamos antes de reparar.",
+    "repair.why.p1.title": "Más limpios",
+    "repair.why.p1.text": "Diagnóstico → causa → reparación.",
+    "repair.why.p2.title": "Mejor refrigerados",
+    "repair.why.p2.text": "Optimización térmica en cada equipo.",
+    "repair.why.p3.title": "Correctamente diagnosticados",
+    "repair.why.p3.text": "Optimizados y preparados para seguir funcionando.",
+
+    "repair.cta.title": "¿No sabes qué está mal? Vamos a averiguarlo.",
+
     "digital.eyebrow": "Soluciones Digitales",
     "digital.title": "Construye lo que viene.",
     "digital.text":
@@ -145,6 +250,111 @@ const translations = {
     "repair.gamingDesc":
       "HDMI repair, drift fixes, cleaning and full console diagnostics.",
     "repair.button": "Explore Repair →",
+
+    "repair.page.eyebrow": "Repair",
+    "repair.page.title": "Technology breaks. We make it work again.",
+    "repair.page.lead": "Jump straight to what you need fixed.",
+
+    "repair.nav.computers": "Computers",
+    "repair.nav.laptops": "Laptops",
+    "repair.nav.apple": "MacBook & Apple",
+    "repair.nav.smartphones": "Smartphones",
+    "repair.nav.screens": "Screens",
+    "repair.nav.gaming": "Gaming",
+    "repair.nav.maintenance": "Maintenance",
+    "repair.nav.servers": "Servers",
+
+    "repair.desktop.eyebrow": "01 — Computers",
+    "repair.desktop.title": "Desktop computers.",
+    "repair.desktop.lead":
+      "We work on desktop computers at every level, from software and configuration issues to hardware diagnosis and repair.",
+    "repair.desktop.card.title": "Full repair",
+    "repair.desktop.gpu.title": "Graphics cards / GPU",
+    "repair.desktop.gpu.sub": "A GPU doesn't just get cleaned — it's reviewed as a complete system.",
+    "repair.desktop.psu.title": "Power supplies",
+    "repair.desktop.cooling.title": "Thermal management and maintenance",
+    "repair.desktop.peripherals.title": "PC peripherals",
+
+    "repair.laptops.eyebrow": "02 — Laptops",
+    "repair.laptops.title": "Laptops, every brand.",
+    "repair.laptops.lead":
+      "We work with conventional laptops from different brands and models, with full hardware repair.",
+    "repair.laptops.card.title": "Full repair",
+    "repair.laptops.thermal.title": "Maintenance and cooling",
+    "repair.laptops.peripherals.title": "Peripherals and accessories",
+
+    "repair.apple.eyebrow": "03 — MacBook & Apple",
+    "repair.apple.title": "Full Apple repair.",
+    "repair.apple.lead": "We work with MacBook, iMac and Apple desktop computers.",
+    "repair.apple.card.title": "MacBook · iMac",
+    "repair.apple.thermal.title": "Maintenance and cooling",
+    "repair.apple.peripherals.title": "Apple peripherals",
+
+    "repair.phones.eyebrow": "04 — Smartphones",
+    "repair.phones.title": "iPhone and Android.",
+    "repair.phones.lead":
+      "Full device repair, from everyday fixes to more complex hardware issues.",
+    "repair.phones.card.title": "Full repair",
+    "repair.phones.diag.title": "Electronic diagnosis",
+    "repair.phones.accessories.title": "Accessories and peripherals",
+
+    "repair.screens.eyebrow": "05 — Screens",
+    "repair.screens.title": "Screen repair.",
+    "repair.screens.lead":
+      "Service for smartphones, laptops, monitors, computers and other compatible electronics.",
+    "repair.screens.card.title": "Screen diagnosis",
+    "repair.screens.conn.title": "Connectors and power",
+
+    "repair.gaming.eyebrow": "06 — Gaming",
+    "repair.gaming.title": "Consoles and controllers.",
+    "repair.gaming.lead":
+      "Full repair for Xbox, PlayStation and other platforms, including specialized controller repair.",
+    "repair.gaming.consoles.title": "Consoles",
+    "repair.gaming.controllers.title": "Controllers",
+    "repair.gaming.clean.title": "Cleaning and maintenance",
+
+    "repair.maint.eyebrow": "07 — Maintenance",
+    "repair.maint.title": "We don't just do a \"cleaning\".",
+    "repair.maint.lead":
+      "Preventive and corrective maintenance focused on restoring performance and extending the life of your equipment.",
+    "repair.maint.step1.title": "Disassembly",
+    "repair.maint.step1.text": "Visual inspection and careful component disassembly.",
+    "repair.maint.step2.title": "Deep cleaning",
+    "repair.maint.step2.text": "Dust, fans and heatsinks fully cleaned.",
+    "repair.maint.step3.title": "Thermal review",
+    "repair.maint.step3.text": "Thermal paste and pad replacement, connection check.",
+    "repair.maint.step4.title": "Optimization",
+    "repair.maint.step4.text": "Cooling and airflow optimization.",
+    "repair.maint.step5.title": "Testing",
+    "repair.maint.step5.text": "Functional testing before your equipment ships back.",
+    "repair.maint.applies.title": "Works on",
+
+    "repair.servers.eyebrow": "08 — Servers",
+    "repair.servers.title": "Server maintenance and cooling.",
+    "repair.servers.lead":
+      "Maintenance and thermal optimization solutions for servers and high-use equipment.",
+    "repair.servers.card.title": "Maintenance",
+    "repair.servers.cooling.title": "Thermal optimization",
+    "repair.servers.peripherals.title": "Peripherals and accessories",
+
+    "repair.soon.eyebrow": "Coming soon",
+    "repair.soon.title": "We're expanding what we repair.",
+    "repair.soon.badge": "Coming soon",
+    "repair.soon.audio.title": "Audio systems",
+    "repair.soon.appliances.title": "Appliances",
+
+    "repair.why.eyebrow": "Why Valadal",
+    "repair.why.title": "We don't just swap parts.",
+    "repair.why.lead":
+      "A device can turn on and still have a thermal, electrical or electronic issue that leads to a bigger failure. That's why we diagnose before we repair.",
+    "repair.why.p1.title": "Cleaner",
+    "repair.why.p1.text": "Diagnosis → root cause → repair.",
+    "repair.why.p2.title": "Better cooled",
+    "repair.why.p2.text": "Thermal optimization on every device.",
+    "repair.why.p3.title": "Properly diagnosed",
+    "repair.why.p3.text": "Optimized and ready to keep working.",
+
+    "repair.cta.title": "Not sure what's wrong? Let's find out.",
 
     "digital.eyebrow": "Digital Solutions",
     "digital.title": "Build what's next.",
@@ -368,16 +578,6 @@ function applyTheme(theme) {
 
   const isDark =
     theme === "dark";
-
-  const themeColorMeta =
-    document.getElementById("theme-color-meta");
-
-  if (themeColorMeta) {
-    themeColorMeta.setAttribute(
-      "content",
-      isDark ? "#0A0A0A" : "#FFFFFF"
-    );
-  }
 
   if (themeIcon) {
     themeIcon.textContent =
