@@ -1181,6 +1181,43 @@ window.addEventListener(
 
 startFloatLoop();
 
+// ============================================================
+// 9B. REPAIR BUBBLES — ÉNFASIS AUTOMÁTICO
+// Va marcando una burbuja a la vez con .is-active (zoom),
+// sin necesidad de click. Se pausa sola sobre la que
+// está "activa" y sigue rotando entre todas.
+// ============================================================
+
+const repairBubbles =
+  document.querySelectorAll(".repair-bubble");
+
+if (repairBubbles.length) {
+
+  let bubbleIndex = 0;
+
+  function emphasizeNextBubble() {
+
+    repairBubbles.forEach((bubble) => {
+      bubble.classList.remove("is-active");
+    });
+
+    repairBubbles[bubbleIndex].classList.add(
+      "is-active"
+    );
+
+    bubbleIndex =
+      (bubbleIndex + 1) % repairBubbles.length;
+  }
+
+  // Primer énfasis inmediato
+  emphasizeNextBubble();
+
+  // Rota cada 3.2 segundos
+  setInterval(emphasizeNextBubble, 3200);
+
+}
+
+
 /* ============================================================
    ACCESIBILIDAD
    ============================================================ */
