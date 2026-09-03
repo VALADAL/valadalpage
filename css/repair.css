@@ -1,129 +1,628 @@
 /* ============================================================
    VALADAL — repair.css
+   Página de Reparación.
    ============================================================ */
 
-/* Index buttons at the top of /repair */
-.repair-index {
-  display: flex;
-  gap: 14px;
-  flex-wrap: wrap;
-  margin-top: 32px;
-}
-.repair-index__btn {
-  padding: 14px 26px;
-  border-radius: var(--radius-pill);
-  border: 1px solid var(--gray-light);
-  font-weight: 600;
-  font-size: 0.92rem;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease;
-}
-.repair-index__btn:hover {
-  border-color: var(--blue);
-  color: var(--blue);
-  background: rgba(0,102,255,0.05);
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+
+.repair-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 72px 0 56px;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at 84% 0%,
+      rgba(0, 102, 255, 0.08),
+      transparent 60%
+    );
 }
 
-/* Generic repair category section */
+.repair-hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  max-width: 760px;
+}
+
+.repair-hero .section-lead {
+  margin-top: 18px;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   QUICK-JUMP BUBBLES
+   Botones flotantes que llevan directo a cada sección.
+   ============================================================ */
+
+.repair-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+.repair-bubble {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 13px 22px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+
+  box-shadow: var(--shadow-card);
+
+  will-change: transform;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s var(--ease),
+    background-color 0.35s ease;
+}
+
+.repair-bubble__icon {
+  font-size: 1.05rem;
+  line-height: 1;
+}
+
+.repair-bubble:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+
+  box-shadow:
+    0 16px 32px rgba(0, 102, 255, 0.16),
+    0 4px 12px rgba(10, 10, 10, 0.06);
+}
+
+/* animación viva, igual que las float-cards del hero mobile */
+.repair-bubble:nth-child(3n + 1) {
+  animation: float-bubble-1 6.4s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(3n + 2) {
+  animation: float-bubble-2 5.8s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(3n) {
+  animation: float-bubble-3 6.9s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(2) { animation-delay: 0.3s; }
+.repair-bubble:nth-child(3) { animation-delay: 0.6s; }
+.repair-bubble:nth-child(4) { animation-delay: 0.9s; }
+.repair-bubble:nth-child(5) { animation-delay: 1.2s; }
+.repair-bubble:nth-child(6) { animation-delay: 1.5s; }
+.repair-bubble:nth-child(7) { animation-delay: 1.8s; }
+.repair-bubble:nth-child(8) { animation-delay: 2.1s; }
+
+.repair-bubble:hover {
+  animation-play-state: paused;
+}
+
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+
 .repair-section {
   padding: 88px 0;
-  border-bottom: 1px solid var(--gray-light);
+  border-bottom: 1px solid var(--border);
   scroll-margin-top: calc(var(--navbar-height) + 12px);
 }
 
 .repair-section__head {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 24px;
-  margin-bottom: 40px;
-  flex-wrap: wrap;
+  max-width: 640px;
+  margin-bottom: 44px;
 }
 
-.repair-section__head h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); }
+.repair-section__head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
 
-/* Sub-device cards (Laptops / MacBook / PC, or iPhone / Android) */
+.repair-section__head .section-lead {
+  margin-top: 12px;
+}
+
+
+/* ============================================================
+   DEVICE GRID + CARDS
+   ============================================================ */
+
 .device-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 24px;
 }
+
 .device-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.device-grid--4 { grid-template-columns: repeat(4, 1fr); }
 
 .device-card {
-  padding: 30px;
-  border-radius: var(--radius-lg);
-  background: var(--off-white);
-  border: 1px solid var(--gray-light);
-  transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease);
-}
-.device-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-card); }
+  display: flex;
+  flex-direction: column;
 
-.device-card__icon {
-  width: 46px; height: 46px;
-  border-radius: 12px;
-  background: rgba(0,102,255,0.08);
-  color: var(--blue);
-  display: flex; align-items: center; justify-content: center;
-  font-size: 1.3rem;
+  padding: 30px;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.device-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.device-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   margin-bottom: 18px;
 }
-.device-card h3 { font-size: 1.15rem; margin-bottom: 14px; }
+
+.device-card__icon {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 12px;
+  background: rgba(0, 102, 255, 0.08);
+  color: var(--blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+.device-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.device-card__sub {
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.device-card ul {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
 .device-card ul li {
-  color: var(--gray-medium);
+  color: var(--text-secondary);
   font-size: 0.92rem;
   padding: 7px 0;
-  border-top: 1px solid var(--gray-light);
+  border-top: 1px solid var(--border);
 }
+
 .device-card ul li:first-child { border-top: none; }
 
-/* ---------- GAMING: powerful dark treatment ---------- */
+.device-grid .device-card:nth-child(2) { transition-delay: 90ms; }
+.device-grid .device-card:nth-child(3) { transition-delay: 180ms; }
+.device-grid .device-card:nth-child(4) { transition-delay: 270ms; }
+
+
+/* ============================================================
+   IMAGE PLACEHOLDER
+   Recuadro para ir agregando fotos reales de trabajos.
+   ============================================================ */
+
+.image-slot {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--border);
+  background: var(--surface-soft);
+
+  color: var(--text-secondary);
+
+  overflow: hidden;
+}
+
+.image-slot__icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+.image-slot__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.device-card .image-slot {
+  aspect-ratio: 16 / 10;
+}
+
+.gaming-section .image-slot {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ============================================================
+   GAMING — panel oscuro (Consolas + Controles)
+   ============================================================ */
+
 .gaming-section {
   background: var(--black);
   color: var(--white);
   border-radius: var(--radius-lg);
-  margin: 0 24px 24px;
+  margin: 0 24px;
   padding: 72px 40px;
   scroll-margin-top: calc(var(--navbar-height) + 12px);
 }
+
 .gaming-section .repair-section__head h2 { color: var(--white); }
+.gaming-section .repair-section__head .section-lead { color: rgba(255, 255, 255, 0.7); }
 .gaming-section .eyebrow { color: var(--blue-bright); }
 
 .gaming-section .device-card {
-  background: rgba(255,255,255,0.04);
-  border-color: rgba(255,255,255,0.1);
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
 }
+
+.gaming-section .device-card:hover {
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
 .gaming-section .device-card__icon {
-  background: rgba(0,163,255,0.15);
+  background: rgba(0, 163, 255, 0.15);
   color: var(--blue-bright);
 }
+
 .gaming-section .device-card h3 { color: var(--white); }
+
 .gaming-section .device-card ul li {
-  color: rgba(255,255,255,0.6);
-  border-top-color: rgba(255,255,255,0.1);
+  color: rgba(255, 255, 255, 0.6);
+  border-top-color: rgba(255, 255, 255, 0.1);
 }
 
 .gaming-services {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 28px;
+  margin-top: 32px;
 }
+
 .gaming-services span {
   padding: 8px 16px;
   border-radius: var(--radius-pill);
-  background: rgba(255,255,255,0.08);
-  border: 1px solid rgba(255,255,255,0.14);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   font-size: 0.86rem;
 }
 
-/* Stagger delays */
-.device-grid .device-card:nth-child(2) { transition-delay: 90ms; }
-.device-grid .device-card:nth-child(3) { transition-delay: 180ms; }
+
+/* ============================================================
+   SERVICE CHIPS
+   Listas cortas tipo "periféricos" / "accesorios".
+   ============================================================ */
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.service-chips span {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.repair-subblock {
+  margin-top: 40px;
+}
+
+.repair-subblock__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   MANTENIMIENTO — flujo de proceso animado
+   ============================================================ */
+
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+
+  margin: 44px 0 8px;
+  position: relative;
+}
+
+.process-flow::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.process-step__index {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--page-bg);
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.process-step h4 {
+  font-size: 0.98rem;
+}
+
+.process-step p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.maintenance-applies {
+  margin-top: 40px;
+}
+
+
+/* ============================================================
+   PRÓXIMAMENTE
+   ============================================================ */
+
+.soon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.soon-card {
+  position: relative;
+
+  padding: 30px;
+
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed var(--border);
+  background: transparent;
+
+  opacity: 0.85;
+}
+
+.soon-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 12px;
+  margin-bottom: 16px;
+
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.soon-card__icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+
+  font-size: 1.15rem;
+  margin-bottom: 16px;
+}
+
+.soon-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+.soon-card ul li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 5px 0;
+}
+
+
+/* ============================================================
+   WHY VALADAL
+   ============================================================ */
+
+.why-band {
+  background: var(--surface-soft);
+}
+
+.why-band__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.why-band__text .section-lead { margin-top: 14px; }
+
+.why-band__points {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.why-band__point {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.why-band__point strong {
+  display: block;
+  margin-bottom: 3px;
+  font-family: var(--font-display);
+}
+
+.why-band__point p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   STAGGER (reveal escalonado dentro de un grid)
+   ============================================================ */
+
+.device-grid .reveal:nth-child(2) { transition-delay: 90ms; }
+.device-grid .reveal:nth-child(3) { transition-delay: 180ms; }
+.device-grid .reveal:nth-child(4) { transition-delay: 270ms; }
+
+.soon-grid .reveal:nth-child(2) { transition-delay: 120ms; }
+
+.process-flow .reveal:nth-child(2) { transition-delay: 90ms; }
+.process-flow .reveal:nth-child(3) { transition-delay: 180ms; }
+.process-flow .reveal:nth-child(4) { transition-delay: 270ms; }
+.process-flow .reveal:nth-child(5) { transition-delay: 360ms; }
+
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .why-band__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
 
 @media (max-width: 860px) {
-  .device-grid, .device-grid--2 { grid-template-columns: 1fr; }
-  .gaming-section { margin: 0 16px 16px; padding: 48px 24px; }
+
+  .repair-hero {
+    padding: 40px 0 24px;
+  }
+
+  .repair-bubbles {
+    gap: 10px;
+    margin-top: 24px;
+  }
+
+  .repair-bubble {
+    padding: 10px 16px;
+    font-size: 0.78rem;
+  }
+
+  .repair-section {
+    padding: 40px 0;
+  }
+
+  .repair-section__head {
+    margin-bottom: 24px;
+  }
+
+  .device-grid,
+  .device-grid--2,
+  .device-grid--4 {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .device-card {
+    padding: 22px;
+  }
+
+  .gaming-section {
+    margin: 0 12px;
+    padding: 40px 20px;
+    border-radius: 18px;
+  }
+
+  .soon-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .process-flow {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .process-flow::before {
+    display: none;
+  }
 }
