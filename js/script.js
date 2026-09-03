@@ -171,6 +171,154 @@ const translations = {
       "Flujos de trabajo, automatización y procesos digitales.",
     "digital.button": "Explorar Digital →",
 
+    "digital.page.eyebrow": "Desarrollo Digital",
+    "digital.page.title": "Impulsa tu empresa con tecnología hecha para ti.",
+    "digital.page.lead":
+      "Sitios web, aplicaciones, sistemas y automatizaciones diseñadas alrededor de las necesidades reales de cada negocio, proyecto o emprendimiento.",
+    "digital.page.intro":
+      "Nuestro objetivo no es solamente crear tecnología: buscamos ayudarte a crecer, mejorar tus procesos y llevar tu empresa al siguiente nivel. Desde sitios web profesionales hasta sistemas empresariales, integraciones mediante APIs y automatización — cada solución se construye alrededor de cómo realmente trabaja tu negocio.",
+    "digital.page.h1.title": "Código propio",
+    "digital.page.h1.text": "Sitios y sistemas desarrollados directamente en código, sin plantillas ni límites de diseño.",
+    "digital.page.h2.title": "Pensado para crecer",
+    "digital.page.h2.text": "Sistemas y automatizaciones que se adaptan a la manera en que realmente trabaja tu empresa.",
+    "digital.page.h3.title": "Todo conectado",
+    "digital.page.h3.text": "Integraciones y APIs para que tus plataformas y servicios trabajen juntos.",
+
+    "digital.nav.web": "01 — Sitios web",
+    "digital.nav.seo": "02 — Google y marketing",
+    "digital.nav.apps": "03 — Apps móviles",
+    "digital.nav.software": "04 — Software para PC",
+    "digital.nav.systems": "05 — Sistemas",
+    "digital.nav.apis": "06 — APIs",
+    "digital.nav.automation": "07 — Automatización",
+    "digital.nav.projects": "08 — Proyectos e ideas",
+
+    "digital.web.eyebrow": "01 — Sitios web",
+    "digital.web.title": "Sitios web profesionales, hechos desde código.",
+    "digital.web.lead":
+      "Desarrollamos páginas web estáticas directamente en código, lo que nos da mayor control sobre diseño, rendimiento y funcionamiento. Cada sitio se construye alrededor de la identidad y las necesidades del proyecto.",
+    "digital.web.item1": "Empresas y negocios locales",
+    "digital.web.item2": "Emprendimientos y profesionales",
+    "digital.web.item3": "Portafolios y landing pages",
+    "digital.web.item4": "Catálogos de productos o servicios",
+    "digital.web.note":
+      "El sitio se entrega completamente preparado, con código fuente propio — normalmente como un archivo ZIP con todos los elementos del proyecto. También podemos encargarnos de publicarlo para que quede disponible en Internet.",
+
+    "digital.seo.eyebrow": "02 — Google y marketing",
+    "digital.seo.title": "Que te encuentren cuando te buscan.",
+    "digital.seo.lead":
+      "Crear una página web es solamente el primer paso. También trabajamos la presencia digital de tu empresa en Google y construimos una estrategia alrededor de tu visibilidad en Internet.",
+    "digital.seo.item1": "Publicación y configuración para buscadores",
+    "digital.seo.item2": "SEO y optimización de contenido",
+    "digital.seo.item3": "Estructura del sitio e indexación",
+    "digital.seo.item4": "Presencia empresarial en Google",
+    "digital.seo.item5": "Estrategia de visibilidad en búsquedas",
+    "digital.seo.item6": "Optimización para clientes potenciales",
+
+    "digital.apps.eyebrow": "03 — Aplicaciones móviles",
+    "digital.apps.title": "Aplicaciones para Android, iPhone y proyectos móviles.",
+    "digital.apps.lead":
+      "Desarrollamos aplicaciones móviles adaptadas a las necesidades de cada proyecto, integrando los servicios y tecnologías que la app requiera.",
+    "digital.apps.item1": "Gestión interna e inventarios",
+    "digital.apps.item2": "Reservaciones y administración",
+    "digital.apps.item3": "Comunicación con clientes",
+    "digital.apps.item4": "Plataformas digitales propias",
+
+    "digital.software.eyebrow": "04 — Software para PC",
+    "digital.software.title": "Software diseñado para tu empresa.",
+    "digital.software.lead":
+      "En lugar de adaptar tu empresa a un programa genérico, desarrollamos herramientas específicas que resuelven lo que el software comercial no cubre.",
+    "digital.software.item1": "Sistemas administrativos",
+    "digital.software.item2": "Gestión de clientes e inventarios",
+    "digital.software.item3": "Herramientas de productividad",
+    "digital.software.item4": "Automatización de tareas internas",
+
+    "digital.bizsys.eyebrow": "05 — Sistemas empresariales",
+    "digital.bizsys.title": "Tecnología diseñada alrededor de tu negocio.",
+    "digital.bizsys.lead":
+      "Desarrollamos sistemas personalizados para empresas, proyectos y emprendimientos, planteados de acuerdo con las necesidades específicas de cada uno.",
+    "digital.bizsys.item1": "Administración y ventas",
+    "digital.bizsys.item2": "Control de recursos e inventarios",
+    "digital.bizsys.item3": "Comunicación entre departamentos",
+    "digital.bizsys.item4": "Procesos internos automatizados",
+
+    "digital.apis.eyebrow": "06 — APIs e integraciones",
+    "digital.apis.title": "Conecta tus sistemas y servicios.",
+    "digital.apis.lead":
+      "Las empresas usan cada vez más plataformas distintas. Desarrollamos integraciones mediante APIs para que diferentes sistemas puedan comunicarse entre sí, en lugar de trabajar de forma aislada.",
+    "digital.apis.item1": "Sincronización de información",
+    "digital.apis.item2": "Integración de servicios externos",
+    "digital.apis.item3": "Conexión entre sistemas internos",
+    "digital.apis.item4": "Herramientas alrededor de servicios existentes",
+
+    "digital.auto.eyebrow": "07 — Automatización empresarial",
+    "digital.auto.title": "Deja que la tecnología haga el trabajo repetitivo.",
+    "digital.auto.lead":
+      "Analizamos procesos que hoy requieren trabajo manual y buscamos oportunidades para automatizarlos, reduciendo errores y liberando tiempo de tu equipo.",
+    "digital.auto.item1": "Procesamiento y gestión de datos",
+    "digital.auto.item2": "Notificaciones y flujos de trabajo",
+    "digital.auto.item3": "Generación automática de información",
+    "digital.auto.item4": "Comunicación entre sistemas",
+
+    "digital.projects.eyebrow": "08 — Proyectos e ideas",
+    "digital.projects.title": "¿Tienes una idea? No necesitas tener una empresa establecida.",
+    "digital.projects.lead":
+      "También desarrollamos soluciones para proyectos personales, startups y prototipos. Si tienes una idea y no sabes cómo convertirla en algo funcional, te acompañamos desde el concepto hasta el producto.",
+    "digital.projects.item1": "Emprendimientos y startups",
+    "digital.projects.item2": "Prototipos y sistemas experimentales",
+    "digital.projects.item3": "Proyectos escolares o tecnológicos",
+    "digital.projects.item4": "Productos digitales propios",
+
+    "digital.process.eyebrow": "Cómo trabajamos",
+    "digital.process.title": "Del concepto al producto funcionando.",
+    "digital.process.lead":
+      "Un proceso claro, para que sepas exactamente en qué punto está tu proyecto en cada momento.",
+    "digital.process.step1.title": "Diagnóstico",
+    "digital.process.step1.text": "Entendemos qué necesitas: el problema a resolver, cómo trabaja tu empresa hoy y qué debería mejorar.",
+    "digital.process.step2.title": "Propuesta",
+    "digital.process.step2.text": "Planteamos la solución más adecuada — sitio, sistema, app o automatización — junto con alcance y tiempos.",
+    "digital.process.step3.title": "Desarrollo",
+    "digital.process.step3.text": "Construimos la solución directamente en código, con avances visibles a lo largo del proceso.",
+    "digital.process.step4.title": "Entrega",
+    "digital.process.step4.text": "Recibes el proyecto completo — código fuente incluido — y, si lo necesitas, nos encargamos de publicarlo.",
+    "digital.process.step5.title": "Soporte",
+    "digital.process.step5.text": "Seguimos disponibles para ajustes, mejoras o para escalar la solución cuando tu negocio lo requiera.",
+
+    "digital.faq.eyebrow": "¿Qué necesitas desarrollar?",
+    "digital.faq.title": "Cuéntanos qué necesitas y analizamos juntos la mejor solución.",
+    "digital.faq.q1": "¿Necesitas una página web?",
+    "digital.faq.a1": "Desarrollamos sitios profesionales desde código, adaptados a tu marca y con entrega de código fuente propio.",
+    "digital.faq.q2": "¿Quieres una aplicación para tus clientes?",
+    "digital.faq.a2": "Diseñamos y desarrollamos aplicaciones móviles a la medida, para Android, iPhone o ambos.",
+    "digital.faq.q3": "¿Tu empresa necesita un sistema propio?",
+    "digital.faq.a3": "Construimos sistemas empresariales alrededor de tus procesos reales, no al revés.",
+    "digital.faq.q4": "¿Hay procesos que haces manualmente todos los días?",
+    "digital.faq.a4": "Podemos automatizarlos: desde notificaciones hasta flujos de trabajo completos.",
+    "digital.faq.q5": "¿Necesitas conectar diferentes plataformas?",
+    "digital.faq.a5": "Desarrollamos integraciones mediante APIs para que tus sistemas trabajen juntos.",
+    "digital.faq.q6": "¿Tienes una idea para un producto tecnológico?",
+    "digital.faq.a6": "Te acompañamos desde el concepto hasta un producto funcional, sin necesidad de una empresa establecida.",
+    "digital.faq.q7": "¿Quieres mejorar la presencia de tu empresa en Internet?",
+    "digital.faq.a7": "Trabajamos SEO, indexación y estrategia de visibilidad para que te encuentren en Google.",
+
+    "digital.growth.eyebrow": "Haz crecer tu empresa con tecnología",
+    "digital.growth.title": "No es solamente una herramienta. Puede ser parte fundamental de tu crecimiento.",
+    "digital.growth.lead": "En Valadal desarrollamos estas soluciones pensando en cómo pueden aportar valor real a tu negocio.",
+    "digital.growth.closing1": "Tu empresa. Tu proyecto. Tu idea.",
+    "digital.growth.closing2": "Nosotros ponemos la tecnología.",
+    "digital.growth.item1.strong": "Una página web",
+    "digital.growth.item1.text": "puede ayudarte a conseguir clientes.",
+    "digital.growth.item2.strong": "Un sistema",
+    "digital.growth.item2.text": "puede ayudarte a organizar tu empresa.",
+    "digital.growth.item3.strong": "Una aplicación",
+    "digital.growth.item3.text": "puede mejorar la experiencia de tus usuarios.",
+    "digital.growth.item4.strong": "Una automatización",
+    "digital.growth.item4.text": "puede ahorrarte horas de trabajo.",
+    "digital.growth.item5.strong": "Una integración",
+    "digital.growth.item5.text": "puede conectar todos tus procesos.",
+
+    "digital.ctaPage.title": "¿Necesitas una página web, una aplicación, software personalizado o quieres automatizar tu empresa?",
+
     "values.eyebrow": "Por qué Valadal",
     "values.title": "Construidos sobre los mismos cuatro principios, siempre.",
     "values.precision": "Precisión",
@@ -370,6 +518,154 @@ const translations = {
     "digital.automationDesc":
       "Workflows, automation and digital processes.",
     "digital.button": "Explore Digital →",
+
+    "digital.page.eyebrow": "Digital Development",
+    "digital.page.title": "Grow your business with technology built for you.",
+    "digital.page.lead":
+      "Websites, apps, systems and automation designed around the real needs of every business, project or venture.",
+    "digital.page.intro":
+      "Our goal isn't just to build technology — it's to help you grow, improve your processes and take your business to the next level. From professional websites to business systems, API integrations and automation, every solution is built around how your business actually works.",
+    "digital.page.h1.title": "Custom-built code",
+    "digital.page.h1.text": "Sites and systems built directly in code, with no templates or design limits.",
+    "digital.page.h2.title": "Built to grow",
+    "digital.page.h2.text": "Systems and automation that adapt to how your business actually works.",
+    "digital.page.h3.title": "Everything connected",
+    "digital.page.h3.text": "Integrations and APIs so your platforms and services work together.",
+
+    "digital.nav.web": "01 — Websites",
+    "digital.nav.seo": "02 — Google & marketing",
+    "digital.nav.apps": "03 — Mobile apps",
+    "digital.nav.software": "04 — PC software",
+    "digital.nav.systems": "05 — Systems",
+    "digital.nav.apis": "06 — APIs",
+    "digital.nav.automation": "07 — Automation",
+    "digital.nav.projects": "08 — Projects & ideas",
+
+    "digital.web.eyebrow": "01 — Websites",
+    "digital.web.title": "Professional websites, built from code.",
+    "digital.web.lead":
+      "We build static websites directly in code, giving us more control over design, performance and functionality. Every site is built around the project's identity and needs.",
+    "digital.web.item1": "Businesses and local shops",
+    "digital.web.item2": "Ventures and professionals",
+    "digital.web.item3": "Portfolios and landing pages",
+    "digital.web.item4": "Product or service catalogs",
+    "digital.web.note":
+      "The site is delivered fully ready, with your own source code — usually as a ZIP file with every project asset. We can also handle publishing it live on the Internet.",
+
+    "digital.seo.eyebrow": "02 — Google & marketing",
+    "digital.seo.title": "Get found when people search for you.",
+    "digital.seo.lead":
+      "Building a website is only the first step. We also work on your business's digital presence on Google and build a strategy around your online visibility.",
+    "digital.seo.item1": "Search engine setup and submission",
+    "digital.seo.item2": "SEO and content optimization",
+    "digital.seo.item3": "Site structure and indexing",
+    "digital.seo.item4": "Business presence on Google",
+    "digital.seo.item5": "Search visibility strategy",
+    "digital.seo.item6": "Optimization for potential customers",
+
+    "digital.apps.eyebrow": "03 — Mobile apps",
+    "digital.apps.title": "Apps for Android, iPhone and mobile projects.",
+    "digital.apps.lead":
+      "We build mobile apps tailored to each project's needs, integrating whatever services and technologies the app requires.",
+    "digital.apps.item1": "Internal management and inventory",
+    "digital.apps.item2": "Bookings and administration",
+    "digital.apps.item3": "Customer communication",
+    "digital.apps.item4": "Your own digital platforms",
+
+    "digital.software.eyebrow": "04 — PC software",
+    "digital.software.title": "Software designed for your business.",
+    "digital.software.lead":
+      "Instead of adapting your business to generic software, we build specific tools that solve what off-the-shelf software doesn't cover.",
+    "digital.software.item1": "Administrative systems",
+    "digital.software.item2": "Customer and inventory management",
+    "digital.software.item3": "Productivity tools",
+    "digital.software.item4": "Internal task automation",
+
+    "digital.bizsys.eyebrow": "05 — Business systems",
+    "digital.bizsys.title": "Technology designed around your business.",
+    "digital.bizsys.lead":
+      "We build custom systems for businesses, projects and ventures, designed around each one's specific needs.",
+    "digital.bizsys.item1": "Administration and sales",
+    "digital.bizsys.item2": "Resource and inventory control",
+    "digital.bizsys.item3": "Communication between departments",
+    "digital.bizsys.item4": "Automated internal processes",
+
+    "digital.apis.eyebrow": "06 — APIs & integrations",
+    "digital.apis.title": "Connect your systems and services.",
+    "digital.apis.lead":
+      "Businesses use more platforms than ever. We build API integrations so different systems can talk to each other instead of working in isolation.",
+    "digital.apis.item1": "Data synchronization",
+    "digital.apis.item2": "Third-party service integration",
+    "digital.apis.item3": "Connecting internal systems",
+    "digital.apis.item4": "Tools built around existing services",
+
+    "digital.auto.eyebrow": "07 — Business automation",
+    "digital.auto.title": "Let technology handle the repetitive work.",
+    "digital.auto.lead":
+      "We analyze processes that currently require manual work and look for ways to automate them, reducing errors and freeing up your team's time.",
+    "digital.auto.item1": "Data processing and management",
+    "digital.auto.item2": "Notifications and workflows",
+    "digital.auto.item3": "Automatic report generation",
+    "digital.auto.item4": "Communication between systems",
+
+    "digital.projects.eyebrow": "08 — Projects & ideas",
+    "digital.projects.title": "Have an idea? You don't need an established business.",
+    "digital.projects.lead":
+      "We also build solutions for personal projects, startups and prototypes. If you have an idea and don't know how to make it real, we'll walk with you from concept to product.",
+    "digital.projects.item1": "Ventures and startups",
+    "digital.projects.item2": "Prototypes and experimental systems",
+    "digital.projects.item3": "School or tech projects",
+    "digital.projects.item4": "Your own digital products",
+
+    "digital.process.eyebrow": "How we work",
+    "digital.process.title": "From concept to a working product.",
+    "digital.process.lead":
+      "A clear process, so you always know exactly where your project stands.",
+    "digital.process.step1.title": "Diagnosis",
+    "digital.process.step1.text": "We understand what you need: the problem to solve, how your business works today, and what should improve.",
+    "digital.process.step2.title": "Proposal",
+    "digital.process.step2.text": "We propose the best-fit solution — site, system, app or automation — along with scope and timeline.",
+    "digital.process.step3.title": "Development",
+    "digital.process.step3.text": "We build the solution directly in code, with visible progress throughout.",
+    "digital.process.step4.title": "Delivery",
+    "digital.process.step4.text": "You get the complete project — source code included — and, if needed, we handle publishing it.",
+    "digital.process.step5.title": "Support",
+    "digital.process.step5.text": "We stay available for adjustments, improvements, or to scale the solution as your business needs it.",
+
+    "digital.faq.eyebrow": "What do you need to build?",
+    "digital.faq.title": "Tell us what you need and we'll figure out the best solution together.",
+    "digital.faq.q1": "Need a website?",
+    "digital.faq.a1": "We build professional sites from code, tailored to your brand, with your own source code delivered.",
+    "digital.faq.q2": "Want an app for your customers?",
+    "digital.faq.a2": "We design and build custom mobile apps, for Android, iPhone or both.",
+    "digital.faq.q3": "Does your business need its own system?",
+    "digital.faq.a3": "We build business systems around your real processes, not the other way around.",
+    "digital.faq.q4": "Are there processes you do manually every day?",
+    "digital.faq.a4": "We can automate them: from notifications to full workflows.",
+    "digital.faq.q5": "Need to connect different platforms?",
+    "digital.faq.a5": "We build API integrations so your systems work together.",
+    "digital.faq.q6": "Have an idea for a tech product?",
+    "digital.faq.a6": "We'll walk with you from concept to a working product, no established business required.",
+    "digital.faq.q7": "Want to improve your business's presence online?",
+    "digital.faq.a7": "We work on SEO, indexing and visibility strategy so people find you on Google.",
+
+    "digital.growth.eyebrow": "Grow your business with technology",
+    "digital.growth.title": "It's not just a tool. It can be a core part of your growth.",
+    "digital.growth.lead": "At Valadal we build these solutions with real value for your business in mind.",
+    "digital.growth.closing1": "Your business. Your project. Your idea.",
+    "digital.growth.closing2": "We bring the technology.",
+    "digital.growth.item1.strong": "A website",
+    "digital.growth.item1.text": "can help you win customers.",
+    "digital.growth.item2.strong": "A system",
+    "digital.growth.item2.text": "can help you organize your business.",
+    "digital.growth.item3.strong": "An app",
+    "digital.growth.item3.text": "can improve your users' experience.",
+    "digital.growth.item4.strong": "Automation",
+    "digital.growth.item4.text": "can save you hours of work.",
+    "digital.growth.item5.strong": "An integration",
+    "digital.growth.item5.text": "can connect all your processes.",
+
+    "digital.ctaPage.title": "Need a website, an app, custom software, or want to automate your business?",
 
     "values.eyebrow": "Why Valadal",
     "values.title": "Built on the same four principles, every time.",
@@ -1180,43 +1476,6 @@ window.addEventListener(
 // ------------------------------------------------------------
 
 startFloatLoop();
-
-// ============================================================
-// 9B. REPAIR BUBBLES — ÉNFASIS AUTOMÁTICO
-// Va marcando una burbuja a la vez con .is-active (zoom),
-// sin necesidad de click. Se pausa sola sobre la que
-// está "activa" y sigue rotando entre todas.
-// ============================================================
-
-const repairBubbles =
-  document.querySelectorAll(".repair-bubble");
-
-if (repairBubbles.length) {
-
-  let bubbleIndex = 0;
-
-  function emphasizeNextBubble() {
-
-    repairBubbles.forEach((bubble) => {
-      bubble.classList.remove("is-active");
-    });
-
-    repairBubbles[bubbleIndex].classList.add(
-      "is-active"
-    );
-
-    bubbleIndex =
-      (bubbleIndex + 1) % repairBubbles.length;
-  }
-
-  // Primer énfasis inmediato
-  emphasizeNextBubble();
-
-  // Rota cada 3.2 segundos
-  setInterval(emphasizeNextBubble, 3200);
-
-}
-
 
 /* ============================================================
    ACCESIBILIDAD
