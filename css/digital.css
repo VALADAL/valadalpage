@@ -116,43 +116,93 @@
 
 /* ------------------------------------------------------------
    QUICK NAV
-   Barra de texto, no burbujas — lista de enlaces separados
-   por líneas, con scroll horizontal en mobile.
+   Chips numerados que retoman el lenguaje de tarjeta del
+   resto de la página (shadow-card, acento azul al hover),
+   en vez de la lista de texto con divisores.
    ------------------------------------------------------------ */
 
-.digital-nav {
-  display: flex;
-  flex-wrap: nowrap;
-  overflow-x: auto;
+.digital-nav__label {
+  display: block;
 
-  border-top: 1px solid var(--border);
-
-  scrollbar-width: none;
-}
-
-.digital-nav::-webkit-scrollbar {
-  display: none;
-}
-
-.digital-nav a {
-  padding: 16px 22px;
+  margin-top: 4px;
+  margin-bottom: 14px;
 
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 0.82rem;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
   color: var(--text-secondary);
+}
+
+.digital-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+
+  padding-bottom: 64px;
+}
+
+.digital-nav a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+
+  padding: 9px 20px 9px 9px;
+
+  border-radius: var(--radius-pill);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.84rem;
+  color: var(--text-main);
   white-space: nowrap;
 
-  border-right: 1px solid var(--border);
-
   transition:
-    color 0.2s ease,
-    background-color 0.2s ease;
+    transform 0.3s var(--ease),
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.3s var(--ease);
 }
 
 .digital-nav a:hover {
+  transform: translateY(-3px);
+
+  border-color: var(--blue);
   color: var(--blue);
-  background: var(--surface-soft);
+
+  box-shadow:
+    0 14px 28px rgba(0, 102, 255, 0.16),
+    0 4px 10px rgba(10, 10, 10, 0.06);
+}
+
+.digital-nav a::before {
+  content: attr(data-num);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+
+  width: 26px;
+  height: 26px;
+
+  border-radius: 50%;
+  background: rgba(0, 102, 255, 0.08);
+  color: var(--blue);
+
+  font-size: 0.7rem;
+  font-weight: 700;
+
+  transition: background-color 0.25s ease;
+}
+
+.digital-nav a:hover::before {
+  background: var(--blue);
+  color: #FFFFFF;
 }
 
 
@@ -677,9 +727,19 @@
     padding: 22px;
   }
 
+  .digital-nav {
+    padding-bottom: 40px;
+  }
+
   .digital-nav a {
-    padding: 13px 16px;
-    font-size: 0.76rem;
+    padding: 8px 16px 8px 8px;
+    font-size: 0.78rem;
+  }
+
+  .digital-nav a::before {
+    width: 22px;
+    height: 22px;
+    font-size: 0.62rem;
   }
 
   .digital-section__intro {
