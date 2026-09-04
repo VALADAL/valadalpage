@@ -320,6 +320,87 @@ const translations = {
 
     "digital.ctaPage.title": "¿Necesitas una página web, una aplicación, software personalizado o quieres automatizar tu empresa?",
 
+    "about.hero.eyebrow": "Nosotros",
+    "about.hero.title": "Tecnología aprendida haciendo.",
+    "about.hero.lead":
+      "VALADAL nació de algo más sencillo que una empresa: la curiosidad por entender cómo funcionan las cosas. Desde computadoras y consolas hasta smartphones, servidores y sistemas electrónicos, nuestra experiencia se ha construido a través de años de experimentar, reparar, construir y aprender.",
+    "about.hero.lead2":
+      "No creemos que el conocimiento tecnológico se limite a un título o a un manual. La experiencia también se construye con práctica, pruebas, errores y soluciones reales.",
+
+    "about.history.eyebrow": "Nuestra historia",
+    "about.history.title": "De un proyecto amateur a VALADAL.",
+    "about.history.lead":
+      "VALADAL comenzó con algo muy sencillo: armar computadoras y ofrecerlas en Facebook Marketplace. Desde el principio tuvimos una idea clara: una buena computadora no debería depender únicamente de cuánto dinero tienes disponible.",
+    "about.history.quote":
+      "\"No aprendimos tecnología solamente estudiándola. La aprendimos construyéndola, reparándola y, muchas veces, equivocándonos.\"",
+
+    "about.tl1.title": "Curiosidad",
+    "about.tl1.text": "Primeras reparaciones y experimentación con dispositivos propios.",
+    "about.tl2.title": "Armado de PCs en Facebook Marketplace",
+    "about.tl2.text": "Buscábamos la mejor combinación posible entre presupuesto, rendimiento y calidad.",
+    "about.tl3.title": "Componentes de segunda mano, restaurados",
+    "about.tl3.text":
+      "Cuando un cliente lo autorizaba, buscábamos componentes usados —especialmente GPUs—, los revisábamos, limpiábamos y probábamos antes de integrarlos. Llegamos a reducir costos hasta un 60% frente a configuraciones nuevas equivalentes.",
+    "about.tl4.title": "Ingeniería y especialización en cooling",
+    "about.tl4.text":
+      "Durante nuestra formación en ingeniería nos especializamos en refrigeración, disipación térmica y mantenimiento de equipos de alto rendimiento.",
+    "about.tl5.title": "Mantenimiento de servidores para Coca-Cola",
+    "about.tl5.text":
+      "Llevamos nuestros conocimientos a un entorno profesional y de mayor escala, revisando y manteniendo infraestructura de servidores.",
+    "about.tl6.title": "VALADAL",
+    "about.tl6.text": "Reparación · Armado · Creación · Electrónica · Servidores · Digital.",
+
+    "about.spec.eyebrow": "De la experiencia a la especialización",
+    "about.spec.title": "Cooling, servidores y alto rendimiento.",
+    "about.spec.text1":
+      "Con el paso del tiempo, nuestro interés por las computadoras fue mucho más allá del armado. Nos especializamos en refrigeración, disipación térmica y mantenimiento de equipos de alto rendimiento.",
+    "about.spec.text2":
+      "Esta experiencia nos llevó a trabajar en revisión y mantenimiento de infraestructura de servidores para Coca-Cola, donde entendimos algo importante: la tecnología no solamente debe funcionar — debe funcionar correctamente, mantenerse y estar preparada para seguir funcionando.",
+
+    "about.passion.eyebrow": "Una pasión que comenzó mucho antes",
+    "about.passion.title": "Smartphones, custom ROMs y curiosidad.",
+    "about.passion.text1":
+      "Desde una edad temprana comenzamos a experimentar con smartphones, sistemas operativos y dispositivos móviles — modos DFU de Apple, Recovery de Android, sistemas modificados, Custom ROMs y jailbreak.",
+    "about.passion.q1": "¿Cómo funciona?",
+    "about.passion.q2": "¿Por qué falla?",
+    "about.passion.q3": "¿Se puede modificar, reparar o mejorar?",
+
+    "about.gaming.eyebrow": "Tecnología que también disfrutamos",
+    "about.gaming.title": "No todo comenzó como trabajo.",
+    "about.gaming.text":
+      "Las consolas y controles que utilizábamos personalmente fueron algunos de nuestros primeros dispositivos de reparación. Cuando algo fallaba, queríamos saber qué había fallado, por qué, y cómo solucionarlo. Con el tiempo, esa afición terminó convirtiéndose también en parte de los servicios que ofrecemos.",
+
+    "about.phil.eyebrow": "Nuestra filosofía",
+    "about.phil.title": "Tratamos cada equipo como si fuera nuestro.",
+    "about.phil.quote":
+      "No vemos una computadora, teléfono, consola o servidor simplemente como otro dispositivo. Detrás de cada equipo existe una inversión, un proyecto o algo que para su propietario tiene valor.",
+    "about.phil.cite": "Buscamos que funcione correctamente, se vea correctamente, y quede correctamente.",
+
+    "about.values.eyebrow": "Más que una persona",
+    "about.values.title": "Cada persona en VALADAL comparte una misma manera de trabajar.",
+    "about.v1.title": "Curiosidad",
+    "about.v1.text": "Queremos entender cómo funcionan las cosas.",
+    "about.v2.title": "Cuidado",
+    "about.v2.text": "Tratamos los equipos de nuestros clientes como si fueran propios.",
+    "about.v3.title": "Precisión",
+    "about.v3.text": "Los detalles importan.",
+    "about.v4.title": "Aprendizaje",
+    "about.v4.text": "Siempre existe algo nuevo que aprender.",
+    "about.v5.title": "Responsabilidad",
+    "about.v5.text": "Cada equipo que recibimos representa la confianza de alguien.",
+
+    "about.today.eyebrow": "Lo que somos hoy",
+    "about.today.title": "Reparación, mantenimiento, creación y desarrollo digital.",
+    "about.today.text":
+      "Pero nuestra meta no es quedarnos ahí. Queremos seguir aprendiendo, explorar nuevas tecnologías y ampliar nuestras áreas de trabajo para resolver cada vez más problemas.",
+
+    "about.vision.eyebrow": "Nuestra visión",
+    "about.vision.text":
+      "VALADAL existe para convertir curiosidad, conocimiento y experiencia en soluciones reales — desde un pequeño circuito hasta un servidor completo, desde una computadora personalizada hasta un sistema diseñado específicamente para una empresa.",
+    "about.closing.line1": "Nació de la pasión.",
+    "about.closing.line2": "Creció con experiencia.",
+    "about.closing.line3": "Y continúa aprendiendo.",
+
     "values.eyebrow": "Por qué Valadal",
     "values.title": "Construidos sobre los mismos cuatro principios, siempre.",
     "values.precision": "Precisión",
@@ -668,6 +749,87 @@ const translations = {
     "digital.growth.item5.text": "can connect all your processes.",
 
     "digital.ctaPage.title": "Need a website, an app, custom software, or want to automate your business?",
+
+    "about.hero.eyebrow": "About",
+    "about.hero.title": "Technology learned by doing.",
+    "about.hero.lead":
+      "VALADAL was born from something simpler than a company: curiosity about how things work. From computers and consoles to smartphones, servers and electronic systems, our experience was built through years of experimenting, repairing, building and learning.",
+    "about.hero.lead2":
+      "We don't believe technical knowledge is limited to a degree or a manual. Experience is also built through practice, testing, mistakes and real solutions.",
+
+    "about.history.eyebrow": "Our story",
+    "about.history.title": "From an amateur project to VALADAL.",
+    "about.history.lead":
+      "VALADAL started with something very simple: building computers and listing them on Facebook Marketplace. From the start we had one clear idea: a good computer shouldn't depend only on how much money you have.",
+    "about.history.quote":
+      "\"We didn't just learn technology by studying it. We learned it by building it, repairing it, and, often, getting it wrong.\"",
+
+    "about.tl1.title": "Curiosity",
+    "about.tl1.text": "First repairs and experimentation with our own devices.",
+    "about.tl2.title": "Building PCs on Facebook Marketplace",
+    "about.tl2.text": "We looked for the best possible balance between budget, performance and quality.",
+    "about.tl3.title": "Refurbished second-hand components",
+    "about.tl3.text":
+      "When a client approved it, we sourced used parts —especially GPUs—, inspected, cleaned and tested them before installing them. We cut costs by up to 60% versus equivalent new builds.",
+    "about.tl4.title": "Engineering and cooling specialization",
+    "about.tl4.text":
+      "During our engineering studies we specialized in cooling, thermal dissipation and maintenance of high-performance equipment.",
+    "about.tl5.title": "Server maintenance for Coca-Cola",
+    "about.tl5.text":
+      "We brought our knowledge into a professional, larger-scale environment, reviewing and maintaining server infrastructure.",
+    "about.tl6.title": "VALADAL",
+    "about.tl6.text": "Repair · Build · Create · Electronics · Servers · Digital.",
+
+    "about.spec.eyebrow": "From experience to specialization",
+    "about.spec.title": "Cooling, servers and high performance.",
+    "about.spec.text1":
+      "Over time, our interest in computers went far beyond building them. We specialized in cooling, thermal dissipation and maintenance of high-performance equipment.",
+    "about.spec.text2":
+      "This experience led us to review and maintain server infrastructure for Coca-Cola, where we understood something important: technology shouldn't just work — it should work correctly, stay maintained, and be ready to keep working.",
+
+    "about.passion.eyebrow": "A passion that started long before",
+    "about.passion.title": "Smartphones, custom ROMs and curiosity.",
+    "about.passion.text1":
+      "From an early age we started experimenting with smartphones, operating systems and mobile devices — Apple's DFU mode, Android Recovery, modified systems, Custom ROMs and jailbreaking.",
+    "about.passion.q1": "How does it work?",
+    "about.passion.q2": "Why did it fail?",
+    "about.passion.q3": "Can it be modified, repaired or improved?",
+
+    "about.gaming.eyebrow": "Technology we also enjoy",
+    "about.gaming.title": "Not everything started as work.",
+    "about.gaming.text":
+      "The consoles and controllers we used personally were some of our first repair projects. When something broke, we wanted to know what failed, why, and how to fix it. Over time, that hobby became part of the services we offer.",
+
+    "about.phil.eyebrow": "Our philosophy",
+    "about.phil.title": "We treat every device like it's our own.",
+    "about.phil.quote":
+      "We don't see a computer, phone, console or server as just another device. Behind every piece of equipment there's an investment, a project, or something with real value to its owner.",
+    "about.phil.cite": "We aim for it to work correctly, look right, and come out right.",
+
+    "about.values.eyebrow": "More than one person",
+    "about.values.title": "Everyone at VALADAL shares the same way of working.",
+    "about.v1.title": "Curiosity",
+    "about.v1.text": "We want to understand how things work.",
+    "about.v2.title": "Care",
+    "about.v2.text": "We treat our clients' equipment like it's our own.",
+    "about.v3.title": "Precision",
+    "about.v3.text": "The details matter.",
+    "about.v4.title": "Learning",
+    "about.v4.text": "There's always something new to learn.",
+    "about.v5.title": "Responsibility",
+    "about.v5.text": "Every device we receive represents someone's trust.",
+
+    "about.today.eyebrow": "Who we are today",
+    "about.today.title": "Repair, maintenance, building and digital development.",
+    "about.today.text":
+      "But our goal isn't to stop there. We want to keep learning, explore new technologies and expand what we do to solve more problems.",
+
+    "about.vision.eyebrow": "Our vision",
+    "about.vision.text":
+      "VALADAL exists to turn curiosity, knowledge and experience into real solutions — from a small circuit to a complete server, from a custom computer to a system designed specifically for a business.",
+    "about.closing.line1": "Born from passion.",
+    "about.closing.line2": "Grew with experience.",
+    "about.closing.line3": "And keeps learning.",
 
     "values.eyebrow": "Why Valadal",
     "values.title": "Built on the same four principles, every time.",
