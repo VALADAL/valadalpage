@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Proyectos — Valadal</title>
+  <meta name="description" content="Una muestra del tipo de trabajo de reparación, armado y soluciones digitales que hacemos en Valadal, y lo que dicen nuestros clientes.">
+
+  <meta property="og:title" content="Proyectos — Valadal">
+  <meta property="og:description" content="Trabajo real. Soluciones reales.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valadal.com/work/">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <meta name="theme-color" content="#0A0A0A" id="theme-color-meta">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/work.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       DEFINICIÓN SVG — media estrella
+       Un solo <defs> global reutilizado por todas las estrellas
+       a medias de la página.
+       ============================================================ -->
+
+  <svg width="0" height="0" aria-hidden="true" focusable="false" style="position:absolute">
+    <defs>
+      <linearGradient id="starHalfGradient" x1="0" y1="0" x2="1" y2="0">
+        <stop offset="50%" stop-color="var(--blue)" stop-opacity="1"/>
+        <stop offset="50%" stop-color="var(--blue)" stop-opacity="0"/>
+      </linearGradient>
+    </defs>
+  </svg>
+
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <a href="../index.html" class="navbar__logo">
+        <span class="navbar__logo-mark">V</span>
+      </a>
+
+      <nav class="navbar__links">
+        <a href="../index.html" class="nav-link" data-i18n="nav.home">Inicio</a>
+        <a href="../repair/index.html" class="nav-link" data-i18n="nav.repair">Reparación</a>
+        <a href="../build/index.html" class="nav-link" data-i18n="nav.build">Armado</a>
+        <a href="../digital/index.html" class="nav-link" data-i18n="nav.digital">Digital</a>
+        <a href="../work/index.html" class="nav-link is-active" data-i18n="nav.work">Proyectos</a>
+        <a href="../about/index.html" class="nav-link" data-i18n="nav.about">Nosotros</a>
+        <a href="../contact/index.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="navbar__right">
+
+        <a href="../contact/index.html" class="btn btn--primary btn--small" data-i18n="nav.quote">Cotizar</a>
+
+        <div class="accessibility-control" id="accessibilityControl">
+
+          <button class="accessibility-toggle" id="accessibilityToggle" type="button" aria-label="Accesibilidad" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2"/>
+              <path d="M5 8h14"/>
+              <path d="M12 8v11"/>
+              <path d="M8 21l4-10 4 10"/>
+            </svg>
+          </button>
+
+          <div class="accessibility-options">
+
+            <button class="accessibility-option" id="languageToggle" type="button" aria-label="Cambiar idioma">
+              <span id="languageLabel">A/文</span>
+            </button>
+
+            <button class="accessibility-option" id="themeToggle" type="button" aria-label="Cambiar modo">
+              <span id="themeIcon">◐</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       MOBILE DRAWER
+       ============================================================ -->
+
+  <div class="nav-drawer" id="navDrawer">
+
+    <nav class="nav-drawer__links">
+      <a href="../index.html" data-i18n="nav.home">Inicio</a>
+      <a href="../repair/index.html" data-i18n="nav.repair">Reparación</a>
+      <a href="../build/index.html" data-i18n="nav.build">Armado</a>
+      <a href="../digital/index.html" data-i18n="nav.digital">Digital</a>
+      <a href="../work/index.html" data-i18n="nav.work">Proyectos</a>
+      <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+      <a href="../contact/index.html" data-i18n="nav.contact">Contacto</a>
+    </nav>
+
+    <a href="../contact/index.html" class="btn btn--primary nav-drawer__cta" data-i18n="nav.quote">Cotizar</a>
+
+  </div>
+
+
+  <!-- ============================================================
+       PAGE HERO + FILTROS EN BURBUJA
+       ============================================================ -->
+
+  <section class="page-hero">
+    <div class="container">
+
+      <p class="eyebrow reveal" data-i18n="workPage.eyebrow">Proyectos</p>
+
+      <h1 class="reveal" data-i18n="workPage.title">Trabajo real. Soluciones reales.</h1>
+
+      <p class="section-lead reveal" data-i18n="workPage.lead">Estamos construyendo este portafolio proyecto por proyecto. Todo lo que ves aquí está marcado como ejemplo hasta que lo reemplacemos con trabajos reales fotografiados.</p>
+
+      <p class="work-filters__label reveal" data-i18n="workPage.nav.label">Filtra por tipo de trabajo</p>
+
+      <div class="work-filters reveal">
+
+        <button class="work-bubble filter-btn is-active" type="button" data-filter="all" aria-pressed="true">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7" rx="1.6"/><rect x="14" y="3" width="7" height="7" rx="1.6"/><rect x="3" y="14" width="7" height="7" rx="1.6"/><rect x="14" y="14" width="7" height="7" rx="1.6"/></svg>
+            </span>
+            <span data-i18n="workPage.filter.all">Todos</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="repair" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2 2.1-2.1Z"/></svg>
+            </span>
+            <span data-i18n="nav.repair">Reparación</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="build" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.8 20.5 7v10L12 21.2 3.5 17V7L12 2.8Z"/><path d="M3.5 7 12 11.5 20.5 7"/><path d="M12 11.5v9.7"/></svg>
+            </span>
+            <span data-i18n="workPage.filter.build">Armado</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="computers" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="13" rx="2"/><path d="M8 21h8"/><path d="M12 17v4"/></svg>
+            </span>
+            <span data-i18n="work.computers">Computadoras</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="gaming" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 8h11a4 4 0 0 1 3.8 5.2l-1.3 4.2a2.2 2.2 0 0 1-3.7 1l-2.3-2.4H10l-2.3 2.4a2.2 2.2 0 0 1-3.7-1l-1.3-4.2A4 4 0 0 1 6.5 8Z"/><path d="M7 11v4"/><path d="M5 13h4"/><circle cx="16.5" cy="12.5" r=".8"/><circle cx="18.5" cy="14.5" r=".8"/></svg>
+            </span>
+            <span data-i18n="work.gaming">Gaming</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="smartphones" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="2.5" width="12" height="19" rx="2.5"/><path d="M10 5h4"/><path d="M11 18.5h2"/></svg>
+            </span>
+            <span data-i18n="work.smartphones">Smartphones</span>
+          </span>
+        </button>
+
+        <button class="work-bubble filter-btn" type="button" data-filter="digital" aria-pressed="false">
+          <span class="work-bubble__content">
+            <span class="work-bubble__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18"/><path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/></svg>
+            </span>
+            <span data-i18n="work.digital">Digital</span>
+          </span>
+        </button>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       GALERÍA
+       ============================================================ -->
+
+  <section class="work-section">
+    <div class="container">
+
+      <div class="work-section__head">
+        <p class="eyebrow reveal" data-i18n="workPage.gallery.eyebrow">Galería</p>
+        <h2 class="reveal" data-i18n="workPage.gallery.title">Lo que sale del taller.</h2>
+      </div>
+
+      <div class="work-grid">
+
+        <div class="work-piece work-piece--wide reveal" data-category="gaming">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0A0A0A, #142238);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-01.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item1">PlayStation 5 — reparación de puerto HDMI</span>
+        </div>
+
+        <div class="work-piece work-piece--tall reveal" data-category="computers">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0052cc, #0066FF);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-02.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item2">MacBook Pro — diagnóstico de tarjeta lógica</span>
+        </div>
+
+        <div class="work-piece reveal" data-category="smartphones">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #6B7280, #9AA2AF);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-03.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item3">iPhone — cambio de pantalla</span>
+        </div>
+
+        <div class="work-piece work-piece--wide reveal" data-category="digital">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0066FF, #00A3FF);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-04.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item4">Negocio local — rediseño de sitio web</span>
+        </div>
+
+        <div class="work-piece reveal" data-category="gaming">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #101010, #1c2530);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-05.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item5">Control de Xbox — reparación de stick drift</span>
+        </div>
+
+        <div class="work-piece reveal" data-category="build">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #E5E7EB, #6B7280);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-06.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item6">Computadora armada a la medida</span>
+        </div>
+
+        <div class="work-piece reveal" data-category="digital">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #061A40, #0066FF);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-07.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item7">Herramienta interna — automatización de procesos</span>
+        </div>
+
+        <div class="work-piece work-piece--tall reveal" data-category="smartphones">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #3f4652, #6B7280);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-08.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item8">Dispositivo Android — batería y diagnóstico</span>
+        </div>
+
+        <div class="work-piece reveal" data-category="repair">
+          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0A0A0A, #0066FF);"></div>
+          <div class="work-piece__scrim"></div>
+          <span class="work-piece__slot">IMAGEN<br>work-09.jpg</span>
+          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
+          <span class="work-piece__title" data-i18n="workPage.item9">Banco de diagnóstico completo</span>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       RESEÑAS
+       ============================================================ -->
+
+  <section class="work-section work-section--soft" id="resenas">
+    <div class="container">
+
+      <div class="work-section__head">
+        <p class="eyebrow reveal" data-i18n="workPage.reviews.eyebrow">Reseñas</p>
+        <h2 class="reveal" data-i18n="workPage.reviews.title">Lo que dicen quienes ya confiaron en nosotros.</h2>
+        <p class="section-lead reveal" data-i18n="workPage.reviews.lead">Estamos reuniendo las reseñas de nuestros clientes. Las que ves aquí son ejemplos hasta que las reemplacemos con reseñas reales verificadas.</p>
+      </div>
+
+
+      <!-- RESUMEN -->
+      <div class="reviews-summary reveal">
+
+        <span class="reviews-summary__score">4,8</span>
+
+        <div class="reviews-summary__meta">
+          <span class="reviews-summary__label" data-i18n="workPage.reviews.scoreLabel">Calificación promedio</span>
+        <span class="stars" role="img" aria-label="4.8 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+        </div>
+
+        <span class="reviews-summary__count">
+          6 <span data-i18n="workPage.reviews.count">reseñas de ejemplo</span>
+        </span>
+
+      </div>
+
+
+      <!-- TARJETAS -->
+      <div class="reviews-grid">
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r1.text">Llevé mi PC porque se apagaba sola y ya me habían dicho que no tenía arreglo. La revisaron a fondo, encontraron el problema real y me explicaron todo antes de tocar nada.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r1.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r1.service">Reparación · Computadoras</p>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r2.text">Me armaron una computadora para edición de video dentro de mi presupuesto. Consiguieron componentes de segunda mano revisados y quedó mucho mejor de lo que esperaba.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r2.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r2.service">Armado · PC personalizada</p>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r3.text">El puerto HDMI de mi consola dejó de funcionar. Me dieron diagnóstico el mismo día y me la entregaron funcionando. El trabajo por dentro quedó impecable.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r3.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r3.service">Reparación · Gaming</p>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="4.5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r4.text">Nos hicieron el sitio web del negocio y además automatizaron el registro de pedidos. Entendieron el proceso antes de proponer la solución.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r4.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r4.service">Digital · Web y automatización</p>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r5.text">Cambio de pantalla de iPhone. Precio claro desde el inicio, sin sorpresas, y me explicaron qué pieza iban a usar y por qué.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r5.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r5.service">Reparación · Smartphones</p>
+            </div>
+          </div>
+
+        </article>
+
+        <article class="review-card reveal">
+
+          <div class="review-card__top">
+        <span class="stars" role="img" aria-label="4.5 de 5 estrellas">
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+        </span>
+            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+          </div>
+
+          <p class="review-card__text" data-i18n="workPage.r6.text">Le dieron mantenimiento a los servidores de la oficina. Bajaron las temperaturas y nos dejaron documentado todo lo que hicieron.</p>
+
+          <div class="review-card__author">
+            <span class="review-card__avatar" aria-hidden="true">V</span>
+            <div>
+              <p class="review-card__name" data-i18n="workPage.r6.name">Cliente de ejemplo</p>
+              <p class="review-card__service" data-i18n="workPage.r6.service">Reparación · Servidores</p>
+            </div>
+          </div>
+
+        </article>
+
+      </div>
+
+
+      <!-- CTA -->
+      <div class="reviews-cta reveal">
+        <p data-i18n="workPage.reviews.cta">¿Ya trabajamos juntos? Cuéntanos cómo nos fue.</p>
+        <a href="../contact/index.html" class="btn btn--ghost" data-i18n="workPage.reviews.ctaButton">Dejar una reseña →</a>
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal" data-i18n="workPage.cta.title">¿Quieres que tu proyecto aparezca aquí?</h2>
+      <a href="../contact/index.html" class="btn btn--primary reveal" data-i18n="cta.button">Cotizar →</a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <div class="footer__brand">
+        <span class="navbar__logo-mark">V</span>
+        <div>
+          <p class="footer__name">Valadal</p>
+          <p class="footer__tagline" data-i18n="footer.tagline">Tecnología para el mundo real.</p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+
+        <div class="footer__col">
+          <h4 data-i18n="footer.company">Empresa</h4>
+          <a href="../repair/index.html" data-i18n="nav.repair">Reparación</a>
+          <a href="../build/index.html" data-i18n="nav.build">Armado</a>
+          <a href="../digital/index.html" data-i18n="nav.digital">Digital</a>
+          <a href="../work/index.html" data-i18n="nav.work">Proyectos</a>
+          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+          <a href="../contact/index.html" data-i18n="nav.contact">Contacto</a>
+        </div>
+
+        <div class="footer__col">
+          <h4 data-i18n="footer.contact">Contáctanos</h4>
+          <a href="https://wa.me/523300000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:hola@valadal.com">Email</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© 2026 Valadal</span>
+      <span data-i18n="footer.location">Guadalajara, Jalisco, México</span>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

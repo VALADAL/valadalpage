@@ -1,0 +1,588 @@
+/* ============================================================
+   VALADAL — contact.css
+   Página de Contacto.
+   Mismo lenguaje visual que repair.css, build.css, digital.css
+   y work.css.
+   ============================================================ */
+
+/* ============================================================
+   PAGE HERO
+   Hero propio, más presente que el .page-hero genérico: panel
+   a todo el ancho con degradado, malla sutil y el título en
+   grande. Sin burbujas flotantes.
+   ============================================================ */
+
+.contact-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 92px 0 84px;
+
+  border-bottom: 1px solid var(--border);
+
+  background:
+    radial-gradient(
+      circle at 78% -10%,
+      rgba(0, 102, 255, 0.16),
+      transparent 58%
+    ),
+    radial-gradient(
+      circle at 8% 118%,
+      rgba(0, 163, 255, 0.12),
+      transparent 54%
+    ),
+    var(--surface-soft);
+}
+
+/* Malla técnica de fondo — el mismo guiño que el device-panel
+   del home, muy tenue para no competir con el texto. */
+
+.contact-hero::before {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+
+  background-size: 56px 56px;
+
+  opacity: 0.35;
+
+  -webkit-mask-image:
+    radial-gradient(circle at 50% 40%, #000, transparent 72%);
+
+  mask-image:
+    radial-gradient(circle at 50% 40%, #000, transparent 72%);
+
+  pointer-events: none;
+}
+
+.contact-hero .container {
+  position: relative;
+  z-index: 1;
+}
+
+.contact-hero h1 {
+  font-size: clamp(2.4rem, 5.2vw, 4rem);
+
+  max-width: 820px;
+
+  margin-top: 8px;
+}
+
+/* La segunda mitad del título va en azul, como en el home. */
+.contact-hero__accent {
+  color: var(--blue);
+}
+
+.contact-hero .section-lead {
+  margin-top: 20px;
+
+  max-width: 560px;
+
+  font-size: 1.08rem;
+}
+
+
+/* ============================================================
+   SECCIONES
+   ============================================================ */
+
+.contact-section {
+  padding: 72px 0;
+}
+
+.contact-section--soft {
+  background: var(--surface-soft);
+}
+
+.contact-section__head {
+  margin-bottom: 36px;
+  max-width: 780px;
+}
+
+.contact-section__head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  margin-top: 6px;
+}
+
+
+/* ============================================================
+   LAYOUT PRINCIPAL — métodos + formulario
+   ============================================================ */
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 48px;
+  align-items: start;
+}
+
+
+/* ------------------------------------------------------------
+   TARJETAS DE CONTACTO
+   ------------------------------------------------------------ */
+
+.contact-methods {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+.contact-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  padding: 24px;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s ease,
+    box-shadow 0.25s var(--ease);
+}
+
+.contact-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-card__icon {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: rgba(0, 102, 255, 0.08);
+  color: var(--blue);
+
+  margin-bottom: 4px;
+}
+
+.contact-card__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: currentColor;
+}
+
+.contact-card h4 {
+  font-family: var(--font-display);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.contact-card a,
+.contact-card p {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-main);
+  line-height: 1.45;
+}
+
+.contact-card a:hover { color: var(--blue); }
+
+/* El recuadro de imagen cierra la columna izquierda */
+.contact-media {
+  margin-top: 16px;
+}
+
+
+/* ------------------------------------------------------------
+   FORMULARIO
+   ------------------------------------------------------------ */
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+
+  background: var(--surface);
+  padding: 36px;
+
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.contact-form__head {
+  margin-bottom: 4px;
+}
+
+.contact-form__head h3 {
+  font-size: 1.25rem;
+  margin-top: 4px;
+}
+
+.contact-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px;
+}
+
+.contact-form label {
+  display: flex;
+  flex-direction: column;
+  gap: 7px;
+
+  font-size: 0.84rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+  padding: 13px 15px;
+
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  background: var(--surface-soft);
+  color: var(--text-main);
+
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 400;
+
+  resize: vertical;
+
+  transition:
+    border-color 0.2s ease,
+    background-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+  color: var(--text-secondary);
+  opacity: 0.7;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+  outline: none;
+
+  border-color: var(--blue);
+  background: var(--surface);
+
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.12);
+}
+
+.contact-form .btn {
+  align-self: flex-start;
+  margin-top: 6px;
+}
+
+.contact-form__success {
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  border-radius: var(--radius-sm);
+  background: rgba(0, 102, 255, 0.08);
+  border: 1px solid rgba(0, 102, 255, 0.2);
+  color: var(--blue);
+
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-form__success.is-visible { display: flex; }
+
+
+/* ============================================================
+   QUÉ SIGUE — 3 pasos
+   ============================================================ */
+
+.contact-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+
+  position: relative;
+}
+
+.contact-steps::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 10%;
+  right: 10%;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.contact-step {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.contact-step__index {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--surface-soft);
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.contact-step h4 {
+  font-size: 1rem;
+}
+
+.contact-step p {
+  color: var(--text-secondary);
+  font-size: 0.88rem;
+  line-height: 1.55;
+}
+
+.contact-steps .reveal:nth-child(2) { transition-delay: 90ms; }
+.contact-steps .reveal:nth-child(3) { transition-delay: 180ms; }
+
+
+/* ============================================================
+   RESPONSIVE — TABLET (compartido desktop/mobile)
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .contact-layout {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+
+/* ============================================================
+   ----------------------------------------------------------
+   A PARTIR DE AQUÍ: VERSIÓN MOBILE
+   Mismo criterio tipográfico y de espaciado que repair.css,
+   digital.css, build.css y work.css (clamp() en títulos,
+   leads ~0.72-0.78rem, texto pequeño 0.55–0.62rem, radios
+   reducidos), adaptado a la escala más grande que ya tenía
+   este hero (por eso los tamaños del hero son un poco mayores
+   que en las demás páginas).
+   ----------------------------------------------------------
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  /* ------------------------------------------------------------
+     HERO
+     ------------------------------------------------------------ */
+
+  .contact-hero {
+    padding: 48px 0 36px;
+  }
+
+  .contact-hero::before {
+    background-size: 40px 40px;
+  }
+
+  .contact-hero h1 {
+    font-size: clamp(1.7rem, 7vw, 2.3rem);
+    line-height: 1.05;
+    max-width: 100%;
+    margin-top: 6px;
+  }
+
+  .contact-hero .section-lead {
+    font-size: 0.76rem !important;
+    line-height: 1.5;
+    margin-top: 12px;
+    max-width: 100%;
+  }
+
+
+  /* ------------------------------------------------------------
+     SECCIONES
+     ------------------------------------------------------------ */
+
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  .contact-section__head {
+    margin-bottom: 20px;
+  }
+
+  .contact-section__head h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    margin-top: 4px;
+  }
+
+
+  /* ------------------------------------------------------------
+     TARJETAS DE CONTACTO
+     ------------------------------------------------------------ */
+
+  .contact-methods {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+
+  .contact-card {
+    padding: 14px;
+    gap: 6px;
+  }
+
+  .contact-card__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 9px;
+    margin-bottom: 2px;
+  }
+
+  .contact-card__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .contact-card h4 {
+    font-size: 0.56rem;
+  }
+
+  .contact-card a,
+  .contact-card p {
+    font-size: 0.68rem;
+    line-height: 1.4;
+  }
+
+  .contact-media {
+    margin-top: 10px;
+  }
+
+
+  /* ------------------------------------------------------------
+     FORMULARIO
+     ------------------------------------------------------------ */
+
+  .contact-form {
+    padding: 18px;
+    gap: 12px;
+  }
+
+  .contact-form__head h3 {
+    font-size: 0.88rem;
+  }
+
+  .contact-form__row {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact-form label {
+    font-size: 0.6rem;
+    gap: 5px;
+  }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea {
+    padding: 10px 12px;
+    font-size: 0.68rem;
+  }
+
+  .contact-form .btn {
+    margin-top: 2px;
+  }
+
+  .contact-form__success {
+    padding: 10px 12px;
+    font-size: 0.62rem;
+    gap: 8px;
+  }
+
+
+  /* ------------------------------------------------------------
+     QUÉ SIGUE — 3 pasos
+     ------------------------------------------------------------ */
+
+  .contact-steps {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .contact-steps::before {
+    display: none;
+  }
+
+  .contact-step {
+    gap: 8px;
+  }
+
+  .contact-step__index {
+    width: 32px;
+    height: 32px;
+    font-size: 0.62rem;
+  }
+
+  .contact-step h4 {
+    font-size: 0.66rem;
+  }
+
+  .contact-step p {
+    font-size: 0.58rem;
+    line-height: 1.4;
+  }
+}
+
+
+/* ============================================================
+   EXTRA SMALL
+   Mismo criterio que las demás páginas a los 520px: no se
+   cambian columnas, solo se afinan tamaños de texto un poco
+   más.
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .contact-hero { padding: 40px 0 30px; }
+
+  .contact-section { padding: 32px 0; }
+
+  .contact-card { padding: 12px; }
+
+  .contact-card a,
+  .contact-card p { font-size: 0.62rem; }
+
+  .contact-form { padding: 14px; }
+
+  .contact-form input,
+  .contact-form select,
+  .contact-form textarea { font-size: 0.62rem; padding: 9px 10px; }
+
+  .contact-step__index { width: 28px; height: 28px; font-size: 0.56rem; }
+}

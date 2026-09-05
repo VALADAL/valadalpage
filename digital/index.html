@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Digital — Valadal</title>
+  <meta name="description" content="Desarrollo de páginas web, aplicaciones, sistemas empresariales, APIs y automatización de procesos. Soluciones digitales hechas a la medida de tu negocio en Valadal.">
+
+  <meta property="og:title" content="Digital — Valadal">
+  <meta property="og:description" content="Tu empresa. Tu proyecto. Tu idea. Nosotros ponemos la tecnología.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://valadal.com/digital/">
+
+  <link rel="icon" type="image/svg+xml" href="../assets/icons/favicon.svg">
+
+  <meta name="theme-color" content="#0A0A0A" id="theme-color-meta">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="../css/global.css">
+  <link rel="stylesheet" href="../css/digital.css">
+</head>
+<body>
+
+  <!-- ============================================================
+       NAVBAR
+       ============================================================ -->
+
+  <header class="navbar" id="navbar">
+    <div class="container navbar__inner">
+
+      <a href="../index.html" class="navbar__logo">
+        <span class="navbar__logo-mark">V</span>
+      </a>
+
+      <nav class="navbar__links">
+        <a href="../index.html" class="nav-link" data-i18n="nav.home">Inicio</a>
+        <a href="../repair/index.html" class="nav-link" data-i18n="nav.repair">Reparación</a>
+        <a href="../build/index.html" class="nav-link" data-i18n="nav.build">Armado</a>
+        <a href="../digital/index.html" class="nav-link is-active" data-i18n="nav.digital">Digital</a>
+        <a href="../work/index.html" class="nav-link" data-i18n="nav.work">Proyectos</a>
+        <a href="../about/index.html" class="nav-link" data-i18n="nav.about">Nosotros</a>
+        <a href="../contact/index.html" class="nav-link" data-i18n="nav.contact">Contacto</a>
+      </nav>
+
+      <div class="navbar__right">
+
+        <a href="../contact/index.html?service=digital" class="btn btn--primary btn--small" data-i18n="nav.quote">Cotizar</a>
+
+        <div class="accessibility-control" id="accessibilityControl">
+
+          <button class="accessibility-toggle" id="accessibilityToggle" type="button" aria-label="Accesibilidad" aria-expanded="false">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="5" r="2"/>
+              <path d="M5 8h14"/>
+              <path d="M12 8v11"/>
+              <path d="M8 21l4-10 4 10"/>
+            </svg>
+          </button>
+
+          <div class="accessibility-options">
+
+            <button class="accessibility-option" id="languageToggle" type="button" aria-label="Cambiar idioma">
+              <span id="languageLabel">A/文</span>
+            </button>
+
+            <button class="accessibility-option" id="themeToggle" type="button" aria-label="Cambiar modo">
+              <span id="themeIcon">◐</span>
+            </button>
+
+          </div>
+
+        </div>
+
+        <button class="navbar__toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+
+      </div>
+
+    </div>
+  </header>
+
+
+  <!-- ============================================================
+       MOBILE DRAWER
+       ============================================================ -->
+
+  <div class="nav-drawer" id="navDrawer">
+
+    <nav class="nav-drawer__links">
+      <a href="../index.html" data-i18n="nav.home">Inicio</a>
+      <a href="../repair/index.html" data-i18n="nav.repair">Reparación</a>
+      <a href="../build/index.html" data-i18n="nav.build">Armado</a>
+      <a href="../digital/index.html" data-i18n="nav.digital">Digital</a>
+      <a href="../work/index.html" data-i18n="nav.work">Proyectos</a>
+      <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+      <a href="../contact/index.html" data-i18n="nav.contact">Contacto</a>
+    </nav>
+
+    <a href="../contact/index.html?service=digital" class="btn btn--primary nav-drawer__cta" data-i18n="nav.quote">Cotizar</a>
+
+  </div>
+
+
+  <!-- ============================================================
+       PAGE HERO
+       ============================================================ -->
+
+  <section class="digital-hero">
+    <div class="container">
+
+      <p class="eyebrow reveal" data-i18n="digital.page.eyebrow">Desarrollo Digital</p>
+
+      <h1 class="reveal" data-i18n="digital.page.title">Impulsa tu empresa con tecnología hecha para ti.</h1>
+
+      <p class="section-lead reveal" data-i18n="digital.page.lead">Sitios web, aplicaciones, sistemas y automatizaciones diseñadas alrededor de las necesidades reales de cada negocio, proyecto o emprendimiento.</p>
+
+      <div class="digital-hero__intro">
+
+        <p class="reveal" data-i18n="digital.page.intro" style="font-size: 1.05rem; color: var(--text-secondary); line-height: 1.75; max-width: 620px;">
+          Nuestro objetivo no es solamente crear tecnología: buscamos ayudarte a crecer, mejorar tus procesos y llevar tu empresa al siguiente nivel. Desde sitios web profesionales hasta sistemas empresariales, integraciones mediante APIs y automatización — cada solución se construye alrededor de cómo realmente trabaja tu negocio.
+        </p>
+
+        <div class="digital-highlights reveal">
+
+          <div class="digital-highlights__item">
+            <span class="digital-highlights__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m18 16 4-4-4-4"/>
+                <path d="m6 8-4 4 4 4"/>
+                <path d="m14.5 4-5 16"/>
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="digital.page.h1.title">Código propio</strong>
+              <p data-i18n="digital.page.h1.text">Sitios y sistemas desarrollados directamente en código, sin plantillas ni límites de diseño.</p>
+            </div>
+          </div>
+
+          <div class="digital-highlights__item">
+            <span class="digital-highlights__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 3v18h18"/>
+                <path d="m19 9-5 5-4-4-4 4"/>
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="digital.page.h2.title">Pensado para crecer</strong>
+              <p data-i18n="digital.page.h2.text">Sistemas y automatizaciones que se adaptan a la manera en que realmente trabaja tu empresa.</p>
+            </div>
+          </div>
+
+          <div class="digital-highlights__item">
+            <span class="digital-highlights__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="6" cy="6" r="2.5"/>
+                <circle cx="18" cy="6" r="2.5"/>
+                <circle cx="12" cy="18" r="2.5"/>
+                <path d="M8 7.2 10.5 16"/>
+                <path d="M16 7.2 13.5 16"/>
+              </svg>
+            </span>
+            <div>
+              <strong data-i18n="digital.page.h3.title">Todo conectado</strong>
+              <p data-i18n="digital.page.h3.text">Integraciones y APIs para que tus plataformas y servicios trabajen juntos.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <p class="digital-nav__label reveal" data-i18n="digital.nav.label">Ir directo a</p>
+
+      <nav class="digital-nav reveal" aria-label="Ir a sección">
+
+        <a href="#web">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="12" cy="12" r="9"/>
+                <path d="M3 12h18"/>
+                <path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.web">Sitios web</span>
+          </span>
+        </a>
+
+        <a href="#presencia">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <circle cx="11" cy="11" r="7"/>
+                <path d="m21 21-4.3-4.3"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.seo">Google y marketing</span>
+          </span>
+        </a>
+
+        <a href="#apps">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="6" y="2.5" width="12" height="19" rx="2.5"/>
+                <path d="M10 5h4"/>
+                <path d="M11 18.5h2"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.apps">Apps móviles</span>
+          </span>
+        </a>
+
+        <a href="#software">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <rect x="3" y="4" width="18" height="13" rx="2"/>
+                <path d="M8 21h8"/>
+                <path d="M12 17v4"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.software">Software para PC</span>
+          </span>
+        </a>
+
+        <a href="#sistemas">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M3 21V9l9-6 9 6v12"/>
+                <path d="M9 21v-7h6v7"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.systems">Sistemas</span>
+          </span>
+        </a>
+
+        <a href="#apis">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 3v6l-6 3 6 3v6"/>
+                <path d="M15 3v6l6 3-6 3v6"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.apis">APIs</span>
+          </span>
+        </a>
+
+        <a href="#automatizacion">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2 2.1-2.1Z"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.automation">Automatización</span>
+          </span>
+        </a>
+
+        <a href="#proyectos">
+          <span class="digital-nav__content">
+            <span class="digital-nav__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M9 18h6"/>
+                <path d="M10 22h4"/>
+                <path d="M12 2a6 6 0 0 0-4 10.5c.6.5 1 1.3 1 2.5h6c0-1.2.4-2 1-2.5A6 6 0 0 0 12 2Z"/>
+              </svg>
+            </span>
+            <span data-i18n="digital.nav.projects">Proyectos e ideas</span>
+          </span>
+        </a>
+
+      </nav>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       01 — SITIOS WEB
+       ============================================================ -->
+
+  <section class="digital-section" id="web">
+    <div class="container">
+
+      <div class="digital-panel">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-01.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="9"/>
+              <path d="M3 12h18"/>
+              <path d="M12 3c2.5 2.5 3.8 5.7 3.8 9s-1.3 6.5-3.8 9c-2.5-2.5-3.8-5.7-3.8-9S9.5 5.5 12 3Z"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.web.eyebrow">01 — Sitios web</p>
+          <h2 data-i18n="digital.web.title">Sitios web profesionales, hechos desde código.</h2>
+          <p class="section-lead" data-i18n="digital.web.lead">Desarrollamos páginas web estáticas directamente en código, lo que nos da mayor control sobre diseño, rendimiento y funcionamiento. Cada sitio se construye alrededor de la identidad y las necesidades del proyecto.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.web.item1">Empresas y negocios locales</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.web.item2">Emprendimientos y profesionales</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.web.item3">Portafolios y landing pages</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.web.item4">Catálogos de productos o servicios</span></li>
+          </ul>
+
+          <div class="digital-note" data-i18n="digital.web.note">
+            El sitio se entrega completamente preparado, con código fuente propio — normalmente como un archivo ZIP con todos los elementos del proyecto. También podemos encargarnos de publicarlo para que quede disponible en Internet.
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       02 — PRESENCIA EN GOOGLE Y MARKETING
+       ============================================================ -->
+
+  <section class="digital-section digital-section--soft" id="presencia">
+    <div class="container">
+
+      <div class="digital-panel digital-panel--reverse digital-panel--soft">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-02.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="11" cy="11" r="7"/>
+              <path d="m21 21-4.3-4.3"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.seo.eyebrow">02 — Google y marketing</p>
+          <h2 data-i18n="digital.seo.title">Que te encuentren cuando te buscan.</h2>
+          <p class="section-lead" data-i18n="digital.seo.lead">Crear una página web es solamente el primer paso. También trabajamos la presencia digital de tu empresa en Google y construimos una estrategia alrededor de tu visibilidad en Internet.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item1">Publicación y configuración para buscadores</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item2">SEO y optimización de contenido</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item3">Estructura del sitio e indexación</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item4">Presencia empresarial en Google</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item5">Estrategia de visibilidad en búsquedas</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.seo.item6">Optimización para clientes potenciales</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       03 — APLICACIONES MÓVILES
+       ============================================================ -->
+
+  <section class="digital-section" id="apps">
+    <div class="container">
+
+      <div class="digital-panel">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-03.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="6" y="2.5" width="12" height="19" rx="2.5"/>
+              <path d="M10 5h4"/>
+              <path d="M11 18.5h2"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.apps.eyebrow">03 — Aplicaciones móviles</p>
+          <h2 data-i18n="digital.apps.title">Aplicaciones para Android, iPhone y proyectos móviles.</h2>
+          <p class="section-lead" data-i18n="digital.apps.lead">Desarrollamos aplicaciones móviles adaptadas a las necesidades de cada proyecto, integrando los servicios y tecnologías que la app requiera.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apps.item1">Gestión interna e inventarios</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apps.item2">Reservaciones y administración</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apps.item3">Comunicación con clientes</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apps.item4">Plataformas digitales propias</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       04 — SOFTWARE PARA PC
+       ============================================================ -->
+
+  <section class="digital-section digital-section--soft" id="software">
+    <div class="container">
+
+      <div class="digital-panel digital-panel--reverse digital-panel--soft">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-04.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="4" width="18" height="13" rx="2"/>
+              <path d="M8 21h8"/>
+              <path d="M12 17v4"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.software.eyebrow">04 — Software para PC</p>
+          <h2 data-i18n="digital.software.title">Software diseñado para tu empresa.</h2>
+          <p class="section-lead" data-i18n="digital.software.lead">En lugar de adaptar tu empresa a un programa genérico, desarrollamos herramientas específicas que resuelven lo que el software comercial no cubre.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.software.item1">Sistemas administrativos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.software.item2">Gestión de clientes e inventarios</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.software.item3">Herramientas de productividad</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.software.item4">Automatización de tareas internas</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       05 — SISTEMAS EMPRESARIALES
+       ============================================================ -->
+
+  <section class="digital-section" id="sistemas">
+    <div class="container">
+
+      <div class="digital-panel">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-05.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M3 21V9l9-6 9 6v12"/>
+              <path d="M9 21v-7h6v7"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.bizsys.eyebrow">05 — Sistemas empresariales</p>
+          <h2 data-i18n="digital.bizsys.title">Tecnología diseñada alrededor de tu negocio.</h2>
+          <p class="section-lead" data-i18n="digital.bizsys.lead">Desarrollamos sistemas personalizados para empresas, proyectos y emprendimientos, planteados de acuerdo con las necesidades específicas de cada uno.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.bizsys.item1">Administración y ventas</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.bizsys.item2">Control de recursos e inventarios</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.bizsys.item3">Comunicación entre departamentos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.bizsys.item4">Procesos internos automatizados</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       06 — APIS E INTEGRACIONES
+       ============================================================ -->
+
+  <section class="digital-section digital-section--soft" id="apis">
+    <div class="container">
+
+      <div class="digital-panel digital-panel--reverse digital-panel--soft">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-06.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 3v6l-6 3 6 3v6"/>
+              <path d="M15 3v6l6 3-6 3v6"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.apis.eyebrow">06 — APIs e integraciones</p>
+          <h2 data-i18n="digital.apis.title">Conecta tus sistemas y servicios.</h2>
+          <p class="section-lead" data-i18n="digital.apis.lead">Las empresas usan cada vez más plataformas distintas. Desarrollamos integraciones mediante APIs para que diferentes sistemas puedan comunicarse entre sí, en lugar de trabajar de forma aislada.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apis.item1">Sincronización de información</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apis.item2">Integración de servicios externos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apis.item3">Conexión entre sistemas internos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.apis.item4">Herramientas alrededor de servicios existentes</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       07 — AUTOMATIZACIÓN EMPRESARIAL
+       ============================================================ -->
+
+  <section class="digital-section" id="automatizacion">
+    <div class="container">
+
+      <div class="digital-panel">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-07.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.1 2.1-2-2 2.1-2.1Z"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.auto.eyebrow">07 — Automatización empresarial</p>
+          <h2 data-i18n="digital.auto.title">Deja que la tecnología haga el trabajo repetitivo.</h2>
+          <p class="section-lead" data-i18n="digital.auto.lead">Analizamos procesos que hoy requieren trabajo manual y buscamos oportunidades para automatizarlos, reduciendo errores y liberando tiempo de tu equipo.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.auto.item1">Procesamiento y gestión de datos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.auto.item2">Notificaciones y flujos de trabajo</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.auto.item3">Generación automática de información</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.auto.item4">Comunicación entre sistemas</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       08 — PROYECTOS E IDEAS
+       ============================================================ -->
+
+  <section class="digital-section digital-section--soft" id="proyectos">
+    <div class="container">
+
+      <div class="digital-panel digital-panel--reverse digital-panel--soft">
+
+        <div class="digital-panel__media reveal">
+          <div class="digital-shot">
+            <span class="digital-shot__label">IMAGEN</span>
+            <span class="digital-shot__file">digital-08.jpg</span>
+          </div>
+        </div>
+
+        <div class="digital-panel__body reveal">
+
+          <span class="digital-panel__icon" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M9 18h6"/>
+              <path d="M10 22h4"/>
+              <path d="M12 2a6 6 0 0 0-4 10.5c.6.5 1 1.3 1 2.5h6c0-1.2.4-2 1-2.5A6 6 0 0 0 12 2Z"/>
+            </svg>
+          </span>
+
+          <p class="eyebrow" data-i18n="digital.projects.eyebrow">08 — Proyectos e ideas</p>
+          <h2 data-i18n="digital.projects.title">¿Tienes una idea? No necesitas tener una empresa establecida.</h2>
+          <p class="section-lead" data-i18n="digital.projects.lead">También desarrollamos soluciones para proyectos personales, startups y prototipos. Si tienes una idea y no sabes cómo convertirla en algo funcional, te acompañamos desde el concepto hasta el producto.</p>
+
+          <ul class="check-list">
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.projects.item1">Emprendimientos y startups</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.projects.item2">Prototipos y sistemas experimentales</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.projects.item3">Proyectos escolares o tecnológicos</span></li>
+            <li><span class="check-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span data-i18n="digital.projects.item4">Productos digitales propios</span></li>
+          </ul>
+
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CÓMO TRABAJAMOS — proceso
+       ============================================================ -->
+
+  <section class="digital-section">
+    <div class="container">
+
+      <div class="digital-section__intro">
+        <p class="eyebrow reveal" data-i18n="digital.process.eyebrow">Cómo trabajamos</p>
+        <h2 class="reveal" data-i18n="digital.process.title">Del concepto al producto funcionando.</h2>
+        <p class="section-lead reveal" data-i18n="digital.process.lead">Un proceso claro, para que sepas exactamente en qué punto está tu proyecto en cada momento.</p>
+      </div>
+
+      <div class="digital-process">
+
+        <div class="digital-process__step reveal">
+          <div class="digital-process__marker">
+            <div class="digital-process__dot">1</div>
+          </div>
+          <div class="digital-process__body">
+            <h4 data-i18n="digital.process.step1.title">Diagnóstico</h4>
+            <p data-i18n="digital.process.step1.text">Entendemos qué necesitas: el problema a resolver, cómo trabaja tu empresa hoy y qué debería mejorar.</p>
+          </div>
+        </div>
+
+        <div class="digital-process__step reveal">
+          <div class="digital-process__marker">
+            <div class="digital-process__dot">2</div>
+          </div>
+          <div class="digital-process__body">
+            <h4 data-i18n="digital.process.step2.title">Propuesta</h4>
+            <p data-i18n="digital.process.step2.text">Planteamos la solución más adecuada — sitio, sistema, app o automatización — junto con alcance y tiempos.</p>
+          </div>
+        </div>
+
+        <div class="digital-process__step reveal">
+          <div class="digital-process__marker">
+            <div class="digital-process__dot">3</div>
+          </div>
+          <div class="digital-process__body">
+            <h4 data-i18n="digital.process.step3.title">Desarrollo</h4>
+            <p data-i18n="digital.process.step3.text">Construimos la solución directamente en código, con avances visibles a lo largo del proceso.</p>
+          </div>
+        </div>
+
+        <div class="digital-process__step reveal">
+          <div class="digital-process__marker">
+            <div class="digital-process__dot">4</div>
+          </div>
+          <div class="digital-process__body">
+            <h4 data-i18n="digital.process.step4.title">Entrega</h4>
+            <p data-i18n="digital.process.step4.text">Recibes el proyecto completo — código fuente incluido — y, si lo necesitas, nos encargamos de publicarlo.</p>
+          </div>
+        </div>
+
+        <div class="digital-process__step reveal">
+          <div class="digital-process__marker">
+            <div class="digital-process__dot">5</div>
+          </div>
+          <div class="digital-process__body">
+            <h4 data-i18n="digital.process.step5.title">Soporte</h4>
+            <p data-i18n="digital.process.step5.text">Seguimos disponibles para ajustes, mejoras o para escalar la solución cuando tu negocio lo requiera.</p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       PREGUNTAS — ¿QUÉ NECESITAS DESARROLLAR?
+       ============================================================ -->
+
+  <section class="digital-section digital-section--soft">
+    <div class="container">
+
+      <div class="digital-section__intro">
+        <p class="eyebrow reveal" data-i18n="digital.faq.eyebrow">¿Qué necesitas desarrollar?</p>
+        <h2 class="reveal" data-i18n="digital.faq.title">Cuéntanos qué necesitas y analizamos juntos la mejor solución.</h2>
+      </div>
+
+      <div class="digital-faq">
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q1">¿Necesitas una página web?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a1">Desarrollamos sitios profesionales desde código, adaptados a tu marca y con entrega de código fuente propio.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q2">¿Quieres una aplicación para tus clientes?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a2">Diseñamos y desarrollamos aplicaciones móviles a la medida, para Android, iPhone o ambos.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q3">¿Tu empresa necesita un sistema propio?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a3">Construimos sistemas empresariales alrededor de tus procesos reales, no al revés.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q4">¿Hay procesos que haces manualmente todos los días?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a4">Podemos automatizarlos: desde notificaciones hasta flujos de trabajo completos.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q5">¿Necesitas conectar diferentes plataformas?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a5">Desarrollamos integraciones mediante APIs para que tus sistemas trabajen juntos.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q6">¿Tienes una idea para un producto tecnológico?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a6">Te acompañamos desde el concepto hasta un producto funcional, sin necesidad de una empresa establecida.</p>
+        </details>
+
+        <details class="digital-faq__item reveal">
+          <summary><span data-i18n="digital.faq.q7">¿Quieres mejorar la presencia de tu empresa en Internet?</span>
+            <span class="digital-faq__plus" aria-hidden="true"></span>
+          </summary>
+          <p class="digital-faq__answer" data-i18n="digital.faq.a7">Trabajamos SEO, indexación y estrategia de visibilidad para que te encuentren en Google.</p>
+        </details>
+
+      </div>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       HAZ CRECER TU EMPRESA — growth band
+       ============================================================ -->
+
+  <section class="digital-section digital-growth">
+    <div class="container digital-growth__grid">
+
+      <div class="digital-growth__text">
+        <p class="eyebrow reveal" data-i18n="digital.growth.eyebrow">Haz crecer tu empresa con tecnología</p>
+        <h2 class="reveal" data-i18n="digital.growth.title">No es solamente una herramienta. Puede ser parte fundamental de tu crecimiento.</h2>
+        <p class="section-lead reveal" data-i18n="digital.growth.lead">En Valadal desarrollamos estas soluciones pensando en cómo pueden aportar valor real a tu negocio.</p>
+
+        <div class="digital-growth__closing reveal">
+          <p><span data-i18n="digital.growth.closing1">Tu empresa. Tu proyecto. Tu idea.</span><br><span data-i18n="digital.growth.closing2">Nosotros ponemos la tecnología.</span></p>
+        </div>
+      </div>
+
+      <ul class="digital-growth__list">
+        <li class="reveal"><strong data-i18n="digital.growth.item1.strong">Una página web</strong>&nbsp;<span data-i18n="digital.growth.item1.text">puede ayudarte a conseguir clientes.</span></li>
+        <li class="reveal"><strong data-i18n="digital.growth.item2.strong">Un sistema</strong>&nbsp;<span data-i18n="digital.growth.item2.text">puede ayudarte a organizar tu empresa.</span></li>
+        <li class="reveal"><strong data-i18n="digital.growth.item3.strong">Una aplicación</strong>&nbsp;<span data-i18n="digital.growth.item3.text">puede mejorar la experiencia de tus usuarios.</span></li>
+        <li class="reveal"><strong data-i18n="digital.growth.item4.strong">Una automatización</strong>&nbsp;<span data-i18n="digital.growth.item4.text">puede ahorrarte horas de trabajo.</span></li>
+        <li class="reveal"><strong data-i18n="digital.growth.item5.strong">Una integración</strong>&nbsp;<span data-i18n="digital.growth.item5.text">puede conectar todos tus procesos.</span></li>
+      </ul>
+
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       CTA
+       ============================================================ -->
+
+  <section class="final-cta">
+    <div class="container">
+      <h2 class="reveal" data-i18n="digital.ctaPage.title">¿Necesitas una página web, una aplicación, software personalizado o quieres automatizar tu empresa?</h2>
+      <a href="../contact/index.html?service=digital" class="btn btn--primary reveal" data-i18n="cta.button">Cotizar →</a>
+    </div>
+  </section>
+
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+
+  <footer class="footer">
+    <div class="container footer__top">
+
+      <div class="footer__brand">
+        <span class="navbar__logo-mark">V</span>
+        <div>
+          <p class="footer__name">Valadal</p>
+          <p class="footer__tagline" data-i18n="footer.tagline">Tecnología para el mundo real.</p>
+        </div>
+      </div>
+
+      <div class="footer__cols">
+
+        <div class="footer__col">
+          <h4 data-i18n="footer.company">Empresa</h4>
+          <a href="../repair/index.html" data-i18n="nav.repair">Reparación</a>
+          <a href="../build/index.html" data-i18n="nav.build">Armado</a>
+          <a href="../digital/index.html" data-i18n="nav.digital">Digital</a>
+          <a href="../work/index.html" data-i18n="nav.work">Proyectos</a>
+          <a href="../about/index.html" data-i18n="nav.about">Nosotros</a>
+          <a href="../contact/index.html" data-i18n="nav.contact">Contacto</a>
+        </div>
+
+        <div class="footer__col">
+          <h4 data-i18n="footer.contact">Contáctanos</h4>
+          <a href="https://wa.me/523300000000" target="_blank" rel="noopener">WhatsApp</a>
+          <a href="mailto:hola@valadal.com">Email</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="container footer__bottom">
+      <span>© 2026 Valadal</span>
+      <span data-i18n="footer.location">Guadalajara, Jalisco, México</span>
+    </div>
+  </footer>
+
+
+  <!-- ============================================================
+       JAVASCRIPT
+       ============================================================ -->
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

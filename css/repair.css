@@ -1,0 +1,1091 @@
+/* ============================================================
+   VALADAL — repair.css
+   Página de Reparación.
+   ============================================================ */
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+
+.repair-hero {
+  position: relative;
+  overflow: hidden;
+
+  padding: 72px 0 56px;
+
+  /* Sin border-bottom a propósito: el hero se funde con la
+     primera sección de fotos en vez de quedar cortado por una
+     línea. */
+
+  background:
+    radial-gradient(
+      circle at 84% 0%,
+      rgba(0, 102, 255, 0.08),
+      transparent 60%
+    );
+}
+
+.repair-hero h1 {
+  font-size: clamp(2.1rem, 4.4vw, 3.4rem);
+  max-width: 760px;
+}
+
+.repair-hero .section-lead {
+  margin-top: 18px;
+  max-width: 520px;
+}
+
+
+/* ============================================================
+   QUICK-JUMP BUBBLES
+   Botones flotantes que llevan directo a cada sección.
+   ============================================================ */
+
+.repair-bubbles {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin-top: 36px;
+}
+
+.repair-bubble {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 13px 22px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+
+  box-shadow: var(--shadow-card);
+
+  will-change: transform;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s var(--ease),
+    background-color 0.35s ease;
+}
+
+.repair-bubble__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.repair-bubble__icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke: currentColor;
+}
+
+/* ------------------------------------------------------------
+   CONTENIDO INTERNO
+   El zoom del énfasis automático vive aquí, para no pelearse
+   con el transform de la animación flotante de la burbuja.
+   ------------------------------------------------------------ */
+
+.repair-bubble__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  transition: transform 0.35s var(--ease);
+}
+
+/* ------------------------------------------------------------
+   HOVER
+   Solo el hover pausa el movimiento de la burbuja.
+   ------------------------------------------------------------ */
+
+.repair-bubble:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+
+  box-shadow:
+    0 16px 32px rgba(0, 102, 255, 0.16),
+    0 4px 12px rgba(10, 10, 10, 0.06);
+
+  animation-play-state: paused;
+}
+
+/* ------------------------------------------------------------
+   ÉNFASIS AUTOMÁTICO
+   El script.js va marcando una burbuja a la vez con
+   .is-active — hace zoom SOLO al contenido interno, NO se hace
+   click, y NO pausa la animación flotante (eso lo hace el hover).
+   ------------------------------------------------------------ */
+
+.repair-bubble.is-active .repair-bubble__content {
+  transform: scale(1.07);
+}
+
+.repair-bubble.is-active {
+  border-color: var(--blue);
+  color: var(--blue);
+
+  box-shadow:
+    0 18px 34px rgba(0, 102, 255, 0.20),
+    0 6px 14px rgba(10, 10, 10, 0.08);
+
+  z-index: 2;
+}
+
+/* animación viva, igual que las float-cards del hero mobile */
+.repair-bubble:nth-child(3n + 1) {
+  animation: float-bubble-1 6.4s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(3n + 2) {
+  animation: float-bubble-2 5.8s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(3n) {
+  animation: float-bubble-3 6.9s ease-in-out infinite;
+}
+
+.repair-bubble:nth-child(2) { animation-delay: 0.3s; }
+.repair-bubble:nth-child(3) { animation-delay: 0.6s; }
+.repair-bubble:nth-child(4) { animation-delay: 0.9s; }
+.repair-bubble:nth-child(5) { animation-delay: 1.2s; }
+.repair-bubble:nth-child(6) { animation-delay: 1.5s; }
+.repair-bubble:nth-child(7) { animation-delay: 1.8s; }
+.repair-bubble:nth-child(8) { animation-delay: 2.1s; }
+
+.repair-bubble {
+  animation-play-state: paused;
+}
+
+
+/* ============================================================
+   SECTION SHELL
+   ============================================================ */
+
+.repair-section {
+  padding: 88px 0;
+  border-bottom: 1px solid var(--border);
+  scroll-margin-top: calc(var(--navbar-height) + 12px);
+}
+
+.repair-section__head {
+  max-width: 640px;
+  margin-bottom: 44px;
+}
+
+.repair-section__head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+}
+
+.repair-section__head .section-lead {
+  margin-top: 12px;
+}
+
+
+/* ============================================================
+   DEVICE GRID + CARDS
+   ============================================================ */
+
+.device-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.device-grid--2 { grid-template-columns: repeat(2, 1fr); }
+.device-grid--4 { grid-template-columns: repeat(4, 1fr); }
+
+.device-card {
+  display: flex;
+  flex-direction: column;
+
+  padding: 30px;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s var(--ease),
+    box-shadow 0.25s var(--ease);
+}
+
+.device-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.device-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  margin-bottom: 18px;
+}
+
+.device-card__icon {
+  width: 46px;
+  height: 46px;
+
+  border-radius: 12px;
+  background: rgba(0, 102, 255, 0.08);
+  color: var(--blue);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  flex-shrink: 0;
+}
+
+.device-card__icon svg {
+  width: 22px;
+  height: 22px;
+  display: block;
+  stroke: currentColor;
+}
+
+.device-card h3 {
+  font-size: 1.15rem;
+  margin-bottom: 6px;
+}
+
+.device-card__sub {
+  color: var(--blue);
+  font-size: 0.86rem;
+  font-weight: 500;
+  margin-bottom: 16px;
+}
+
+.device-card ul {
+  margin-top: auto;
+  padding-top: 14px;
+}
+
+.device-card ul li {
+  color: var(--text-secondary);
+  font-size: 0.92rem;
+  padding: 7px 0;
+  border-top: 1px solid var(--border);
+}
+
+.device-card ul li:first-child { border-top: none; }
+
+.device-grid .device-card:nth-child(2) { transition-delay: 90ms; }
+.device-grid .device-card:nth-child(3) { transition-delay: 180ms; }
+.device-grid .device-card:nth-child(4) { transition-delay: 270ms; }
+
+
+/* ============================================================
+   IMAGE PLACEHOLDER
+   Recuadro para ir agregando fotos reales de trabajos.
+   ============================================================ */
+
+.image-slot {
+  position: relative;
+
+  width: 100%;
+  aspect-ratio: 4 / 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8px;
+
+  margin-bottom: 20px;
+
+  border-radius: var(--radius-md);
+  border: 1.5px dashed var(--border);
+  background: var(--surface-soft);
+
+  color: var(--text-secondary);
+
+  overflow: hidden;
+}
+
+.image-slot__icon {
+  width: 30px;
+  height: 30px;
+  opacity: 0.5;
+}
+
+.image-slot__label {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.device-card .image-slot {
+  aspect-ratio: 16 / 10;
+}
+
+.gaming-section .image-slot {
+  border-color: rgba(255, 255, 255, 0.18);
+  background: rgba(255, 255, 255, 0.04);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+
+/* ============================================================
+   GAMING — panel oscuro (Consolas + Controles)
+   ============================================================ */
+
+.gaming-section {
+  /* Usamos valores fijos (no var(--black)/var(--white)) a propósito:
+     esas variables se invierten en modo oscuro (--black pasa a ser
+     casi blanco), y por eso este panel se veía blanco al cambiar
+     de tema. En modo claro este panel se queda negro, como siempre. */
+  background: #0A0A0A;
+  color: #FFFFFF;
+  border-radius: var(--radius-lg);
+  margin: 0 24px;
+  padding: 72px 40px;
+  scroll-margin-top: calc(var(--navbar-height) + 12px);
+
+  transition: background-color 0.35s ease;
+}
+
+.gaming-section .repair-section__head h2 { color: #FFFFFF; }
+.gaming-section .repair-section__head .section-lead { color: rgba(255, 255, 255, 0.7); }
+.gaming-section .eyebrow { color: var(--blue-bright); }
+
+.gaming-section .device-card {
+  background: rgba(255, 255, 255, 0.04);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+.gaming-section .device-card:hover {
+  box-shadow: none;
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.gaming-section .device-card__icon {
+  background: rgba(0, 163, 255, 0.15);
+  color: var(--blue-bright);
+}
+
+.gaming-section .device-card h3 { color: #FFFFFF; }
+
+.gaming-section .device-card ul li {
+  color: rgba(255, 255, 255, 0.6);
+  border-top-color: rgba(255, 255, 255, 0.1);
+}
+
+/* En modo oscuro este panel se vuelve azul en vez de negro. */
+html[data-theme="dark"] .gaming-section {
+  background: linear-gradient(160deg, #001C4D, var(--blue));
+}
+
+.gaming-services {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 32px;
+}
+
+.gaming-services span {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  font-size: 0.86rem;
+}
+
+
+/* ============================================================
+   SERVICE CHIPS
+   Listas cortas tipo "periféricos" / "accesorios".
+   ============================================================ */
+
+.service-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.service-chips span {
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+  color: var(--text-secondary);
+  font-size: 0.86rem;
+}
+
+.repair-subblock {
+  margin-top: 40px;
+}
+
+.repair-subblock__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+  margin-bottom: 12px;
+}
+
+
+/* ============================================================
+   MANTENIMIENTO — flujo de proceso animado
+   ============================================================ */
+
+.process-flow {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+
+  margin: 44px 0 8px;
+  position: relative;
+}
+
+.process-flow::before {
+  content: "";
+  position: absolute;
+  top: 22px;
+  left: 6%;
+  right: 6%;
+  height: 1px;
+  background: var(--border);
+  z-index: 0;
+}
+
+.process-step {
+  position: relative;
+  z-index: 1;
+
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.process-step__index {
+  width: 44px;
+  height: 44px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: var(--page-bg);
+  border: 1.5px solid var(--blue);
+  color: var(--blue);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+}
+
+.process-step h4 {
+  font-size: 0.98rem;
+}
+
+.process-step p {
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+
+.maintenance-applies {
+  margin-top: 40px;
+}
+
+
+/* ============================================================
+   PRÓXIMAMENTE
+   ============================================================ */
+
+.soon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.soon-card {
+  position: relative;
+
+  padding: 30px;
+
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed var(--border);
+  background: transparent;
+
+  opacity: 0.85;
+}
+
+.soon-card__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+
+  padding: 5px 12px;
+  margin-bottom: 16px;
+
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.soon-card__icon {
+  width: 40px;
+  height: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 12px;
+  background: var(--surface-soft);
+  color: var(--text-secondary);
+
+  margin-bottom: 16px;
+}
+
+.soon-card__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: currentColor;
+}
+
+.soon-card h3 { font-size: 1.1rem; margin-bottom: 10px; }
+
+.soon-card ul li {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  padding: 5px 0;
+}
+
+
+/* ============================================================
+   WHY VALADAL
+   ============================================================ */
+
+.why-band {
+  background: var(--surface-soft);
+}
+
+.why-band__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.why-band__text .section-lead { margin-top: 14px; }
+
+.why-band__points {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.why-band__point {
+  display: flex;
+  gap: 14px;
+  padding: 18px;
+
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  border: 1px solid var(--border);
+}
+
+.why-band__point__icon {
+  width: 24px;
+  height: 24px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: var(--blue);
+  flex-shrink: 0;
+}
+
+.why-band__point__icon svg {
+  width: 20px;
+  height: 20px;
+  display: block;
+  stroke: currentColor;
+}
+
+.why-band__point strong {
+  display: block;
+  margin-bottom: 3px;
+  font-family: var(--font-display);
+}
+
+.why-band__point p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+}
+
+
+/* ============================================================
+   STAGGER (reveal escalonado dentro de un grid)
+   ============================================================ */
+
+.device-grid .reveal:nth-child(2) { transition-delay: 90ms; }
+.device-grid .reveal:nth-child(3) { transition-delay: 180ms; }
+.device-grid .reveal:nth-child(4) { transition-delay: 270ms; }
+
+.soon-grid .reveal:nth-child(2) { transition-delay: 120ms; }
+
+.process-flow .reveal:nth-child(2) { transition-delay: 90ms; }
+.process-flow .reveal:nth-child(3) { transition-delay: 180ms; }
+.process-flow .reveal:nth-child(4) { transition-delay: 270ms; }
+.process-flow .reveal:nth-child(5) { transition-delay: 360ms; }
+
+
+/* ============================================================
+   RESPONSIVE — TABLET (compartido desktop/mobile)
+   ============================================================ */
+
+@media (max-width: 960px) {
+  .why-band__grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+}
+
+
+/* ============================================================
+   ----------------------------------------------------------
+   A PARTIR DE AQUÍ: VERSIÓN MOBILE
+   (migrada desde la variante que ya la tenía, para mantener
+   el bloque responsive completo separado y fácil de ubicar)
+   ----------------------------------------------------------
+   ============================================================ */
+
+/* ============================================================
+   RESPONSIVE — MOBILE
+   Basado literalmente en el sistema mobile de home.css: misma
+   escala tipográfica (títulos clamp(1.55rem,6vw,2rem), leads
+   0.72rem, texto pequeño 0.55-0.62rem), mismos radios (~11px)
+   y el mismo criterio de mantener las cuadrículas del escritorio
+   en miniatura en vez de apilarlas a 1 columna — igual que
+   .repair-preview__grid / .digital-band__grid / .values-grid
+   en home. Solo .why-band se apila, igual que .about-teaser
+   en home (es el mismo patrón de "imagen/columna + texto").
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  /* ------------------------------------------------------------
+     HERO
+     ------------------------------------------------------------ */
+
+  .repair-hero {
+    padding: 56px 0 20px;
+  }
+
+  .repair-hero h1 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    max-width: 100%;
+  }
+
+  .repair-hero .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+
+
+  /* ------------------------------------------------------------
+     QUICK-JUMP BUBBLES
+     ------------------------------------------------------------ */
+
+  .repair-bubbles {
+    gap: 8px;
+    margin-top: 20px;
+  }
+
+  .repair-bubble {
+    padding: 8px 14px;
+    gap: 6px;
+  }
+
+  .repair-bubble__content {
+    gap: 6px;
+    font-size: 0.68rem;
+  }
+
+  .repair-bubble__icon {
+    width: 14px;
+    height: 14px;
+  }
+
+  .repair-bubble__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+
+  /* ------------------------------------------------------------
+     SECTION SHELL
+     ------------------------------------------------------------ */
+
+  .repair-section {
+    padding: 40px 0;
+  }
+
+  .repair-section__head {
+    margin-bottom: 20px;
+  }
+
+  .repair-section__head h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .repair-section__head .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  .repair-subblock {
+    margin-top: 24px;
+  }
+
+  .repair-subblock__title {
+    font-size: 0.78rem;
+    margin-bottom: 8px;
+  }
+
+
+  /* ------------------------------------------------------------
+     DEVICE GRID + CARDS
+     Misma cantidad de columnas que en escritorio, en miniatura.
+     ------------------------------------------------------------ */
+
+  .device-grid,
+  .device-grid--2,
+  .device-grid--4 {
+    gap: 8px;
+  }
+
+  .device-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .device-grid--2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .device-grid--4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .device-card {
+    min-width: 0;
+    padding: 12px 10px;
+    border-radius: 12px;
+  }
+
+  .device-card__top {
+    margin-bottom: 10px;
+  }
+
+  .device-card__icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+  }
+
+  .device-card__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .device-card h3 {
+    font-size: 0.68rem;
+    line-height: 1.15;
+    margin-bottom: 4px;
+  }
+
+  .device-card__sub {
+    font-size: 0.55rem;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  .device-card ul {
+    padding-top: 8px;
+  }
+
+  .device-card ul li {
+    font-size: 0.55rem;
+    line-height: 1.35;
+    padding: 4px 0;
+  }
+
+
+  /* ------------------------------------------------------------
+     IMAGEN PLACEHOLDER
+     ------------------------------------------------------------ */
+
+  .image-slot {
+    border-radius: 10px;
+    margin-bottom: 10px;
+    gap: 4px;
+  }
+
+  .image-slot__icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .image-slot__label {
+    font-size: 0.52rem;
+  }
+
+
+  /* ------------------------------------------------------------
+     GAMING — panel oscuro
+     ------------------------------------------------------------ */
+
+  .gaming-section {
+    margin: 0 12px;
+    padding: 32px 16px;
+    border-radius: 16px;
+  }
+
+  .gaming-services {
+    gap: 6px;
+    margin-top: 20px;
+  }
+
+  .gaming-services span {
+    padding: 6px 12px;
+    font-size: 0.62rem;
+  }
+
+
+  /* ------------------------------------------------------------
+     SERVICE CHIPS
+     ------------------------------------------------------------ */
+
+  .service-chips {
+    gap: 6px;
+  }
+
+  .service-chips span {
+    padding: 6px 12px;
+    font-size: 0.62rem;
+  }
+
+
+  /* ------------------------------------------------------------
+     PROCESO — mismo criterio que .values-grid en home: se
+     mantienen las columnas del escritorio, solo en miniatura.
+     ------------------------------------------------------------ */
+
+  .process-flow {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .process-flow::before {
+    display: none;
+  }
+
+  .process-step {
+    gap: 6px;
+  }
+
+  .process-step__index {
+    width: 24px;
+    height: 24px;
+    font-size: 0.6rem;
+  }
+
+  .process-step h4 {
+    font-size: 0.6rem;
+    line-height: 1.15;
+  }
+
+  .process-step p {
+    font-size: 0.5rem;
+    line-height: 1.3;
+  }
+
+  .maintenance-applies {
+    margin-top: 24px;
+  }
+
+
+  /* ------------------------------------------------------------
+     PRÓXIMAMENTE
+     ------------------------------------------------------------ */
+
+  .soon-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .soon-card {
+    padding: 14px 12px;
+    border-radius: 12px;
+  }
+
+  .soon-card__badge {
+    padding: 4px 9px;
+    margin-bottom: 10px;
+    font-size: 0.5rem;
+  }
+
+  .soon-card__icon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 10px;
+  }
+
+  .soon-card__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .soon-card h3 {
+    font-size: 0.68rem;
+    margin-bottom: 6px;
+  }
+
+  .soon-card ul li {
+    font-size: 0.55rem;
+    padding: 3px 0;
+  }
+
+
+  /* ------------------------------------------------------------
+     WHY VALADAL — se apila igual que .about-teaser en home
+     (es el mismo patrón: columna de texto + columna de lista).
+     ------------------------------------------------------------ */
+
+  .why-band__grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .why-band__text .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+  .why-band__points {
+    gap: 10px;
+  }
+
+  .why-band__point {
+    padding: 12px;
+    gap: 10px;
+    border-radius: 10px;
+  }
+
+  .why-band__point__icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .why-band__point__icon svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .why-band__point strong {
+    font-size: 0.68rem;
+  }
+
+  .why-band__point p {
+    font-size: 0.58rem;
+    line-height: 1.35;
+  }
+
+
+  /* ------------------------------------------------------------
+     FOOTER — mismos tamaños que en home
+     ------------------------------------------------------------ */
+
+  .footer {
+    padding-top: 40px;
+  }
+
+  .footer__name {
+    font-size: 0.72rem;
+  }
+
+  .footer__tagline {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+  .footer__col h4 {
+    font-size: 0.62rem;
+  }
+
+  .footer__col a {
+    font-size: 0.55rem;
+    line-height: 1.35;
+  }
+
+  .footer__bottom {
+    font-size: 0.52rem;
+    line-height: 1.3;
+  }
+}
+
+
+/* ============================================================
+   EXTRA SMALL
+   Mismo criterio que home a los 520px: no se cambian columnas,
+   solo se afinan tamaños de texto un poco más.
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .process-step h4 {
+    font-size: 0.56rem;
+  }
+
+  .process-step p {
+    font-size: 0.48rem;
+  }
+
+  .footer__tagline,
+  .footer__col a {
+    font-size: 0.52rem;
+  }
+
+  .footer__bottom {
+    font-size: 0.5rem;
+  }
+}

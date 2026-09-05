@@ -1,0 +1,808 @@
+/* ============================================================
+   VALADAL — work.css
+   Página de Proyectos.
+   Mismo lenguaje visual que repair.css, build.css y digital.css.
+   ============================================================ */
+
+/* ============================================================
+   PAGE HERO
+   ============================================================ */
+
+.page-hero {
+  position: relative;
+  overflow: hidden;
+
+  background:
+    radial-gradient(
+      circle at 84% 0%,
+      rgba(0, 102, 255, 0.08),
+      transparent 60%
+    );
+}
+
+
+/* ============================================================
+   FILTROS EN FORMATO BURBUJA
+   Mismo componente visual que .repair-bubble / .build-bubble /
+   .digital-nav a. Aquí las burbujas SÍ tienen estado propio:
+   .is-active significa "filtro seleccionado". Por eso el
+   énfasis automático del loop usa .is-emphasis, para no mentir
+   sobre cuál filtro está aplicado.
+   ============================================================ */
+
+.work-filters__label {
+  display: block;
+
+  margin-top: 30px;
+  margin-bottom: 14px;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.work-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+
+  margin: 0 0 8px;
+}
+
+.work-bubble {
+  position: relative;
+
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  padding: 13px 22px;
+
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-pill);
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-main);
+
+  box-shadow: var(--shadow-card);
+
+  cursor: pointer;
+  white-space: nowrap;
+
+  will-change: transform;
+
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    box-shadow 0.25s var(--ease),
+    background-color 0.35s ease;
+}
+
+.work-bubble__icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  width: 18px;
+  height: 18px;
+
+  color: var(--blue);
+  flex-shrink: 0;
+
+  transition: color 0.25s ease;
+}
+
+.work-bubble__icon svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+  stroke: currentColor;
+}
+
+.work-bubble__content {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+
+  transition: transform 0.35s var(--ease);
+}
+
+
+/* ------------------------------------------------------------
+   HOVER
+   ------------------------------------------------------------ */
+
+.work-bubble:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+
+  box-shadow:
+    0 16px 32px rgba(0, 102, 255, 0.16),
+    0 4px 12px rgba(10, 10, 10, 0.06);
+
+  animation-play-state: paused;
+}
+
+
+/* ------------------------------------------------------------
+   ÉNFASIS AUTOMÁTICO (.is-emphasis)
+   Idéntico al de repair/build/digital, pero con clase propia
+   para no chocar con el estado del filtro. El script salta la
+   burbuja que ya está seleccionada.
+   ------------------------------------------------------------ */
+
+.work-bubble.is-emphasis .work-bubble__content {
+  transform: scale(1.07);
+}
+
+.work-bubble.is-emphasis {
+  border-color: var(--blue);
+  color: var(--blue);
+
+  box-shadow:
+    0 18px 34px rgba(0, 102, 255, 0.20),
+    0 6px 14px rgba(10, 10, 10, 0.08);
+
+  z-index: 2;
+}
+
+
+/* ------------------------------------------------------------
+   FILTRO SELECCIONADO (.is-active)
+   Relleno sólido, para que se distinga sin ambigüedad del
+   énfasis automático.
+   ------------------------------------------------------------ */
+
+.work-bubble.is-active {
+  background: var(--text-main);
+  border-color: var(--text-main);
+  color: var(--page-bg);
+
+  box-shadow: var(--shadow-lifted);
+
+  animation: none;
+  transform: none;
+}
+
+.work-bubble.is-active .work-bubble__icon {
+  color: var(--page-bg);
+}
+
+.work-bubble.is-active:hover {
+  border-color: var(--text-main);
+  color: var(--page-bg);
+}
+
+
+/* ------------------------------------------------------------
+   FLOTE — mismas @keyframes que repair/build/digital
+   ------------------------------------------------------------ */
+
+.work-bubble:nth-child(3n + 1) {
+  animation: float-bubble-1 6.4s ease-in-out infinite;
+}
+
+.work-bubble:nth-child(3n + 2) {
+  animation: float-bubble-2 5.8s ease-in-out infinite;
+}
+
+.work-bubble:nth-child(3n) {
+  animation: float-bubble-3 6.9s ease-in-out infinite;
+}
+
+.work-bubble:nth-child(2) { animation-delay: 0.3s; }
+.work-bubble:nth-child(3) { animation-delay: 0.6s; }
+.work-bubble:nth-child(4) { animation-delay: 0.9s; }
+.work-bubble:nth-child(5) { animation-delay: 1.2s; }
+.work-bubble:nth-child(6) { animation-delay: 1.5s; }
+.work-bubble:nth-child(7) { animation-delay: 1.8s; }
+
+@media (prefers-reduced-motion: reduce) {
+  .work-bubble { animation: none; }
+}
+
+
+/* ============================================================
+   GALERÍA
+   ============================================================ */
+
+.work-section {
+  padding: 72px 0;
+}
+
+.work-section--soft {
+  background: var(--surface-soft);
+}
+
+.work-section__head {
+  margin-bottom: 36px;
+  max-width: 780px;
+}
+
+.work-section__head h2 {
+  font-size: clamp(1.6rem, 2.8vw, 2.2rem);
+  margin-top: 6px;
+}
+
+.work-section__head .section-lead {
+  margin-top: 14px;
+}
+
+
+/* ------------------------------------------------------------
+   TARJETAS DE LA GALERÍA
+   Diseño original: mosaico asimétrico a sangre completa, con
+   scrim y el texto encima de la foto. La foto real reemplaza
+   el gradiente de .work-piece__visual por un
+   <img class="work-piece__image">.
+   ------------------------------------------------------------ */
+
+.work-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 220px;
+  gap: 20px;
+}
+
+.work-piece {
+  position: relative;
+
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+
+  padding: 22px;
+
+  transition: transform 0.4s var(--ease);
+}
+
+.work-piece:hover { transform: translateY(-4px); }
+.work-piece:hover .work-piece__visual { transform: scale(1.06); }
+
+.work-piece--wide { grid-column: span 2; }
+.work-piece--tall { grid-row: span 2; }
+
+.work-piece__visual {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  transition: transform 0.5s var(--ease);
+}
+
+.work-piece__image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.work-piece__scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0) 40%,
+      rgba(10, 10, 10, 0.55) 100%
+    );
+}
+
+.work-piece__tag {
+  position: relative;
+  z-index: 2;
+
+  align-self: flex-start;
+
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #FFFFFF;
+
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  backdrop-filter: blur(6px);
+
+  padding: 5px 10px;
+  border-radius: var(--radius-pill);
+
+  margin-bottom: auto;
+}
+
+.work-piece__title {
+  position: relative;
+  z-index: 2;
+
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+
+/* Marca de posición mientras no hay foto real */
+.work-piece__slot {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.72rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.work-piece[hidden] { display: none; }
+
+.work-piece:nth-child(2) { transition-delay: 60ms; }
+.work-piece:nth-child(3) { transition-delay: 120ms; }
+.work-piece:nth-child(4) { transition-delay: 180ms; }
+.work-piece:nth-child(5) { transition-delay: 240ms; }
+.work-piece:nth-child(6) { transition-delay: 300ms; }
+
+
+/* ============================================================
+   RESEÑAS — sistema de estrellas
+   ============================================================ */
+
+.reviews-summary {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+
+  padding: 26px 30px;
+  margin-bottom: 36px;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-card);
+}
+
+.reviews-summary__score {
+  font-family: var(--font-display);
+  font-size: 2.6rem;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--text-main);
+}
+
+.reviews-summary__meta {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.reviews-summary__label {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+}
+
+.reviews-summary__count {
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+}
+
+
+/* ------------------------------------------------------------
+   ESTRELLAS
+   Se rellenan con .stars__star--full / --half según la
+   calificación. El trazo es el mismo 1.6–1.8 del resto de los
+   iconos del sitio.
+   ------------------------------------------------------------ */
+
+.stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+}
+
+.stars svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+
+  stroke: var(--blue);
+  stroke-width: 1.6;
+  fill: none;
+}
+
+.stars__star--full svg {
+  fill: var(--blue);
+}
+
+.stars__star--half svg {
+  fill: url(#starHalfGradient);
+}
+
+.reviews-summary .stars svg {
+  width: 20px;
+  height: 20px;
+}
+
+
+/* ------------------------------------------------------------
+   TARJETAS DE RESEÑA
+   ------------------------------------------------------------ */
+
+.reviews-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+
+  padding: 28px;
+
+  border-radius: var(--radius-lg);
+  background: var(--surface);
+  border: 1px solid var(--border);
+
+  transition:
+    transform 0.25s var(--ease),
+    border-color 0.25s ease,
+    box-shadow 0.25s var(--ease);
+}
+
+.review-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--blue);
+  box-shadow: var(--shadow-card);
+}
+
+.review-card__top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+.review-card__tag {
+  padding: 4px 10px;
+
+  border-radius: var(--radius-pill);
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+
+  white-space: nowrap;
+}
+
+.work-section--soft .review-card__tag {
+  background: var(--page-bg);
+}
+
+.review-card__text {
+  color: var(--text-secondary);
+  font-size: 0.95rem;
+  line-height: 1.6;
+
+  flex-grow: 1;
+}
+
+.review-card__author {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+
+  padding-top: 16px;
+  border-top: 1px solid var(--border);
+}
+
+.review-card__avatar {
+  width: 38px;
+  height: 38px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 50%;
+  background: rgba(0, 102, 255, 0.08);
+  color: var(--blue);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.9rem;
+}
+
+.review-card__name {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.94rem;
+  color: var(--text-main);
+}
+
+.review-card__service {
+  font-size: 0.8rem;
+  color: var(--text-secondary);
+}
+
+.reviews-grid .reveal:nth-child(2) { transition-delay: 80ms; }
+.reviews-grid .reveal:nth-child(3) { transition-delay: 160ms; }
+.reviews-grid .reveal:nth-child(4) { transition-delay: 240ms; }
+.reviews-grid .reveal:nth-child(5) { transition-delay: 320ms; }
+.reviews-grid .reveal:nth-child(6) { transition-delay: 400ms; }
+
+
+/* ------------------------------------------------------------
+   CTA DE RESEÑAS
+   ------------------------------------------------------------ */
+
+.reviews-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+
+  margin-top: 36px;
+  padding: 26px 30px;
+
+  border-radius: var(--radius-lg);
+  border: 1.5px dashed var(--border);
+}
+
+.reviews-cta p {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 1.02rem;
+}
+
+
+/* ============================================================
+   RESPONSIVE — TABLET (compartido desktop/mobile)
+   ============================================================ */
+
+@media (max-width: 1000px) {
+
+  .reviews-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+
+/* ============================================================
+   ----------------------------------------------------------
+   A PARTIR DE AQUÍ: VERSIÓN MOBILE
+   Mismo criterio tipográfico y de espaciado que repair.css,
+   digital.css y build.css (clamp(1.55rem,6vw,2rem) en títulos,
+   0.72rem en leads, texto pequeño 0.55–0.62rem, radios ~10-16px)
+   y el mismo criterio de achicar las cuadrículas en vez de
+   apilarlas a 1 columna donde tiene sentido.
+   ----------------------------------------------------------
+   ============================================================ */
+
+@media (max-width: 860px) {
+
+  /* ------------------------------------------------------------
+     HERO
+     ------------------------------------------------------------ */
+
+  .page-hero {
+    padding: 56px 0 20px;
+  }
+
+
+  /* ------------------------------------------------------------
+     FILTROS EN BURBUJA
+     ------------------------------------------------------------ */
+
+  .work-filters__label {
+    font-size: 0.58rem;
+    margin-top: 16px;
+    margin-bottom: 8px;
+  }
+
+  .work-filters {
+    gap: 6px;
+  }
+
+  .work-bubble {
+    padding: 8px 14px;
+    gap: 6px;
+  }
+
+  .work-bubble__content {
+    gap: 6px;
+    font-size: 0.68rem;
+  }
+
+  .work-bubble__icon,
+  .work-bubble__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+
+  /* ------------------------------------------------------------
+     SECCIÓN
+     ------------------------------------------------------------ */
+
+  .work-section {
+    padding: 40px 0;
+  }
+
+  .work-section__head {
+    margin-bottom: 20px;
+  }
+
+  .work-section__head h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    margin-top: 4px;
+  }
+
+  .work-section__head .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 8px;
+  }
+
+
+  /* ------------------------------------------------------------
+     GALERÍA — mosaico en miniatura, 2 columnas
+     ------------------------------------------------------------ */
+
+  .work-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-auto-rows: 150px;
+    gap: 10px;
+  }
+
+  .work-piece--wide { grid-column: span 2; }
+
+  .work-piece {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .work-piece__tag {
+    font-size: 0.58rem;
+    padding: 4px 8px;
+  }
+
+  .work-piece__title {
+    font-size: 0.8rem;
+  }
+
+  .work-piece__slot {
+    font-size: 0.56rem;
+  }
+
+
+  /* ------------------------------------------------------------
+     RESEÑAS
+     ------------------------------------------------------------ */
+
+  .reviews-summary {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px;
+    margin-bottom: 20px;
+  }
+
+  .reviews-summary__score {
+    font-size: 1.8rem;
+  }
+
+  .reviews-summary__label {
+    font-size: 0.6rem;
+  }
+
+  .reviews-summary__count {
+    font-size: 0.62rem;
+  }
+
+  .stars svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .reviews-summary .stars svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .reviews-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .review-card {
+    padding: 16px;
+    gap: 10px;
+  }
+
+  .review-card__tag {
+    font-size: 0.55rem;
+    padding: 3px 8px;
+  }
+
+  .review-card__text {
+    font-size: 0.62rem;
+    line-height: 1.45;
+  }
+
+  .review-card__author {
+    gap: 8px;
+    padding-top: 10px;
+  }
+
+  .review-card__avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 0.68rem;
+  }
+
+  .review-card__name {
+    font-size: 0.62rem;
+  }
+
+  .review-card__service {
+    font-size: 0.55rem;
+  }
+
+  .reviews-cta {
+    margin-top: 20px;
+    padding: 16px;
+    gap: 12px;
+  }
+
+  .reviews-cta p {
+    font-size: 0.68rem;
+  }
+}
+
+
+/* ============================================================
+   EXTRA SMALL
+   Mismo criterio que las demás páginas a los 520px: la
+   cuadrícula de proyectos pasa a 1 columna y se afinan tamaños
+   de texto un poco más.
+   ============================================================ */
+
+@media (max-width: 520px) {
+
+  .work-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 190px;
+  }
+
+  .work-piece--wide { grid-column: span 1; }
+  .work-piece--tall { grid-row: span 1; }
+
+  .work-section { padding: 32px 0; }
+}
