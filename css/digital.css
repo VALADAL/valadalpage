@@ -940,16 +940,16 @@
     padding: 20px 0;
     gap: 12px;
 
-    align-items: flex-start;
+    /* Centrada verticalmente respecto al texto, igual que en
+       escritorio. Sin sticky: con la foto centrada, quedarse
+       pegada al hacer scroll la sacaría de su eje. */
+    align-items: center;
   }
 
   .digital-panel__media {
     flex: 0 0 36%;
 
-    /* La foto acompaña al texto mientras se lee la lista, en
-       vez de quedarse arriba y perderse al hacer scroll. */
-    position: sticky;
-    top: calc(var(--navbar-height) + 12px);
+    align-self: center;
   }
 
   .digital-shot {
