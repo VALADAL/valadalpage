@@ -472,6 +472,10 @@ const translations = {
     "contactPage.form.optRepair": "Reparación",
     "contactPage.form.optBuild": "Armado y creación",
     "contactPage.form.optDigital": "Soluciones digitales",
+    "contactPage.form.optReview": "Dejar una reseña",
+    "contactPage.form.sending": "Enviando...",
+    "contactPage.form.error":
+      "No pudimos enviar tu mensaje. Escríbenos por WhatsApp o inténtalo de nuevo.",
     "contactPage.form.optOther": "Otro",
     "contactPage.form.message": "Mensaje",
     "contactPage.form.messagePh": "Cuéntanos qué necesitas...",
@@ -1143,6 +1147,10 @@ const translations = {
     "contactPage.form.optRepair": "Repair",
     "contactPage.form.optBuild": "Build & Creation",
     "contactPage.form.optDigital": "Digital Solutions",
+    "contactPage.form.optReview": "Leave a review",
+    "contactPage.form.sending": "Sending...",
+    "contactPage.form.error":
+      "We couldn't send your message. Reach us on WhatsApp or try again.",
     "contactPage.form.optOther": "Other",
     "contactPage.form.message": "Message",
     "contactPage.form.messagePh": "Tell us what you need...",
@@ -1905,6 +1913,12 @@ const contactForm =
 
 if (contactForm) {
 
+  // ----------------------------------------------------------
+  // PRESELECCIÓN DEL SERVICIO
+  // Permite llegar con ?service=repair | build | digital |
+  // review | other desde los CTA de otras páginas.
+  // ----------------------------------------------------------
+
   const params =
     new URLSearchParams(
       window.location.search
@@ -1940,9 +1954,35 @@ if (contactForm) {
   }
 
 
+  // ----------------------------------------------------------
+  // ENVÍO
+  //
+  // El sitio es estático, así que no puede mandar correos por
+  // sí mismo: hace falta alguien que reciba el POST y lo
+  // reenvíe. Usamos Web3Forms, que hace exactamente eso y no
+  // requiere servidor propio.
+  //
+  // Para activarlo:
+  //   1. Entra a https://web3forms.com
+  //   2. Escribe el correo donde quieres recibir los mensajes
+  //   3. Te mandan una "Access Key" por correo
+  //   4. Pégala en el input oculto access_key del formulario,
+  //      en contact/index.html
+  //
+  // Mientras la llave siga siendo el marcador de posición, el
+  // formulario avisa en consola y NO finge que envió.
+  // ----------------------------------------------------------
+
+  const ENDPOINT =
+    "https://api.web3forms.com/submit";
+
+  const KEY_PLACEHOLDER =
+    "PEGA_AQUI_TU_ACCESS_KEY";
+
+
   contactForm.addEventListener(
     "submit",
-    (event) => {
+    async (event) => {
 
       event.preventDefault();
 
@@ -1951,15 +1991,122 @@ if (contactForm) {
           "formSuccess"
         );
 
-      if (successMessage) {
-
-        successMessage.classList.add(
-          "is-visible"
+      const errorMessage =
+        document.getElementById(
+          "formError"
         );
 
+      const submitButton =
+        contactForm.querySelector(
+          "button[type='submit']"
+        );
+
+      const accessKey =
+        contactForm.querySelector(
+          "input[name='access_key']"
+        );
+
+
+      // Limpiamos avisos anteriores
+      if (successMessage) {
+        successMessage.classList.remove("is-visible");
       }
 
-      contactForm.reset();
+      if (errorMessage) {
+        errorMessage.classList.remove("is-visible");
+      }
+
+
+      // Sin llave configurada no se envía nada, y se dice.
+      if (
+        !accessKey ||
+        !accessKey.value ||
+        accessKey.value === KEY_PLACEHOLDER
+      ) {
+
+        console.warn(
+          "Formulario sin configurar: falta la Access Key de " +
+          "Web3Forms en el input access_key."
+        );
+
+        if (errorMessage) {
+          errorMessage.classList.add("is-visible");
+        }
+
+        return;
+      }
+
+
+      // Estado "enviando"
+      const originalLabel =
+        submitButton
+          ? submitButton.textContent
+          : "";
+
+      if (submitButton) {
+
+        submitButton.disabled = true;
+
+        const sendingKey =
+          "contactPage.form.sending";
+
+        submitButton.textContent =
+          (translations[language] &&
+            translations[language][sendingKey]) ||
+          "Enviando...";
+      }
+
+
+      try {
+
+        const response =
+          await fetch(ENDPOINT, {
+            method: "POST",
+            body: new FormData(contactForm)
+          });
+
+        const result =
+          await response.json();
+
+
+        if (result.success) {
+
+          if (successMessage) {
+            successMessage.classList.add("is-visible");
+          }
+
+          contactForm.reset();
+
+        } else {
+
+          console.error(
+            "Web3Forms respondió con error:",
+            result
+          );
+
+          if (errorMessage) {
+            errorMessage.classList.add("is-visible");
+          }
+        }
+
+      } catch (err) {
+
+        console.error(
+          "No se pudo contactar al servicio de formularios:",
+          err
+        );
+
+        if (errorMessage) {
+          errorMessage.classList.add("is-visible");
+        }
+
+      } finally {
+
+        if (submitButton) {
+          submitButton.disabled = false;
+          submitButton.textContent = originalLabel;
+        }
+      }
     }
   );
 }
