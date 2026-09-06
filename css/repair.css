@@ -1037,22 +1037,51 @@ html[data-theme="dark"] .gaming-section {
   #computadoras .device-card:nth-child(2) { grid-column: 2; grid-row: 2; }
   #computadoras .device-card:nth-child(3) { grid-column: 1; grid-row: 3; }
 
-  /* Segundo subbloque = Periféricos de PC → junto a la tarjeta 3 */
+  /* Los DOS subbloques comparten la celda de la derecha, junto
+     a la tarjeta 3: primero Periféricos de PC y debajo Gestión
+     térmica y mantenimiento. */
 
-  #computadoras .repair-subblock + .repair-subblock {
+  /* Gestión térmica es el PRIMERO en el HTML: cae en la fila 4. */
+
+  #computadoras .repair-subblock {
     grid-column: 2;
-    grid-row: 3;
+    grid-row: 4;
 
     margin-top: 0;
   }
 
-  /* Primer subbloque = Gestión térmica → abajo, a todo lo ancho */
+  /* Periféricos es el segundo, y por especificidad esta regla
+     le gana a la anterior: sube a la fila 3. */
 
-  #computadoras .repair-subblock {
+  #computadoras .repair-subblock + .repair-subblock {
+    grid-row: 3;
+  }
+
+  /* La tarjeta 3 se estira para acompañar a las dos columnas
+     de chips que quedan a su lado. */
+
+  #computadoras .device-card:nth-child(3) {
+    grid-row: 3 / span 2;
+  }
+
+
+  /* ============================================================
+     #gaming — 3 tarjetas: 2 arriba y la 3ª centrada abajo
+     ============================================================ */
+
+  #gaming .device-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  /* La tercera ocupa las dos columnas pero con ancho de una,
+     centrada. Así no queda un hueco raro a su derecha. */
+
+  #gaming .device-card:nth-child(3) {
     grid-column: 1 / -1;
-    grid-row: 4;
 
-    margin-top: 6px;
+    width: calc(50% - 4px);
+
+    justify-self: center;
   }
 
 
