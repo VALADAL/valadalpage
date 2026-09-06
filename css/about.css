@@ -6,8 +6,11 @@
    PAGE HERO
    ============================================================ */
 
+/* El padding inferior separa la imagen de la línea divisoria
+   del hero; antes iba en 0 y la foto quedaba pegada al borde. */
+
 .about-hero {
-  padding: 72px 0 0;
+  padding: 72px 0 36px;
   border-bottom: 1px solid var(--border);
 }
 
@@ -224,6 +227,40 @@
   margin-top: 8px;
 }
 
+/* Los estilos de .value-item solo existían en home.css, y esta
+   página no carga ese archivo: las tarjetas de valores salían
+   sin borde, sin color en el índice y con tamaños por defecto.
+   Aquí se definen para /about/. */
+
+.about-values .value-item {
+  border-top: 1px solid var(--border);
+  padding-top: 18px;
+
+  min-width: 0;
+}
+
+.about-values .value-item__index {
+  display: block;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--blue);
+
+  margin-bottom: 10px;
+}
+
+.about-values .value-item h3 {
+  font-size: 1.05rem;
+  margin-bottom: 8px;
+}
+
+.about-values .value-item p {
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
 .about-values .value-item:nth-child(2) { transition-delay: 60ms; }
 .about-values .value-item:nth-child(3) { transition-delay: 120ms; }
 .about-values .value-item:nth-child(4) { transition-delay: 180ms; }
@@ -281,13 +318,16 @@
    ============================================================ */
 
 @media (max-width: 960px) {
+
+  /* Se conservan las columnas del escritorio, solo con menos
+     separación — mismo criterio que en las demás pestañas. */
+
   .about-panel {
-    grid-template-columns: 1fr;
-    gap: 12px;
+    gap: 28px;
   }
 
   .about-values {
-    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
   }
 }
 
@@ -296,10 +336,7 @@
    ----------------------------------------------------------
    A PARTIR DE AQUÍ: VERSIÓN MOBILE
    Mismo criterio tipográfico y de espaciado que repair.css,
-   digital.css, build.css y work.css (clamp(1.55rem,6vw,2rem)
-   en títulos, 0.72rem en leads, texto pequeño 0.55–0.62rem,
-   radios ~10-16px), y el mismo criterio de achicar cuadrículas
-   en vez de apilarlas donde ya no aplica.
+   digital.css, build.css y work.css.
    ----------------------------------------------------------
    ============================================================ */
 
@@ -309,8 +346,22 @@
      HERO
      ------------------------------------------------------------ */
 
+  /* El padding inferior despega la imagen de la línea divisoria. */
+
   .about-hero {
-    padding: 56px 0 0;
+    padding: 56px 0 22px;
+  }
+
+  .about-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .about-hero .pill svg {
+    width: 11px;
+    height: 11px;
   }
 
   .about-hero h1 {
@@ -391,8 +442,12 @@
      QUOTE CALLOUT
      ------------------------------------------------------------ */
 
+  /* El margin-top va inline en el HTML (48px y 28px), así que
+     solo se puede reducir con !important. */
+
   .about-quote {
     padding: 18px 16px;
+    margin-top: 20px !important;
   }
 
   .about-quote p {
@@ -410,12 +465,24 @@
      TWO-COL STORY PANELS
      ------------------------------------------------------------ */
 
+  /* Dos columnas, igual que en escritorio. */
+
   .about-panel {
-    gap: 8px;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .about-panel > * {
+    min-width: 0;
   }
 
   .about-panel:not(:last-child) {
     margin-bottom: 20px;
+  }
+
+  .about-panel .eyebrow {
+    font-size: 0.55rem;
+    margin-bottom: 6px;
   }
 
   .about-panel h3 {
@@ -446,9 +513,32 @@
      VALUES GRID
      ------------------------------------------------------------ */
 
+  /* Los 5 valores siguen en fila, como en escritorio y como
+     hace el home con su .values-grid. */
+
   .about-values {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+    gap: 8px;
+  }
+
+  .about-values .value-item {
+    padding-top: 10px;
+  }
+
+  .about-values .value-item__index {
+    font-size: 0.58rem;
+    margin-bottom: 6px;
+  }
+
+  .about-values .value-item h3 {
+    font-size: 0.62rem;
+    line-height: 1.15;
+    margin-bottom: 5px;
+  }
+
+  .about-values .value-item p {
+    font-size: 0.5rem;
+    line-height: 1.35;
   }
 
 
@@ -486,16 +576,30 @@
 
 /* ============================================================
    EXTRA SMALL
-   Mismo criterio que las demás páginas a los 520px: no se
-   cambian columnas, solo se afinan tamaños de texto un poco
-   más.
    ============================================================ */
 
 @media (max-width: 520px) {
 
+  .about-hero { padding-bottom: 18px; }
+
   .about-section { padding: 32px 0; }
 
   .about-section__head { margin-bottom: 16px; }
+
+  /* A este ancho, cinco columnas ya no dan: los valores pasan a
+     dos filas conservando el bloque compacto. */
+
+  .about-values {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 7px;
+  }
+
+  .about-values .value-item h3 { font-size: 0.58rem; }
+  .about-values .value-item p { font-size: 0.46rem; }
+
+  .about-panel { gap: 8px; }
+  .about-panel h3 { font-size: 0.72rem; }
+  .about-panel p { font-size: 0.55rem; }
 
   .about-quote p { font-size: 0.76rem; }
 
