@@ -790,131 +790,358 @@ html[data-theme="dark"] .gaming-section {
     gap: 32px;
   }
 }
+/* ============================================================
+   ----------------------------------------------------------
+   A PARTIR DE AQUÍ: VERSIÓN MOBILE
+   Misma escala y criterio que el bloque mobile de digital.css,
+   para que las dos pestañas se sientan iguales en celular.
+   ----------------------------------------------------------
+   ============================================================ */
 
 @media (max-width: 860px) {
 
+  /* ============================================================
+     HERO — mismo lenguaje "chiquito" que .hero de home.css
+     ============================================================ */
+
   .repair-hero {
-    padding: 40px 0 24px;
+    padding: 62px 0 20px !important;
   }
 
+  .repair-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .repair-hero .pill svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .repair-hero h1 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+    max-width: 100%;
+  }
+
+  .repair-hero .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 10px;
+    max-width: 100%;
+  }
+
+
+  /* ============================================================
+     BURBUJAS — chiquitas, igual que los chips de digital
+     ============================================================ */
+
   .repair-bubbles {
-    gap: 10px;
-    margin-top: 24px;
+    gap: 6px;
+    margin-top: 16px;
+    padding-bottom: 4px;
   }
 
   .repair-bubble {
-    padding: 10px 16px;
-    font-size: 0.78rem;
+    padding: 7px 11px;
+    font-size: 0.6rem;
   }
 
+  .repair-bubble__content {
+    gap: 5px;
+  }
+
+  .repair-bubble__icon,
+  .repair-bubble__icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+
+  /* ============================================================
+     SECCIONES
+     ============================================================ */
+
   .repair-section {
-    padding: 40px 0;
+    padding: 24px 0;
   }
 
   .repair-section__head {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
   }
+
+  .repair-section__head h2 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .repair-section__head .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+  }
+
+
+  /* ============================================================
+     TARJETAS
+     Una por renglón. El título y su botón "i" arriba, la lista
+     pegada justo debajo con separador en cada elemento.
+     ============================================================ */
 
   .device-grid,
   .device-grid--2,
   .device-grid--4 {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
   }
 
   .device-card {
-    padding: 22px;
+    padding: 14px;
+    border-radius: 12px;
   }
+
+  .device-card__top {
+    margin-bottom: 10px;
+  }
+
+  .device-card__icon {
+    width: 32px;
+    height: 32px;
+    border-radius: 10px;
+  }
+
+  .device-card__icon svg {
+    width: 15px;
+    height: 15px;
+  }
+
+  .device-card__heading {
+    gap: 8px;
+    margin-bottom: 0;
+  }
+
+  .device-card h3 {
+    font-size: 0.9rem;
+    line-height: 1.2;
+  }
+
+  .info-toggle {
+    width: 18px;
+    height: 18px;
+    font-size: 0.6rem;
+  }
+
+  .device-card__sub {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    padding-top: 6px;
+  }
+
+  .device-card ul {
+    padding-top: 8px;
+  }
+
+  .device-card ul li {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    padding: 5px 0;
+  }
+
+  .device-card .image-slot {
+    margin-bottom: 12px;
+  }
+
+  .image-slot__label {
+    font-size: 0.55rem;
+  }
+
+  .image-slot__file {
+    font-size: 0.5rem;
+  }
+
+
+  /* ============================================================
+     SUBBLOQUES Y CHIPS
+     ============================================================ */
+
+  .repair-subblock {
+    margin-top: 20px;
+  }
+
+  .repair-subblock__title {
+    font-size: 0.72rem;
+    margin-bottom: 8px;
+  }
+
+  .service-chips {
+    gap: 5px;
+    margin-top: 6px;
+  }
+
+  .service-chips span {
+    padding: 4px 9px;
+    font-size: 0.55rem;
+  }
+
+
+  /* ============================================================
+     PANEL DE GAMING
+     ============================================================ */
 
   .gaming-section {
     margin: 0 12px;
-    padding: 40px 20px;
+    padding: 24px 14px;
     border-radius: 18px;
   }
 
+
+  /* ============================================================
+     PRÓXIMAMENTE
+     ============================================================ */
+
   .soon-grid {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 10px;
   }
+
+  .soon-card {
+    padding: 14px;
+    border-radius: 12px;
+  }
+
+  .soon-card__badge {
+    padding: 4px 9px;
+    margin-bottom: 10px;
+    font-size: 0.55rem;
+  }
+
+  .soon-card__icon {
+    width: 28px;
+    height: 28px;
+    border-radius: 10px;
+    margin-bottom: 10px;
+  }
+
+  .soon-card__icon svg {
+    width: 14px;
+    height: 14px;
+  }
+
+  .soon-card h3 {
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+  }
+
+  .soon-card ul li {
+    font-size: 0.6rem;
+    line-height: 1.4;
+    padding: 4px 0;
+  }
+
+
+  /* ============================================================
+     PROCESO
+     ============================================================ */
 
   .process-flow {
     grid-template-columns: 1fr;
-    gap: 24px;
+    gap: 16px;
   }
 
   .process-flow::before {
     display: none;
   }
-}
 
-
-/* ------------------------------------------------------------
-   ETAPA 7 — pantallas muy angostas
-   ------------------------------------------------------------ */
-
-@media (max-width: 520px) {
-
-  .repair-section { padding: 32px 0; }
-
-  .device-card { padding: 18px; }
-
-  .device-card h3 { font-size: 1rem; }
-
-  .device-card ul li { font-size: 0.8rem; padding: 6px 0; }
-
-  .gaming-section { margin: 0 8px; padding: 32px 16px; }
-
-  .process-step__index { width: 38px; height: 38px; font-size: 0.85rem; }
-
-  .soon-card { padding: 22px; }
-}
-
-
-/* ------------------------------------------------------------
-   ENCABEZADO + INFO PLEGABLE EN MOBILE
-   ------------------------------------------------------------ */
-
-@media (max-width: 860px) {
-
-  .device-card__heading {
-    gap: 10px;
-    margin-bottom: 4px;
+  .process-step__index {
+    width: 24px;
+    height: 24px;
+    font-size: 0.6rem;
   }
 
-  .device-card h3 {
-    font-size: 1rem;
-  }
-
-  .info-toggle {
-    width: 21px;
-    height: 21px;
+  .process-step h4 {
     font-size: 0.68rem;
   }
 
-  .device-card__sub {
-    font-size: 0.8rem;
-    padding-top: 6px;
+  .process-step p {
+    font-size: 0.58rem;
+    line-height: 1.4;
   }
 
-  .device-card ul {
-    padding-top: 10px;
+
+  /* ============================================================
+     WHY VALADAL
+     ============================================================ */
+
+  .why-band {
+    padding: 24px 0;
   }
 
-  .device-card ul li {
-    font-size: 0.85rem;
-    padding: 6px 0;
+  .why-band__grid {
+    gap: 16px;
+  }
+
+  .why-band__text .section-lead {
+    font-size: 0.72rem !important;
+    margin-top: 10px;
+  }
+
+  .why-band__points {
+    gap: 8px;
+    margin-top: 12px;
+  }
+
+  .why-band__point {
+    padding: 9px 10px;
+    gap: 8px;
+  }
+
+  .why-band__point__icon {
+    width: 26px;
+    height: 26px;
+    border-radius: 8px;
+  }
+
+  .why-band__point__icon svg {
+    width: 13px;
+    height: 13px;
+  }
+
+  .why-band__point strong {
+    font-size: 0.68rem;
+  }
+
+  .why-band__point p {
+    font-size: 0.58rem;
+    line-height: 1.35;
   }
 }
 
+
+/* ------------------------------------------------------------
+   PANTALLAS MUY ANGOSTAS
+   Solo afinado, la escala real ya la fija el bloque de 860px.
+   ------------------------------------------------------------ */
+
 @media (max-width: 520px) {
 
-  .info-toggle {
-    width: 20px;
-    height: 20px;
-    font-size: 0.64rem;
+  .repair-section {
+    padding: 20px 0;
   }
 
-  .device-card__sub {
-    font-size: 0.76rem;
+  .device-card,
+  .soon-card {
+    padding: 12px;
+  }
+
+  .info-toggle {
+    width: 17px;
+    height: 17px;
+    font-size: 0.56rem;
+  }
+
+  .gaming-section {
+    margin: 0 8px;
+    padding: 20px 12px;
   }
 }
