@@ -1020,30 +1020,23 @@ html[data-theme="dark"]
    ============================================================ */
 
 /* Ritmo vertical.
-   Cuentas reales del espacio en blanco:
-     ARRIBA = 100px (padding inferior de la sección de Reparación)
-              + padding-top de aquí
-     ABAJO  = padding-bottom de aquí
-              + 56px (padding superior de la banda de Digital)
-   Con padding-top 0 y padding-bottom 44px quedan 100px y 100px:
-   exactamente iguales. */
+   Arriba: la sección de Reparación cierra con padding-bottom
+   48px (definido en su style inline en index.html), y aquí no
+   agregamos nada. Abajo: 16px de aquí + 56px que aporta la
+   banda azul de Digital = 72px.
+   Así Armado queda pegado a Reparación, como debe. */
 
 .build-teaser {
   padding-top: 0;
 
-  padding-bottom: 44px;
+  padding-bottom: 16px;
 }
 
-/* El .build-teaser__inner es solo el contenedor.
-   La rejilla de dos columnas vive en __content, porque el
-   visual ahora está DENTRO de él (va después del <h2> para que
-   en mobile el texto y las burbujas lo puedan envolver). */
+/* Dos columnas: imagen a la izquierda, texto a la derecha.
+   El bloque de burbujas + botón va debajo del texto, en la
+   misma columna derecha. */
 
 .build-teaser__inner {
-  display: block;
-}
-
-.build-teaser__content {
   display: grid;
 
   grid-template-columns:
@@ -1052,26 +1045,14 @@ html[data-theme="dark"]
   column-gap: 70px;
 
   align-items: center;
-
-  max-width: none;
 }
-
-/* Todo el texto va en la columna derecha... */
-
-.build-teaser__content > *:not(.build-teaser__visual) {
-  grid-column: 2;
-}
-
-/* ...y la imagen ocupa la columna izquierda completa. */
 
 .build-teaser__visual {
   grid-column: 1;
-  grid-row: 1 / -1;
+  grid-row: 1 / span 2;
 
   align-self: center;
-}
 
-.build-teaser__visual {
   display: flex;
 
   align-items: center;
@@ -1079,9 +1060,17 @@ html[data-theme="dark"]
   justify-content: center;
 }
 
-/* Recuadro CUADRADO para la imagen que se sube manualmente.
-   Cuando exista la foto real, basta con reemplazar el contenido
-   del frame por un <img class="build-teaser__image">. */
+.build-teaser__content {
+  grid-column: 2;
+  grid-row: 1;
+
+  max-width: 640px;
+}
+
+.build-teaser__actions {
+  grid-column: 2;
+  grid-row: 2;
+}
 
 .build-teaser__frame {
   position: relative;
@@ -1493,36 +1482,50 @@ html[data-theme="dark"]
      el display:none de .build-teaser__visual.
      ============================================================ */
 
-  /* Mismo criterio que en escritorio:
-     ARRIBA = 40px de la sección de Reparación + 0 de aquí
-     ABAJO  = 4px de aquí + 40px de la banda de Digital
-     → 40px arriba y 44px abajo. */
+  /*
+   * BUILD / ARMADO — MOBILE
+   *
+   * Rejilla de dos filas:
+   *
+   *   [ texto ..................... ]   ← título y descripción, ancho completo
+   *   [ foto ][ burbujas + botón ]      ← misma altura los dos
+   *
+   * align-items: stretch hace que la foto crezca exactamente
+   * hasta donde llega el bloque de burbujas + botón, y como la
+   * sección no tiene padding inferior, termina justo al final
+   * de la foto.
+   * ============================================================ */
 
   .build-teaser {
     margin: 0 !important;
-    padding: 0 0 4px !important;
+    padding: 0 !important;
   }
 
-  /*
-   * OJO: .build-teaser__inner ES el .container.
-   * Antes llevaba padding: 0 !important, lo que borraba los
-   * 14px laterales y pegaba la sección a las paredes.
-   * Solo anulamos el padding VERTICAL.
-   */
+  /* OJO: .build-teaser__inner ES el .container.
+     Solo se anula el padding VERTICAL — el horizontal es el
+     que da los márgenes laterales. */
 
   .build-teaser__inner {
-    display: block;
+    display: grid;
+
+    grid-template-columns: 40% 1fr;
+
+    grid-template-areas:
+      "texto  texto"
+      "foto   acciones";
+
+    column-gap: 12px;
+    row-gap: 14px;
+
+    align-items: stretch;
 
     margin: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
 
-  /* En mobile se deshace la rejilla: volvemos a flujo normal
-     para que el float de la imagen funcione. */
-
   .build-teaser__content {
-    display: block;
+    grid-area: texto;
 
     max-width: 100%;
     margin: 0 !important;
@@ -1535,58 +1538,29 @@ html[data-theme="dark"]
     margin-top: 8px;
   }
 
-  .build-teaser__points {
-    gap: 6px;
-    margin: 14px 0 18px;
-  }
 
-  .build-teaser__points span {
-    padding: 5px 10px;
-    font-size: 0.55rem;
-  }
-
-  .build-teaser .btn {
-    font-size: 0.68rem;
-    padding: 8px 13px;
-    white-space: nowrap;
-  }
-
-  /*
-   * IMAGEN EN MOBILE
-   * Flota a la derecha justo debajo del título, así la
-   * descripción, la nota y las burbujas la envuelven por la
-   * izquierda en lugar de quedar arriba o abajo de ella.
-   *
-   * Los párrafos envuelven el float con sus líneas de texto,
-   * y .build-teaser__points, al ser flex, no se encima: se
-   * angosta para caber al lado. Por eso no hay traslape.
-   */
+  /* ---- FOTO ----
+     Pierde el aspect-ratio cuadrado a propósito: aquí manda la
+     altura del bloque de la derecha. */
 
   .build-teaser__visual {
-    display: block;
+    grid-area: foto;
 
-    float: right;
+    display: flex;
 
-    width: 118px;
-
-    margin: 2px 0 10px 14px !important;
-
-    grid-column: auto;
-    grid-row: auto;
+    margin: 0 !important;
   }
 
   .build-teaser__frame {
-    width: 118px;
-    max-width: 118px;
+    width: 100%;
+    max-width: 100%;
+    height: 100%;
+
+    aspect-ratio: auto;
+
+    min-height: 120px;
 
     border-radius: 14px;
-  }
-
-  /* El botón cierra el float para que nunca quede a medias
-     al lado de la imagen. */
-
-  .build-teaser .btn {
-    clear: both;
   }
 
   .build-teaser__frame-label {
@@ -1602,6 +1576,45 @@ html[data-theme="dark"]
   /* Sin hover en táctil: el translateY solo estorba. */
   .build-teaser__frame:hover {
     transform: none;
+  }
+
+
+  /* ---- BURBUJAS + BOTÓN ----
+     Columna que se reparte el alto: las burbujas arriba y el
+     botón pegado abajo, para que el bloque llene la altura y
+     la foto la iguale. */
+
+  .build-teaser__actions {
+    grid-area: acciones;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    gap: 10px;
+  }
+
+  .build-teaser__points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+
+    margin: 0 !important;
+  }
+
+  .build-teaser__points span {
+    padding: 5px 10px;
+    font-size: 0.55rem;
+  }
+
+  .build-teaser .btn {
+    align-self: flex-start;
+
+    font-size: 0.68rem;
+    padding: 8px 13px;
+    white-space: nowrap;
+
+    margin: 0 !important;
   }
 
 
