@@ -1019,10 +1019,16 @@ html[data-theme="dark"]
    .valadal-section (imagen a un lado, contenido al otro).
    ============================================================ */
 
-.build-teaser {
-  padding-top: 70px;
+/* Ritmo vertical:
+   la sección de Reparación de arriba ya aporta 100px de padding
+   inferior, así que aquí arriba basta con 40px. Abajo ponemos
+   80px porque la banda azul de Digital solo aporta 56px.
+   Resultado: ~140px arriba y ~136px abajo, en vez de 170/80. */
 
-  padding-bottom: 24px;
+.build-teaser {
+  padding-top: 40px;
+
+  padding-bottom: 80px;
 }
 
 .build-teaser__inner {
@@ -1034,6 +1040,20 @@ html[data-theme="dark"]
   gap: 70px;
 
   align-items: center;
+}
+
+/* En el HTML el visual va DESPUÉS del texto para que en mobile
+   caiga debajo sin encimarse. En escritorio lo regresamos a la
+   columna izquierda con grid-column. */
+
+.build-teaser__visual {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.build-teaser__content {
+  grid-column: 2;
+  grid-row: 1;
 }
 
 .build-teaser__visual {
@@ -1460,17 +1480,24 @@ html[data-theme="dark"]
 
   .build-teaser {
     margin: 0 !important;
-    padding: 24px 0 !important;
+    padding: 28px 0 32px !important;
   }
+
+  /*
+   * OJO: .build-teaser__inner ES el .container.
+   * Antes llevaba padding: 0 !important, lo que borraba los
+   * 14px laterales y pegaba la sección a las paredes.
+   * Solo anulamos el padding VERTICAL.
+   */
 
   .build-teaser__inner {
-    display: block;
-    margin: 0 !important;
-    padding: 0 !important;
-  }
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
 
-  .build-teaser__visual {
-    display: none;
+    margin: 0 !important;
+    padding-top: 0 !important;
+    padding-bottom: 0 !important;
   }
 
   .build-teaser__content {
@@ -1499,6 +1526,44 @@ html[data-theme="dark"]
     font-size: 0.68rem;
     padding: 8px 13px;
     white-space: nowrap;
+  }
+
+  /*
+   * IMAGEN EN MOBILE
+   * Va debajo del texto, en formato chico y alineada a la
+   * izquierda como el resto del contenido. Al estar después
+   * del texto en el DOM no hay riesgo de que se encime.
+   */
+
+  .build-teaser__visual {
+    display: flex;
+    justify-content: flex-start;
+
+    order: 2;
+
+    margin: 0 !important;
+  }
+
+  .build-teaser__frame {
+    width: 132px;
+    max-width: 132px;
+
+    border-radius: 14px;
+  }
+
+  .build-teaser__frame-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.06em;
+  }
+
+  .build-teaser__frame-file {
+    font-size: 0.44rem;
+    margin-top: 3px;
+  }
+
+  /* Sin hover en táctil: el translateY solo estorba. */
+  .build-teaser__frame:hover {
+    transform: none;
   }
 
 
