@@ -2043,16 +2043,40 @@ if (contactForm) {
           ? submitButton.textContent
           : "";
 
+      // Red de seguridad: si por lo que sea la petición nunca
+      // responde, el botón se libera solo a los 20 segundos en
+      // vez de quedarse trabado para siempre.
+      const unlock =
+        setTimeout(() => {
+
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = originalLabel;
+          }
+
+          if (errorMessage) {
+            errorMessage.classList.add("is-visible");
+          }
+
+        }, 20000);
+
       if (submitButton) {
 
         submitButton.disabled = true;
 
-        const sendingKey =
-          "contactPage.form.sending";
+        /* OJO: "language" es un PARÁMETRO de applyLanguage(), no
+           una variable global — usarla aquí lanzaba
+           ReferenceError y dejaba el botón trabado en
+           "Enviando...". El idioma se lee del <html lang>. */
+
+        const currentLang =
+          document.documentElement.lang === "en"
+            ? "en"
+            : "es";
 
         submitButton.textContent =
-          (translations[language] &&
-            translations[language][sendingKey]) ||
+          (translations[currentLang] &&
+            translations[currentLang]["contactPage.form.sending"]) ||
           "Enviando...";
       }
 
@@ -2101,6 +2125,8 @@ if (contactForm) {
         }
 
       } finally {
+
+        clearTimeout(unlock);
 
         if (submitButton) {
           submitButton.disabled = false;
