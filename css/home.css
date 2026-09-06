@@ -1019,41 +1019,56 @@ html[data-theme="dark"]
    .valadal-section (imagen a un lado, contenido al otro).
    ============================================================ */
 
-/* Ritmo vertical:
-   la sección de Reparación de arriba ya aporta 100px de padding
-   inferior, así que aquí arriba basta con 40px. Abajo ponemos
-   80px porque la banda azul de Digital solo aporta 56px.
-   Resultado: ~140px arriba y ~136px abajo, en vez de 170/80. */
+/* Ritmo vertical.
+   Cuentas reales del espacio en blanco:
+     ARRIBA = 100px (padding inferior de la sección de Reparación)
+              + padding-top de aquí
+     ABAJO  = padding-bottom de aquí
+              + 56px (padding superior de la banda de Digital)
+   Con padding-top 0 y padding-bottom 44px quedan 100px y 100px:
+   exactamente iguales. */
 
 .build-teaser {
-  padding-top: 40px;
+  padding-top: 0;
 
-  padding-bottom: 80px;
+  padding-bottom: 44px;
 }
 
+/* El .build-teaser__inner es solo el contenedor.
+   La rejilla de dos columnas vive en __content, porque el
+   visual ahora está DENTRO de él (va después del <h2> para que
+   en mobile el texto y las burbujas lo puedan envolver). */
+
 .build-teaser__inner {
+  display: block;
+}
+
+.build-teaser__content {
   display: grid;
 
   grid-template-columns:
     0.85fr 1.15fr;
 
-  gap: 70px;
+  column-gap: 70px;
 
   align-items: center;
+
+  max-width: none;
 }
 
-/* En el HTML el visual va DESPUÉS del texto para que en mobile
-   caiga debajo sin encimarse. En escritorio lo regresamos a la
-   columna izquierda con grid-column. */
+/* Todo el texto va en la columna derecha... */
+
+.build-teaser__content > *:not(.build-teaser__visual) {
+  grid-column: 2;
+}
+
+/* ...y la imagen ocupa la columna izquierda completa. */
 
 .build-teaser__visual {
   grid-column: 1;
-  grid-row: 1;
-}
+  grid-row: 1 / -1;
 
-.build-teaser__content {
-  grid-column: 2;
-  grid-row: 1;
+  align-self: center;
 }
 
 .build-teaser__visual {
@@ -1478,9 +1493,14 @@ html[data-theme="dark"]
      el display:none de .build-teaser__visual.
      ============================================================ */
 
+  /* Mismo criterio que en escritorio:
+     ARRIBA = 40px de la sección de Reparación + 0 de aquí
+     ABAJO  = 4px de aquí + 40px de la banda de Digital
+     → 40px arriba y 44px abajo. */
+
   .build-teaser {
     margin: 0 !important;
-    padding: 28px 0 32px !important;
+    padding: 0 0 4px !important;
   }
 
   /*
@@ -1491,16 +1511,19 @@ html[data-theme="dark"]
    */
 
   .build-teaser__inner {
-    display: flex;
-    flex-direction: column;
-    gap: 18px;
+    display: block;
 
     margin: 0 !important;
     padding-top: 0 !important;
     padding-bottom: 0 !important;
   }
 
+  /* En mobile se deshace la rejilla: volvemos a flujo normal
+     para que el float de la imagen funcione. */
+
   .build-teaser__content {
+    display: block;
+
     max-width: 100%;
     margin: 0 !important;
     padding: 0 !important;
@@ -1530,25 +1553,40 @@ html[data-theme="dark"]
 
   /*
    * IMAGEN EN MOBILE
-   * Va debajo del texto, en formato chico y alineada a la
-   * izquierda como el resto del contenido. Al estar después
-   * del texto en el DOM no hay riesgo de que se encime.
+   * Flota a la derecha justo debajo del título, así la
+   * descripción, la nota y las burbujas la envuelven por la
+   * izquierda en lugar de quedar arriba o abajo de ella.
+   *
+   * Los párrafos envuelven el float con sus líneas de texto,
+   * y .build-teaser__points, al ser flex, no se encima: se
+   * angosta para caber al lado. Por eso no hay traslape.
    */
 
   .build-teaser__visual {
-    display: flex;
-    justify-content: flex-start;
+    display: block;
 
-    order: 2;
+    float: right;
 
-    margin: 0 !important;
+    width: 118px;
+
+    margin: 2px 0 10px 14px !important;
+
+    grid-column: auto;
+    grid-row: auto;
   }
 
   .build-teaser__frame {
-    width: 132px;
-    max-width: 132px;
+    width: 118px;
+    max-width: 118px;
 
     border-radius: 14px;
+  }
+
+  /* El botón cierra el float para que nunca quede a medias
+     al lado de la imagen. */
+
+  .build-teaser .btn {
+    clear: both;
   }
 
   .build-teaser__frame-label {
