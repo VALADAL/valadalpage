@@ -597,10 +597,7 @@
    ----------------------------------------------------------
    A PARTIR DE AQUÍ: VERSIÓN MOBILE
    Mismo criterio tipográfico y de espaciado que repair.css,
-   digital.css y build.css (clamp(1.55rem,6vw,2rem) en títulos,
-   0.72rem en leads, texto pequeño 0.55–0.62rem, radios ~10-16px)
-   y el mismo criterio de achicar las cuadrículas en vez de
-   apilarlas a 1 columna donde tiene sentido.
+   digital.css y build.css.
    ----------------------------------------------------------
    ============================================================ */
 
@@ -612,6 +609,29 @@
 
   .page-hero {
     padding: 56px 0 20px;
+  }
+
+  .page-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .page-hero .pill svg {
+    width: 11px;
+    height: 11px;
+  }
+
+  .page-hero h1 {
+    font-size: clamp(1.55rem, 6vw, 2rem);
+    line-height: 1.04;
+  }
+
+  .page-hero .section-lead {
+    font-size: 0.72rem !important;
+    line-height: 1.5;
+    margin-top: 10px;
   }
 
 
@@ -789,9 +809,6 @@
 
 /* ============================================================
    EXTRA SMALL
-   Mismo criterio que las demás páginas a los 520px: la
-   cuadrícula de proyectos pasa a 1 columna y se afinan tamaños
-   de texto un poco más.
    ============================================================ */
 
 @media (max-width: 520px) {
