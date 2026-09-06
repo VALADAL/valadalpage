@@ -1019,17 +1019,25 @@ html[data-theme="dark"]
    .valadal-section (imagen a un lado, contenido al otro).
    ============================================================ */
 
-/* Ritmo vertical.
-   Arriba: la sección de Reparación cierra con padding-bottom
-   48px (definido en su style inline en index.html), y aquí no
-   agregamos nada. Abajo: 16px de aquí + 56px que aporta la
-   banda azul de Digital = 72px.
-   Así Armado queda pegado a Reparación, como debe. */
+/* Cierre de la sección de Reparación.
+   Vive aquí y no en un style inline para poder darle un valor
+   distinto en mobile; el padding-top: 0 sí sigue inline. */
+
+.home-repair {
+  padding-bottom: 48px;
+}
+
+
+/* Ritmo vertical de Armado.
+   ARRIBA = 48px que cierra Reparación + 0 de aquí = 48px
+   ABAJO  = 40px de aquí + 56px que abre la banda de Digital
+            = 96px
+   Pegado arriba, con aire abajo antes de la banda azul. */
 
 .build-teaser {
   padding-top: 0;
 
-  padding-bottom: 16px;
+  padding-bottom: 40px;
 }
 
 /* Dos columnas: imagen a la izquierda, texto a la derecha.
@@ -1496,9 +1504,15 @@ html[data-theme="dark"]
    * de la foto.
    * ============================================================ */
 
+  /* Arriba se recorta un poco y abajo se le da aire. */
+
+  .home-repair {
+    padding-bottom: 30px;
+  }
+
   .build-teaser {
     margin: 0 !important;
-    padding: 0 !important;
+    padding: 0 0 26px !important;
   }
 
   /* OJO: .build-teaser__inner ES el .container.
@@ -1594,10 +1608,14 @@ html[data-theme="dark"]
     gap: 10px;
   }
 
+  /* Burbujas intercaladas: 1ª izquierda, 2ª derecha, 3ª
+     izquierda, 4ª derecha. Una por renglón, en columna. */
+
   .build-teaser__points {
     display: flex;
-    flex-wrap: wrap;
-    gap: 6px;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 7px;
 
     margin: 0 !important;
   }
@@ -1605,10 +1623,23 @@ html[data-theme="dark"]
   .build-teaser__points span {
     padding: 5px 10px;
     font-size: 0.55rem;
+
+    max-width: 100%;
   }
 
-  .build-teaser .btn {
+  .build-teaser__points span:nth-child(odd) {
     align-self: flex-start;
+  }
+
+  .build-teaser__points span:nth-child(even) {
+    align-self: flex-end;
+  }
+
+  /* Botón centrado en el hueco que queda entre la foto y la
+     pared derecha, o sea centrado en su propia columna. */
+
+  .build-teaser .btn {
+    align-self: center;
 
     font-size: 0.68rem;
     padding: 8px 13px;
