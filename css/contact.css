@@ -307,6 +307,32 @@
 .contact-form__success.is-visible { display: flex; }
 
 
+/* Mismo bloque que el de éxito, en rojo. */
+
+.contact-form__error {
+  display: none;
+  align-items: center;
+  gap: 10px;
+
+  padding: 14px 16px;
+
+  border-radius: var(--radius-sm);
+  background: rgba(220, 38, 38, 0.08);
+  border: 1px solid rgba(220, 38, 38, 0.22);
+  color: #DC2626;
+
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+
+.contact-form__error.is-visible { display: flex; }
+
+.contact-form .btn:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
+
+
 /* ============================================================
    QUÉ SIGUE — 3 pasos
    ============================================================ */
@@ -377,6 +403,9 @@
 
 @media (max-width: 1000px) {
 
+  /* Una sola columna: el bloque de métodos queda ARRIBA y el
+     formulario debajo, respetando el orden del HTML. */
+
   .contact-layout {
     grid-template-columns: 1fr;
     gap: 32px;
@@ -387,12 +416,9 @@
 /* ============================================================
    ----------------------------------------------------------
    A PARTIR DE AQUÍ: VERSIÓN MOBILE
-   Mismo criterio tipográfico y de espaciado que repair.css,
-   digital.css, build.css y work.css (clamp() en títulos,
-   leads ~0.72-0.78rem, texto pequeño 0.55–0.62rem, radios
-   reducidos), adaptado a la escala más grande que ya tenía
-   este hero (por eso los tamaños del hero son un poco mayores
-   que en las demás páginas).
+   Mismo criterio tipográfico que repair.css, digital.css,
+   build.css, work.css y about.css, adaptado a la escala más
+   grande que ya tenía este hero.
    ----------------------------------------------------------
    ============================================================ */
 
@@ -404,6 +430,18 @@
 
   .contact-hero {
     padding: 48px 0 36px;
+  }
+
+  .contact-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .contact-hero .pill svg {
+    width: 11px;
+    height: 11px;
   }
 
   .contact-hero::before {
@@ -446,14 +484,17 @@
 
   /* ------------------------------------------------------------
      TARJETAS DE CONTACTO
+     Se conserva la cuadrícula 2x2 del escritorio en vez de
+     apilar las cuatro tarjetas una debajo de otra.
      ------------------------------------------------------------ */
 
   .contact-methods {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
   .contact-card {
+    min-width: 0;
     padding: 14px;
     gap: 6px;
   }
@@ -476,8 +517,11 @@
 
   .contact-card a,
   .contact-card p {
-    font-size: 0.68rem;
+    font-size: 0.66rem;
     line-height: 1.4;
+
+    /* hola@valadal.com no cabe en media columna sin esto */
+    overflow-wrap: anywhere;
   }
 
   .contact-media {
@@ -519,7 +563,8 @@
     margin-top: 2px;
   }
 
-  .contact-form__success {
+  .contact-form__success,
+  .contact-form__error {
     padding: 10px 12px;
     font-size: 0.62rem;
     gap: 8px;
@@ -531,15 +576,16 @@
      ------------------------------------------------------------ */
 
   .contact-steps {
-    grid-template-columns: 1fr;
-    gap: 16px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .contact-steps::before {
-    display: none;
+    top: 16px;
   }
 
   .contact-step {
+    min-width: 0;
     gap: 8px;
   }
 
@@ -550,21 +596,19 @@
   }
 
   .contact-step h4 {
-    font-size: 0.66rem;
+    font-size: 0.6rem;
+    line-height: 1.15;
   }
 
   .contact-step p {
-    font-size: 0.58rem;
-    line-height: 1.4;
+    font-size: 0.52rem;
+    line-height: 1.35;
   }
 }
 
 
 /* ============================================================
    EXTRA SMALL
-   Mismo criterio que las demás páginas a los 520px: no se
-   cambian columnas, solo se afinan tamaños de texto un poco
-   más.
    ============================================================ */
 
 @media (max-width: 520px) {
@@ -573,10 +617,12 @@
 
   .contact-section { padding: 32px 0; }
 
-  .contact-card { padding: 12px; }
+  .contact-methods { gap: 6px; }
+
+  .contact-card { padding: 11px; }
 
   .contact-card a,
-  .contact-card p { font-size: 0.62rem; }
+  .contact-card p { font-size: 0.6rem; }
 
   .contact-form { padding: 14px; }
 
@@ -584,5 +630,11 @@
   .contact-form select,
   .contact-form textarea { font-size: 0.62rem; padding: 9px 10px; }
 
-  .contact-step__index { width: 28px; height: 28px; font-size: 0.56rem; }
+  .contact-steps { gap: 6px; }
+
+  .contact-step__index { width: 26px; height: 26px; font-size: 0.54rem; }
+
+  .contact-step h4 { font-size: 0.55rem; }
+
+  .contact-step p { font-size: 0.48rem; }
 }
