@@ -671,6 +671,8 @@ const translations = {
     "contactPage.next.s3.title": "Tú decides",
     "contactPage.next.s3.text": "No tocamos nada sin tu autorización. Si decides seguir, empezamos.",
 
+    "common.moreInfo": "Más información",
+
     "cta.title": "Hagámoslo funcionar.",
     "cta.button": "Cotizar →",
 
@@ -1339,6 +1341,8 @@ const translations = {
     "contactPage.next.s2.text": "We tell you what we think is going on, what your options are and what each one would cost.",
     "contactPage.next.s3.title": "You decide",
     "contactPage.next.s3.text": "We don't touch anything without your approval. If you decide to go ahead, we start.",
+
+    "common.moreInfo": "More information",
 
     "cta.title": "Let's make it work.",
     "cta.button": "Get a Quote →",
@@ -2488,3 +2492,53 @@ if (bubbleConfig) {
 
   startBubbleLoop();
 }
+
+
+// ============================================================
+// 11. INFO PLEGABLE EN LAS TARJETAS
+// El botón "i" que va junto al título abre y cierra el texto
+// de contexto de la tarjeta.
+//
+// La animación de altura la hace el CSS con
+// grid-template-rows: 0fr → 1fr. Aquí solo se alterna la clase
+// y se mantiene aria-expanded en sincronía para lectores de
+// pantalla.
+// ============================================================
+
+const infoToggles =
+  document.querySelectorAll(
+    ".info-toggle"
+  );
+
+
+infoToggles.forEach((toggle) => {
+
+  toggle.addEventListener("click", () => {
+
+    const targetId =
+      toggle.getAttribute(
+        "aria-controls"
+      );
+
+    const panel =
+      document.getElementById(
+        targetId
+      );
+
+    if (!panel) {
+      return;
+    }
+
+    const isOpen =
+      panel.classList.toggle(
+        "is-open"
+      );
+
+    toggle.setAttribute(
+      "aria-expanded",
+      isOpen ? "true" : "false"
+    );
+
+  });
+
+});
