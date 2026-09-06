@@ -895,7 +895,7 @@ html[data-theme="dark"] .gaming-section {
      ============================================================ */
 
   .device-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 8px;
   }
 
@@ -904,7 +904,7 @@ html[data-theme="dark"] .gaming-section {
   }
 
   .device-grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .device-card {
@@ -962,11 +962,21 @@ html[data-theme="dark"] .gaming-section {
     padding: 4px 0;
   }
 
-  /* Igual que .digital-panel__media en digital.css: a este
-     tamaño la foto no aporta y aprieta el texto. */
+  /* Las fotos se quedan. A dos columnas caben bien. */
 
   .device-card .image-slot {
-    display: none;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .image-slot__label {
+    font-size: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .image-slot__file {
+    font-size: 0.44rem;
+    margin-top: 2px;
   }
 
 
@@ -991,6 +1001,58 @@ html[data-theme="dark"] .gaming-section {
   .service-chips span {
     padding: 4px 9px;
     font-size: 0.55rem;
+  }
+
+
+  /* ============================================================
+     #computadoras — acomodo propio en mobile
+
+       [ tarjeta 1 ] [ tarjeta 2 ]
+       [ tarjeta 3 ] [ Periféricos de PC ]
+       [ Gestión térmica y mantenimiento .......... ]
+
+     Las tarjetas y los subbloques son hermanos en el HTML pero
+     viven en padres distintos. display: contents sobre
+     .device-grid disuelve ese contenedor, así que sus tarjetas
+     pasan a ser celdas de la MISMA rejilla que los subbloques y
+     se pueden colocar libremente.
+     ============================================================ */
+
+  #computadoras > .container {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px;
+    align-items: start;
+  }
+
+  #computadoras .repair-section__head {
+    grid-column: 1 / -1;
+  }
+
+  #computadoras .device-grid {
+    display: contents;
+  }
+
+  #computadoras .device-card:nth-child(1) { grid-column: 1; grid-row: 2; }
+  #computadoras .device-card:nth-child(2) { grid-column: 2; grid-row: 2; }
+  #computadoras .device-card:nth-child(3) { grid-column: 1; grid-row: 3; }
+
+  /* Segundo subbloque = Periféricos de PC → junto a la tarjeta 3 */
+
+  #computadoras .repair-subblock + .repair-subblock {
+    grid-column: 2;
+    grid-row: 3;
+
+    margin-top: 0;
+  }
+
+  /* Primer subbloque = Gestión térmica → abajo, a todo lo ancho */
+
+  #computadoras .repair-subblock {
+    grid-column: 1 / -1;
+    grid-row: 4;
+
+    margin-top: 6px;
   }
 
 
@@ -1157,7 +1219,8 @@ html[data-theme="dark"] .gaming-section {
 
   .device-grid,
   .soon-grid,
-  .process-flow {
+  .process-flow,
+  #computadoras > .container {
     gap: 6px;
   }
 
