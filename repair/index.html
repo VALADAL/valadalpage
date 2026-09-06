@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/repair.css">
+  <link rel="stylesheet" href="../css/global.css?v=2">
+  <link rel="stylesheet" href="../css/repair.css?v=2">
 </head>
 <body>
 
@@ -261,7 +261,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.desktop.card.title">Reparación integral</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.desktop.card.title">Reparación integral</h3>
+          </div>
           <ul>
             <li>Diagnóstico completo de fallas</li>
             <li>Reparación y reemplazo de componentes</li>
@@ -290,8 +292,23 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.desktop.gpu.title">Tarjetas gráficas / GPU</h3>
-          <p class="device-card__sub" data-i18n="repair.desktop.gpu.sub">La GPU no solamente se limpia: se revisa como un sistema completo.</p>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.desktop.gpu.title">Tarjetas gráficas / GPU</h3>
+            <button
+              class="info-toggle"
+              type="button"
+              aria-expanded="false"
+              aria-controls="repairInfo1"
+              data-i18n-aria="common.moreInfo"
+              aria-label="Más información">
+              <span aria-hidden="true">i</span>
+            </button>
+          </div>
+          <div class="device-card__info" id="repairInfo1">
+            <div class="device-card__info-inner">
+              <p class="device-card__sub" data-i18n="repair.desktop.gpu.sub">La GPU no solamente se limpia: se revisa como un sistema completo.</p>
+            </div>
+          </div>
           <ul>
             <li>Diagnóstico de fallas y artefactos gráficos</li>
             <li>Sobrecalentamiento y fallas de ventiladores</li>
@@ -317,7 +334,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.desktop.psu.title">Fuentes de poder</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.desktop.psu.title">Fuentes de poder</h3>
+          </div>
           <ul>
             <li>Diagnóstico de fuentes e identificación de fallas</li>
             <li>Reparación electrónica</li>
@@ -387,7 +406,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.laptops.card.title">Reparación completa</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.laptops.card.title">Reparación completa</h3>
+          </div>
           <ul>
             <li>Diagnóstico completo</li>
             <li>Reparación de hardware y tarjetas</li>
@@ -411,7 +432,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.laptops.thermal.title">Mantenimiento y refrigeración</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.laptops.thermal.title">Mantenimiento y refrigeración</h3>
+          </div>
           <ul>
             <li>Limpieza profunda</li>
             <li>Cambio de pasta térmica y thermal pads</li>
@@ -467,7 +490,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.apple.card.title">MacBook · iMac</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.apple.card.title">MacBook · iMac</h3>
+          </div>
           <ul>
             <li>Diagnóstico completo</li>
             <li>Reparación de hardware y tarjetas</li>
@@ -491,7 +516,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.apple.thermal.title">Mantenimiento y refrigeración</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.apple.thermal.title">Mantenimiento y refrigeración</h3>
+          </div>
           <ul>
             <li>Limpieza profunda</li>
             <li>Cambio de pasta térmica y thermal pads</li>
@@ -547,7 +574,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.phones.card.title">Reparación integral</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.phones.card.title">Reparación integral</h3>
+          </div>
           <ul>
             <li>Pantallas y baterías</li>
             <li>Centros de carga y cámaras</li>
@@ -571,7 +600,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.phones.diag.title">Diagnóstico electrónico</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.phones.diag.title">Diagnóstico electrónico</h3>
+          </div>
           <ul>
             <li>Diagnóstico electrónico completo</li>
             <li>Reparaciones de componentes</li>
@@ -625,7 +656,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.screens.card.title">Diagnóstico de pantalla</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.screens.card.title">Diagnóstico de pantalla</h3>
+          </div>
           <ul>
             <li>Pantalla rota</li>
             <li>Falta de imagen</li>
@@ -649,7 +682,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.screens.conn.title">Conectores y alimentación</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.screens.conn.title">Conectores y alimentación</h3>
+          </div>
           <ul>
             <li>Conectores</li>
             <li>Flex</li>
@@ -694,7 +729,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.gaming.consoles.title">Consolas</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.gaming.consoles.title">Consolas</h3>
+          </div>
           <ul>
             <li>Diagnóstico y reparación de hardware</li>
             <li>Problemas de encendido</li>
@@ -718,7 +755,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.gaming.controllers.title">Controles</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.gaming.controllers.title">Controles</h3>
+          </div>
           <ul>
             <li>Stick drift / joystick con movimiento involuntario</li>
             <li>Botones pegados o que no funcionan</li>
@@ -747,7 +786,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.gaming.clean.title">Limpieza y mantenimiento</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.gaming.clean.title">Limpieza y mantenimiento</h3>
+          </div>
           <ul>
             <li>Limpieza profunda</li>
             <li>Cambio de pasta térmica y thermal pads</li>
@@ -868,7 +909,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.servers.card.title">Mantenimiento</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.servers.card.title">Mantenimiento</h3>
+          </div>
           <ul>
             <li>Mantenimiento preventivo y profundo</li>
             <li>Limpieza interna</li>
@@ -891,7 +934,9 @@
               </svg>
             </div>
           </div>
-          <h3 data-i18n="repair.servers.cooling.title">Optimización térmica</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.servers.cooling.title">Optimización térmica</h3>
+          </div>
           <ul>
             <li>Diseño de cooling</li>
             <li>Cambio de pasta y pads térmicos</li>
@@ -940,7 +985,9 @@
               <path d="M19 5a9 9 0 0 1 0 14"/>
             </svg>
           </div>
-          <h3 data-i18n="repair.soon.audio.title">Sistemas de audio</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.soon.audio.title">Sistemas de audio</h3>
+          </div>
           <ul>
             <li>Reparación de equipos de audio</li>
             <li>Mantenimiento y diagnóstico electrónico</li>
@@ -956,7 +1003,9 @@
               <path d="M5 10v10h14V10"/>
             </svg>
           </div>
-          <h3 data-i18n="repair.soon.appliances.title">Electrodomésticos</h3>
+          <div class="device-card__heading">
+            <h3 data-i18n="repair.soon.appliances.title">Electrodomésticos</h3>
+          </div>
           <ul>
             <li>Diagnóstico y reparación electrónica</li>
             <li>Mantenimiento y reparación de componentes</li>
@@ -1090,7 +1139,7 @@
        JAVASCRIPT
        ============================================================ -->
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=2"></script>
 
 </body>
 </html>
