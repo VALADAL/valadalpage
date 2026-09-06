@@ -891,6 +891,19 @@ html[data-theme="dark"] .build-dark {
     border-radius: 11px;
   }
 
+  /* #computadoras tiene 3 tarjetas y en mobile la rejilla es de
+     2 columnas, así que la tercera queda sola en el renglón.
+     La centramos conservando el ancho de una columna, para que
+     no quede un hueco raro a su derecha. */
+
+  #computadoras .build-card:nth-child(3) {
+    grid-column: 1 / -1;
+
+    width: calc(50% - 4px);
+
+    justify-self: center;
+  }
+
   .build-card__top {
     margin-bottom: 8px;
   }
@@ -1121,6 +1134,10 @@ html[data-theme="dark"] .build-dark {
 
   .build-card {
     padding: 10px 7px;
+  }
+
+  #computadoras .build-card:nth-child(3) {
+    width: calc(50% - 3px);
   }
 
   .build-card h3 {
