@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/global.css">
-  <link rel="stylesheet" href="../css/contact.css">
+  <link rel="stylesheet" href="../css/global.css?v=4">
+  <link rel="stylesheet" href="../css/contact.css?v=4">
 </head>
 <body>
 
@@ -115,7 +115,35 @@
   <section class="contact-hero">
     <div class="container">
 
-      <p class="eyebrow reveal" data-i18n="contactPage.eyebrow">Contacto</p>
+      <span class="pill reveal">
+
+        <svg
+          width="14"
+          height="14"
+          viewBox="0 0 24 24"
+          fill="none">
+
+          <circle
+            cx="12"
+            cy="12"
+            r="9"
+            stroke="currentColor"
+            stroke-width="2"/>
+
+          <path
+            d="M12 7v5l3 3"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"/>
+
+        </svg>
+
+
+        <span data-i18n="hero.pill">
+          Reparación y Soluciones Digitales
+        </span>
+
+      </span>
 
       <h1 class="reveal">
         <span data-i18n="contactPage.title">Hagamos que funcione.</span>
@@ -180,6 +208,20 @@
         <!-- COLUMNA DERECHA — FORMULARIO -->
         <form class="contact-form reveal" id="contactForm">
 
+          <!--
+            CONFIGURACIÓN DEL ENVÍO (Web3Forms)
+            Cambia el value de access_key por la llave que te
+            llega por correo al registrar tu dirección en
+            https://web3forms.com — sin eso el formulario NO
+            envía nada y avisa con un mensaje de error.
+          -->
+          <input type="hidden" name="access_key" value="e4b7e495-1439-4bb8-9990-18f8ac238148">
+          <input type="hidden" name="subject" value="Nueva solicitud desde valadal.com">
+          <input type="hidden" name="from_name" value="Sitio web VALADAL">
+
+          <!-- Trampa antispam: si un bot la llena, se descarta. -->
+          <input type="checkbox" name="botcheck" tabindex="-1" style="display:none" aria-hidden="true">
+
           <div class="contact-form__head">
             <p class="eyebrow" data-i18n="contactPage.form.eyebrow">Cuéntanos</p>
             <h3 data-i18n="contactPage.form.title">Escríbenos y te respondemos.</h3>
@@ -211,6 +253,7 @@
               <option value="repair" data-i18n="contactPage.form.optRepair">Reparación</option>
               <option value="build" data-i18n="contactPage.form.optBuild">Armado y creación</option>
               <option value="digital" data-i18n="contactPage.form.optDigital">Soluciones digitales</option>
+              <option value="review" data-i18n="contactPage.form.optReview">Dejar una reseña</option>
               <option value="other" data-i18n="contactPage.form.optOther">Otro</option>
             </select>
           </label>
@@ -224,6 +267,10 @@
 
           <div class="contact-form__success" id="formSuccess" data-i18n="contactPage.form.success">
             ✓ Gracias — recibimos tu solicitud. Te contactamos muy pronto.
+          </div>
+
+          <div class="contact-form__error" id="formError" data-i18n="contactPage.form.error">
+            No pudimos enviar tu mensaje. Escríbenos por WhatsApp o inténtalo de nuevo.
           </div>
 
         </form>
@@ -320,7 +367,7 @@
        JAVASCRIPT
        ============================================================ -->
 
-  <script src="../js/script.js"></script>
+  <script src="../js/script.js?v=4"></script>
 
 </body>
 </html>
