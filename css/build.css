@@ -274,21 +274,134 @@
   stroke: currentColor;
 }
 
+/* ------------------------------------------------------------
+   ENCABEZADO DE LA TARJETA
+   El título y el botón "i" comparten renglón.
+   ------------------------------------------------------------ */
+
+.build-card__heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  margin-bottom: 6px;
+}
+
 .build-card h3 {
   font-size: 1.15rem;
-  margin-bottom: 6px;
+  margin-bottom: 0;
+}
+
+
+/* ------------------------------------------------------------
+   BOTÓN "i"
+   ------------------------------------------------------------ */
+
+.info-toggle {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  background: var(--surface);
+  color: var(--text-secondary);
+
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 0.76rem;
+  line-height: 1;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    color 0.22s ease,
+    transform 0.22s var(--ease);
+}
+
+.info-toggle:hover {
+  border-color: var(--blue);
+  color: var(--blue);
+  transform: translateY(-1px);
+}
+
+.info-toggle[aria-expanded="true"] {
+  background: var(--blue);
+  border-color: var(--blue);
+  color: #FFFFFF;
+}
+
+
+/* ------------------------------------------------------------
+   INFO PLEGABLE
+   grid-template-rows 0fr → 1fr permite animar hasta la altura
+   real del contenido, cosa que max-height no logra sin fijar
+   un número arbitrario.
+   ------------------------------------------------------------ */
+
+.build-card__info {
+  display: grid;
+  grid-template-rows: 0fr;
+
+  transition: grid-template-rows 0.32s var(--ease);
+}
+
+.build-card__info.is-open {
+  grid-template-rows: 1fr;
+}
+
+.build-card__info-inner {
+  overflow: hidden;
+
+  opacity: 0;
+
+  transition: opacity 0.25s ease;
+}
+
+.build-card__info.is-open .build-card__info-inner {
+  opacity: 1;
 }
 
 .build-card__sub {
   color: var(--blue);
   font-size: 0.86rem;
   font-weight: 500;
-  margin-bottom: 16px;
+
+  padding-top: 8px;
+  margin-bottom: 0;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  .build-card__info,
+  .build-card__info-inner {
+    transition: none;
+  }
+}
+
+
+/* ------------------------------------------------------------
+   LISTA
+   Separador ARRIBA de cada elemento, incluido el primero, para
+   que la línea cierre el bloque del título.
+
+   Sin margin-top: auto — ese auto empujaba la lista al fondo de
+   la tarjeta y dejaba un hueco entre el título y el primer
+   punto en las tarjetas con pocos elementos.
+   ------------------------------------------------------------ */
+
 .build-card ul {
-  margin-top: auto;
   padding-top: 14px;
+
+  margin-bottom: auto;
 }
 
 .build-card ul li {
@@ -298,8 +411,6 @@
   border-top: 1px solid var(--border);
   list-style: none;
 }
-
-.build-card ul li:first-child { border-top: none; }
 
 
 /* ============================================================
@@ -450,6 +561,25 @@
 }
 
 .build-dark .build-card h3 { color: #FFFFFF; }
+
+.build-dark .info-toggle {
+  background: rgba(255, 255, 255, 0.06);
+  border-color: rgba(255, 255, 255, 0.22);
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.build-dark .info-toggle:hover {
+  border-color: var(--blue-bright);
+  color: var(--blue-bright);
+}
+
+.build-dark .info-toggle[aria-expanded="true"] {
+  background: var(--blue-bright);
+  border-color: var(--blue-bright);
+  color: #0A0A0A;
+}
+
+.build-dark .build-card__sub { color: var(--blue-bright); }
 
 .build-dark .build-card ul li {
   color: rgba(255, 255, 255, 0.6);
@@ -641,20 +771,10 @@ html[data-theme="dark"] .build-dark {
 /* ============================================================
    ----------------------------------------------------------
    A PARTIR DE AQUÍ: VERSIÓN MOBILE
-   (migrada desde la variante que ya la tenía, para mantener
-   el bloque responsive completo separado y fácil de ubicar)
+   Mismo criterio que repair.css: se conservan las cuadrículas
+   del escritorio en miniatura en vez de apilarlas a 1 columna,
+   con la escala tipográfica del home.
    ----------------------------------------------------------
-   ============================================================ */
-
-/* ============================================================
-   RESPONSIVE — MOBILE
-   Basado literalmente en el sistema mobile de home.css: misma
-   escala tipográfica (títulos clamp(1.55rem,6vw,2rem), leads
-   0.72rem, texto pequeño 0.55-0.62rem), mismos radios (~11-16px)
-   y el mismo criterio de mantener las cuadrículas del escritorio
-   en miniatura en vez de apilarlas a 1 columna — igual que se
-   hizo en repair.css (.device-grid) y que home hace con
-   .repair-preview__grid / .digital-band__grid / .values-grid.
    ============================================================ */
 
 @media (max-width: 860px) {
@@ -665,6 +785,18 @@ html[data-theme="dark"] .build-dark {
 
   .build-hero {
     padding: 56px 0 20px;
+  }
+
+  .build-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .build-hero .pill svg {
+    width: 11px;
+    height: 11px;
   }
 
   .build-hero h1 {
@@ -693,28 +825,24 @@ html[data-theme="dark"] .build-dark {
      ------------------------------------------------------------ */
 
   .build-bubbles {
-    gap: 8px;
-    margin-top: 20px;
+    gap: 6px;
+    margin-top: 16px;
   }
 
   .build-bubble {
-    padding: 8px 14px;
-    gap: 6px;
+    padding: 7px 11px;
+    gap: 5px;
+    font-size: 0.6rem;
   }
 
   .build-bubble__content {
-    gap: 6px;
-    font-size: 0.68rem;
+    gap: 5px;
   }
 
-  .build-bubble__icon {
-    width: 14px;
-    height: 14px;
-  }
-
+  .build-bubble__icon,
   .build-bubble__icon svg {
-    width: 14px;
-    height: 14px;
+    width: 13px;
+    height: 13px;
   }
 
 
@@ -723,11 +851,11 @@ html[data-theme="dark"] .build-dark {
      ------------------------------------------------------------ */
 
   .build-section {
-    padding: 40px 0;
+    padding: 24px 0;
   }
 
   .build-section__head {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
   }
 
   .build-section__head h2 {
@@ -745,62 +873,65 @@ html[data-theme="dark"] .build-dark {
 
   /* ------------------------------------------------------------
      GRID + TARJETAS
-     Misma cantidad de columnas que en escritorio, en miniatura.
+     Dos columnas y no tres: con la foto dentro, a tres columnas
+     la imagen queda demasiado chica para distinguirse.
+     minmax(0, 1fr) evita que el texto largo desborde la rejilla.
      ------------------------------------------------------------ */
 
   .build-grid,
   .build-grid--2,
   .build-grid--4 {
-    gap: 8px;
-  }
-
-  .build-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
-  .build-grid--2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
-  .build-grid--4 {
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 8px;
   }
 
   .build-card {
     min-width: 0;
-    padding: 12px 10px;
-    border-radius: 12px;
+    padding: 12px 9px;
+    border-radius: 11px;
   }
 
   .build-card__top {
-    margin-bottom: 10px;
+    margin-bottom: 8px;
   }
 
   .build-card__icon {
-    width: 26px;
-    height: 26px;
-    border-radius: 8px;
+    width: 22px;
+    height: 22px;
+    border-radius: 7px;
   }
 
   .build-card__icon svg {
-    width: 14px;
-    height: 14px;
+    width: 12px;
+    height: 12px;
+  }
+
+  .build-card__heading {
+    gap: 5px;
+    margin-bottom: 0;
+    align-items: flex-start;
   }
 
   .build-card h3 {
     font-size: 0.68rem;
     line-height: 1.15;
-    margin-bottom: 4px;
+  }
+
+  .info-toggle {
+    width: 15px;
+    height: 15px;
+    font-size: 0.5rem;
+    margin-top: 1px;
   }
 
   .build-card__sub {
     font-size: 0.55rem;
-    line-height: 1.3;
-    margin-bottom: 8px;
+    line-height: 1.35;
+    padding-top: 5px;
   }
 
   .build-card ul {
-    padding-top: 8px;
+    padding-top: 7px;
   }
 
   .build-card ul li {
@@ -811,17 +942,23 @@ html[data-theme="dark"] .build-dark {
 
 
   /* ------------------------------------------------------------
-     IMAGEN PLACEHOLDER
+     IMAGEN PLACEHOLDER — se queda visible
      ------------------------------------------------------------ */
 
   .image-slot {
-    border-radius: 10px;
+    border-radius: 8px;
     margin-bottom: 10px;
-    gap: 4px;
+    gap: 3px;
   }
 
   .image-slot__label {
-    font-size: 0.52rem;
+    font-size: 0.5rem;
+    letter-spacing: 0.05em;
+  }
+
+  .image-slot__file {
+    font-size: 0.44rem;
+    margin-top: 2px;
   }
 
 
@@ -830,38 +967,37 @@ html[data-theme="dark"] .build-dark {
      ------------------------------------------------------------ */
 
   .build-subblock {
-    margin-top: 24px;
+    margin-top: 20px;
   }
 
   .build-subblock__title {
-    font-size: 0.78rem;
+    font-size: 0.72rem;
     margin-bottom: 8px;
   }
 
   .build-chips {
-    gap: 6px;
+    gap: 5px;
+    margin-top: 6px;
   }
 
   .build-chips span {
-    padding: 6px 12px;
-    font-size: 0.62rem;
+    padding: 4px 9px;
+    font-size: 0.55rem;
   }
 
 
   /* ------------------------------------------------------------
      FLUJO — Medir → Procesar → Decidir → Actuar
-     Las flechas se ocultan (no caben bien en fila angosta),
-     los pasos quedan como chips envolventes.
      ------------------------------------------------------------ */
 
   .build-flow {
-    gap: 6px;
-    margin-top: 20px;
+    gap: 5px;
+    margin-top: 16px;
   }
 
   .build-flow__step {
-    padding: 8px 14px;
-    font-size: 0.62rem;
+    padding: 6px 11px;
+    font-size: 0.55rem;
   }
 
   .build-flow__arrow {
@@ -870,12 +1006,12 @@ html[data-theme="dark"] .build-dark {
 
 
   /* ------------------------------------------------------------
-     PANEL OSCURO — Prototipos y personalizadas
+     PANEL OSCURO
      ------------------------------------------------------------ */
 
   .build-dark {
     margin: 0 12px;
-    padding: 32px 16px;
+    padding: 24px 14px;
     border-radius: 16px;
   }
 
@@ -885,46 +1021,47 @@ html[data-theme="dark"] .build-dark {
      ------------------------------------------------------------ */
 
   .build-stack {
-    gap: 6px;
-    margin-top: 20px;
+    gap: 5px;
+    margin-top: 16px;
   }
 
   .build-stack span {
-    padding: 6px 12px;
-    font-size: 0.6rem;
+    padding: 5px 11px;
+    font-size: 0.55rem;
   }
 
   .build-stack em {
-    font-size: 0.68rem;
+    font-size: 0.62rem;
   }
 
 
   /* ------------------------------------------------------------
-     PROCESO — mismo criterio que .values-grid en home: se
-     mantienen las columnas del escritorio, solo en miniatura.
+     PROCESO — los 5 pasos siguen en fila, con su línea guía
      ------------------------------------------------------------ */
 
   .build-process {
     grid-template-columns: repeat(5, minmax(0, 1fr));
-    gap: 8px;
+    gap: 6px;
+    margin: 20px 0 0;
   }
 
   .build-process::before {
-    display: none;
+    top: 12px;
   }
 
   .build-process__step {
+    min-width: 0;
     gap: 6px;
   }
 
   .build-process__index {
     width: 24px;
     height: 24px;
-    font-size: 0.6rem;
+    font-size: 0.55rem;
   }
 
   .build-process__step h4 {
-    font-size: 0.6rem;
+    font-size: 0.58rem;
     line-height: 1.15;
   }
 
@@ -939,7 +1076,7 @@ html[data-theme="dark"] .build-dark {
      ------------------------------------------------------------ */
 
   .build-closing {
-    padding-top: 40px;
+    padding-top: 24px;
   }
 
   .build-closing h2 {
@@ -949,76 +1086,63 @@ html[data-theme="dark"] .build-dark {
   }
 
   .build-closing__list {
-    gap: 6px;
-    margin: 18px 0 16px;
+    gap: 5px;
+    margin: 16px 0 14px;
   }
 
   .build-closing__list span {
-    padding: 6px 12px;
-    font-size: 0.62rem;
+    padding: 4px 9px;
+    font-size: 0.55rem;
   }
 
   .build-closing__line {
-    font-size: 0.68rem;
-    line-height: 1.45;
-  }
-
-
-  /* ------------------------------------------------------------
-     FOOTER — mismos tamaños que en home
-     ------------------------------------------------------------ */
-
-  .footer {
-    padding-top: 40px;
-  }
-
-  .footer__name {
-    font-size: 0.72rem;
-  }
-
-  .footer__tagline {
-    font-size: 0.55rem;
-    line-height: 1.35;
-  }
-
-  .footer__col h4 {
     font-size: 0.62rem;
-  }
-
-  .footer__col a {
-    font-size: 0.55rem;
-    line-height: 1.35;
-  }
-
-  .footer__bottom {
-    font-size: 0.52rem;
-    line-height: 1.3;
+    line-height: 1.45;
   }
 }
 
 
 /* ============================================================
    EXTRA SMALL
-   Mismo criterio que home a los 520px: no se cambian columnas,
-   solo se afinan tamaños de texto un poco más.
    ============================================================ */
 
 @media (max-width: 520px) {
 
-  .build-process__step h4 {
-    font-size: 0.56rem;
+  .build-section {
+    padding: 20px 0;
   }
 
-  .build-process__step p {
-    font-size: 0.48rem;
+  .build-grid,
+  .build-grid--2,
+  .build-grid--4,
+  .build-process {
+    gap: 6px;
   }
 
-  .footer__tagline,
-  .footer__col a {
-    font-size: 0.52rem;
+  .build-card {
+    padding: 10px 7px;
   }
 
-  .footer__bottom {
+  .build-card h3 {
+    font-size: 0.62rem;
+  }
+
+  .build-card ul li,
+  .build-card__sub {
     font-size: 0.5rem;
+  }
+
+  .info-toggle {
+    width: 14px;
+    height: 14px;
+    font-size: 0.46rem;
+  }
+
+  .build-process__step h4 { font-size: 0.54rem; }
+  .build-process__step p { font-size: 0.48rem; }
+
+  .build-dark {
+    margin: 0 8px;
+    padding: 20px 12px;
   }
 }
