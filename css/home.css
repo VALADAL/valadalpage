@@ -1037,7 +1037,7 @@ html[data-theme="dark"]
 .build-teaser {
   padding-top: 0;
 
-  padding-bottom: 40px;
+  padding-bottom: 72px;
 }
 
 /* Dos columnas: imagen a la izquierda, texto a la derecha.
@@ -1512,7 +1512,7 @@ html[data-theme="dark"]
 
   .build-teaser {
     margin: 0 !important;
-    padding: 0 0 26px !important;
+    padding: 0 0 44px !important;
   }
 
   /* OJO: .build-teaser__inner ES el .container.
@@ -1612,9 +1612,10 @@ html[data-theme="dark"]
      izquierda, 4ª derecha. Una por renglón, en columna. */
 
   .build-teaser__points {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: nowrap;
+    display: flex !important;
+    flex-direction: column !important;
+    flex-wrap: nowrap !important;
+    align-items: stretch !important;
     gap: 7px;
 
     margin: 0 !important;
@@ -1628,24 +1629,29 @@ html[data-theme="dark"]
   }
 
   .build-teaser__points span:nth-child(odd) {
-    align-self: flex-start;
+    align-self: flex-start !important;
+    margin-right: auto !important;
   }
 
   .build-teaser__points span:nth-child(even) {
-    align-self: flex-end;
+    align-self: flex-end !important;
+    margin-left: auto !important;
   }
 
   /* Botón centrado en el hueco que queda entre la foto y la
      pared derecha, o sea centrado en su propia columna. */
 
   .build-teaser .btn {
-    align-self: center;
+    align-self: center !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
 
     font-size: 0.68rem;
     padding: 8px 13px;
     white-space: nowrap;
 
-    margin: 0 !important;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
   }
 
 
