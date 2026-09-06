@@ -769,15 +769,17 @@
     gap: 32px;
   }
 
+  /* Los paneles CONSERVAN la fila del escritorio — imagen a un
+     lado y texto al otro, alternando. Solo se aprieta el gap y
+     la columna de la imagen. */
+
   .digital-panel,
   .digital-panel--reverse {
-    flex-direction: column;
-    align-items: stretch;
     gap: 28px;
   }
 
   .digital-panel__media {
-    flex: none;
+    flex: 0 0 38%;
   }
 
   .digital-growth__grid {
@@ -794,19 +796,32 @@
 /* ============================================================
    ----------------------------------------------------------
    A PARTIR DE AQUÍ: VERSIÓN MOBILE
-   (migrada desde la variante que ya la tenía, para mantener
-   el bloque responsive completo separado y fácil de ubicar)
+   Se mantiene el diseño del escritorio en miniatura: los
+   paneles siguen siendo filas con la foto a un lado y el texto
+   al otro, alternando lado en cada sección.
    ----------------------------------------------------------
    ============================================================ */
 
 @media (max-width: 860px) {
 
   /* ============================================================
-     HERO — mismo lenguaje "chiquito" que .hero de home.css
+     HERO
      ============================================================ */
 
   .digital-hero {
     padding: 62px 0 20px !important;
+  }
+
+  .digital-hero .pill {
+    padding: 6px 10px;
+    gap: 5px;
+    font-size: 0.65rem;
+    margin-bottom: 14px;
+  }
+
+  .digital-hero .pill svg {
+    width: 11px;
+    height: 11px;
   }
 
   .digital-hero h1 {
@@ -902,6 +917,8 @@
 
   /* ============================================================
      SECCIONES / PANELES
+     La foto NO se oculta: el panel sigue siendo una fila, igual
+     que en escritorio, con la imagen alternando de lado.
      ============================================================ */
 
   .digital-section__intro {
@@ -920,66 +937,103 @@
 
   .digital-panel,
   .digital-panel--reverse {
-    padding: 24px 0;
-    gap: 16px;
+    padding: 20px 0;
+    gap: 12px;
+
+    align-items: flex-start;
   }
 
   .digital-panel__media {
-    display: none;
+    flex: 0 0 36%;
+
+    /* La foto acompaña al texto mientras se lee la lista, en
+       vez de quedarse arriba y perderse al hacer scroll. */
+    position: sticky;
+    top: calc(var(--navbar-height) + 12px);
   }
 
-  .digital-panel__icon {
-    width: 32px;
-    height: 32px;
-    margin-bottom: 12px;
+  .digital-shot {
     border-radius: 10px;
   }
 
+  .digital-shot::before {
+    background-size: 10px 10px;
+  }
+
+  .digital-shot__label {
+    padding: 4px 8px;
+    font-size: 0.45rem;
+    letter-spacing: 0.06em;
+  }
+
+  .digital-shot__file {
+    font-size: 0.42rem;
+    margin-top: 2px;
+  }
+
+  .digital-panel__icon {
+    width: 26px;
+    height: 26px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
   .digital-panel__icon svg {
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
+  }
+
+  .digital-panel__body .eyebrow {
+    font-size: 0.55rem;
+    margin-bottom: 6px;
   }
 
   .digital-panel__body h2 {
-    font-size: 0.9rem;
+    font-size: 0.88rem;
+    line-height: 1.15;
   }
 
   .digital-panel__body .section-lead {
-    font-size: 0.6rem !important;
+    font-size: 0.58rem !important;
     line-height: 1.4;
     margin-top: 6px;
   }
 
+  /* Una sola columna: la columna de texto ya viene angosta por
+     ir al lado de la foto. */
+
   .check-list {
-    gap: 6px 10px;
-    margin-top: 12px;
+    grid-template-columns: 1fr;
+    gap: 5px;
+    margin-top: 10px;
   }
 
   .check-list li {
-    font-size: 0.58rem;
-    gap: 6px;
+    font-size: 0.56rem;
+    gap: 5px;
+    line-height: 1.35;
   }
 
   .check-icon,
   .check-icon svg {
-    width: 12px;
-    height: 12px;
+    width: 11px;
+    height: 11px;
   }
 
   .digital-tags {
     gap: 5px;
-    margin-top: 12px;
+    margin-top: 10px;
   }
 
   .digital-tags span {
     padding: 4px 9px;
-    font-size: 0.55rem;
+    font-size: 0.52rem;
   }
 
   .digital-note {
-    margin-top: 12px;
-    padding: 10px 12px;
-    font-size: 0.58rem;
+    margin-top: 10px;
+    padding: 9px 11px;
+    font-size: 0.56rem;
     line-height: 1.4;
   }
 
@@ -1099,20 +1153,43 @@
 
 
 /* ------------------------------------------------------------
-   ETAPA 7 — pantallas muy angostas
-   Nota: esta versión mobile no traía un ajuste específico para
-   520px, así que se conserva tal cual estaba en la variante
-   anterior, como afinado adicional dentro del mismo bloque
-   responsive de mobile.
+   PANTALLAS MUY ANGOSTAS
+   La foto cede algo de ancho al texto, pero sigue en fila.
    ------------------------------------------------------------ */
 
 @media (max-width: 520px) {
 
-  .digital-section { padding: 32px 0; }
+  .digital-highlights {
+    padding: 12px;
+  }
 
-  .digital-highlights { padding: 18px; }
+  .digital-panel__media {
+    flex: 0 0 32%;
+  }
 
-  .digital-highlights__item strong { font-size: 0.88rem; }
+  .digital-panel,
+  .digital-panel--reverse {
+    gap: 10px;
+    padding: 16px 0;
+  }
 
-  .digital-highlights__item p { font-size: 0.78rem; }
+  .digital-panel__body h2 {
+    font-size: 0.8rem;
+  }
+
+  .digital-panel__body .section-lead {
+    font-size: 0.54rem !important;
+  }
+
+  .check-list li {
+    font-size: 0.52rem;
+  }
+
+  .digital-tags span {
+    font-size: 0.48rem;
+  }
+
+  .digital-note {
+    font-size: 0.52rem;
+  }
 }
