@@ -386,8 +386,16 @@
    ------------------------------------------------------------ */
 
 .device-card ul {
-  margin-top: auto;
+  /* Sin margin-top: auto.
+     Ese auto empujaba la lista hasta el fondo de la tarjeta, y
+     en las que tienen pocos puntos dejaba un hueco enorme entre
+     el título y el primer elemento. Ahora la lista va pegada al
+     título y el espacio sobrante queda abajo, que es donde no
+     estorba. */
+
   padding-top: 14px;
+
+  margin-bottom: auto;
 }
 
 .device-card ul li {
