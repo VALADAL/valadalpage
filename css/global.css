@@ -949,7 +949,10 @@ html[data-theme="dark"]
   background: #0A0A0A;
   color: #FFFFFF;
 
-  padding: 64px 0 32px;
+  /* El 24 de abajo hace juego con el padding-top de
+     .footer__bottom, para que esa línea quede centrada entre la
+     división y el final de la página. */
+  padding: 64px 0 24px;
 }
 
 .footer__top {
@@ -1295,26 +1298,21 @@ html[data-theme="dark"]
     line-height: 1.35;
   }
 
-  /* Iba pegado a la línea divisoria y con los dos textos en
-     los extremos; en mobile se centra y se le da aire. */
+  /* Se mantiene en fila: "© 2026" a la izquierda y la ubicación
+     a la derecha. Lo que se corrige es el centrado VERTICAL:
+     el padding superior de este bloque y el inferior del footer
+     valen lo mismo, así queda a media altura entre la línea
+     divisoria y el final de la página. */
 
   .footer__bottom {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-
-    gap: 5px;
-
-    padding-top: 18px;
-    padding-bottom: 4px;
+    padding-top: 20px;
 
     font-size: 0.52rem;
     line-height: 1.3;
   }
 
   .footer {
-    padding-bottom: 26px;
+    padding-bottom: 20px;
   }
 
 
