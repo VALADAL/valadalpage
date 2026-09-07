@@ -368,7 +368,7 @@
   /* El padding inferior despega la imagen de la línea divisoria. */
 
   .about-hero {
-    padding: 56px 0 40px;
+    padding: 62px 0 40px;
 
     /* En pantalla angosta los focos laterales quedan fuera de
        cuadro: se centran para que el degradado se note. */
