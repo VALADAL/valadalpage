@@ -444,8 +444,34 @@
     height: 11px;
   }
 
+  /* En escritorio los focos del degradado van a 78% y 8%, pero
+     en pantalla angosta esos puntos caen fuera de cuadro y el
+     hero se ve cargado a un lado. Aquí se recentran, y la
+     máscara de la malla pasa al centro real del bloque. */
+
+  .contact-hero {
+    background:
+      radial-gradient(
+        circle at 62% -12%,
+        rgba(0, 102, 255, 0.16),
+        transparent 62%
+      ),
+      radial-gradient(
+        circle at 18% 115%,
+        rgba(0, 163, 255, 0.12),
+        transparent 58%
+      ),
+      var(--surface-soft);
+  }
+
   .contact-hero::before {
-    background-size: 40px 40px;
+    background-size: 34px 34px;
+
+    -webkit-mask-image:
+      radial-gradient(circle at 50% 50%, #000, transparent 78%);
+
+    mask-image:
+      radial-gradient(circle at 50% 50%, #000, transparent 78%);
   }
 
   .contact-hero h1 {
