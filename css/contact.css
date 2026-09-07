@@ -643,7 +643,11 @@
 
 @media (max-width: 520px) {
 
-  .contact-hero { padding: 58px 0 30px; }
+  /* Solo el padding INFERIOR. Antes esta regla reescribía el
+     padding completo y bajaba el superior a 58px, pisando los
+     62px del bloque de 860px justo en los anchos de celular. */
+
+  .contact-hero { padding-bottom: 30px; }
 
   .contact-section { padding: 32px 0; }
 
