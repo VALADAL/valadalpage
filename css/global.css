@@ -1304,6 +1304,15 @@ html[data-theme="dark"]
      valen lo mismo, así queda a media altura entre la línea
      divisoria y el final de la página. */
 
+  /* Más aire entre la columna de Empresa y la de Contáctanos.
+     column-gap separa las dos columnas; row-gap actúa solo si
+     llegan a apilarse en pantallas muy angostas. */
+
+  .footer__cols {
+    column-gap: 88px;
+    row-gap: 24px;
+  }
+
   .footer__bottom {
     padding-top: 20px;
 
