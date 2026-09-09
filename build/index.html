@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/global.css?v=8">
-  <link rel="stylesheet" href="../css/build.css?v=8">
+  <link rel="stylesheet" href="../css/global.css?v=9">
+  <link rel="stylesheet" href="../css/build.css?v=9">
 </head>
 <body>
 
@@ -33,7 +33,17 @@
     <div class="container navbar__inner">
 
       <a href="../index.html" class="navbar__logo">
-        <span class="navbar__logo-mark">V</span>
+
+        <img
+          class="navbar__logo-img"
+          src="../assets/icons/Logo_valadal.png"
+          alt="Valadal">
+
+        <!-- Rótulo de página: solo visible en mobile. Sale
+             deslizándose del logo, se queda 5 s y vuelve a
+             entrar hacia la izquierda. -->
+        <span class="navbar__page" data-i18n="nav.build">Armado</span>
+
       </a>
 
       <nav class="navbar__links">
@@ -1072,7 +1082,7 @@
     <div class="container footer__top">
 
       <div class="footer__brand">
-        <span class="navbar__logo-mark">V</span>
+        <img class="footer__logo-img" src="../assets/icons/Logo_valadal.png" alt="Valadal">
         <div>
           <p class="footer__name">Valadal</p>
           <p class="footer__tagline" data-i18n="footer.tagline">Crea, repara e innova sin límites.</p>
@@ -1112,7 +1122,7 @@
        JAVASCRIPT
        ============================================================ -->
 
-  <script src="../js/script.js?v=8"></script>
+  <script src="../js/script.js?v=9"></script>
 
 </body>
 </html>
