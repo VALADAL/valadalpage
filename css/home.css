@@ -687,6 +687,48 @@
   padding: 16px;
 }
 
+/* La tarjeta del teaser ahora es <a> con foto real dentro. */
+
+.work-teaser__item {
+  text-decoration: none;
+  color: inherit;
+}
+
+.work-teaser__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s var(--ease);
+}
+
+.work-teaser__item:hover .work-teaser__image {
+  transform: scale(1.06);
+}
+
+/* Degradado inferior para que la etiqueta se lea sobre
+   cualquier fotografía. */
+
+.work-teaser__item::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  background:
+    linear-gradient(
+      180deg,
+      rgba(10, 10, 10, 0) 45%,
+      rgba(10, 10, 10, 0.6) 100%
+    );
+}
+
+
 .work-teaser__item span {
   position: relative;
 
