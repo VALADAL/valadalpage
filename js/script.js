@@ -620,10 +620,21 @@ const translations = {
     "workPage.reviews.eyebrow": "Reseñas",
     "workPage.reviews.title": "Lo que dicen quienes ya confiaron en nosotros.",
     "workPage.reviews.lead":
-      "Estamos reuniendo las reseñas de nuestros clientes. Las que ves aquí son ejemplos hasta que las reemplacemos con reseñas reales verificadas.",
+      "Empresas con las que hemos trabajado y el servicio que realizamos para cada una.",
     "workPage.reviews.scoreLabel": "Calificación promedio",
-    "workPage.reviews.count": "reseñas de ejemplo",
+    "workPage.reviews.count": "reseñas verificadas",
     "workPage.reviews.tag": "Reseña de ejemplo",
+    "workPage.reviews.verified": "Verificado",
+    "workPage.viewer.of": "de",
+    "workPage.rFemsa.text":
+      "Contratamos a Valadal para el mantenimiento de nuestros servidores y el reemplazo de una unidad de almacenamiento. El trabajo se realizó de forma ordenada, con diagnóstico previo y reporte de lo ejecutado. La atención técnica fue puntual y profesional en todo momento.",
+    "workPage.rFemsa.service": "Mantenimiento de servidores",
+    "workPage.rLogens.text":
+      "Nos han atendido varios equipos de la operación: laptops, impresoras y otros dispositivos de uso diario. Resolvieron fallas que otros proveedores no lograron identificar y trabajan con distintos tipos de equipo sin problema. La comunicación durante el proceso es clara.",
+    "workPage.rLogens.service": "Reparación y mantenimiento de equipos",
+    "workPage.rHercor.text":
+      "Nos armaron una computadora de escritorio configurada específicamente para nuestro software de diseño y para el trabajo diario de corte y grabado. El equipo responde con holgura a lo que necesitábamos y llevamos tiempo trabajando con él sin contratiempos.",
+    "workPage.rHercor.service": "Armado de PC de alto rendimiento",
     "workPage.reviews.cta": "¿Ya trabajamos juntos? Cuéntanos cómo nos fue.",
     "workPage.reviews.ctaButton": "Dejar una reseña →",
 
@@ -1295,10 +1306,21 @@ const translations = {
     "workPage.reviews.eyebrow": "Reviews",
     "workPage.reviews.title": "What people who trusted us have to say.",
     "workPage.reviews.lead":
-      "We're gathering reviews from our customers. The ones you see here are examples until we replace them with real, verified reviews.",
+      "Companies we have worked with and the service we carried out for each one.",
     "workPage.reviews.scoreLabel": "Average rating",
-    "workPage.reviews.count": "example reviews",
+    "workPage.reviews.count": "verified reviews",
     "workPage.reviews.tag": "Example review",
+    "workPage.reviews.verified": "Verified",
+    "workPage.viewer.of": "of",
+    "workPage.rFemsa.text":
+      "We hired Valadal to service our servers and replace a storage drive. The work was carried out methodically, with a diagnosis beforehand and a report of what was done. Technical support was prompt and professional throughout.",
+    "workPage.rFemsa.service": "Server maintenance",
+    "workPage.rLogens.text":
+      "They have serviced several machines from our operation: laptops, printers and other everyday devices. They solved faults other providers could not identify and handle different types of equipment without issue. Communication throughout the process is clear.",
+    "workPage.rLogens.service": "Equipment repair and maintenance",
+    "workPage.rHercor.text":
+      "They built us a desktop computer configured specifically for our design software and for daily cutting and engraving work. The machine handles what we needed with room to spare and we have been working on it without issues.",
+    "workPage.rHercor.service": "High-performance PC build",
     "workPage.reviews.cta": "Have we worked together? Tell us how it went.",
     "workPage.reviews.ctaButton": "Leave a review →",
 
@@ -2715,3 +2737,169 @@ infoToggles.forEach((toggle) => {
   });
 
 });
+
+
+// ============================================================
+// 12. VISOR DE PROYECTOS (lightbox de /work/)
+//
+// Cada tarjeta de la galería es un <button> que lleva en sus
+// data-attributes la lista de fotos del proyecto y su
+// descripción en los dos idiomas. El visor lee esos datos al
+// abrirse, así que la navegación nunca se sale del proyecto
+// seleccionado.
+// ============================================================
+
+const viewer = document.getElementById("viewer");
+
+
+if (viewer) {
+
+  const vImage   = document.getElementById("viewerImage");
+  const vTitle   = document.getElementById("viewerTitle");
+  const vDesc    = document.getElementById("viewerDesc");
+  const vCounter = document.getElementById("viewerCounter");
+  const vClose   = document.getElementById("viewerClose");
+  const vPrev    = document.getElementById("viewerPrev");
+  const vNext    = document.getElementById("viewerNext");
+
+  const piezas = document.querySelectorAll(".work-piece");
+
+  let fotos = [];
+  let actual = 0;
+  let slug = "";
+  let ultimoBoton = null;
+
+
+  function idioma() {
+    return document.documentElement.lang === "en" ? "en" : "es";
+  }
+
+
+  function textoDe(clave) {
+    const lang = idioma();
+    return (translations[lang] && translations[lang][clave]) || "";
+  }
+
+
+  function pintar() {
+
+    vImage.src =
+      "../assets/images/work/" + slug + "/" + fotos[actual];
+
+    vImage.alt = vTitle.textContent;
+
+    vCounter.textContent =
+      (actual + 1) + " " + (textoDe("workPage.viewer.of") || "de") +
+      " " + fotos.length;
+
+    // Con una sola foto se ocultan las flechas.
+    viewer.classList.toggle("is-single", fotos.length < 2);
+  }
+
+
+  function abrir(boton) {
+
+    ultimoBoton = boton;
+
+    slug  = boton.dataset.project;
+    fotos = boton.dataset.photos.split("|");
+    actual = 0;
+
+    const lang = idioma();
+
+    vTitle.textContent =
+      boton.dataset["title" + (lang === "en" ? "En" : "Es")];
+
+    vDesc.textContent =
+      boton.dataset["desc" + (lang === "en" ? "En" : "Es")];
+
+    pintar();
+
+    viewer.classList.add("is-open");
+    viewer.setAttribute("aria-hidden", "false");
+    document.body.classList.add("viewer-open");
+
+    vClose.focus();
+  }
+
+
+  function cerrar() {
+
+    viewer.classList.remove("is-open");
+    viewer.setAttribute("aria-hidden", "true");
+    document.body.classList.remove("viewer-open");
+
+    // La foto se libera para no dejarla cargada en memoria.
+    setTimeout(() => {
+      if (!viewer.classList.contains("is-open")) {
+        vImage.src = "";
+      }
+    }, 350);
+
+    if (ultimoBoton) {
+      ultimoBoton.focus();
+    }
+  }
+
+
+  function mover(paso) {
+
+    if (fotos.length < 2) {
+      return;
+    }
+
+    actual = (actual + paso + fotos.length) % fotos.length;
+    pintar();
+  }
+
+
+  piezas.forEach((boton) => {
+    boton.addEventListener("click", () => abrir(boton));
+  });
+
+  vClose.addEventListener("click", cerrar);
+  vPrev.addEventListener("click", () => mover(-1));
+  vNext.addEventListener("click", () => mover(1));
+
+
+  // Clic en el fondo (fuera de la foto) también cierra.
+  viewer.addEventListener("click", (e) => {
+    if (e.target === viewer) {
+      cerrar();
+    }
+  });
+
+
+  // Teclado: Esc cierra, flechas navegan.
+  document.addEventListener("keydown", (e) => {
+
+    if (!viewer.classList.contains("is-open")) {
+      return;
+    }
+
+    if (e.key === "Escape")     cerrar();
+    if (e.key === "ArrowLeft")  mover(-1);
+    if (e.key === "ArrowRight") mover(1);
+  });
+
+
+  // Deslizar en móvil.
+  let inicioX = null;
+
+  viewer.addEventListener("touchstart", (e) => {
+    inicioX = e.changedTouches[0].clientX;
+  }, { passive: true });
+
+  viewer.addEventListener("touchend", (e) => {
+
+    if (inicioX === null) return;
+
+    const dif = e.changedTouches[0].clientX - inicioX;
+
+    if (Math.abs(dif) > 50) {
+      mover(dif > 0 ? -1 : 1);
+    }
+
+    inicioX = null;
+  }, { passive: true });
+}
