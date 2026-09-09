@@ -734,7 +734,11 @@
 
   z-index: 1;
 
-  color: var(--white);
+  /* Blanco fijo, NO var(--white): esa variable se invierte a
+     #111111 en modo oscuro y la etiqueta desaparecía sobre la
+     foto. Va siempre encima de una imagen, así que el blanco
+     es correcto en los dos temas. */
+  color: #FFFFFF;
 
   font-size: 0.82rem;
 
@@ -882,6 +886,7 @@ html[data-theme="dark"] .value-item {
 
 html[data-theme="dark"] .work-teaser__item span {
   background: rgba(0, 0, 0, 0.55);
+  color: #FFFFFF;
 }
 
 
