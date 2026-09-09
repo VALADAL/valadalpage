@@ -1479,3 +1479,126 @@ html[data-theme="dark"]
 .digital-panel:hover .digital-shot__img {
   transform: scale(1.04);
 }
+
+
+/* ============================================================
+   LOGO EN IMAGEN
+   Sustituye a la marca cuadrada con la "V". El PNG tiene
+   transparencia, así que funciona igual en claro y en oscuro.
+   ============================================================ */
+
+.navbar__logo {
+  position: relative;
+
+  overflow: hidden;
+
+  text-decoration: none;
+}
+
+.navbar__logo-img {
+  width: 32px;
+  height: 32px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  display: block;
+}
+
+.footer__logo-img {
+  width: 30px;
+  height: 30px;
+
+  object-fit: contain;
+
+  flex-shrink: 0;
+
+  display: block;
+}
+
+
+/* ============================================================
+   RÓTULO DE PÁGINA EN EL NAVBAR
+   Solo en mobile. Al cargar la página el nombre sale
+   deslizándose desde detrás del logo hacia la derecha, se
+   mantiene 5 s y se retira deslizándose hacia la izquierda.
+
+   Va con animación CSS y no con JavaScript: arranca sola en
+   cuanto se pinta la página, sin esperar a que cargue el
+   script, que es justo cuando tiene que verse.
+   ============================================================ */
+
+.navbar__page {
+  display: none;
+}
+
+@media (max-width: 860px) {
+
+  .navbar__page {
+    display: block;
+
+    white-space: nowrap;
+    pointer-events: none;
+
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 0.82rem;
+    letter-spacing: -0.01em;
+
+    color: var(--blue);
+
+    /* clip-path revela el texto de izquierda a derecha, así
+       parece salir de detrás del logo en vez de aparecer. */
+    animation: navbar-page 6s var(--ease) 0.25s both;
+  }
+
+  @keyframes navbar-page {
+
+    0% {
+      opacity: 0;
+      transform: translateX(-10px);
+      clip-path: inset(0 100% 0 0);
+      margin-left: -8px;
+    }
+
+    10% {
+      opacity: 1;
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      margin-left: 0;
+    }
+
+    88% {
+      opacity: 1;
+      transform: translateX(0);
+      clip-path: inset(0 0 0 0);
+      margin-left: 0;
+    }
+
+    100% {
+      opacity: 0;
+      transform: translateX(-10px);
+      clip-path: inset(0 100% 0 0);
+      margin-left: -8px;
+    }
+  }
+
+  /* Si el sistema pide menos movimiento, el rótulo no aparece. */
+
+  @media (prefers-reduced-motion: reduce) {
+    .navbar__page {
+      display: none;
+    }
+  }
+
+  .navbar__logo-img {
+    width: 24px;
+    height: 24px;
+  }
+
+  .footer__logo-img {
+    width: 22px;
+    height: 22px;
+  }
+}
