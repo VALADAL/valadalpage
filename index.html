@@ -26,8 +26,8 @@
   <!-- El ?v= obliga al navegador a bajar el CSS de nuevo en vez de
        usar el que tenga en caché. Súbele el número cada vez que
        cambies el CSS y no veas reflejados los cambios. -->
-  <link rel="stylesheet" href="css/global.css?v=8">
-  <link rel="stylesheet" href="css/home.css?v=8">
+  <link rel="stylesheet" href="css/global.css?v=9">
+  <link rel="stylesheet" href="css/home.css?v=9">
 
   <!-- ============================================================
        INTRO DEL HERO — SOLO LA PRIMERA VISITA
@@ -62,7 +62,17 @@
 
       <!-- LOGO -->
       <a href="#top" class="navbar__logo">
-        <span class="navbar__logo-mark">V</span>
+
+        <img
+          class="navbar__logo-img"
+          src="assets/icons/Logo_valadal.png"
+          alt="Valadal">
+
+        <!-- Rótulo de página: solo visible en mobile. Sale
+             deslizándose del logo, se queda 5 s y vuelve a
+             entrar hacia la izquierda. -->
+        <span class="navbar__page" data-i18n="nav.brandFull">Valadal Enterprises</span>
+
       </a>
 
 
@@ -1320,9 +1330,7 @@
       <!-- BRAND -->
       <div class="footer__brand">
 
-        <span class="navbar__logo-mark">
-          V
-        </span>
+        <img class="footer__logo-img" src="assets/icons/Logo_valadal.png" alt="Valadal">
 
 
         <div>
