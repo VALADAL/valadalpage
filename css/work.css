@@ -262,11 +262,67 @@
 
   padding: 22px;
 
+  /* Ahora es un <button>: hay que neutralizar los estilos que
+     el navegador le pone por defecto. */
+  width: 100%;
+  border: none;
+  background: none;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+
   transition: transform 0.4s var(--ease);
 }
 
+.work-piece__image {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+
+  transition: transform 0.5s var(--ease);
+}
+
+.work-piece:hover .work-piece__image { transform: scale(1.06); }
+
+/* Contador de fotos, esquina superior derecha */
+
+.work-piece__count {
+  position: absolute;
+  top: 14px;
+  right: 14px;
+  z-index: 2;
+
+  min-width: 22px;
+  height: 22px;
+  padding: 0 7px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: var(--radius-pill);
+  background: rgba(10, 10, 10, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(6px);
+
+  color: #FFFFFF;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.66rem;
+  line-height: 1;
+}
+
+.work-piece:focus-visible {
+  outline: 2px solid var(--blue);
+  outline-offset: 3px;
+}
+
 .work-piece:hover { transform: translateY(-4px); }
-.work-piece:hover .work-piece__visual { transform: scale(1.06); }
 
 .work-piece--wide { grid-column: span 2; }
 .work-piece--tall { grid-row: span 2; }
@@ -287,6 +343,7 @@
 }
 
 .work-piece__scrim {
+  display: block;
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -822,4 +879,317 @@
   .work-piece--tall { grid-row: span 1; }
 
   .work-section { padding: 32px 0; }
+}
+
+
+/* ============================================================
+   BADGE DE VERIFICADO + LOGO DE EMPRESA
+   ============================================================ */
+
+.review-card__verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+
+  padding: 4px 10px;
+
+  border-radius: var(--radius-pill);
+  background: rgba(0, 102, 255, 0.09);
+  border: 1px solid rgba(0, 102, 255, 0.22);
+  color: var(--blue);
+
+  font-size: 0.66rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+
+  white-space: nowrap;
+}
+
+.review-card__verified svg {
+  width: 11px;
+  height: 11px;
+  flex-shrink: 0;
+}
+
+/* Espacio del logo. Mientras no exista el archivo, el borde
+   punteado marca dónde va. */
+
+.review-card__logo {
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 10px;
+  background: var(--surface-soft);
+  border: 1px solid var(--border);
+
+  overflow: hidden;
+}
+
+.review-card__logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  padding: 5px;
+}
+
+.work-section--soft .review-card__logo {
+  background: var(--page-bg);
+}
+
+
+/* ============================================================
+   VISOR DE PROYECTO (lightbox)
+   ============================================================ */
+
+.viewer {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 48px;
+
+  background: rgba(8, 10, 14, 0.92);
+  backdrop-filter: blur(14px);
+
+  opacity: 0;
+  visibility: hidden;
+
+  transition:
+    opacity 0.3s var(--ease),
+    visibility 0.3s var(--ease);
+}
+
+.viewer.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.viewer__stage {
+  position: relative;
+
+  max-width: 1100px;
+  max-height: 100%;
+
+  display: flex;
+  flex-direction: column;
+
+  margin: 0;
+
+  transform: scale(0.97);
+  transition: transform 0.35s var(--ease);
+}
+
+.viewer.is-open .viewer__stage {
+  transform: scale(1);
+}
+
+.viewer__image {
+  display: block;
+
+  max-width: 100%;
+  max-height: 72vh;
+
+  width: auto;
+  height: auto;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: 0 40px 80px rgba(0, 0, 0, 0.5);
+
+  background: #0F1216;
+}
+
+
+/* ------------------------------------------------------------
+   PANEL DE INFORMACIÓN
+   Va debajo de la foto y no encima, para no taparla.
+   ------------------------------------------------------------ */
+
+.viewer__info {
+  margin-top: 16px;
+  padding: 18px 22px;
+
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+
+  color: #FFFFFF;
+
+  max-width: 760px;
+}
+
+.viewer__counter {
+  display: block;
+
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.68rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+
+  color: var(--blue-bright);
+
+  margin-bottom: 6px;
+}
+
+.viewer__title {
+  font-size: 1.08rem;
+  margin-bottom: 8px;
+  color: #FFFFFF;
+}
+
+.viewer__desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.72);
+}
+
+
+/* ------------------------------------------------------------
+   CONTROLES
+   ------------------------------------------------------------ */
+
+.viewer__close,
+.viewer__nav {
+  position: absolute;
+  z-index: 3;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0;
+
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  color: #FFFFFF;
+
+  cursor: pointer;
+
+  transition:
+    background-color 0.22s ease,
+    border-color 0.22s ease,
+    transform 0.22s var(--ease);
+}
+
+.viewer__close:hover,
+.viewer__nav:hover {
+  background: var(--blue);
+  border-color: var(--blue);
+  transform: scale(1.06);
+}
+
+.viewer__close {
+  top: 26px;
+  right: 26px;
+
+  width: 44px;
+  height: 44px;
+}
+
+.viewer__close svg {
+  width: 20px;
+  height: 20px;
+}
+
+.viewer__nav {
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 52px;
+  height: 52px;
+}
+
+.viewer__nav:hover {
+  transform: translateY(-50%) scale(1.06);
+}
+
+.viewer__nav--prev { left: 26px; }
+.viewer__nav--next { right: 26px; }
+
+.viewer__nav svg {
+  width: 22px;
+  height: 22px;
+}
+
+/* Con una sola foto no hay a dónde navegar. */
+
+.viewer.is-single .viewer__nav {
+  display: none;
+}
+
+/* Mientras el visor está abierto, la página de fondo no scrollea. */
+
+body.viewer-open {
+  overflow: hidden;
+}
+
+
+@media (max-width: 860px) {
+
+  .viewer {
+    padding: 16px;
+  }
+
+  .viewer__image {
+    max-height: 56vh;
+    border-radius: 12px;
+  }
+
+  .viewer__info {
+    margin-top: 12px;
+    padding: 12px 14px;
+    border-radius: 10px;
+  }
+
+  .viewer__counter { font-size: 0.55rem; margin-bottom: 4px; }
+  .viewer__title { font-size: 0.78rem; margin-bottom: 5px; }
+  .viewer__desc { font-size: 0.6rem; line-height: 1.45; }
+
+  .viewer__close {
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+  }
+
+  .viewer__close svg { width: 16px; height: 16px; }
+
+  .viewer__nav {
+    width: 38px;
+    height: 38px;
+  }
+
+  .viewer__nav svg { width: 17px; height: 17px; }
+
+  .viewer__nav--prev { left: 8px; }
+  .viewer__nav--next { right: 8px; }
+
+  .work-piece__count {
+    top: 8px;
+    right: 8px;
+    font-size: 0.55rem;
+    height: 18px;
+  }
+
+  .review-card__verified {
+    font-size: 0.55rem;
+    padding: 3px 8px;
+  }
+
+  .review-card__logo {
+    width: 32px;
+    height: 32px;
+    border-radius: 8px;
+  }
 }
