@@ -19,6 +19,7 @@ const translations = {
     "nav.about": "Nosotros",
     "nav.contact": "Contacto",
     "nav.quote": "Cotizar",
+    "nav.brandFull": "Valadal Enterprises",
 
     "theme.toggle": "Modo oscuro",
 
@@ -705,6 +706,7 @@ const translations = {
     "nav.about": "About",
     "nav.contact": "Contact",
     "nav.quote": "Get a Quote",
+    "nav.brandFull": "Valadal Enterprises",
 
     "theme.toggle": "Dark mode",
 
