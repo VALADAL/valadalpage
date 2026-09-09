@@ -20,8 +20,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="../css/global.css?v=6">
-  <link rel="stylesheet" href="../css/work.css?v=6">
+  <link rel="stylesheet" href="../css/global.css?v=7">
+  <link rel="stylesheet" href="../css/work.css?v=7">
 </head>
 <body>
 
@@ -252,77 +252,653 @@
 
       <div class="work-grid">
 
-        <div class="work-piece work-piece--wide reveal" data-category="gaming">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0A0A0A, #142238);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-01.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item1">PlayStation 5 — reparación de puerto HDMI</span>
-        </div>
+        <button
+          class="work-piece work-piece--wide reveal"
+          type="button"
+          data-category="repair"
+          data-project="impresora"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg|05.jpg|06.jpg|07.jpg|08.jpg|09.jpg|10.jpg"
+          data-title-es="Impresora multifuncional"
+          data-title-en="Multifunction printer"
+          data-desc-es="La impresora encendía de forma intermitente y, cuando lo hacía, no llegaba a operar. El diagnóstico reveló un sensor averiado, una pista quemada por una resistencia en corto y dos capacitores explotados. Se sustituyó el sensor, se puenteó la pista dañada y se reemplazaron los capacitores. El equipo quedó funcionando con normalidad."
+          data-desc-en="The printer powered on intermittently and, when it did, never became operational. Diagnosis revealed a failed sensor, a track burnt by a shorted resistor and two blown capacitors. We replaced the sensor, bridged the damaged track and replaced the capacitors. The unit was returned fully working.">
 
-        <div class="work-piece work-piece--tall reveal" data-category="computers">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0052cc, #0066FF);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-02.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item2">MacBook Pro — diagnóstico de tarjeta lógica</span>
-        </div>
+          <img class="work-piece__image"
+               src="../assets/images/work/impresora/thumb.jpg"
+               alt="Impresora multifuncional"
+               loading="lazy">
 
-        <div class="work-piece reveal" data-category="smartphones">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #6B7280, #9AA2AF);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-03.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item3">iPhone — cambio de pantalla</span>
-        </div>
+          <span class="work-piece__scrim"></span>
 
-        <div class="work-piece work-piece--wide reveal" data-category="digital">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0066FF, #00A3FF);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-04.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item4">Negocio local — rediseño de sitio web</span>
-        </div>
+          <span class="work-piece__count">10</span>
 
-        <div class="work-piece reveal" data-category="gaming">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #101010, #1c2530);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-05.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item5">Control de Xbox — reparación de stick drift</span>
-        </div>
+          <span class="work-piece__title" data-title>Impresora multifuncional</span>
 
-        <div class="work-piece reveal" data-category="build">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #E5E7EB, #6B7280);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-06.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item6">Computadora armada a la medida</span>
-        </div>
+        </button>
 
-        <div class="work-piece reveal" data-category="digital">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #061A40, #0066FF);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-07.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item7">Herramienta interna — automatización de procesos</span>
-        </div>
+        <button
+          class="work-piece work-piece--wide reveal"
+          type="button"
+          data-category="computers"
+          data-project="rtx-3080"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg|05.jpg|06.jpg|07.jpg|08.jpg|09.jpg"
+          data-title-es="RTX 3080 — mantenimiento profundo"
+          data-title-en="RTX 3080 — deep maintenance"
+          data-desc-es="Servicio completo de mantenimiento sobre una tarjeta gráfica de alta gama: desmontaje íntegro, sustitución de thermal pads, limpieza del sistema de ventilación y disipación, y aplicación de pasta térmica nueva. El objetivo fue recuperar las temperaturas de fábrica y prolongar la vida útil del componente."
+          data-desc-en="Full maintenance service on a high-end graphics card: complete teardown, thermal pad replacement, cleaning of the cooling and heatsink assembly, and fresh thermal paste. The goal was to restore factory temperatures and extend the component&#x27;s service life.">
 
-        <div class="work-piece work-piece--tall reveal" data-category="smartphones">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #3f4652, #6B7280);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-08.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item8">Dispositivo Android — batería y diagnóstico</span>
-        </div>
+          <img class="work-piece__image"
+               src="../assets/images/work/rtx-3080/thumb.jpg"
+               alt="RTX 3080 — mantenimiento profundo"
+               loading="lazy">
 
-        <div class="work-piece reveal" data-category="repair">
-          <div class="work-piece__visual" style="background: linear-gradient(150deg, #0A0A0A, #0066FF);"></div>
-          <div class="work-piece__scrim"></div>
-          <span class="work-piece__slot">IMAGEN<br>work-09.jpg</span>
-          <span class="work-piece__tag" data-i18n="workPage.tag">Proyecto de ejemplo</span>
-          <span class="work-piece__title" data-i18n="workPage.item9">Banco de diagnóstico completo</span>
-        </div>
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">9</span>
+
+          <span class="work-piece__title" data-title>RTX 3080 — mantenimiento profundo</span>
+
+        </button>
+
+        <button
+          class="work-piece work-piece--tall reveal"
+          type="button"
+          data-category="repair"
+          data-project="monitor"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg|05.jpg|06.jpg|07.jpg|08.jpg"
+          data-title-es="Dos monitores sin encender"
+          data-title-en="Two monitors not powering on"
+          data-desc-es="Dos monitores llegaron sin dar señal de encendido. En el primero, un MOSFET regulador de corriente se había quemado por sobrecarga. En el segundo, dos capacitores de la fuente conmutada estaban explotados. Se reemplazaron los componentes afectados en ambos equipos y los dos volvieron a encender correctamente."
+          data-desc-en="Two monitors arrived with no sign of power. On the first, a current-regulating MOSFET had burnt out from overload. On the second, two capacitors in the switching power supply had blown. We replaced the affected components on both units and both powered on correctly again.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/monitor/thumb.jpg"
+               alt="Dos monitores sin encender"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">8</span>
+
+          <span class="work-piece__title" data-title>Dos monitores sin encender</span>
+
+        </button>
+
+        <button
+          class="work-piece work-piece--wide reveal"
+          type="button"
+          data-category="smartphones"
+          data-project="iphone-x"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg|05.jpg|06.jpg"
+          data-title-es="iPhone X — batería y pantalla"
+          data-title-en="iPhone X — battery and screen"
+          data-desc-es="El equipo no encendía. Se encontró la batería inflada y la pantalla dañada. Se reemplazaron ambos componentes y se realizó una limpieza profunda del interior antes del armado final."
+          data-desc-en="The device would not power on. We found a swollen battery and a damaged screen. Both components were replaced and the interior was deep cleaned before final reassembly.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/iphone-x/thumb.jpg"
+               alt="iPhone X — batería y pantalla"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">6</span>
+
+          <span class="work-piece__title" data-title>iPhone X — batería y pantalla</span>
+
+        </button>
+
+        <button
+          class="work-piece work-piece--wide reveal"
+          type="button"
+          data-category="build"
+          data-project="armado-de-pc-3"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="PC para streaming"
+          data-title-en="Streaming PC"
+          data-desc-es="Equipo armado con componentes de alta gama para transmisión en vivo, dimensionado para codificar y jugar de forma simultánea sin comprometer el rendimiento."
+          data-desc-en="Machine built with high-end components for live streaming, sized to encode and game simultaneously without compromising performance.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/armado-de-pc-3/thumb.jpg"
+               alt="PC para streaming"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>PC para streaming</span>
+
+        </button>
+
+        <button
+          class="work-piece work-piece--tall reveal"
+          type="button"
+          data-category="repair"
+          data-project="reparacion-hdmi-televisor"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg"
+          data-title-es="Televisor Sony — entrada HDMI"
+          data-title-en="Sony TV — HDMI input"
+          data-desc-es="El televisor presentaba falla en la entrada HDMI por avería del procesador encargado de decodificar la señal. Se recuperó la entrada de video. El audio no pudo restaurarse porque el chip requerido está descontinuado en un equipo de 2010, algo que se informó al cliente antes de intervenir."
+          data-desc-en="The TV had a faulty HDMI input caused by the chip that decodes the signal. Video input was recovered. Audio could not be restored because the required chip is discontinued on a 2010 set, which was explained to the client before starting work.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/reparacion-hdmi-televisor/thumb.jpg"
+               alt="Televisor Sony — entrada HDMI"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">4</span>
+
+          <span class="work-piece__title" data-title>Televisor Sony — entrada HDMI</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="computers"
+          data-project="rtx-2060"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg"
+          data-title-es="RTX 2060 — reparación electrónica"
+          data-title-en="RTX 2060 — board-level repair"
+          data-desc-es="El cliente adquirió la tarjeta con una falla existente. Tras el diagnóstico se identificaron tres transistores y un diodo dañados, que fueron reemplazados a nivel de placa. Se completó con un mantenimiento profundo y la tarjeta quedó operando con normalidad."
+          data-desc-en="The client bought the card with an existing fault. Diagnosis identified three damaged transistors and one diode, all replaced at board level. The job was completed with deep maintenance and the card returned to normal operation.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/rtx-2060/thumb.jpg"
+               alt="RTX 2060 — reparación electrónica"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">4</span>
+
+          <span class="work-piece__title" data-title>RTX 2060 — reparación electrónica</span>
+
+        </button>
+
+        <button
+          class="work-piece work-piece--tall reveal"
+          type="button"
+          data-category="digital"
+          data-project="smart-doctor"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg|05.jpg|06.jpg|07.jpg"
+          data-title-es="Smart Doctor — recuperación de discos"
+          data-title-en="Smart Doctor — drive recovery"
+          data-desc-es="Desarrollo propio: un dispositivo capaz de reparar discos duros con sectores dañados inhabilitándolos, corregir unidades con formato defectuoso y mostrar en pantalla el estado de salud y los datos SMART del disco."
+          data-desc-en="In-house development: a device able to repair hard drives with bad sectors by disabling them, fix drives with a faulty format, and display drive health and SMART data on screen.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/smart-doctor/thumb.jpg"
+               alt="Smart Doctor — recuperación de discos"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">7</span>
+
+          <span class="work-piece__title" data-title>Smart Doctor — recuperación de discos</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="gaming"
+          data-project="control-xbox-2"
+          data-photos="01.jpg|02.jpg|03.jpg"
+          data-title-es="Control Xbox One S — botones y cruz"
+          data-title-en="Xbox One S controller — buttons and D-pad"
+          data-desc-es="El control no respondía en los botones RB y LB ni en la cruceta direccional. Se desoldaron y sustituyeron los componentes afectados por unidades nuevas, dejando el control en perfecto estado."
+          data-desc-en="The controller was unresponsive on the RB and LB buttons and on the D-pad. The affected components were desoldered and replaced with new units, leaving the controller in perfect condition.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/control-xbox-2/thumb.jpg"
+               alt="Control Xbox One S — botones y cruz"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">3</span>
+
+          <span class="work-piece__title" data-title>Control Xbox One S — botones y cruz</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="computers"
+          data-project="reparacion-de-pines-de-cpu"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg"
+          data-title-es="Enderezado de pines de CPU"
+          data-title-en="CPU pin straightening"
+          data-desc-es="Un Ryzen 7 llegó con nueve pines doblados y varios desprendidos. Se enderezaron los pines recuperables y se resoldaron los que se habían caído. El procesador quedó funcionando perfectamente tras las pruebas de validación."
+          data-desc-en="A Ryzen 7 arrived with nine bent pins and several detached. We straightened the recoverable pins and re-soldered the ones that had come off. The processor tested perfectly after validation.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/reparacion-de-pines-de-cpu/thumb.jpg"
+               alt="Enderezado de pines de CPU"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">4</span>
+
+          <span class="work-piece__title" data-title>Enderezado de pines de CPU</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="build"
+          data-project="armado-de-pc-hercor"
+          data-photos="01.jpg"
+          data-title-es="PC para diseño y corte láser"
+          data-title-en="Design and laser cutting PC"
+          data-desc-es="Equipo armado para una empresa de diseño y corte y grabado láser, configurado de acuerdo con sus requerimientos de software y su flujo de trabajo diario."
+          data-desc-en="Machine built for a design and laser cutting and engraving company, configured around their software requirements and daily workflow.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/armado-de-pc-hercor/thumb.jpg"
+               alt="PC para diseño y corte láser"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">1</span>
+
+          <span class="work-piece__title" data-title>PC para diseño y corte láser</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="laptop-5"
+          data-photos="01.jpg|02.jpg|03.jpg"
+          data-title-es="Cambio de placa madre"
+          data-title-en="Motherboard replacement"
+          data-desc-es="Se sustituyó la placa madre por una con chip de video más reciente y mayor VRAM, buscando mejor rendimiento en juegos. Se aprovechó la intervención para una limpieza profunda de todo el chasis."
+          data-desc-en="The motherboard was replaced with one carrying a newer graphics chip and more VRAM, aiming for better gaming performance. We took the opportunity for a deep clean of the whole chassis.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/laptop-5/thumb.jpg"
+               alt="Cambio de placa madre"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">3</span>
+
+          <span class="work-piece__title" data-title>Cambio de placa madre</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="digital"
+          data-project="sistema-de-enfriamiento-con-peltier"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="Sistema autorregulable con celda Peltier"
+          data-title-en="Self-regulating Peltier system"
+          data-desc-es="Proyecto propio: un dispositivo autorregulable con celda Peltier que alterna entre calor y frío según la temperatura y la humedad del ambiente. Fue el punto de partida de nuestro trabajo en refrigeración y disipación térmica."
+          data-desc-en="In-house project: a self-regulating device with a Peltier cell that switches between heating and cooling based on ambient temperature and humidity. It was the starting point of our work in cooling and thermal management.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/sistema-de-enfriamiento-con-peltier/thumb.jpg"
+               alt="Sistema autorregulable con celda Peltier"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>Sistema autorregulable con celda Peltier</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="computers"
+          data-project="cambio-de-ram-danada-ddr3"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg"
+          data-title-es="Diagnóstico de pantallazos azules"
+          data-title-en="Blue screen diagnosis"
+          data-desc-es="Un equipo de trabajo presentaba pantallazos azules repentinos sin patrón aparente. El diagnóstico apuntó a un módulo de memoria RAM defectuoso. Se sustituyó por uno de la misma generación y especificación, y el equipo quedó completamente estable."
+          data-desc-en="A work computer suffered sudden blue screens with no clear pattern. Diagnosis pointed to a faulty RAM module. It was replaced with one of the same generation and specification, and the machine became completely stable.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/cambio-de-ram-danada-ddr3/thumb.jpg"
+               alt="Diagnóstico de pantallazos azules"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">4</span>
+
+          <span class="work-piece__title" data-title>Diagnóstico de pantallazos azules</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="macbook-1"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="MacBook Pro 2019 — mantenimiento"
+          data-title-en="MacBook Pro 2019 — maintenance"
+          data-desc-es="Limpieza y mantenimiento profundo completo sobre un MacBook Pro 2019, incluyendo desmontaje, limpieza del sistema de disipación y renovación de la interfaz térmica."
+          data-desc-en="Complete deep cleaning and maintenance on a 2019 MacBook Pro, including teardown, cleaning of the cooling assembly and renewal of the thermal interface.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/macbook-1/thumb.jpg"
+               alt="MacBook Pro 2019 — mantenimiento"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>MacBook Pro 2019 — mantenimiento</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="gaming"
+          data-project="control-xbox-3"
+          data-photos="01.jpg|02.jpg|03.jpg"
+          data-title-es="Control Series S — stick drift"
+          data-title-en="Series S controller — stick drift"
+          data-desc-es="El control presentaba drift en el joystick izquierdo. Se desoldó el módulo original y se sustituyó, eliminando por completo la deriva del stick."
+          data-desc-en="The controller had drift on the left thumbstick. The original module was desoldered and replaced, fully eliminating the drift.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/control-xbox-3/thumb.jpg"
+               alt="Control Series S — stick drift"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">3</span>
+
+          <span class="work-piece__title" data-title>Control Series S — stick drift</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="laptop-1"
+          data-photos="01.jpg"
+          data-title-es="Batería y migración a SSD"
+          data-title-en="Battery and SSD migration"
+          data-desc-es="Se reemplazó la batería y se migró el almacenamiento de disco duro mecánico a unidad SSD, con la mejora de velocidad que eso implica. Se completó con mantenimiento y limpieza profunda del equipo."
+          data-desc-en="We replaced the battery and migrated storage from a mechanical hard drive to an SSD, with the speed improvement that brings. The job was completed with maintenance and deep cleaning.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/laptop-1/thumb.jpg"
+               alt="Batería y migración a SSD"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">1</span>
+
+          <span class="work-piece__title" data-title>Batería y migración a SSD</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="digital"
+          data-project="creacion-de-reloj-inteligente"
+          data-photos="01.jpg"
+          data-title-es="Reloj inteligente"
+          data-title-en="Smart watch build"
+          data-desc-es="Desarrollo de un reloj inteligente desde cero, integrando hardware, electrónica y programación en un mismo dispositivo funcional."
+          data-desc-en="A smart watch developed from scratch, integrating hardware, electronics and programming into a single working device.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/creacion-de-reloj-inteligente/thumb.jpg"
+               alt="Reloj inteligente"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">1</span>
+
+          <span class="work-piece__title" data-title>Reloj inteligente</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="build"
+          data-project="armado-de-pc-1"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="PC para gaming casual"
+          data-title-en="Casual gaming PC"
+          data-desc-es="Equipo armado a la medida para un perfil de jugador casual, con los componentes seleccionados para equilibrar rendimiento y presupuesto."
+          data-desc-en="Custom-built machine for a casual gaming profile, with components selected to balance performance and budget.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/armado-de-pc-1/thumb.jpg"
+               alt="PC para gaming casual"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>PC para gaming casual</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="computers"
+          data-project="cambio-de-refrigeracion-para-psu-a-mas-bpm-y-silencioso"
+          data-photos="01.jpg|02.jpg|03.jpg|04.jpg"
+          data-title-es="Refrigeración de fuente de poder"
+          data-title-en="Power supply cooling upgrade"
+          data-desc-es="El cliente reportaba ruido excesivo y calentamiento del gabinete. Se sustituyó el ventilador de la fuente de poder por uno de mayor caudal y menor nivel sonoro, conectado a la placa base para permitir el monitoreo de RPM. El resultado fue una fuente más fría y un equipo notablemente más silencioso."
+          data-desc-en="The client reported excessive noise and a hot case. We replaced the power supply fan with a higher-airflow, lower-noise unit, wired to the motherboard for RPM monitoring. The result was a cooler supply and a noticeably quieter machine.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/cambio-de-refrigeracion-para-psu-a-mas-bpm-y-silencioso/thumb.jpg"
+               alt="Refrigeración de fuente de poder"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">4</span>
+
+          <span class="work-piece__title" data-title>Refrigeración de fuente de poder</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="reparacion-flex"
+          data-photos="01.jpg"
+          data-title-es="Cambio de flex de teclado"
+          data-title-en="Keyboard ribbon replacement"
+          data-desc-es="El teclado de la laptop había dejado de responder. La revisión mostró cuatro canales rayados en el cable flex. Se sustituyó por uno nuevo y el teclado recuperó su funcionamiento completo."
+          data-desc-en="The laptop keyboard had stopped responding. Inspection showed four scratched channels on the ribbon cable. It was replaced with a new one and the keyboard was fully restored.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/reparacion-flex/thumb.jpg"
+               alt="Cambio de flex de teclado"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">1</span>
+
+          <span class="work-piece__title" data-title>Cambio de flex de teclado</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="laptop-4"
+          data-photos="01.jpg|02.jpg|03.jpg"
+          data-title-es="Ampliación de memoria RAM"
+          data-title-en="RAM upgrade"
+          data-desc-es="Ampliación de memoria RAM para mejorar el rendimiento en multitarea, junto con mantenimiento y limpieza profunda del equipo."
+          data-desc-en="RAM upgrade to improve multitasking performance, along with maintenance and deep cleaning of the machine.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/laptop-4/thumb.jpg"
+               alt="Ampliación de memoria RAM"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">3</span>
+
+          <span class="work-piece__title" data-title>Ampliación de memoria RAM</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="gaming"
+          data-project="control-xbox-1"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="Control Series S — botón LB"
+          data-title-en="Series S controller — LB button"
+          data-desc-es="El control presentaba falso contacto en el botón LB. Se sustituyó el componente y el control quedó funcionando correctamente."
+          data-desc-en="The controller had a faulty contact on the LB button. The component was replaced and the controller returned to normal operation.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/control-xbox-1/thumb.jpg"
+               alt="Control Series S — botón LB"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>Control Series S — botón LB</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="smartphones"
+          data-project="reparacion-caja-airpods-3"
+          data-photos="01.jpg"
+          data-title-es="AirPods 3 — conector de carga"
+          data-title-en="AirPods 3 — charging connector"
+          data-desc-es="El conector de la batería en la caja de carga no hacía contacto: el pin de anclaje se había roto. Se puenteó la conexión y se selló la zona para evitar que volviera a desprenderse con el uso."
+          data-desc-en="The battery connector inside the charging case had lost contact: the anchor pin had broken. We bridged the connection and sealed the area so it would not come loose again with use.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/reparacion-caja-airpods-3/thumb.jpg"
+               alt="AirPods 3 — conector de carga"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">1</span>
+
+          <span class="work-piece__title" data-title>AirPods 3 — conector de carga</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="build"
+          data-project="armado-de-pc-4"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="PC compacta para competitivo"
+          data-title-en="Compact competitive PC"
+          data-desc-es="Equipo armado para un jugador competitivo con limitaciones de espacio, priorizando altas tasas de cuadros por segundo en un formato reducido."
+          data-desc-en="Machine built for a competitive player with limited desk space, prioritising high frame rates in a compact format.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/armado-de-pc-4/thumb.jpg"
+               alt="PC compacta para competitivo"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>PC compacta para competitivo</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="laptop3"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="Batería y teclado"
+          data-title-en="Battery and keyboard"
+          data-desc-es="Sustitución de batería y teclado en una laptop, acompañada de mantenimiento y limpieza profunda del chasis y del sistema de disipación."
+          data-desc-en="Battery and keyboard replacement on a laptop, together with maintenance and deep cleaning of the chassis and cooling system.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/laptop3/thumb.jpg"
+               alt="Batería y teclado"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>Batería y teclado</span>
+
+        </button>
+
+        <button
+          class="work-piece reveal"
+          type="button"
+          data-category="repair"
+          data-project="cambio-de-pila-explotada"
+          data-photos="01.jpg|02.jpg"
+          data-title-es="Reproductor MP3 — batería inflada"
+          data-title-en="MP3 player — swollen battery"
+          data-desc-es="El reproductor no encendía. Al abrirlo se encontró la batería visiblemente inflada, que explotó durante el retiro. Se instaló una celda nueva de mayor capacidad y el dispositivo volvió a funcionar."
+          data-desc-en="The player would not power on. On opening it, the battery was visibly swollen and burst during removal. We fitted a new, higher-capacity cell and the device returned to service.">
+
+          <img class="work-piece__image"
+               src="../assets/images/work/cambio-de-pila-explotada/thumb.jpg"
+               alt="Reproductor MP3 — batería inflada"
+               loading="lazy">
+
+          <span class="work-piece__scrim"></span>
+
+          <span class="work-piece__count">2</span>
+
+          <span class="work-piece__title" data-title>Reproductor MP3 — batería inflada</span>
+
+        </button>
 
       </div>
 
@@ -340,28 +916,28 @@
       <div class="work-section__head">
         <p class="eyebrow reveal" data-i18n="workPage.reviews.eyebrow">Reseñas</p>
         <h2 class="reveal" data-i18n="workPage.reviews.title">Lo que dicen quienes ya confiaron en nosotros.</h2>
-        <p class="section-lead reveal" data-i18n="workPage.reviews.lead">Estamos reuniendo las reseñas de nuestros clientes. Las que ves aquí son ejemplos hasta que las reemplacemos con reseñas reales verificadas.</p>
+        <p class="section-lead reveal" data-i18n="workPage.reviews.lead">Empresas con las que hemos trabajado y el servicio que realizamos para cada una.</p>
       </div>
 
 
       <!-- RESUMEN -->
       <div class="reviews-summary reveal">
 
-        <span class="reviews-summary__score">4,8</span>
+        <span class="reviews-summary__score">5,0</span>
 
         <div class="reviews-summary__meta">
           <span class="reviews-summary__label" data-i18n="workPage.reviews.scoreLabel">Calificación promedio</span>
-        <span class="stars" role="img" aria-label="4.8 de 5 estrellas">
+        <span class="stars" role="img" aria-label="5 de 5 estrellas">
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
+          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
         </span>
         </div>
 
         <span class="reviews-summary__count">
-          6 <span data-i18n="workPage.reviews.count">reseñas de ejemplo</span>
+          3 <span data-i18n="workPage.reviews.count">reseñas verificadas</span>
         </span>
 
       </div>
@@ -373,24 +949,36 @@
         <article class="review-card reveal">
 
           <div class="review-card__top">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas">
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+            </span>
+            <span class="review-card__verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span data-i18n="workPage.reviews.verified">Verificado</span>
+            </span>
           </div>
 
-          <p class="review-card__text" data-i18n="workPage.r1.text">Llevé mi PC porque se apagaba sola y ya me habían dicho que no tenía arreglo. La revisaron a fondo, encontraron el problema real y me explicaron todo antes de tocar nada.</p>
+          <p class="review-card__text" data-i18n="workPage.rFemsa.text">Contratamos a Valadal para el mantenimiento de nuestros servidores y el reemplazo de una unidad de almacenamiento. El trabajo se realizó de forma ordenada, con diagnóstico previo y reporte de lo ejecutado. La atención técnica fue puntual y profesional en todo momento.</p>
 
           <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
+
+            <span class="review-card__logo">
+              <img src="../assets/images/reviews/femsa.png"
+                   alt="FEMSA"
+                   loading="lazy">
+            </span>
+
             <div>
-              <p class="review-card__name" data-i18n="workPage.r1.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r1.service">Reparación · Computadoras</p>
+              <p class="review-card__name">FEMSA</p>
+              <p class="review-card__service" data-i18n="workPage.rFemsa.service">Mantenimiento de servidores</p>
             </div>
+
           </div>
 
         </article>
@@ -398,24 +986,36 @@
         <article class="review-card reveal">
 
           <div class="review-card__top">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas">
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+            </span>
+            <span class="review-card__verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span data-i18n="workPage.reviews.verified">Verificado</span>
+            </span>
           </div>
 
-          <p class="review-card__text" data-i18n="workPage.r2.text">Me armaron una computadora para edición de video dentro de mi presupuesto. Consiguieron componentes de segunda mano revisados y quedó mucho mejor de lo que esperaba.</p>
+          <p class="review-card__text" data-i18n="workPage.rLogens.text">Nos han atendido varios equipos de la operación: laptops, impresoras y otros dispositivos de uso diario. Resolvieron fallas que otros proveedores no lograron identificar y trabajan con distintos tipos de equipo sin problema. La comunicación durante el proceso es clara.</p>
 
           <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
+
+            <span class="review-card__logo">
+              <img src="../assets/images/reviews/logens.jpg"
+                   alt="Logística Logens"
+                   loading="lazy">
+            </span>
+
             <div>
-              <p class="review-card__name" data-i18n="workPage.r2.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r2.service">Armado · PC personalizada</p>
+              <p class="review-card__name">Logística Logens</p>
+              <p class="review-card__service" data-i18n="workPage.rLogens.service">Reparación y mantenimiento de equipos</p>
             </div>
+
           </div>
 
         </article>
@@ -423,99 +1023,36 @@
         <article class="review-card reveal">
 
           <div class="review-card__top">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas">
+            <span class="stars" role="img" aria-label="5 de 5 estrellas">
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
           <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
+            </span>
+            <span class="review-card__verified">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M20 6 9 17l-5-5"/>
+              </svg>
+              <span data-i18n="workPage.reviews.verified">Verificado</span>
+            </span>
           </div>
 
-          <p class="review-card__text" data-i18n="workPage.r3.text">El puerto HDMI de mi consola dejó de funcionar. Me dieron diagnóstico el mismo día y me la entregaron funcionando. El trabajo por dentro quedó impecable.</p>
+          <p class="review-card__text" data-i18n="workPage.rHercor.text">Nos armaron una computadora de escritorio configurada específicamente para nuestro software de diseño y para el trabajo diario de corte y grabado. El equipo responde con holgura a lo que necesitábamos y llevamos tiempo trabajando con él sin contratiempos.</p>
 
           <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
+
+            <span class="review-card__logo">
+              <img src="../assets/images/reviews/hercor.jpg"
+                   alt="Hercor Corte Láser"
+                   loading="lazy">
+            </span>
+
             <div>
-              <p class="review-card__name" data-i18n="workPage.r3.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r3.service">Reparación · Gaming</p>
+              <p class="review-card__name">Hercor Corte Láser</p>
+              <p class="review-card__service" data-i18n="workPage.rHercor.service">Armado de PC de alto rendimiento</p>
             </div>
-          </div>
 
-        </article>
-
-        <article class="review-card reveal">
-
-          <div class="review-card__top">
-        <span class="stars" role="img" aria-label="4.5 de 5 estrellas">
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
-          </div>
-
-          <p class="review-card__text" data-i18n="workPage.r4.text">Nos hicieron el sitio web del negocio y además automatizaron el registro de pedidos. Entendieron el proceso antes de proponer la solución.</p>
-
-          <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
-            <div>
-              <p class="review-card__name" data-i18n="workPage.r4.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r4.service">Digital · Web y automatización</p>
-            </div>
-          </div>
-
-        </article>
-
-        <article class="review-card reveal">
-
-          <div class="review-card__top">
-        <span class="stars" role="img" aria-label="5 de 5 estrellas">
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
-          </div>
-
-          <p class="review-card__text" data-i18n="workPage.r5.text">Cambio de pantalla de iPhone. Precio claro desde el inicio, sin sorpresas, y me explicaron qué pieza iban a usar y por qué.</p>
-
-          <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
-            <div>
-              <p class="review-card__name" data-i18n="workPage.r5.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r5.service">Reparación · Smartphones</p>
-            </div>
-          </div>
-
-        </article>
-
-        <article class="review-card reveal">
-
-          <div class="review-card__top">
-        <span class="stars" role="img" aria-label="4.5 de 5 estrellas">
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--full"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-          <span class="stars__star--half"><svg viewBox="0 0 24 24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.6l2.6 5.3 5.8.85-4.2 4.1 1 5.75L12 16.9l-5.2 2.7 1-5.75-4.2-4.1 5.8-.85L12 3.6Z"/></svg></span>
-        </span>
-            <span class="review-card__tag" data-i18n="workPage.reviews.tag">Reseña de ejemplo</span>
-          </div>
-
-          <p class="review-card__text" data-i18n="workPage.r6.text">Le dieron mantenimiento a los servidores de la oficina. Bajaron las temperaturas y nos dejaron documentado todo lo que hicieron.</p>
-
-          <div class="review-card__author">
-            <span class="review-card__avatar" aria-hidden="true">V</span>
-            <div>
-              <p class="review-card__name" data-i18n="workPage.r6.name">Cliente de ejemplo</p>
-              <p class="review-card__service" data-i18n="workPage.r6.service">Reparación · Servidores</p>
-            </div>
           </div>
 
         </article>
@@ -543,6 +1080,47 @@
       <a href="../contact/index.html" class="btn btn--primary reveal" data-i18n="cta.button">Cotizar →</a>
     </div>
   </section>
+
+
+  <!-- ============================================================
+       VISOR DE PROYECTO (lightbox)
+       Se abre al hacer clic en una tarjeta de la galería. Vive
+       fuera de la galería para poder cubrir toda la pantalla.
+       ============================================================ -->
+
+  <div class="viewer" id="viewer" role="dialog" aria-modal="true" aria-hidden="true">
+
+    <button class="viewer__close" id="viewerClose" type="button" aria-label="Cerrar">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+        <path d="M6 6l12 12M18 6L6 18"/>
+      </svg>
+    </button>
+
+    <button class="viewer__nav viewer__nav--prev" id="viewerPrev" type="button" aria-label="Anterior">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M15 5l-7 7 7 7"/>
+      </svg>
+    </button>
+
+    <button class="viewer__nav viewer__nav--next" id="viewerNext" type="button" aria-label="Siguiente">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <path d="M9 5l7 7-7 7"/>
+      </svg>
+    </button>
+
+    <figure class="viewer__stage">
+
+      <img class="viewer__image" id="viewerImage" src="" alt="">
+
+      <figcaption class="viewer__info" id="viewerInfo">
+        <span class="viewer__counter" id="viewerCounter"></span>
+        <h3 class="viewer__title" id="viewerTitle"></h3>
+        <p class="viewer__desc" id="viewerDesc"></p>
+      </figcaption>
+
+    </figure>
+
+  </div>
 
 
   <!-- ============================================================
@@ -593,7 +1171,7 @@
        JAVASCRIPT
        ============================================================ -->
 
-  <script src="../js/script.js?v=6"></script>
+  <script src="../js/script.js?v=7"></script>
 
 </body>
 </html>
